@@ -1,0 +1,23 @@
+/* 
+    File: home.css
+    
+    Styling specifically for the Home page. 
+
+    Updated: March 21, 2023
+*/
+
+body {
+    align-items: center;
+}
+
+/* Place feature highlight text and corresponding images side by side. */
+.feature-highlight-container {
+    display: flex;
+    margin-left: 13%;
+    margin-right: 13%;
+    padding: 2%;
+}
+
+.feature-highlight-child {
+    flex: 1;
+}  

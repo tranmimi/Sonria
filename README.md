@@ -1,2 +1,4 @@
 # Sonria!
-A web application dedicated to helping students better their understanding of their mental health throughout the school year.
+Developed by Hannah Guillen, Mimi Tran, Aria Siriouthay, Tashia Boddu.
+
+Sonria! is a web application that can help students better understand their mental health throughout the school year.

@@ -1,0 +1,20 @@
+/* 
+    File: dashboard.css
+    
+    Styling specifically for the Dashboard page. 
+
+    Updated: March 22, 2023
+*/
+
+/* Reposition mood tracker calendar and reminders bar side-by-side. */
+
+
+/* Style profile bar. */
+#profile-bar {
+    background-color: #FEF9F4;
+    border-radius: 20px;
+    margin: auto;
+    width: 75%;
+}
+
+/* Style "Did you miss anything?" bar. */
