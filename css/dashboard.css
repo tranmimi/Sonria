@@ -2,19 +2,216 @@
     File: dashboard.css
     
     Styling specifically for the Dashboard page. 
-
-    Updated: March 22, 2023
 */
 
-/* Reposition mood tracker calendar and reminders bar side-by-side. */
+/* Style mood tracker modal box. 
 
+    Part of the code for this section is referenced from:
+        https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_modal
+*/
+h2 {
+    padding-top: 20px;
+}
+
+#mood-tracker-modal-box {
+    background-color: rgba(0,0,0,0.4);
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    z-index: 1;
+}
+
+#modal-content {
+    background-color: white;
+    border-radius: 20px;
+    width: 700px;
+    height: 200px;
+    margin-top: 100px;
+    margin-left: 550px;
+}
+
+.emoji {
+    background: none;
+    border: none;
+}
+
+.emoji:hover {
+    cursor: pointer;
+}
+
+    /* After clicking on a button, make it shake to indicate selection.
+        
+        Part of code for this section is referenced from:
+            https://codepen.io/TechyBlogger/pen/XNgYqX
+    */
+
+    @keyframes wiggle {
+        2% {
+          -webkit-transform: translateX(3px) rotate(2deg);
+          transform: translateX(3px) rotate(2deg);
+        }
+        4% {
+          -webkit-transform: translateX(-3px) rotate(-2deg);
+          transform: translateX(-3px) rotate(-2deg);
+        }
+        6% {
+          -webkit-transform: translateX(3px) rotate(2deg);
+          transform: translateX(3px) rotate(2deg);
+        }
+        8% {
+          -webkit-transform: translateX(-3px) rotate(-2deg);
+          transform: translateX(-3px) rotate(-2deg);
+        }
+        10% {
+          -webkit-transform: translateX(2px) rotate(1deg);
+          transform: translateX(2px) rotate(1deg);
+        }
+        12% {
+          -webkit-transform: translateX(-2px) rotate(-1deg);
+          transform: translateX(-2px) rotate(-1deg);
+        }
+        14% {
+          -webkit-transform: translateX(2px) rotate(1deg);
+          transform: translateX(2px) rotate(1deg);
+        }
+        16% {
+          -webkit-transform: translateX(-2px) rotate(-1deg);
+          transform: translateX(-2px) rotate(-1deg);
+        }
+        18% {
+          -webkit-transform: translateX(1px) rotate(0);
+          transform: translateX(1px) rotate(0);
+        }
+        20% {
+          -webkit-transform: translateX(-1px) rotate(0);
+          transform: translateX(-1px) rotate(0);
+        }
+      }
+
+/* Reposition mood tracker calendar and reminders bar side-by-side. */
+#main-area {
+    display: flex;
+    margin-left: 13%;
+    margin-right: 13%;
+    padding: 2%;
+}
+
+.main-area-child {
+    flex: 1;
+    margin: 10px;
+    height: 500px;
+}  
 
 /* Style profile bar. */
 #profile-bar {
     background-color: #FEF9F4;
     border-radius: 20px;
     margin: auto;
+    padding: 10px;
     width: 75%;
 }
 
+#users-name {
+    display: inline-block;
+    padding-left: 20px;
+}
+
+/* Style mood tracker calendar. */
+#mood-tracker-calendar {
+    background-color: #FEF9F4;
+    border-radius: 20px;
+    width: 500px;
+}
+
+.calendar-wrapper {
+    width: 360px;
+    margin: 3em auto;
+    padding: 2em;
+    border: 1px solid #dcdcff;
+    border-radius: 5px;
+    background: #fff;
+}
+
+.calendar-wrapper table {
+    clear: both;
+    width: 100%;
+    border: 1px solid #dcdcff;
+    border-radius: 3px;
+    border-collapse: collapse;
+    color: #444;
+  }
+  .calendar-wrapper td {
+    height: 48px;
+    text-align: center;
+    vertical-align: middle;
+    border-right: 1px solid #dcdcff;
+    border-top: 1px solid #dcdcff;
+    width: 14.28571429%;
+  }
+  thead td {
+    border: none;
+    color: #28283b;
+    text-transform: uppercase;
+    font-size: 1.5em;
+  }
+
+  td.not-current {
+    color: #c0c0c0;
+  }
+  td.today {
+    font-weight: 700;
+    color: #28283b;
+    font-size: 1.5em;
+  }
+
+  #btnPrev {
+    float: left;
+    margin-bottom: 20px;
+  }
+  #btnPrev:before {
+    content: '\f104';
+    font-family: FontAwesome;
+    padding-right: 4px;
+  }
+  #btnNext {
+    float: right;
+    margin-bottom: 20px;
+  }
+  #btnNext:after {
+    content: '\f105';
+    font-family: FontAwesome;
+    padding-left: 4px;
+  }
+  #btnPrev,
+  #btnNext {
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: #c0c0c0;
+    cursor: pointer;
+    font-family: "Roboto Condensed", sans-serif;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+  }
+  #btnPrev:hover,
+#btnNext:hover {
+  color: #28283b;
+  font-weight: bold;
+}
+
+
 /* Style "Did you miss anything?" bar. */
+#reminders-bar {
+    background-color: #FEF9F4;
+    border-radius: 20px;
+}
+
+#no-reminders {
+    text-align: center;
+    vertical-align: middle;
+    line-height: 350px;
+}

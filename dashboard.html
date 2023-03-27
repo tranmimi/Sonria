@@ -4,8 +4,6 @@
     This is the Dashboard page of Sonria!
     This is the Home page for the Sonria! website, where new users can register and current users can log into their accounts.
     Home also contains the Features Highlight for Sonria!
-
-    Updated: March 22, 2023
 -->
 
 <!DOCTYPE html>
@@ -20,40 +18,65 @@
         <link rel="stylesheet" href="css/dashboard.css"/>
     </head>
     <body>
+        <!-- Mood Tracker Modal Box -->
+        <div id="mood-tracker-modal-box">
+            <div id="modal-content">
+                <h2>How are you feeling today?</h2>
+                <ul id="emoji-lineup">
+                    <li><button class="emoji" id="angry-face"><img src="img\🦆 emoji _pouting face_.png"></button></li>
+                    <li><button class="emoji" id="crying-face"><img src="img\🦆 emoji _loudly crying face_.png"></button></li>
+                    <li><button class="emoji" id="worried-face"><img src="img\🦆 emoji _worried face_.png"></button></li>
+                    <li><button class="emoji" id="neutral-face"><img src="img\🦆 emoji _neutral face_.png"></button></li>
+                    <li><button class="emoji" id="smiling-face"><img src="img\🦆 emoji _slightly smiling face_.png"></button></li>
+                    <li><button class="emoji" id="happy-face"><img src="img\🦆 emoji _smiling face with open mouth and smiling eyes_.png"></button></li>
+                </ul>
+                <br>
+                <button class="normal-btn" id="mood-confirm">Confirm</button>
+            </div>
+        </div>
 
         <!-- Navigation Bar-->
         <ul id="nav-bar">
-            <li><img src="img\final logo - tan.png" height="40px" width="46px"></li>
-            <li class="page-link"><a href="#">Dashboard</a></li>
-            <li class="page-link"><a href="#">Reminders</a></li>
-            <li class="page-link"><a href="#">Journal</a></li>
-            <li class="page-link"><a href="#">Forums</a></li>
-            <li class="page-link"><a href="#">Analytics</a></li>
-            <li class="page-link"><a href="#">Settings</a></li>
+            <li><img src="img\logo.png" height="50px" width="56px" id="logo"></li>
+            <li><a href="dashboard.html" class="nav-link" id="current-page">Dashboard</a></li>
+            <li><a href="home.html" class="nav-link">Reminders</a></li>
+            <li><a href="" class="nav-link">Journal</a></li>
+            <li><a href="#" class="nav-link">Forums</a></li>
+            <li><a href="#" class="nav-link">Analytics</a></li>
+            <li><a href="#" class="nav-link">Settings</a></li>
         </ul>
 
         <br><hr><br>
 
         <!-- Profile Bar -->
         <div id="profile-bar">
-            <img src="img\final logo - tan.png" height="50px" width="56px">
-            Your Name
+            <img src="img\logo.png" height="50px" width="56px" id="logo">
+            <h1 id="users-name">Your Name</h1>
         </div>
+
+        <br> 
 
         <div id="main-area">
             <!-- Mood Tracker Calendar -->
             <div class="main-area-child" id="mood-tracker-calendar">
-                March
+                <h2>March</h2>
+                <div class="calendar-wrapper">
+                    <button id="btnPrev" type="button">Prev</button>
+                    <button id="btnNext" type="button">Next</button>
+                <div id="divCal"></div>
+                </div>    
             </div>
 
             <!-- Tracked Reminders -->
             <div class="main-area-child" id="reminders-bar">
-                Did you miss anything?
+                <h3>Did you miss anything?</h3>
+                <p id="no-reminders">Nope, you're all set!</p>
             </div>
         </div>
 
         <br><hr><br>
 
         <footer>Copyright © 2023 Hannah Guillen, Mimi Tran, Aria Siriouthay, Tashia Boddu</footer>
+        <script src="src/dashboard.js"></script>
     </body>
 </html>

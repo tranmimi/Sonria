@@ -2,8 +2,6 @@
     File: main.css
     
     Styling from this page will be universal across all web pages associated with Sonria!
-
-    Updated: March 22, 2023
 */
 
 /* 
@@ -24,12 +22,12 @@ hr {
 }
 
 /* Style headings. */
-h1, h3 {
+h1, h2, h3 {
     color: #5D3F35;
 }
 
 /* Style buttons. */
-button {
+.normal-btn {
     background-color: #A5A58E;
     border: 1px solid #A5A58E;
     border-radius: 20px;
@@ -45,16 +43,23 @@ button {
     transition-duration: 0.3s;
 }
 
-button:hover {
+.normal-btn:hover {
     background-color: #8b8b6f;
     color: #d1d1c4;
     cursor: pointer;
 }
 
-button:active {
+.normal-btn:active {
     background-color: #707058;
     color: #bdbdac;
     cursor: pointer;
+}
+
+.normal-btn:disabled {
+    background-color: #cacabb;
+    border: none;
+    color: white;
+    cursor: not-allowed;
 }
 
 /* Style navigation bar (Dashboard, Reminders, Journal, Forums, Analytics, Settings) */
@@ -65,6 +70,8 @@ button:active {
 
     margin: auto;
     width: 75%;
+
+    transition-duration: 0.3s;
 }
 
 li {
@@ -72,8 +79,8 @@ li {
     padding: 10px;
 }
 
-.page-links {
-    display: inline-block;
+#logo {
+    vertical-align: middle;
 }
 
 a {
@@ -83,19 +90,17 @@ a {
 }
 
 a:hover {
-    /*
-        - make text bolder?
-        - change color to darker/lighter? or diff color?
-        - 
-    */
+    color: #A5A58E;
     cursor: pointer;
 }
 
 a:active {
-    /*
-        correspond w hover
-    */
+    color: #707058;
     cursor: pointer;
+}
+
+#current-page {
+    color: #A5A58E;
 }
 
 /* Style copyright footer. */
