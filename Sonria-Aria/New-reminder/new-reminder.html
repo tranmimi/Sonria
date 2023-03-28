@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/new-reminder-style.css">
+    <link rel = "stylesheet" href = "https://fonts.googleapis.com/css?family=Poppins">
+    <link rel="stylesheet" href="css/main.css"/>  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>New Reminder</title>
+</head>
+<body>
+<!-- Navigation Bar-->
+<ul id="nav-bar">
+    <li><img src="img\logo.png" height="50px" width="56px" id="logo"></li>
+    <li><a href="dashboard.html" class="nav-link" id="current-page">Dashboard</a></li>
+    <li><a href="home.html" class="nav-link">Reminders</a></li>
+    <li><a href="" class="nav-link">Journal</a></li>
+    <li><a href="#" class="nav-link">Forums</a></li>
+    <li><a href="#" class="nav-link">Analytics</a></li>
+    <li><a href="#" class="nav-link">Settings</a></li>
+</ul>
+<div class="container">
+    <div class="left">
+        <div class="form-container">
+            <form action="#">
+                <p>Title</p>
+                <div class="input-box" id="title">
+                    <input type="text" placeholder="Title" required>
+                </div>
+                <p>Date</p>
+                <div class="input-box" id="date">
+                    <input type="date" placeholder="Date" required>
+                </div>
+                <p>Start</p>
+                <div class="input-box" id="start-time">
+                    <input type="time" placeholder="Time"required>
+                </div>
+                <p>End</p>
+                <div class="input-box" id="end-time">
+                    <input type="time" placeholder="Time" required>
+                </div>
+            </form>
+            <div class="repeat-container">
+                <h4>Repeat</h4>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+                <hr>
+                <p>How important is this task?</p>
+                <div class="priority-btns">
+                    <button type="submit" class="btn">!!!</button>
+                    <button type="submit" class="btn">!!</button>
+                    <button type="submit" class="btn">!</button>
+                    <button type="submit" class="btn">x</button>
+                </div>
+            </div>
+            <div class="notes-container">
+                <div class="notes">
+                    <h3>Notes</h3>
+                    <div class="note">
+                        <ul>
+                            <li><span>Get party hats</span></li>
+                            <li><span>Get balloons</span></li>
+                            <li><span>Buy chips</span></li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="right">
+        <div class="calender">
+            <div class="month">
+                <i class="fa fa-angle-left prev"></i>
+                <div class="date">hi</div>
+                <i class="fa fa-angle-right next"></i>
+            </div>
+            <div class="weekdays">
+                <div>Sun</div>
+                <div>Mon</div>
+                <div>Tue</div>
+                <div>Wed</div>
+                <div>Thu</div>
+                <div>Fri</div>
+                <div>Sat</div>
+            </div>
+            <div class="days">
+                <div class="day"></div>
+        </div>
+        <div class="btn-contaner">
+            <button type="submit" class="submit-btn">Create</button>
+        </div>
+    </div>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="js/new-reminder-script.js"></script>
+</body>
+</html>
