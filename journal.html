@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>journal_main</title>
-<link rel="stylesheet" type="text/css" id="applicationStylesheet" href="css/journal_main.css"/>
-  <!-- Add Poppins font from main-->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto+Condensed:ital,wght@0,400;1,700&display=swap"
-        rel="stylesheet">
-  <link rel="stylesheet" href="css/main.css" />
-<script id="applicationScript" type="text/javascript" src="js/journal_main.js"></script>
+	<meta charset="utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>journal_main</title>
+	<link rel="stylesheet" type="text/css" id="applicationStylesheet" href="css/journal.css"/>
+	<!-- Add Poppins font from main-->
+	<link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto+Condensed:ital,wght@0,400;1,700&display=swap"
+		  rel="stylesheet">
+	<link rel="stylesheet" href="css/main.css" />
+	<!-- <script id="applicationScript" type="text/javascript" src="js/journal_main.js"></script> -->
 </head>
 <body>
 <div id="journal_main">
@@ -21,7 +21,9 @@
 		</svg>
 		<div id="user_prompt">
 			<div id="user_page_entry">
-				<span>I woke up feeling refreshed and ready to tackle my classes. I went for a run before my morning lecture, and it felt amazing. There’s something about getting outside and moving my body that just makes me feel so much better. In my first class, I</span>
+				<span>I woke up feeling refreshed and ready to tackle my classes. I went for a run before my morning
+					lecture, and it felt amazing. There’s something about getting outside and moving my body that just
+					makes me feel so much better. In my first class, I</span>
 			</div>
 			<div id="btn_continue">
 				<span>…Continue</span>
@@ -87,17 +89,17 @@
 				<span>How are you feeling right now?</span>
 			</div>
 			<div id="emoji_icons">
-				<img id="pouting_emoji" src="img/pouting_emoji.png" srcset="img/pouting_emoji.png img/pouting_emoji@2x.png.png 2x">
+				<img id="pouting_emoji" src="img/pouting_emoji.png" srcset="img/pouting_emoji.png">
 
-				<img id="crying_emoji" src="img/crying_emoji.png" srcset="img/crying_emoji.png img/crying_emoji@2x.png.png 2x">
+				<img id="crying_emoji" src="img/crying_emoji.png" srcset="img/crying_emoji.png">
 
-				<img id="worried_emoji" src="img/worried_emoji.png" srcset="img/worried_emoji.png img/worried_emoji@2x.png.png 2x">
+				<img id="worried_emoji" src="img/worried_emoji.png" srcset="img/worried_emoji.png">
 
-				<img id="neutral_emoji" src="img/neutral_emoji.png" srcset="img/neutral_emoji.png img/neutral_emoji@2x.png.png 2x">
+				<img id="neutral_emoji" src="img/neutral_emoji.png" srcset="img/neutral_emoji.png">
 
-				<img id="smiling_emoji" src="img/smiling_emoji.png" srcset="img/smiling_emoji.png img/smiling_emoji@2x.png.png 2x">
+				<img id="smiling_emoji" src="img/smiling_emoji.png" srcset="img/smiling_emoji.png">
 
-				<img id="joyful_emoji" src="img/joyful_emoji.png" srcset="img/joyful_emoji.png img/joyful_emoji@2x.png.png 2x">
+				<img id="joyful_emoji" src="img/joyful_emoji.png" srcset="img/joyful_emoji.png">
 
 			</div>
 		</div>
@@ -151,9 +153,9 @@
 	</div>
 	<div id="date_scroll_bar">
 		<div id="change_date">
-			<img id="left_date" src="img/left_date.png" srcset="img/left_date.png img/left_date@2x.png.png 2x">
+			<img id="left_date" src="img/left_date.png" srcset="img/left_date.png">
 
-			<img id="right_date" src="img/right_date.png" srcset="img/right_date.png img/right_date@2x.png.png 2x">
+			<img id="right_date" src="img/right_date.png" srcset="img/right_date.png">
 
 		</div>
 		<div id="dates">
@@ -226,30 +228,31 @@
 	<div id="date_prompt">
 		<span>Today is Saturday, February 25</span>
 	</div>
+	<!-- Navigation Bar -->
 	<div id="Nav_Bar">
 		<svg class="nav_bar_box">
 			<rect id="nav_bar_box" rx="20" ry="20" x="0" y="0" width="981" height="70">
 			</rect>
 		</svg>
-		<div id="Settings">
+		<div id="Settings" onclick="window.location.href='../pages/settings.html'">
 			<span>Settings</span>
 		</div>
-		<div id="Analytics">
+		<div id="Analytics" onclick="window.location.href='../pages/analytics.html'">
 			<span>Analytics</span>
 		</div>
-		<div onclick="application.goToTargetView(event)" id="Forms">
+		<div id="Forms" onclick="window.location.href='../pages/form.html'">
 			<span>Forms</span>
 		</div>
-		<div id="Journal">
+		<div id="Journal" onclick="window.location.href='../pages/journal.html'">
 			<span>Journal</span>
 		</div>
-		<div id="Reminders">
+		<div id="Reminders" onclick="window.location.href='../pages/reminders.html'">
 			<span>Reminders</span>
 		</div>
-		<div id="Dashboard">
+		<div id="Dashboard" onclick="window.location.href='../pages/dashboard.html'">
 			<span>Dashboard</span>
 		</div>
-		<img id="sonria_logo" src="img/sonria_logo.png" srcset="img/sonria_logo.png img/sonria_logo@2x.png.png 2x">
+		<img id="sonria_logo" src="img/sonria_logo.png" srcset="img/sonria_logo.png">
 
 		<svg class="nav_bar_divider" viewBox="0 0 1 51">
 			<path id="nav_bar_divider" d="M 0 0 L 0 51">

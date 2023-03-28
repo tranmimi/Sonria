@@ -4,16 +4,16 @@
 <meta charset="utf-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>fourm_main</title>
-<link rel="stylesheet" type="text/css" id="applicationStylesheet" href="css/fourm_main.css"/>
+<title>form_main</title>
+<link rel="stylesheet" type="text/css" id="applicationStylesheet" href="css/form.css"/>
   <!-- Add Poppins font from main-->
   <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto+Condensed:ital,wght@0,400;1,700&display=swap"
         rel="stylesheet">
   <link rel="stylesheet" href="css/main.css" />
-<script id="applicationScript" type="text/javascript" src="js/fourm_main.js"></script>
+<!-- <script id="applicationScript" type="text/javascript" src="js/fourm_main.js"></script> -->
 </head>
 <body>
-<div id="fourm_main">
+<div id="form_main">
 	<svg class="user_avatar">
 		<ellipse id="user_avatar" rx="43.5" ry="42" cx="43.5" cy="42">
 		</ellipse>
@@ -43,11 +43,13 @@
 				</ellipse>
 			</svg>
 			<div onclick="application.goToTargetView(event)" id="first_user_comment">
-				<span>Thanks for sharing these tips! I’ve been struggling to stay focused while studying lately, so it’s helpful to see what’s worked for others. I particularly like your suggestion about breaking up study sessions into shorter, more manageable chunks - I think…  Continue reading </span>
+				<span>Thanks for sharing these tips! I’ve been struggling to stay focused while studying lately,
+					so it’s helpful to see what’s worked for others. I particularly like your suggestion about breaking
+					up study sessions into shorter, more manageable chunks - I think…  Continue reading </span>
 			</div>
 		</div>
 		<div id="post_1">
-			<img id="post_1_image" src="img/post_1_image.png" srcset="img/post_1_image.png img/post_1_image@2x.png.png 2x">
+			<img id="post_1_image" src="img/post_1_image.png" srcset="img/post_1_image.png">
 
 			<div id="post_1_question">
 				<span>What study habits have helped you?<br/>What did you have to change?</span>
@@ -98,30 +100,31 @@
 			</svg>
 		</div>
 	</div>
+	<!-- Navigation Bar -->
 	<div id="Nav_Bar">
 		<svg class="nav_bar_box">
 			<rect id="nav_bar_box" rx="20" ry="20" x="0" y="0" width="981" height="70">
 			</rect>
 		</svg>
-		<div id="Settings">
+		<div id="Settings" onclick="window.location.href='../pages/settings.html'">
 			<span>Settings</span>
 		</div>
-		<div id="Analytics">
+		<div id="Analytics" onclick="window.location.href='../pages/analytics.html'">
 			<span>Analytics</span>
 		</div>
-		<div id="Forms">
+		<div id="Forms" onclick="window.location.href='../pages/form.html'">
 			<span>Forms</span>
 		</div>
-		<div onclick="application.goToTargetView(event)" id="Journal">
+		<div id="Journal" onclick="window.location.href='../pages/journal.html'">
 			<span>Journal</span>
 		</div>
-		<div id="Reminders">
+		<div id="Reminders" onclick="window.location.href='../pages/reminders.html'">
 			<span>Reminders</span>
 		</div>
-		<div id="Dashboard">
+		<div id="Dashboard" onclick="window.location.href='../pages/dashboard.html'">
 			<span>Dashboard</span>
 		</div>
-		<img id="sonria_logo" src="img/sonria_logo.png" srcset="img/sonria_logo.png img/sonria_logo@2x.png.png 2x">
+		<img id="sonria_logo" src="img/sonria_logo.png" srcset="img/sonria_logo.png">
 
 		<svg class="nav_bar_divider" viewBox="0 0 1 51">
 			<path id="nav_bar_divider" d="M 0 0 L 0 51">

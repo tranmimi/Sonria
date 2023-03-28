@@ -13,7 +13,7 @@
 	box-sizing: border-box;
 	border: none;
 }
-#fourm_post_1 {
+#form_post_1 {
 	position: absolute;
 	width: 1440px;
 	height: 1024px;
@@ -24,18 +24,7 @@
 	--web-scale-on-resize: true;
 	--web-enable-deep-linking: true;
 }
-@keyframes  {
 
-
-}
-@keyframes  {
-
-
-}
-@keyframes  {
-
-
-}
 #first_post {
 	position: absolute;
 	width: 981px;

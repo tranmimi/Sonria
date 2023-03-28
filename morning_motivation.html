@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto+Condensed:ital,wght@0,400;1,700&display=swap"
         rel="stylesheet">
   <link rel="stylesheet" href="css/main.css" />
-<script id="applicationScript" type="text/javascript" src="js/morning_motivation.js"></script>
+<!-- <script id="applicationScript" type="text/javascript" src="js/morning_motivation.js"></script> -->
 </head>
 <body>
 <div id="morning_motivation">
@@ -23,7 +23,9 @@
 				<span>How did you sleep?</span>
 			</div>
 			<div id="sleep_entry">
-				<span>I feel good about my sleep last night. I went to bed at my usual time and was able to fall asleep quickly. I woke up feeling refreshed and energized. I’m glad that I’m starting to get into a consistent sleep routine, as I know how important it is for my health and academic performance.</span>
+				<span>I feel good about my sleep last night. I went to bed at my usual time and was able to fall asleep
+					quickly. I woke up feeling refreshed and energized. I’m glad that I’m starting to get into a
+					consistent sleep routine, as I know how important it is for my health and academic performance.</span>
 			</div>
 		</div>
 		<div id="grateful">
@@ -46,32 +48,33 @@
 	<div id="date_prompt">
 		<span>Today is Saturday, February 25</span>
 	</div>
-	<img onclick="application.goToTargetView(event)" id="back_arrow_icon" src="img/back_arrow_icon.png" srcset="img/back_arrow_icon.png img/back_arrow_icon@2x.png.png 2x">
+	<img onclick="application.goToTargetView(event)" id="back_arrow_icon" src="img/back_arrow_icon.png" srcset="img/back_arrow_icon.png">
 
+	<!-- Navigation Bar -->
 	<div id="Nav_Bar">
 		<svg class="nav_bar_box">
 			<rect id="nav_bar_box" rx="20" ry="20" x="0" y="0" width="981" height="70">
 			</rect>
 		</svg>
-		<div id="Settings">
+		<div id="Settings" onclick="window.location.href='../pages/settings.html'">
 			<span>Settings</span>
 		</div>
-		<div id="Analytics">
+		<div id="Analytics" onclick="window.location.href='../pages/analytics.html'">
 			<span>Analytics</span>
 		</div>
-		<div onclick="application.goToTargetView(event)" id="Forms">
+		<div id="Forms" onclick="window.location.href='../pages/form.html'">
 			<span>Forms</span>
 		</div>
-		<div id="Journal">
+		<div id="Journal" onclick="window.location.href='../pages/journal.html'">
 			<span>Journal</span>
 		</div>
-		<div id="Reminders">
+		<div id="Reminders" onclick="window.location.href='../pages/reminders.html'">
 			<span>Reminders</span>
 		</div>
-		<div id="Dashboard">
+		<div id="Dashboard" onclick="window.location.href='../pages/dashboard.html'">
 			<span>Dashboard</span>
 		</div>
-		<img id="sonria_logo" src="img/sonria_logo.png" srcset="img/sonria_logo.png img/sonria_logo@2x.png.png 2x">
+		<img id="sonria_logo" src="img/sonria_logo.png" srcset="img/sonria_logo.png">
 
 		<svg class="nav_bar_divider" viewBox="0 0 1 51">
 			<path id="nav_bar_divider" d="M 0 0 L 0 51">

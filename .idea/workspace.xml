@@ -6,16 +6,40 @@
   <component name="ChangeListManager">
     <list default="true" id="61907396-d378-4eb3-be59-f0199394ba08" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/journal_check_in.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/journal_check_in.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/journal_daily_planner.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/journal_daily_planner.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/journal_empty.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/journal_empty.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/journal_main.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/journal_main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/journal_morning_motivation.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/journal_morning_motivation.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/journal_new_entry.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/journal_new_entry.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/journal_check_in.html" beforeDir="false" afterPath="$PROJECT_DIR$/journal_check_in.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/journal_daily_planner.html" beforeDir="false" afterPath="$PROJECT_DIR$/journal_daily_planner.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/journal_main.html" beforeDir="false" afterPath="$PROJECT_DIR$/journal_main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/daily_planner.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/daily_planner.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/emotional_check_in.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/emotional_check_in.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/empty_prompt.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/empty_prompt.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/fourm_main.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/form.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/fourm_post_1.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/post_1.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/journal_main.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/journal.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/morning_motivation.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/morning_motivation.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/new_entry.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/new_entry.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/daily_planner.html" beforeDir="false" afterPath="$PROJECT_DIR$/daily_planner.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emotional_check_in.html" beforeDir="false" afterPath="$PROJECT_DIR$/emotional_check_in.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/empty_prompt.html" beforeDir="false" afterPath="$PROJECT_DIR$/empty_prompt.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fourm_main.html" beforeDir="false" afterPath="$PROJECT_DIR$/form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fourm_post_1.html" beforeDir="false" afterPath="$PROJECT_DIR$/post_1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/back_arrow_icon@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/cal_1_filled@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/cal_2_empty@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/cal_3_empty@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/chkbox_empty@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/chkbox_filled@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/chkbox_filled_b@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/chkbox_filled_ca@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/crying_emoji@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/joyful_emoji@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/left_date@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/neutral_emoji@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/post_1_image@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/pouting_emoji@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/right_date@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/smiling_emoji@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/sonria_logo@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/worried_emoji@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/journal_main.html" beforeDir="false" afterPath="$PROJECT_DIR$/journal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/morning_motivation.html" beforeDir="false" afterPath="$PROJECT_DIR$/morning_motivation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/new_entry.html" beforeDir="false" afterPath="$PROJECT_DIR$/new_entry.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,6 +89,7 @@
       <updated>1679964953457</updated>
       <workItem from="1679964955385" duration="2911000" />
       <workItem from="1679973168617" duration="3615000" />
+      <workItem from="1680036185947" duration="2358000" />
     </task>
     <servers />
   </component>
