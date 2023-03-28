@@ -5,7 +5,7 @@
   <!-- Poppins Font link-->
   <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto+Condensed:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
   <!-- CSS link -->
-  <link href="analytics.css" rel="stylesheet">
+  <link href="css/analytics.css" rel="stylesheet">
   <!-- JS link as well as link to chart.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,12 +36,12 @@
   <!-- Java Script -->
   <script>
   const labels = ['', '', '' ];
-  const images = ['images/crying.png', 'images/neutral.png', 'images/pout.png']
+  const images = ['img/crying.png', 'img/neutral.png', 'img/pout.png']
     .map(png => {
       const image = new Image();
       image.src = png;
       return image;
-    });
+    }); 
   const values = [5,10, 7];
 
   new Chart(document.getElementById("myChart"), {
