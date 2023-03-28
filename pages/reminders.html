@@ -4,25 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/reminders-style.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="../css/reminders-style.css">
+    <link rel="stylesheet" href="../css/main.css">
     <link rel = "stylesheet" href = "https://fonts.googleapis.com/css?family=Poppins">  
+    <link rel="stylesheet" href="../css/main.css">  
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Reminders</title>
 </head>
 <body>
+    <!-- Navigation Bar-->
     <ul id="nav-bar">
-        <li><img src="img\logo.png" height="50px" width="56px" id="logo"></li>
-        <li><a href="dashboard.html" class="nav-link" id="current-page">Dashboard</a></li>
-        <li><a href="reminders.html" class="nav-link">Reminders</a></li>
-        <li><a href="" class="nav-link">Journal</a></li>
-        <li><a href="#" class="nav-link">Forums</a></li>
-        <li><a href="#" class="nav-link">Analytics</a></li>
-        <li><a href="#" class="nav-link">Settings</a></li>
+        <li><img src="..\img\logo.png" height="50px" width="56px" id="logo"></li>
+        <li><a href="\pages\dashboard.html" class="nav-link" id="current-page">Dashboard</a></li>
+        <li><a href="\pages\home.html" class="nav-link">Reminders</a></li>
+        <li><a href="\pages\journal.html" class="nav-link">Journal</a></li>
+        <li><a href="\pages\forums.html" class="nav-link">Forums</a></li>
+        <li><a href="\pages\analytics.html" class="nav-link">Analytics</a></li>
+        <li><a href="\pages\settings.html" class="nav-link">Settings</a></li>
     </ul>
-    <br><br>
+   
     <div class="container">
-        <button type="button" class="btn">New Reminder</button>
         <div class="left">
             <div class="today-date">hello</div>
             <div class="icon">
@@ -51,6 +52,8 @@
                 </div> -->
 
             </div>
+            <button type="button" class="btn">New Reminder</button>
+            <br>
         </div>
         <div class="right">
             <div class="calender">
@@ -90,6 +93,6 @@
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="js/reminders-script.js"></script>
+    <script src="../js/reminders-script.js"></script>
 </body>
 </html>

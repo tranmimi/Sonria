@@ -2,30 +2,55 @@ body{
     background: #E7E2DE;
     font-family: "Poppins";
     color: #5C3F37;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    /* display: flex; */
+    /* align-items: center;
+    justify-content: center; */
     overflow: scroll;
+    margin-top: 50px;
 }
 .container{
-    display:flex;
-    justify-content: space-between;
+    display: flex;
+    /* align-content: flex-start;
+    justify-content: space-around; */
+    /* align-items: center;
+    justify-content:space-between; */
+    /* justify-content: center;
+    align-items: center; */
+    /* text-align: center; */
+    /* justify-content: space-between; */
     /* width: 100vw; */
     /* height: 100vh; */
     /* overflow: scroll; */
     
 }
+#nav-bar{
+    /* position: relative; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* bottom: 400px;
+    left: 800px; */
+    /* display: flex;
+    flex-direction: column; */
+    /* display: block; */
+
+}
 .left{
     width: 50%;
     display:flex;
-    justify-content: space-between;
-    margin: 80px;
+    /* justify-content: space-between; */
+    /* margin-left: 100px; */
+    /* flex-direction: column;
+    flex-wrap:wrap; */
+    /* justify-content: space-between; */
+    margin-left:200px;
 }
 .right{
     width: 50%;
     display:flex;
-    justify-content: space-between;
-    margin: 80px;
+    /* justify-content: space-between; */
+    /* margin-right: 100px; */
+    margin-right:200px;
 }
 /* left */
 input{
@@ -60,19 +85,30 @@ form{
 h4{
     display: inline;
     margin: 10px;
+    position: relative;
+    /* float:left; */
 }
-p .repeat-container{
-    margin: 10px;
+.repeat-container p { 
+    margin-left: 10px;
     font-size: smaller;
     font-style: italic;
+    text-align: center;
+    /* display: inline; */
     color: #5c3f374d;
 }
 p{
     display: inline;
     padding-left: 10px;
     font-size: smaller;
+    position: relative;
+    float:left;
 }
 .btn{
+    /* display: flex; */
+    /* position: relative;
+    float:left; */
+    align-items: start;
+    justify-content: center;
     border-radius: 100px;
     border: 1px solid lightgrey;
     box-shadow: 0 0 30px rgba(0, 0, 0, .1);
@@ -82,16 +118,10 @@ p{
     font-family: "Poppins";
     color:#5C3F37;
     font-size: larger;
+    
 }
 /* https://stackoverflow.com/questions/58120283/hr-tag-shows-a-line-in-2-colors-against-a-colored-background */
-hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid rgb(190, 190, 190);
-    margin: 1em 0;
-    padding: 0;
-}
+
 .notes-container{
     /* box-shadow: 0 0 30px rgba(0, 0, 0, .1); */
     margin-top: 10px;
@@ -216,10 +246,10 @@ li span{
 /* calender end */
 .submit-btn{
     width: 100px;
-    height: 30px;
+    height: 40px;
     position: relative;
     top: 50px;
-    left: 100px;
+    left: 0px;
     background-color: #FFF3E8;
     border: 1px solid lightgrey;
     border-radius: 10px;
@@ -232,6 +262,7 @@ li span{
     display: inline-block;
     width: 60px;
     height: 34px;
+    /* right: 25px; */
   }
   
   /* Hide default HTML checkbox */

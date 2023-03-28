@@ -1,0 +1,77 @@
+/* Setting logo size and position */
+img {
+  display: block;
+  width: 7%;
+  height: 7%;
+  margin-top: 80px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* background color */
+body {
+  background-color: #E7E2DE;
+}
+
+/* change font family and size, and center text */
+h1 {
+  font-family: Poppins;
+  text-align: center;
+  font-size: 25px;
+  color: black;
+}
+
+/* change font and center */
+.login {
+  font-family: Poppins;
+  text-align: center;
+  color: #5D3F35;
+}
+
+/* customize username and password box */
+input[type=text], input[type=password] {
+  display: block;
+  margin: auto;
+  padding: 15px;
+  width: 70%;
+  font-family: Poppins;
+  border: 1px solid black;
+  border-radius: 15px;
+  background-color: #E7E2DE;
+  font-size: 14px;
+}
+
+/* customize forgot username and password */
+.usrname, .psw {
+  display: block;
+  font-family: Poppins;
+  margin-left: 200px;
+  margin-bottom: 30px;
+}
+a {
+  text-decoration: none;
+  color: #5D3F35;
+}
+
+/* Customize sign in button */
+button {
+  display: block;
+  padding: 15px;
+  width: 50%;
+  margin: auto;
+  margin-bottom: 50px;
+  font-family: Poppins;
+  background-color: #A5A58E;
+  border: 1px solid black;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 14px; 
+}
+
+form {
+  margin-left: 520px;
+  margin-right: 520px;
+  border: 1px solid black;
+  border-radius: 40px;
+  background-color: #D8BEAA;
+}

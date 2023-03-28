@@ -1,0 +1,233 @@
+/* change background */
+body {
+  background-color: #E7E2DE;
+}
+
+/* Style navigation bar (Dashboard, Reminders, Journal, Forums, Analytics, Settings) */
+#nav-bar {
+    background-color: #FEF9F4;
+    border-radius: 20px;
+    list-style: none;
+    margin: auto;
+    margin-top: 50px;
+    width: 75%;
+    transition-duration: 0.3s;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+li {
+    display: inline-block;
+}
+
+#logo {
+    vertical-align: middle;
+}
+
+a {
+    color: #875F4A;
+    font-weight: bold;
+    text-decoration: none;
+    margin-left: 60px;
+
+}
+
+a:hover {
+    color: #A5A58E;
+    cursor: pointer;
+}
+
+a:active {
+    color: #707058;
+    cursor: pointer;
+}
+
+#settings {
+    color: #A5A58E;
+}
+
+
+/* change Settings title */
+h1 {
+  font-family: Poppins;
+  margin-top: 40px;
+  margin-left: 170px;
+  color: #A36361;
+  font-size: 30px;
+}
+/* change line breaking up sections */
+hr {
+  width: 60%;
+  text-align:left;
+  margin-left: 170px;
+  border: 1px solid #A36361;
+}
+
+h2 {
+  font-family: Poppins;
+  margin-left: 170px;
+  font-size: 25px;
+}
+
+/* SECTION 1 */
+.userSettings {
+  color: #5D3F35;
+}
+
+/* change font and color as well as orientation of list */
+ul {
+  list-style-type:none;
+}
+.section1 {
+  font-family: Poppins;
+  margin-left: 130px;
+  margin-top: 15px;
+  display:inline-block;
+  width: 150px;
+  font-size: 20px;
+  color: #75735A;
+}
+
+a {
+  color: #A36361;
+  font-family: Poppins;
+  font-size: 20px;
+}
+
+.change-link {
+  margin-left: 130px;
+}
+
+/* Customization button */
+button {
+  border: none;
+  background-color: #A36361;
+  padding: 12px 35px;
+  margin-left: 170px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  font-family: Poppins;
+  border-radius: 15px;
+  font-size: 17px;
+  color: white;
+}
+
+/* SECTION 2 */
+.custom {
+  color: #A47B65;
+}
+/* change 'Choose a Theme' */
+h3 {
+  font-family: Poppins;
+  font-size: 20px;
+  margin-left: 170px;
+  color: #5F5B36;
+}
+.foo { /* size for all boxes */
+   float: left;
+   width: 80px;
+   height: 35px;
+   margin-bottom: 35px;
+}
+
+/* colors for dark mode */
+.white {
+  margin-left: 170px;
+  background: white;
+}
+.grey {
+  background: grey;
+}
+.black {
+  background: black;
+}
+
+/* colors for blue mode */
+.blue1 {
+  margin-left: 200px;
+  background: #D3D8E3;
+}
+.blue2 {
+  background: #ABC5E0;
+}
+.blue3 {
+  background: #3C5D82;
+}
+
+/* SECTION 3 */
+.notify {
+  color: #5F5B36;
+}
+.section3 {
+  font-family: Poppins;
+  margin-left: 170px;
+  margin-top: 15px;
+  width: 150px;
+  font-size: 20px;
+  color: #A36361;
+}
+
+/* ON/OFF buttons*/
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  margin-left: 50px;
+  margin-bottom: 30px;
+  display: float;
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #D79F8F;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #B7B7A5;
+}
+input:focus + .slider {
+  box-shadow: 0 0 1px #B7B7A5;
+}
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* add spacing around delete button */
+.deleteBtn {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
