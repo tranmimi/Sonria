@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>daily_planner</title>
+<link rel="stylesheet" type="text/css" id="applicationStylesheet" href="css/daily_planner.css"/>
+  <!-- Add Poppins font from main-->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto+Condensed:ital,wght@0,400;1,700&display=swap"
+        rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css" />
+<!-- <script id="applicationScript" type="text/javascript" src="js/daily_planner.js"></script> -->
+</head>
+<body>
+<div id="daily_planner">
+	<svg class="daily_planner_box">
+		<rect id="daily_planner_box" rx="20" ry="20" x="0" y="0" width="977" height="760">
+		</rect>
+	</svg>
+	<div id="notes">
+		<div id="notes_question">
+			<span>Notes:</span>
+		</div>
+		<div id="user_notes_entry">
+			<span>Need to practice my presentation for the public speaking tonight!</span>
+		</div>
+	</div>
+	<div id="classes">
+		<div id="classes_question">
+			<span>Classes I went to today:</span>
+		</div>
+		<div id="class_3">
+			<div id="class_3_checked">
+				<svg class="class_3_checked_circle">
+					<ellipse id="class_3_checked_circle" rx="25" ry="25" cx="25" cy="25">
+					</ellipse>
+				</svg>
+				<svg class="check_icon" viewBox="6 9 28.512 19.602">
+					<path id="check_icon" d="M 34.51185607910156 9 L 14.90995407104492 28.60190010070801 L 6 19.69194602966309">
+					</path>
+				</svg>
+			</div>
+			<div id="class_3_name">
+				<span>GUI Programming II</span>
+			</div>
+			<div id="class_3_time">
+				<span>6:30 PM - 9:20 PM</span>
+			</div>
+		</div>
+		<div id="class_2">
+			<svg class="class_2_circle">
+				<ellipse id="class_2_circle" rx="25" ry="25" cx="25" cy="25">
+				</ellipse>
+			</svg>
+			<div id="class_2_name">
+				<span>Cloud Computing</span>
+			</div>
+			<div id="class_2_time">
+				<span>2:00 PM - 3:15 PM</span>
+			</div>
+		</div>
+		<div id="class_1">
+			<svg class="class_1_circle">
+				<ellipse id="class_1_circle" rx="25" ry="25" cx="25" cy="25">
+				</ellipse>
+			</svg>
+			<div id="class_1_name">
+				<span>Prob & Stats 1</span>
+			</div>
+			<div id="class_1_time">
+				<span>12:30 PM - 1:45 PM</span>
+			</div>
+		</div>
+	</div>
+	<div id="tasks">
+		<div id="task_3">
+			<svg class="task_3_circle">
+				<ellipse id="task_3_circle" rx="3" ry="3" cx="3" cy="3">
+				</ellipse>
+			</svg>
+			<div id="task_3_entry">
+				<span>Find tutoring center hours.</span>
+			</div>
+		</div>
+		<div id="task_2">
+			<svg class="task_2_circle">
+				<ellipse id="task_2_circle" rx="3" ry="3" cx="3" cy="3">
+				</ellipse>
+			</svg>
+			<div id="task_2_entry">
+				<span>Checkout book from library.</span>
+			</div>
+		</div>
+		<div id="task_1">
+			<svg class="task_1_circle">
+				<ellipse id="task_1_circle" rx="3" ry="3" cx="3" cy="3">
+				</ellipse>
+			</svg>
+			<div id="task_1_entry">
+				<span>Print resume for career fair.</span>
+			</div>
+		</div>
+		<div id="tasks_question">
+			<span>School tasks:</span>
+		</div>
+	</div>
+	<div id="calendar">
+		<div id="cal_3">
+			<div id="cal_3_entry">
+				<span>5:00PM - Interview Follow-Up</span>
+			</div>
+			<img id="cal_3_empty" src="img/cal_3_empty.png" srcset="img/cal_3_empty.png">
+
+		</div>
+		<div id="cal_2">
+			<div id="cal_2_entry">
+				<span>3:30PM - Group Meeting</span>
+			</div>
+			<img id="cal_2_empty" src="img/cal_2_empty.png" srcset="img/cal_2_empty.png">
+
+		</div>
+		<div id="cal_1">
+			<div id="cal_1_entry">
+				<span>7:00AM - GYM</span>
+			</div>
+			<img id="cal_1_filled" src="img/cal_1_filled.png" srcset="img/cal_1_filled.png">
+
+		</div>
+		<div id="calendar_txt">
+			<span>Calendar:</span>
+		</div>
+	</div>
+	<div id="goals">
+		<div id="goal_3">
+			<div id="goal_3_entry">
+				<span>Study for Prob & Stats exam!</span>
+			</div>
+			<img id="chkbox_filled" src="img/chkbox_filled.png" srcset="img/chkbox_filled.png">
+
+			<img id="chkbox_empty" src="img/chkbox_empty.png" srcset="img/chkbox_empty.png">
+
+		</div>
+		<div id="goal_2">
+			<div id="goal_2_entry">
+				<span>Remember to email Prof. Zhou</span>
+			</div>
+			<img id="chkbox_filled_b" src="img/chkbox_filled_b.png" srcset="img/chkbox_filled_b.png">
+
+		</div>
+		<div id="goal_1">
+			<div id="goal_1_entry">
+				<span>Do laundry</span>
+			</div>
+			<img id="chkbox_filled_ca" src="img/chkbox_filled_ca.png" srcset="img/chkbox_filled_ca.png">
+
+		</div>
+		<div id="goals_question">
+			<span>Goals for the day:</span>
+		</div>
+	</div>
+	<svg class="page_divider" viewBox="0 0 3 760">
+		<path id="page_divider" d="M 0 0 L 0 760">
+		</path>
+	</svg>
+	<div id="date_prompt">
+		<span>Today is Saturday, February 25</span>
+	</div>
+	<img onclick="application.goToTargetView(event)" id="back_arrow_icon" src="img/back_arrow_icon.png" srcset="img/back_arrow_icon.png">
+
+	<!-- Navigation Bar -->
+	<div id="Nav_Bar">
+		<svg class="nav_bar_box">
+			<rect id="nav_bar_box" rx="20" ry="20" x="0" y="0" width="981" height="70">
+			</rect>
+		</svg>
+		<div id="Settings" onclick="window.location.href='../pages/settings.html'">
+			<span>Settings</span>
+		</div>
+		<div id="Analytics" onclick="window.location.href='../pages/analytics.html'">
+			<span>Analytics</span>
+		</div>
+		<div id="Forms" onclick="window.location.href='../pages/form.html'">
+			<span>Forms</span>
+		</div>
+		<div id="Journal" onclick="window.location.href='../pages/journal.html'">
+			<span>Journal</span>
+		</div>
+		<div id="Reminders" onclick="window.location.href='../pages/reminders.html'">
+			<span>Reminders</span>
+		</div>
+		<div id="Dashboard" onclick="window.location.href='../pages/dashboard.html'">
+			<span>Dashboard</span>
+		</div>
+		<img id="sonria_logo" src="img/sonria_logo.png" srcset="img/sonria_logo.png">
+
+		<svg class="nav_bar_divider" viewBox="0 0 1 51">
+			<path id="nav_bar_divider" d="M 0 0 L 0 51">
+			</path>
+		</svg>
+	</div>
+</div>
+</body>
+</html>
