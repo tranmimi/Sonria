@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>form_post_1</title>
-<link rel="stylesheet" type="text/css" id="applicationStylesheet" href="css/post_1.css"/>
+<link rel="stylesheet" type="text/css" id="applicationStylesheet" href="../css/post_1.css"/>
   <!-- Add Poppins font from main-->
   <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto+Condensed:ital,wght@0,400;1,700&display=swap"
         rel="stylesheet">
@@ -40,7 +40,7 @@
 			</div>
 		</div>
 		<div id="post_1">
-			<img id="post_1_image" src="img/post_1_image.png" srcset="img/post_1_image.png">
+			<img id="post_1_image" src="../img/post_1_image.png" srcset="../img/post_1_image.png">
 
 			<div id="post_1_question">
 				<span>What study habits have helped you?<br/>What did you have to change?</span>
@@ -72,37 +72,38 @@
 			<span>Follow</span>
 		</div>
 	</div>
+	<!-- Navigation Bar -->
 	<div id="Nav_Bar">
 		<svg class="nav_bar_box">
 			<rect id="nav_bar_box" rx="20" ry="20" x="0" y="0" width="981" height="70">
 			</rect>
 		</svg>
-		<div id="Settings">
+		<div id="Settings" onclick="window.location.href='../pages/settings.html'">
 			<span>Settings</span>
 		</div>
-		<div id="Analytics">
+		<div id="Analytics" onclick="window.location.href='../pages/analytics.html'">
 			<span>Analytics</span>
 		</div>
-		<div onclick="application.goToTargetView(event)" id="Forms">
+		<div id="Forms" onclick="window.location.href='../pages/form.html'">
 			<span>Forms</span>
 		</div>
-		<div onclick="application.goToTargetView(event)" id="Journal">
+		<div id="Journal" onclick="window.location.href='../pages/journal.html'">
 			<span>Journal</span>
 		</div>
-		<div id="Reminders">
+		<div id="Reminders" onclick="window.location.href='../pages/reminders.html'">
 			<span>Reminders</span>
 		</div>
-		<div id="Dashboard">
+		<div id="Dashboard" onclick="window.location.href='../pages/dashboard.html'">
 			<span>Dashboard</span>
 		</div>
-		<img id="sonria_logo" src="img/sonria_logo.png" srcset="img/sonria_logo.png">
+		<img id="sonria_logo" src="../img/sonria_logo.png" srcset="../img/sonria_logo.png">
 
 		<svg class="nav_bar_divider" viewBox="0 0 1 51">
 			<path id="nav_bar_divider" d="M 0 0 L 0 51">
 			</path>
 		</svg>
 	</div>
-	<img onclick="application.goToTargetView(event)" id="back_arrow_icon" src="img/back_arrow_icon.png" srcset="img/back_arrow_icon.png">
+	<img onclick="application.goToTargetView(event)" id="back_arrow_icon" src="../img/back_arrow_icon.png" srcset="../img/back_arrow_icon.png">
 
 </div>
 </body>
