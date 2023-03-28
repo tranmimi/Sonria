@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Creation</title>
+    <link rel="stylesheet" href="css/account-creation-style.css">
+    <link rel = "stylesheet" href = "https://fonts.googleapis.com/css?family=Poppins">  
+</head>
+<body>
+    <div class="container">
+        <div class="form-box create">
+            <div class="logo"></div>
+            <h2>Welcome to Sonria!</h2>
+            <h4>Create an account with us.</h4>
+            <form action="#">
+                <div class="input-box">
+                    <!-- <span class="icon"></span> --> 
+                    <input type="email" id="input-email" placeholder="Email" required>
+                    <!-- <label>Email</label> -->
+                </div>
+                <div class="input-box">
+                     <!-- <span class="icon"></span> -->
+                    <input type="email" id="confirm-email" placeholder="Confirm Email" >
+                    <!-- <label>Confirm Email</label> -->
+                </div>
+                <div class="input-box">
+                     <!-- <span class="icon"></span> -->
+                    <input type="text" id="input-firstname" placeholder="First Name" >
+                    <!-- <label>First Name</label> -->
+                </div>
+                <div class="input-box">
+                     <!-- <span class="icon"></span> -->
+                    <input type="text" id="input-lastname" placeholder="Last Name" >
+                    <!-- <label>Last Name</label> -->
+                </div>
+                <div class="input-box">
+                     <!-- <span class="icon"></span> -->
+                    <input type="text" id="input-username" placeholder="Username" >
+                    <!-- <label>Username</label> -->
+                </div>
+                <div class="input-box">
+                    <!-- <span class="icon"></span> -->
+                   <input type="password" id="input-password" placeholder="Password" required >
+                   <!-- <label>Confirm Password</label> -->
+               </div>
+                <div class="input-box">
+                     <!-- <span class="icon"></span> -->
+                    <input type="password" id="confirm-password" placeholder="Confirm Password" >
+                    <!-- <label>Confirm Password</label> -->
+                </div>
+                <button type="submit" class="btn"  id="submit-btn">Create Account</button>
+            </form>
+        </div>
+    </div>
+    
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-analytics.js";
+        import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-auth.js";
+        import { getDatabase, set, ref } from  "https://www.gstatic.com/firebasejs/9.18.0/firebase-database.js";
+
+
+
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth();
+        const database = getDatabase(app);
+
+        const btn = document.getElementById("submit-btn")
+        btn.onclick = function () {
+            var email = document.getElementById("input-email").value;
+            var password = document.getElementById("input-password").value;
+            createUserWithEmailAndPassword(auth, email, password).then((userCredential) => {
+
+                // Signed in 
+                const user = userCredential.user;
+                // ...
+                set(ref(database, 'users/' + user.uid), {
+                    // username: name,
+                    email: email,
+                    password: password
+                    // profile_picture: imageUrl
+                }).then(() => {
+                    // Data saved successfully!
+                    alert("user created successfully")
+                })
+                .catch((error) => {
+                    // The write failed...
+                    alert("error in creating user");
+                });
+                console.log("success");
+                window.location.href = "verification-page.html";
+            })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    // ..
+                    alert(errorMessage);
+                });
+}
+
+      </script>
+    <script src="js/account-creation-script.js"></script>
+</body>
+</html>
