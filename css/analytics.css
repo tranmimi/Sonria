@@ -1,0 +1,77 @@
+/* Change background color*/
+body {
+  background-color: #E7E2DE;
+}
+
+/* Style navigation bar (Dashboard, Reminders, Journal, Forums, Analytics, Settings) */
+#nav-bar {
+    background-color: #FEF9F4;
+    border-radius: 20px;
+    list-style: none;
+    margin: auto;
+    margin-top: 60px;
+    width: 70%;
+    transition-duration: 0.3s;
+}
+
+li {
+    display: inline-block;
+    padding: 10px;
+}
+
+#logo {
+    vertical-align: middle;
+}
+
+a {
+    color: #875F4A;
+    font-weight: bold;
+    text-decoration: none;
+    font-family: Poppins;
+    padding-right: 35px;
+    font-size: 20px;
+}
+
+a:hover {
+    color: #A5A58E;
+    cursor: pointer;
+}
+
+a:active {
+    color: #707058;
+    cursor: pointer;
+}
+
+#settings {
+    color: #A5A58E;
+}
+
+/* Change font and color */
+h1 {
+  font-family: Poppins;
+  font-size: 25px;
+  margin-left: 230px;
+  margin-top: 50px;
+  color: #A36361;
+}
+
+/* Customize buttons 1, 2 &3 */
+button {
+  border: none;
+  background-color: #D79F8F;
+  margin-left: 30px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-family: Poppins;
+  border-radius: 15px;
+}
+.button1 {
+  margin-left: 770px;
+}
+.button1:hover, .button2:hover, .button3:hover {
+  background-color: #A36361;
+}
+canvas{
+  margin-left: 220px;
+  margin-top: 30px;
+}

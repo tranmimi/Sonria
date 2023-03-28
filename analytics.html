@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- Poppins Font link-->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto+Condensed:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
+  <!-- CSS link -->
+  <link href="css/analytics.css" rel="stylesheet">
+  <!-- JS link as well as link to chart.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Analytics</title>
+</head> 
+<body>
+  <!-- Navigation Bar-->
+  <ul id="nav-bar">
+    <li><img src="img\logo.png" height="50px" width="56px" id="logo"></li>
+    <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+    <li><a href="home.html" class="nav-link">Reminders</a></li>
+    <li><a href="" class="nav-link">Journal</a></li>
+    <li><a href="#" class="nav-link">Forums</a></li>
+    <li><a href="analytics.html" class="nav-link" id="settings">Analytics</a></li>
+    <li><a href="settings.html" class="nav-link">Settings</a></li>
+  </ul>
+
+  <h1>Monthly Mood Chart</h1>
+
+  <!-- Buttons for different time frames-->
+  <button class="button1">1 Month</button>
+  <button class="button2">6 Months</button>
+  <button class="button3">1 Year</button>
+
+  <canvas id="myChart" style="height: 600px; width:100%;max-width:900px"></canvas>
+
+  <!-- Java Script -->
+  <script>
+  const labels = ['', '', '' ];
+  const images = ['img/🦆 emoji _slightly smiling face_.png',
+    'img/🦆 emoji _worried face_.png', 'img/🦆 emoji _pouting face_.png']
+    .map(png => {
+      const image = new Image();
+      image.src = png;
+      return image;
+    });
+  const values = [5,10, 7];
+
+  new Chart(document.getElementById("myChart"), {
+    type: "line",
+    plugins: [{
+      afterDraw: chart => {
+        var ctx = chart.chart.ctx;
+        var xAxis = chart.scales['x-axis-0'];
+        var yAxis = chart.scales['y-axis-0'];
+        xAxis.ticks.forEach((value, index) => {
+          var x = xAxis.getPixelForTick(index);
+          ctx.drawImage(images[index], x - 12, yAxis.bottom + 10, 50, 50);
+        });
+      }
+    }],
+    data: {
+      labels: labels,
+      datasets: [{
+        data: values,
+        backgroundColor: ['lightgray']
+      }]
+    },
+    options: {
+      responsive: false,
+      legend: {
+        display: false
+      },
+      scales: {
+        yAxes: [{
+          ticks: {
+            beginAtZero: true
+          }
+        }],
+        xAxes: [{
+          ticks: {
+            padding: 50
+          }
+        }],
+      }
+    }
+  });
+</script>
+</body>
+</html>
