@@ -23,7 +23,7 @@ $(document).ready(function(){
 
     $(".btn").click(function(){
         // console.log("hello");
-        window.location.href = "../../New-reminder/new-reminder.html";
+        window.location.href = "../new-reminder.html";
     });
     $(".prev").click(function(){
         // console.log("prev");
