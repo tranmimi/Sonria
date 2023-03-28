@@ -1,0 +1,327 @@
+.mediaViewInfo {
+	--web-view-name: morning_motivation;
+	--web-view-id: morning_motivation;
+	--web-scale-on-resize: true;
+	--web-enable-deep-linking: true;
+}
+:root {
+	--web-view-ids: morning_motivation;
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	border: none;
+}
+#morning_motivation {
+	position: absolute;
+	width: 1440px;
+	height: 1024px;
+	background-color: rgba(231,226,222,1);
+	overflow: hidden;
+	--web-view-name: morning_motivation;
+	--web-view-id: morning_motivation;
+	--web-scale-on-resize: true;
+	--web-enable-deep-linking: true;
+}
+
+#motivation_entry {
+	position: absolute;
+	width: 977px;
+	height: 760px;
+	left: 225px;
+	top: 193px;
+	overflow: visible;
+}
+#motivated_box {
+	fill: rgba(234,218,214,1);
+}
+.motivated_box {
+	filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.161));
+	position: absolute;
+	overflow: visible;
+	width: 995px;
+	height: 778px;
+	left: 0px;
+	top: 0px;
+}
+#sleep {
+	position: absolute;
+	width: 904px;
+	height: 157px;
+	left: 39px;
+	top: 27px;
+	overflow: visible;
+}
+#sleep_question {
+	left: 2px;
+	top: 0px;
+	position: absolute;
+	overflow: hidden;
+	width: 398px;
+	height: 27px;
+	text-align: left;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	color: rgba(93,63,53,0.6);
+}
+#sleep_entry {
+	left: 0px;
+	top: 37px;
+	position: absolute;
+	overflow: visible;
+	width: 905px;
+	height: 120px;
+	text-align: left;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	color: rgba(93,63,53,1);
+}
+#grateful {
+	position: absolute;
+	width: 904px;
+	height: 157px;
+	left: 39px;
+	top: 197px;
+	overflow: visible;
+}
+#grateful_question {
+	left: 2px;
+	top: 0px;
+	position: absolute;
+	overflow: hidden;
+	width: 398px;
+	height: 27px;
+	text-align: left;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	color: rgba(93,63,53,0.6);
+}
+#grateful_entry {
+	left: 0px;
+	top: 37px;
+	position: absolute;
+	overflow: visible;
+	width: 905px;
+	height: 120px;
+	text-align: left;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	color: rgba(93,63,53,1);
+}
+#motivated {
+	position: absolute;
+	width: 904px;
+	height: 157px;
+	left: 39px;
+	top: 354px;
+	overflow: visible;
+}
+#motivated_question {
+	left: 2px;
+	top: 0px;
+	position: absolute;
+	overflow: hidden;
+	width: 398px;
+	height: 27px;
+	text-align: left;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	color: rgba(93,63,53,0.6);
+}
+#motivated_entry {
+	left: 0px;
+	top: 37px;
+	position: absolute;
+	overflow: visible;
+	width: 905px;
+	height: 120px;
+	text-align: left;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	color: rgba(93,63,53,1);
+}
+#date_prompt {
+	left: 436px;
+	top: 120px;
+	position: absolute;
+	overflow: visible;
+	width: 560px;
+	height: 54px;
+	text-align: center;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	color: rgba(135,95,74,1);
+}
+#back_arrow_icon {
+	position: absolute;
+	width: 51.38px;
+	height: 51.38px;
+	left: 225px;
+	top: 121px;
+	overflow: visible;
+	--web-animation: fadein undefineds undefined;
+	--web-action-type: page;
+	--web-action-target: journal_main.html;
+	cursor: pointer;
+}
+#Nav_Bar {
+	position: absolute;
+	width: 981px;
+	height: 70px;
+	left: 225px;
+	top: 31px;
+	overflow: visible;
+}
+#nav_bar_box {
+	fill: rgba(254,249,244,1);
+}
+.nav_bar_box {
+	filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.161));
+	position: absolute;
+	overflow: visible;
+	width: 999px;
+	height: 88px;
+	left: 0px;
+	top: 0px;
+}
+#Settings {
+	left: 847px;
+	top: 19px;
+	position: absolute;
+	overflow: visible;
+	width: 92px;
+	white-space: nowrap;
+	line-height: 32px;
+	margin-top: -4px;
+	text-align: left;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	color: rgba(135,95,74,1);
+}
+#Analytics {
+	left: 709px;
+	top: 21px;
+	position: absolute;
+	overflow: visible;
+	width: 102px;
+	white-space: nowrap;
+	line-height: 32px;
+	margin-top: -4px;
+	text-align: left;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	color: rgba(135,95,74,1);
+}
+#Forms {
+	left: 592px;
+	top: 21px;
+	position: absolute;
+	overflow: visible;
+	width: 71px;
+	white-space: nowrap;
+	--web-animation: fadein undefineds undefined;
+	--web-action-type: page;
+	--web-action-target: fourm_main.html;
+	cursor: pointer;
+	line-height: 32px;
+	margin-top: -4px;
+	text-align: left;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	color: rgba(135,95,74,1);
+}
+#Journal {
+	left: 474px;
+	top: 21px;
+	position: absolute;
+	overflow: visible;
+	width: 84px;
+	white-space: nowrap;
+	line-height: 32px;
+	margin-top: -4px;
+	text-align: left;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	color: rgba(135,95,74,1);
+}
+#Reminders {
+	left: 318px;
+	top: 21px;
+	position: absolute;
+	overflow: visible;
+	width: 121px;
+	white-space: nowrap;
+	line-height: 32px;
+	margin-top: -4px;
+	text-align: left;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	color: rgba(135,95,74,1);
+}
+#Dashboard {
+	left: 157px;
+	top: 21px;
+	position: absolute;
+	overflow: visible;
+	width: 123px;
+	white-space: nowrap;
+	line-height: 32px;
+	margin-top: -4px;
+	text-align: left;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	color: rgba(135,95,74,1);
+}
+#sonria_logo {
+	position: absolute;
+	width: 55px;
+	height: 49.42px;
+	left: 36px;
+	top: 9px;
+	overflow: visible;
+}
+#nav_bar_divider {
+	fill: transparent;
+	stroke: rgba(240,222,203,1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.nav_bar_divider {
+	overflow: visible;
+	position: absolute;
+	width: 1px;
+	height: 51px;
+	left: 124px;
+	top: 11px;
+	transform: matrix(1,0,0,1,0,0);
+}

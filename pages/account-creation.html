@@ -50,7 +50,7 @@
                     <input type="password" id="confirm-password" placeholder="Confirm Password" >
                     <!-- <label>Confirm Password</label> -->
                 </div>
-                <button type="submit" class="btn"  id="submit-btn">Create Account</button>
+                <button type="button" class="btn"  id="submit-btn">Create Account</button>
             </form>
         </div>
     </div>
@@ -93,7 +93,7 @@
                     alert("error in creating user");
                 });
                 console.log("success");
-                window.location.href = "verification-page.html";
+                window.location.href = "../Sonria/pages/login.html";
             })
                 .catch((error) => {
                     const errorCode = error.code;

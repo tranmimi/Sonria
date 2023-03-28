@@ -23,7 +23,7 @@ $(document).ready(function(){
 
     $(".submit-btn").click(function(){
         // console.log("hello");
-        window.location.href = "reminders.html";
+        window.location.href = "../Sonria/pages/reminders.html";
     });
     $(".prev").click(function(){
         // console.log("prev");
