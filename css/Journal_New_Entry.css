@@ -1,0 +1,1434 @@
+.mediaViewInfo {
+	--web-view-name: Journal_New_Entry;
+	--web-view-id: Journal_New_Entry;
+	--web-scale-on-resize: true;
+	--web-enable-deep-linking: true;
+}
+:root {
+	--web-view-ids: Journal_New_Entry;
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	border: none;
+}
+#Journal_New_Entry {
+	position: absolute;
+	width: 1440px;
+	height: 1024px;
+	background-color: rgba(231,226,222,1);
+	overflow: hidden;
+	--web-view-name: Journal_New_Entry;
+	--web-view-id: Journal_New_Entry;
+	--web-scale-on-resize: true;
+	--web-enable-deep-linking: true;
+}
+
+#journal_page {
+	position: absolute;
+	width: 476px;
+	height: 309px;
+	left: 728px;
+	top: 708px;
+	overflow: visible;
+}
+#Rectangle_1 {
+	fill: rgba(234,218,214,1);
+}
+.Rectangle_1 {
+	filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.161));
+	position: absolute;
+	overflow: visible;
+	width: 494px;
+	height: 327px;
+	left: 0px;
+	top: 0px;
+}
+#user_prompt {
+	position: absolute;
+	width: 417px;
+	height: 229px;
+	left: 31px;
+	top: 27px;
+	overflow: visible;
+}
+#Journal_page_o {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 262px;
+	height: 34px;
+	text-align: left;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	color: rgba(93,63,53,1);
+}
+#entry_time {
+	left: 329px;
+	top: 4px;
+	position: absolute;
+	overflow: visible;
+	width: 89px;
+	height: 26px;
+	text-align: right;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 20px;
+	color: rgba(93,63,53,0.6);
+}
+#user_prompt_q {
+	position: absolute;
+	width: 397px;
+	height: 185px;
+	left: 8px;
+	top: 44px;
+	overflow: visible;
+}
+#sleep_entry {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 392px;
+	height: 185px;
+	text-align: left;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 20px;
+	color: rgba(93,63,53,1);
+}
+#Continue {
+	left: 0px;
+	top: 152px;
+	position: absolute;
+	overflow: visible;
+	width: 398px;
+	height: 27px;
+	text-align: center;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 20px;
+	color: rgba(93,63,53,0.6);
+}
+#daily_planner {
+	position: absolute;
+	width: 476px;
+	height: 309px;
+	left: 225px;
+	top: 708px;
+	overflow: visible;
+}
+#daily_planner_u {
+	position: absolute;
+	width: 476px;
+	height: 309px;
+	left: 0px;
+	top: 0px;
+	overflow: visible;
+}
+#Rectangle_1_v {
+	fill: rgba(234,218,214,1);
+}
+.Rectangle_1_v {
+	filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.161));
+	position: absolute;
+	overflow: visible;
+	width: 494px;
+	height: 327px;
+	left: 0px;
+	top: 0px;
+}
+#Daily_planner_w {
+	left: 31px;
+	top: 27px;
+	position: absolute;
+	overflow: visible;
+	width: 262px;
+	height: 34px;
+	text-align: left;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	color: rgba(93,63,53,1);
+}
+#entry_time_x {
+	left: 360px;
+	top: 31px;
+	position: absolute;
+	overflow: visible;
+	width: 89px;
+	height: 26px;
+	text-align: right;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 20px;
+	color: rgba(93,63,53,0.6);
+}
+#goals_entry {
+	position: absolute;
+	width: 397px;
+	height: 99px;
+	left: 39px;
+	top: 71px;
+	overflow: visible;
+}
+#Goals_for_the_day {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 398px;
+	height: 27px;
+	text-align: left;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 20px;
+	color: rgba(93,63,53,0.6);
+}
+#sleep_entry_ {
+	left: 0px;
+	top: 25px;
+	position: absolute;
+	overflow: visible;
+	width: 398px;
+	height: 74px;
+	text-align: left;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 20px;
+	color: rgba(93,63,53,1);
+}
+#class_1 {
+	position: absolute;
+	width: 397px;
+	height: 93px;
+	left: 39px;
+	top: 185px;
+	overflow: visible;
+}
+#Classes_to_go_to_today {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 398px;
+	height: 27px;
+	text-align: left;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 20px;
+	color: rgba(93,63,53,0.6);
+}
+#class_1_ {
+	position: absolute;
+	width: 281px;
+	height: 52px;
+	left: 0px;
+	top: 41px;
+	overflow: visible;
+}
+#Ellipse_1 {
+	fill: rgba(198,180,168,1);
+}
+.Ellipse_1 {
+	filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.161));
+	position: absolute;
+	overflow: visible;
+	width: 65px;
+	height: 65px;
+	left: 0px;
+	top: 1px;
+}
+#Prob__Stats_1 {
+	left: 77px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 205px;
+	height: 27px;
+	text-align: left;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 20px;
+	color: rgba(93,63,53,1);
+}
+#sleep_entry_ba {
+	opacity: 0.45;
+	left: 77px;
+	top: 25px;
+	position: absolute;
+	overflow: visible;
+	width: 205px;
+	height: 27px;
+	text-align: left;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 20px;
+	color: rgba(93,63,53,1);
+}
+#emo_check_in {
+	position: absolute;
+	width: 476px;
+	height: 309px;
+	left: 730px;
+	top: 375px;
+	overflow: visible;
+}
+#check_in_prompt {
+	position: absolute;
+	width: 476px;
+	height: 309px;
+	left: 0px;
+	top: 0px;
+	overflow: visible;
+}
+#emo_check_in_ {
+	position: absolute;
+	width: 476px;
+	height: 309px;
+	left: 0px;
+	top: 0px;
+	overflow: visible;
+}
+#Rectangle_1_ba {
+	fill: rgba(234,218,214,1);
+}
+.Rectangle_1_ba {
+	filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.161));
+	position: absolute;
+	overflow: visible;
+	width: 494px;
+	height: 327px;
+	left: 0px;
+	top: 0px;
+}
+#Emotional_check-in {
+	left: 31px;
+	top: 27px;
+	position: absolute;
+	overflow: visible;
+	width: 262px;
+	height: 34px;
+	text-align: left;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	color: rgba(93,63,53,1);
+}
+#entry_time_bc {
+	left: 358px;
+	top: 27px;
+	position: absolute;
+	overflow: visible;
+	width: 89px;
+	height: 26px;
+	text-align: right;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 20px;
+	color: rgba(93,63,53,0.6);
+}
+#emoji_feeling {
+	position: absolute;
+	width: 397px;
+	height: 75px;
+	left: 37px;
+	top: 78px;
+	overflow: visible;
+}
+#How_are_you_feeling_right_now {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 398px;
+	height: 27px;
+	text-align: left;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 20px;
+	color: rgba(93,63,53,0.6);
+}
+#emoji_feeling_bf {
+	position: absolute;
+	width: 317px;
+	height: 40px;
+	left: 2px;
+	top: 35px;
+	overflow: visible;
+}
+#pouting_emoji {
+	opacity: 0.304;
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	left: 0px;
+	top: 0px;
+	overflow: visible;
+}
+#crying_emoji {
+	opacity: 0.302;
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	left: 56px;
+	top: 0px;
+	overflow: visible;
+}
+#worried_emoji {
+	opacity: 0.299;
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	left: 111px;
+	top: 0px;
+	overflow: visible;
+}
+#neutral_emoji {
+	opacity: 0.3;
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	left: 166px;
+	top: 0px;
+	overflow: visible;
+}
+#smiling_emoji {
+	position: absolute;
+	width: 40.58px;
+	height: 40px;
+	left: 221px;
+	top: 0px;
+	overflow: visible;
+}
+#joyful_emoji {
+	opacity: 0.295;
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	left: 277px;
+	top: 0px;
+	overflow: visible;
+}
+#feeling_description {
+	position: absolute;
+	width: 397px;
+	height: 109px;
+	left: 37px;
+	top: 175px;
+	overflow: visible;
+}
+#How_motivated_are_you {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 398px;
+	height: 27px;
+	text-align: left;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 20px;
+	color: rgba(93,63,53,0.6);
+}
+#sleep_entry_bo {
+	left: 0px;
+	top: 35px;
+	position: absolute;
+	overflow: visible;
+	width: 398px;
+	height: 74px;
+	text-align: left;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 20px;
+	color: rgba(93,63,53,1);
+}
+#morning_motivation {
+	position: absolute;
+	width: 476px;
+	height: 309px;
+	left: 225px;
+	top: 375px;
+	overflow: visible;
+}
+#morn_mot {
+	position: absolute;
+	width: 476px;
+	height: 309px;
+	left: 0px;
+	top: 0px;
+	overflow: visible;
+}
+#Rectangle_1_br {
+	fill: rgba(234,218,214,1);
+}
+.Rectangle_1_br {
+	filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.161));
+	position: absolute;
+	overflow: visible;
+	width: 494px;
+	height: 327px;
+	left: 0px;
+	top: 0px;
+}
+#entry {
+	position: absolute;
+	width: 417px;
+	height: 235px;
+	left: 31px;
+	top: 27px;
+	overflow: visible;
+}
+#Morning_motivation_bt {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 262px;
+	height: 34px;
+	text-align: left;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	color: rgba(93,63,53,1);
+}
+#entry_time_bu {
+	left: 329px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 89px;
+	height: 26px;
+	text-align: right;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 20px;
+	color: rgba(93,63,53,0.6);
+}
+#sleep_entry_bv {
+	position: absolute;
+	width: 397px;
+	height: 52px;
+	left: 8px;
+	top: 51px;
+	overflow: visible;
+}
+#How_did_you_sleep {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 398px;
+	height: 27px;
+	text-align: left;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 20px;
+	color: rgba(93,63,53,0.6);
+}
+#sleep_entry_bx {
+	left: 0px;
+	top: 25px;
+	position: absolute;
+	overflow: visible;
+	width: 398px;
+	height: 27px;
+	text-align: left;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 20px;
+	color: rgba(93,63,53,1);
+}
+#grateful_entry {
+	position: absolute;
+	width: 397px;
+	height: 52px;
+	left: 8px;
+	top: 116px;
+	overflow: visible;
+}
+#What_are_you_grateful_for {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 398px;
+	height: 27px;
+	text-align: left;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 20px;
+	color: rgba(93,63,53,0.6);
+}
+#grateful_entry_b {
+	left: 0px;
+	top: 25px;
+	position: absolute;
+	overflow: visible;
+	width: 398px;
+	height: 27px;
+	text-align: left;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 20px;
+	color: rgba(93,63,53,1);
+}
+#motivated_entry {
+	position: absolute;
+	width: 397px;
+	height: 52px;
+	left: 8px;
+	top: 183px;
+	overflow: visible;
+}
+#How_motivated_are_you_b {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 398px;
+	height: 27px;
+	text-align: left;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 20px;
+	color: rgba(93,63,53,0.6);
+}
+#motivation_entry {
+	left: 0px;
+	top: 25px;
+	position: absolute;
+	overflow: visible;
+	width: 398px;
+	height: 27px;
+	text-align: left;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 20px;
+	color: rgba(93,63,53,1);
+}
+#Your_entries_for_the_day {
+	left: 525px;
+	top: 323px;
+	position: absolute;
+	overflow: visible;
+	width: 392px;
+	height: 45px;
+	text-align: center;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 25px;
+	color: rgba(93,63,53,1);
+}
+#date_scroll_bar {
+	position: absolute;
+	width: 676px;
+	height: 114px;
+	left: 378px;
+	top: 191px;
+	overflow: visible;
+}
+#change_date {
+	position: absolute;
+	width: 676px;
+	height: 50px;
+	left: 0px;
+	top: 48px;
+	overflow: visible;
+}
+#left_date {
+	position: absolute;
+	width: 48px;
+	height: 50px;
+	left: 0px;
+	top: 0px;
+	overflow: visible;
+}
+#right_date {
+	position: absolute;
+	width: 48px;
+	height: 50px;
+	left: 628px;
+	top: 0px;
+	overflow: visible;
+}
+#dates {
+	position: absolute;
+	width: 486px;
+	height: 114px;
+	left: 94px;
+	top: 0px;
+	overflow: visible;
+}
+#date_2_before {
+	position: absolute;
+	width: 50px;
+	height: 83px;
+	left: 0px;
+	top: 15px;
+	overflow: visible;
+}
+#date_2_before_cb {
+	fill: rgba(215,159,143,1);
+}
+.date_2_before_cb {
+	position: absolute;
+	overflow: visible;
+	width: 50px;
+	height: 50px;
+	left: 0px;
+	top: 33px;
+}
+#Th {
+	left: 11px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 27px;
+	height: 33px;
+	text-align: center;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: lighter;
+	font-size: 22px;
+	color: rgba(93,63,53,1);
+}
+#n_3 {
+	left: 13px;
+	top: 43px;
+	position: absolute;
+	overflow: visible;
+	width: 26px;
+	height: 30px;
+	text-align: center;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 22px;
+	color: rgba(254,249,244,1);
+}
+#date_yesterday {
+	position: absolute;
+	width: 50px;
+	height: 83px;
+	left: 109px;
+	top: 15px;
+	overflow: visible;
+}
+#date_yesterday_cf {
+	fill: rgba(215,159,143,1);
+}
+.date_yesterday_cf {
+	position: absolute;
+	overflow: visible;
+	width: 50px;
+	height: 50px;
+	left: 0px;
+	top: 33px;
+}
+#Fr {
+	left: 11px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 25px;
+	height: 33px;
+	text-align: center;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: lighter;
+	font-size: 22px;
+	color: rgba(93,63,53,1);
+}
+#n_4 {
+	left: 13px;
+	top: 43px;
+	position: absolute;
+	overflow: visible;
+	width: 26px;
+	height: 30px;
+	text-align: center;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 22px;
+	color: rgba(254,249,244,1);
+}
+#date_today {
+	position: absolute;
+	width: 57px;
+	height: 114px;
+	left: 214px;
+	top: 0px;
+	overflow: visible;
+}
+#Rectangle_3 {
+	fill: rgba(254,249,244,1);
+}
+.Rectangle_3 {
+	position: absolute;
+	overflow: visible;
+	width: 57px;
+	height: 114px;
+	left: 0px;
+	top: 0px;
+}
+#date_today_ck {
+	fill: rgba(215,159,143,1);
+}
+.date_today_ck {
+	position: absolute;
+	overflow: visible;
+	width: 50px;
+	height: 50px;
+	left: 4px;
+	top: 48px;
+}
+#Sa {
+	left: 15px;
+	top: 15px;
+	position: absolute;
+	overflow: visible;
+	width: 29px;
+	height: 33px;
+	text-align: center;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: lighter;
+	font-size: 22px;
+	color: rgba(93,63,53,1);
+}
+#n_5 {
+	left: 17px;
+	top: 58px;
+	position: absolute;
+	overflow: visible;
+	width: 26px;
+	height: 30px;
+	text-align: center;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 22px;
+	color: rgba(254,249,244,1);
+}
+#date_tmrw {
+	position: absolute;
+	width: 50px;
+	height: 83px;
+	left: 327px;
+	top: 15px;
+	overflow: visible;
+}
+#date_tomorrow {
+	fill: rgba(215,159,143,1);
+}
+.date_tomorrow {
+	position: absolute;
+	overflow: visible;
+	width: 50px;
+	height: 50px;
+	left: 0px;
+	top: 33px;
+}
+#Su {
+	left: 11px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 28px;
+	height: 33px;
+	text-align: center;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: lighter;
+	font-size: 22px;
+	color: rgba(93,63,53,1);
+}
+#n_6 {
+	left: 13px;
+	top: 43px;
+	position: absolute;
+	overflow: visible;
+	width: 26px;
+	height: 30px;
+	text-align: center;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 22px;
+	color: rgba(254,249,244,1);
+}
+#date_2_after {
+	position: absolute;
+	width: 50px;
+	height: 83px;
+	left: 436px;
+	top: 15px;
+	overflow: visible;
+}
+#date_2_after_cs {
+	fill: rgba(215,159,143,1);
+}
+.date_2_after_cs {
+	position: absolute;
+	overflow: visible;
+	width: 50px;
+	height: 50px;
+	left: 0px;
+	top: 33px;
+}
+#Mo {
+	left: 8px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 34px;
+	height: 33px;
+	text-align: center;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: lighter;
+	font-size: 22px;
+	color: rgba(93,63,53,1);
+}
+#n_7 {
+	left: 13px;
+	top: 43px;
+	position: absolute;
+	overflow: visible;
+	width: 26px;
+	height: 30px;
+	text-align: center;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 22px;
+	color: rgba(254,249,244,1);
+}
+#Today_is_Saturday_February_25 {
+	left: 436px;
+	top: 120px;
+	position: absolute;
+	overflow: visible;
+	width: 560px;
+	height: 54px;
+	text-align: center;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	color: rgba(93,63,53,1);
+}
+#Nav_Bar {
+	position: absolute;
+	width: 981px;
+	height: 70px;
+	left: 225px;
+	top: 31px;
+	overflow: visible;
+}
+#Rectangle_2 {
+	fill: rgba(254,249,244,1);
+}
+.Rectangle_2 {
+	filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.161));
+	position: absolute;
+	overflow: visible;
+	width: 999px;
+	height: 88px;
+	left: 0px;
+	top: 0px;
+}
+#Settings {
+	left: 847px;
+	top: 19px;
+	position: absolute;
+	overflow: visible;
+	width: 92px;
+	white-space: nowrap;
+	line-height: 32px;
+	margin-top: -4px;
+	text-align: left;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	color: rgba(135,95,74,1);
+}
+#Analytics {
+	left: 709px;
+	top: 21px;
+	position: absolute;
+	overflow: visible;
+	width: 102px;
+	white-space: nowrap;
+	line-height: 32px;
+	margin-top: -4px;
+	text-align: left;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	color: rgba(135,95,74,1);
+}
+#Forms {
+	left: 592px;
+	top: 21px;
+	position: absolute;
+	overflow: visible;
+	width: 71px;
+	white-space: nowrap;
+	line-height: 32px;
+	margin-top: -4px;
+	text-align: left;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	color: rgba(135,95,74,1);
+}
+#Journal {
+	left: 474px;
+	top: 21px;
+	position: absolute;
+	overflow: visible;
+	width: 84px;
+	white-space: nowrap;
+	line-height: 32px;
+	margin-top: -4px;
+	text-align: left;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	color: rgba(135,95,74,1);
+}
+#Reminders {
+	left: 318px;
+	top: 21px;
+	position: absolute;
+	overflow: visible;
+	width: 121px;
+	white-space: nowrap;
+	line-height: 32px;
+	margin-top: -4px;
+	text-align: left;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	color: rgba(135,95,74,1);
+}
+#Dashboard {
+	left: 157px;
+	top: 21px;
+	position: absolute;
+	overflow: visible;
+	width: 123px;
+	white-space: nowrap;
+	line-height: 32px;
+	margin-top: -4px;
+	text-align: left;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	color: rgba(135,95,74,1);
+}
+#sonria_logo {
+	position: absolute;
+	width: 55px;
+	height: 49.42px;
+	left: 36px;
+	top: 9px;
+	overflow: visible;
+}
+#Line_1 {
+	fill: transparent;
+	stroke: rgba(240,222,203,1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Line_1 {
+	overflow: visible;
+	position: absolute;
+	width: 1px;
+	height: 51px;
+	left: 124px;
+	top: 11px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#btnNew_Entry {
+	position: absolute;
+	width: 321px;
+	height: 65px;
+	left: 560px;
+	top: 931px;
+	overflow: visible;
+}
+#Rectangle_4 {
+	fill: rgba(255,243,232,1);
+}
+.Rectangle_4 {
+	filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.161));
+	position: absolute;
+	overflow: visible;
+	width: 351px;
+	height: 95px;
+	left: 0px;
+	top: 0px;
+}
+#New_Entry {
+	left: 24px;
+	top: 14px;
+	position: absolute;
+	overflow: visible;
+	width: 274px;
+	height: 37px;
+	text-align: center;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	color: rgba(93,63,53,1);
+}
+#shadow {
+	opacity: 0.304;
+	fill: rgba(0,0,0,1);
+}
+.shadow {
+	position: absolute;
+	overflow: visible;
+	width: 1440px;
+	height: 1024px;
+	left: 0px;
+	top: 0px;
+}
+#new_entry_prompt {
+	position: absolute;
+	width: 832px;
+	height: 489px;
+	left: 304px;
+	top: 335px;
+	overflow: visible;
+}
+#Rectangle_6 {
+	fill: rgba(254,249,244,1);
+}
+.Rectangle_6 {
+	position: absolute;
+	overflow: visible;
+	width: 832px;
+	height: 489px;
+	left: 0px;
+	top: 0px;
+}
+#btn_plus {
+	position: absolute;
+	width: 76px;
+	height: 75px;
+	left: 378px;
+	top: 400px;
+	overflow: visible;
+}
+#Ellipse_5 {
+	fill: rgba(255,243,232,1);
+}
+.Ellipse_5 {
+	filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.161));
+	position: absolute;
+	overflow: visible;
+	width: 106px;
+	height: 105px;
+	left: 0px;
+	top: 0px;
+}
+#Icon_feather-plus {
+	position: absolute;
+	width: 35.745px;
+	height: 32.622px;
+	left: 20.127px;
+	top: 21.189px;
+	overflow: visible;
+}
+#Path_1 {
+	fill: transparent;
+	stroke: rgba(93,63,53,1);
+	stroke-width: 3px;
+	stroke-linejoin: round;
+	stroke-linecap: round;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Path_1 {
+	overflow: visible;
+	position: absolute;
+	width: 3px;
+	height: 35.622px;
+	left: 17.873px;
+	top: 0px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Path_2 {
+	fill: transparent;
+	stroke: rgba(93,63,53,1);
+	stroke-width: 3px;
+	stroke-linejoin: round;
+	stroke-linecap: round;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Path_2 {
+	overflow: visible;
+	position: absolute;
+	width: 38.745px;
+	height: 3px;
+	left: 0px;
+	top: 16.311px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#empty_page {
+	position: absolute;
+	width: 321px;
+	height: 65px;
+	left: 452px;
+	top: 217px;
+	overflow: visible;
+	--web-animation: fadein undefineds undefined;
+	--web-action-type: page;
+	--web-action-target: Journal_Empty.html;
+	cursor: pointer;
+}
+#Rectangle_4_di {
+	fill: rgba(255,243,232,1);
+}
+.Rectangle_4_di {
+	filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.161));
+	position: absolute;
+	overflow: visible;
+	width: 351px;
+	height: 95px;
+	left: 0px;
+	top: 0px;
+}
+#New_Entry_dj {
+	left: 24px;
+	top: 14px;
+	position: absolute;
+	overflow: visible;
+	width: 274px;
+	height: 37px;
+	text-align: center;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	color: rgba(93,63,53,1);
+}
+#emo_check_in_dk {
+	position: absolute;
+	width: 321px;
+	height: 65px;
+	left: 452px;
+	top: 127px;
+	overflow: visible;
+	--web-animation: fadein undefineds undefined;
+	--web-action-type: page;
+	--web-action-target: Journal_Check_In.html;
+	cursor: pointer;
+}
+#Rectangle_4_dl {
+	fill: rgba(255,243,232,1);
+}
+.Rectangle_4_dl {
+	filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.161));
+	position: absolute;
+	overflow: visible;
+	width: 351px;
+	height: 95px;
+	left: 0px;
+	top: 0px;
+}
+#New_Entry_dm {
+	left: 24px;
+	top: 14px;
+	position: absolute;
+	overflow: visible;
+	width: 274px;
+	height: 37px;
+	text-align: center;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	color: rgba(93,63,53,1);
+}
+#day_recap {
+	position: absolute;
+	width: 321px;
+	height: 65px;
+	left: 61px;
+	top: 307px;
+	overflow: visible;
+}
+#Rectangle_4_do {
+	fill: rgba(255,243,232,1);
+}
+.Rectangle_4_do {
+	filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.161));
+	position: absolute;
+	overflow: visible;
+	width: 351px;
+	height: 95px;
+	left: 0px;
+	top: 0px;
+}
+#New_Entry_dp {
+	left: 24px;
+	top: 14px;
+	position: absolute;
+	overflow: visible;
+	width: 274px;
+	height: 37px;
+	text-align: center;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	color: rgba(93,63,53,1);
+}
+#daily_planner_dq {
+	position: absolute;
+	width: 321px;
+	height: 65px;
+	left: 61px;
+	top: 217px;
+	overflow: visible;
+	--web-animation: fadein undefineds undefined;
+	--web-action-type: page;
+	--web-action-target: Journal_Daily_Planner.html;
+	cursor: pointer;
+}
+#Rectangle_4_dr {
+	fill: rgba(255,243,232,1);
+}
+.Rectangle_4_dr {
+	filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.161));
+	position: absolute;
+	overflow: visible;
+	width: 351px;
+	height: 95px;
+	left: 0px;
+	top: 0px;
+}
+#New_Entry_ds {
+	left: 24px;
+	top: 14px;
+	position: absolute;
+	overflow: visible;
+	width: 274px;
+	height: 37px;
+	text-align: center;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	color: rgba(93,63,53,1);
+}
+#morning_motivation_dt {
+	position: absolute;
+	width: 321px;
+	height: 65px;
+	left: 61px;
+	top: 127px;
+	overflow: visible;
+	--web-animation: fadein undefineds undefined;
+	--web-action-type: page;
+	--web-action-target: Journal_Morning_Motivation.html;
+	cursor: pointer;
+}
+#Rectangle_4_du {
+	fill: rgba(255,243,232,1);
+}
+.Rectangle_4_du {
+	filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.161));
+	position: absolute;
+	overflow: visible;
+	width: 351px;
+	height: 95px;
+	left: 0px;
+	top: 0px;
+}
+#New_Entry_dv {
+	left: 24px;
+	top: 14px;
+	position: absolute;
+	overflow: visible;
+	width: 274px;
+	height: 37px;
+	text-align: center;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	color: rgba(93,63,53,1);
+}
+#What_would_you_like_to_journal {
+	left: 221px;
+	top: 27px;
+	position: absolute;
+	overflow: visible;
+	width: 392px;
+	height: 49px;
+	text-align: center;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	color: rgba(93,63,53,1);
+}
+#back_arrow_icon {
+	position: absolute;
+	width: 45px;
+	height: 45px;
+	left: 68px;
+	top: 18px;
+	overflow: visible;
+	--web-animation: fadein undefineds undefined;
+	--web-action-type: page;
+	--web-action-target: Journal_Main.html;
+	cursor: pointer;
+}
