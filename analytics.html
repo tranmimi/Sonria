@@ -36,12 +36,13 @@
   <!-- Java Script -->
   <script>
   const labels = ['', '', '' ];
-  const images = ['img/crying.png', 'img/neutral.png', 'img/pout.png']
+  const images = ['img/🦆 emoji _slightly smiling face_.png',
+    'img/🦆 emoji _worried face_.png', 'img/🦆 emoji _pouting face_.png']
     .map(png => {
       const image = new Image();
       image.src = png;
       return image;
-    }); 
+    });
   const values = [5,10, 7];
 
   new Chart(document.getElementById("myChart"), {
