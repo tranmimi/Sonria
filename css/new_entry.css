@@ -1,11 +1,11 @@
 .mediaViewInfo {
-	--web-view-name: Journal_New_Entry;
-	--web-view-id: Journal_New_Entry;
+	--web-view-name: new_entry;
+	--web-view-id: new_entry;
 	--web-scale-on-resize: true;
 	--web-enable-deep-linking: true;
 }
 :root {
-	--web-view-ids: Journal_New_Entry;
+	--web-view-ids: new_entry;
 }
 * {
 	margin: 0;
@@ -13,18 +13,37 @@
 	box-sizing: border-box;
 	border: none;
 }
-#Journal_New_Entry {
+#new_entry {
 	position: absolute;
 	width: 1440px;
 	height: 1024px;
 	background-color: rgba(231,226,222,1);
 	overflow: hidden;
-	--web-view-name: Journal_New_Entry;
-	--web-view-id: Journal_New_Entry;
+	--web-view-name: new_entry;
+	--web-view-id: new_entry;
 	--web-scale-on-resize: true;
 	--web-enable-deep-linking: true;
 }
+@keyframes  {
 
+
+}
+@keyframes  {
+
+
+}
+@keyframes  {
+
+
+}
+@keyframes  {
+
+
+}
+@keyframes  {
+
+
+}
 #journal_page {
 	position: absolute;
 	width: 476px;
@@ -33,10 +52,10 @@
 	top: 708px;
 	overflow: visible;
 }
-#Rectangle_1 {
+#journal_page_box {
 	fill: rgba(234,218,214,1);
 }
-.Rectangle_1 {
+.journal_page_box {
 	filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.161));
 	position: absolute;
 	overflow: visible;
@@ -47,49 +66,13 @@
 }
 #user_prompt {
 	position: absolute;
-	width: 417px;
-	height: 229px;
-	left: 31px;
-	top: 27px;
-	overflow: visible;
-}
-#Journal_page_o {
-	left: 0px;
-	top: 0px;
-	position: absolute;
-	overflow: visible;
-	width: 262px;
-	height: 34px;
-	text-align: left;
-	font-family: Helvetica Neue;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 24px;
-	color: rgba(93,63,53,1);
-}
-#entry_time {
-	left: 329px;
-	top: 4px;
-	position: absolute;
-	overflow: visible;
-	width: 89px;
-	height: 26px;
-	text-align: right;
-	font-family: Helvetica Neue;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 20px;
-	color: rgba(93,63,53,0.6);
-}
-#user_prompt_q {
-	position: absolute;
 	width: 397px;
 	height: 185px;
-	left: 8px;
-	top: 44px;
+	left: 39px;
+	top: 71px;
 	overflow: visible;
 }
-#sleep_entry {
+#user_page_entry {
 	left: 0px;
 	top: 0px;
 	position: absolute;
@@ -103,7 +86,7 @@
 	font-size: 20px;
 	color: rgba(93,63,53,1);
 }
-#Continue {
+#btn_continue {
 	left: 0px;
 	top: 152px;
 	position: absolute;
@@ -111,6 +94,34 @@
 	width: 398px;
 	height: 27px;
 	text-align: center;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 20px;
+	color: rgba(93,63,53,0.6);
+}
+#journal_page_s {
+	left: 31px;
+	top: 27px;
+	position: absolute;
+	overflow: visible;
+	width: 262px;
+	height: 34px;
+	text-align: left;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	color: rgba(93,63,53,1);
+}
+#entry_time {
+	left: 360px;
+	top: 31px;
+	position: absolute;
+	overflow: visible;
+	width: 89px;
+	height: 26px;
+	text-align: right;
 	font-family: Helvetica Neue;
 	font-style: normal;
 	font-weight: normal;
@@ -125,18 +136,10 @@
 	top: 708px;
 	overflow: visible;
 }
-#daily_planner_u {
-	position: absolute;
-	width: 476px;
-	height: 309px;
-	left: 0px;
-	top: 0px;
-	overflow: visible;
-}
-#Rectangle_1_v {
+#daily_planner_box {
 	fill: rgba(234,218,214,1);
 }
-.Rectangle_1_v {
+.daily_planner_box {
 	filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.161));
 	position: absolute;
 	overflow: visible;
@@ -145,7 +148,7 @@
 	left: 0px;
 	top: 0px;
 }
-#Daily_planner_w {
+#daily_planner_w {
 	left: 31px;
 	top: 27px;
 	position: absolute;
@@ -159,7 +162,7 @@
 	font-size: 24px;
 	color: rgba(93,63,53,1);
 }
-#entry_time_x {
+#goals_entry_time {
 	left: 360px;
 	top: 31px;
 	position: absolute;
@@ -173,7 +176,7 @@
 	font-size: 20px;
 	color: rgba(93,63,53,0.6);
 }
-#goals_entry {
+#user_goals {
 	position: absolute;
 	width: 397px;
 	height: 99px;
@@ -181,7 +184,7 @@
 	top: 71px;
 	overflow: visible;
 }
-#Goals_for_the_day {
+#goals_prompt {
 	left: 0px;
 	top: 0px;
 	position: absolute;
@@ -195,7 +198,7 @@
 	font-size: 20px;
 	color: rgba(93,63,53,0.6);
 }
-#sleep_entry_ {
+#goals_entry {
 	left: 0px;
 	top: 25px;
 	position: absolute;
@@ -209,7 +212,7 @@
 	font-size: 20px;
 	color: rgba(93,63,53,1);
 }
-#class_1 {
+#user_classes {
 	position: absolute;
 	width: 397px;
 	height: 93px;
@@ -217,7 +220,7 @@
 	top: 185px;
 	overflow: visible;
 }
-#Classes_to_go_to_today {
+#classes_prompt {
 	left: 0px;
 	top: 0px;
 	position: absolute;
@@ -231,7 +234,7 @@
 	font-size: 20px;
 	color: rgba(93,63,53,0.6);
 }
-#class_1_ {
+#class_1 {
 	position: absolute;
 	width: 281px;
 	height: 52px;
@@ -239,10 +242,10 @@
 	top: 41px;
 	overflow: visible;
 }
-#Ellipse_1 {
+#class_1_circle {
 	fill: rgba(198,180,168,1);
 }
-.Ellipse_1 {
+.class_1_circle {
 	filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.161));
 	position: absolute;
 	overflow: visible;
@@ -251,7 +254,7 @@
 	left: 0px;
 	top: 1px;
 }
-#Prob__Stats_1 {
+#class_1_name {
 	left: 77px;
 	top: 0px;
 	position: absolute;
@@ -265,7 +268,7 @@
 	font-size: 20px;
 	color: rgba(93,63,53,1);
 }
-#sleep_entry_ba {
+#class_1_time {
 	opacity: 0.45;
 	left: 77px;
 	top: 25px;
@@ -288,26 +291,10 @@
 	top: 375px;
 	overflow: visible;
 }
-#check_in_prompt {
-	position: absolute;
-	width: 476px;
-	height: 309px;
-	left: 0px;
-	top: 0px;
-	overflow: visible;
-}
-#emo_check_in_ {
-	position: absolute;
-	width: 476px;
-	height: 309px;
-	left: 0px;
-	top: 0px;
-	overflow: visible;
-}
-#Rectangle_1_ba {
+#check_in_box {
 	fill: rgba(234,218,214,1);
 }
-.Rectangle_1_ba {
+.check_in_box {
 	filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.161));
 	position: absolute;
 	overflow: visible;
@@ -316,7 +303,7 @@
 	left: 0px;
 	top: 0px;
 }
-#Emotional_check-in {
+#ci_prompt {
 	left: 31px;
 	top: 27px;
 	position: absolute;
@@ -330,7 +317,7 @@
 	font-size: 24px;
 	color: rgba(93,63,53,1);
 }
-#entry_time_bc {
+#entry_time_ba {
 	left: 358px;
 	top: 27px;
 	position: absolute;
@@ -352,7 +339,7 @@
 	top: 78px;
 	overflow: visible;
 }
-#How_are_you_feeling_right_now {
+#emoji_question {
 	left: 0px;
 	top: 0px;
 	position: absolute;
@@ -366,7 +353,7 @@
 	font-size: 20px;
 	color: rgba(93,63,53,0.6);
 }
-#emoji_feeling_bf {
+#emoji_icons {
 	position: absolute;
 	width: 317px;
 	height: 40px;
@@ -435,7 +422,7 @@
 	top: 175px;
 	overflow: visible;
 }
-#How_motivated_are_you {
+#feeling_description_question {
 	left: 0px;
 	top: 0px;
 	position: absolute;
@@ -449,7 +436,7 @@
 	font-size: 20px;
 	color: rgba(93,63,53,0.6);
 }
-#sleep_entry_bo {
+#feeling_description_entry {
 	left: 0px;
 	top: 35px;
 	position: absolute;
@@ -471,18 +458,10 @@
 	top: 375px;
 	overflow: visible;
 }
-#morn_mot {
-	position: absolute;
-	width: 476px;
-	height: 309px;
-	left: 0px;
-	top: 0px;
-	overflow: visible;
-}
-#Rectangle_1_br {
+#morning_motivation_box {
 	fill: rgba(234,218,214,1);
 }
-.Rectangle_1_br {
+.morning_motivation_box {
 	filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.161));
 	position: absolute;
 	overflow: visible;
@@ -491,17 +470,9 @@
 	left: 0px;
 	top: 0px;
 }
-#entry {
-	position: absolute;
-	width: 417px;
-	height: 235px;
+#morning_motivation_prompt {
 	left: 31px;
 	top: 27px;
-	overflow: visible;
-}
-#Morning_motivation_bt {
-	left: 0px;
-	top: 0px;
 	position: absolute;
 	overflow: visible;
 	width: 262px;
@@ -513,9 +484,9 @@
 	font-size: 24px;
 	color: rgba(93,63,53,1);
 }
-#entry_time_bu {
-	left: 329px;
-	top: 0px;
+#entry_time_bq {
+	left: 360px;
+	top: 27px;
 	position: absolute;
 	overflow: visible;
 	width: 89px;
@@ -527,15 +498,15 @@
 	font-size: 20px;
 	color: rgba(93,63,53,0.6);
 }
-#sleep_entry_bv {
+#sleep_entry {
 	position: absolute;
 	width: 397px;
 	height: 52px;
-	left: 8px;
-	top: 51px;
+	left: 39px;
+	top: 78px;
 	overflow: visible;
 }
-#How_did_you_sleep {
+#sleep_question {
 	left: 0px;
 	top: 0px;
 	position: absolute;
@@ -549,7 +520,7 @@
 	font-size: 20px;
 	color: rgba(93,63,53,0.6);
 }
-#sleep_entry_bx {
+#sleep_entry_bt {
 	left: 0px;
 	top: 25px;
 	position: absolute;
@@ -567,11 +538,11 @@
 	position: absolute;
 	width: 397px;
 	height: 52px;
-	left: 8px;
-	top: 116px;
+	left: 39px;
+	top: 143px;
 	overflow: visible;
 }
-#What_are_you_grateful_for {
+#grateful_question {
 	left: 0px;
 	top: 0px;
 	position: absolute;
@@ -585,7 +556,7 @@
 	font-size: 20px;
 	color: rgba(93,63,53,0.6);
 }
-#grateful_entry_b {
+#grateful_entry_bw {
 	left: 0px;
 	top: 25px;
 	position: absolute;
@@ -603,11 +574,11 @@
 	position: absolute;
 	width: 397px;
 	height: 52px;
-	left: 8px;
-	top: 183px;
+	left: 39px;
+	top: 210px;
 	overflow: visible;
 }
-#How_motivated_are_you_b {
+#motivation_question {
 	left: 0px;
 	top: 0px;
 	position: absolute;
@@ -635,7 +606,7 @@
 	font-size: 20px;
 	color: rgba(93,63,53,1);
 }
-#Your_entries_for_the_day {
+#entries_prompt {
 	left: 525px;
 	top: 323px;
 	position: absolute;
@@ -697,10 +668,10 @@
 	top: 15px;
 	overflow: visible;
 }
-#date_2_before_cb {
+#date_2_before_b {
 	fill: rgba(215,159,143,1);
 }
-.date_2_before_cb {
+.date_2_before_b {
 	position: absolute;
 	overflow: visible;
 	width: 50px;
@@ -744,10 +715,10 @@
 	top: 15px;
 	overflow: visible;
 }
-#date_yesterday_cf {
+#date_yesterday_cb {
 	fill: rgba(215,159,143,1);
 }
-.date_yesterday_cf {
+.date_yesterday_cb {
 	position: absolute;
 	overflow: visible;
 	width: 50px;
@@ -802,10 +773,10 @@
 	left: 0px;
 	top: 0px;
 }
-#date_today_ck {
+#date_today_cg {
 	fill: rgba(215,159,143,1);
 }
-.date_today_ck {
+.date_today_cg {
 	position: absolute;
 	overflow: visible;
 	width: 50px;
@@ -896,10 +867,10 @@
 	top: 15px;
 	overflow: visible;
 }
-#date_2_after_cs {
+#date_2_after_co {
 	fill: rgba(215,159,143,1);
 }
-.date_2_after_cs {
+.date_2_after_co {
 	position: absolute;
 	overflow: visible;
 	width: 50px;
@@ -935,7 +906,7 @@
 	font-size: 22px;
 	color: rgba(254,249,244,1);
 }
-#statement_date {
+#date_prompt {
 	left: 436px;
 	top: 120px;
 	position: absolute;
@@ -957,10 +928,10 @@
 	top: 31px;
 	overflow: visible;
 }
-#Rectangle_2 {
+#nav_bar_box {
 	fill: rgba(254,249,244,1);
 }
-.Rectangle_2 {
+.nav_bar_box {
 	filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.161));
 	position: absolute;
 	overflow: visible;
@@ -1073,7 +1044,7 @@
 	top: 9px;
 	overflow: visible;
 }
-#Line_1 {
+#nav_bar_divider {
 	fill: transparent;
 	stroke: rgba(240,222,203,1);
 	stroke-width: 1px;
@@ -1082,7 +1053,7 @@
 	stroke-miterlimit: 4;
 	shape-rendering: auto;
 }
-.Line_1 {
+.nav_bar_divider {
 	overflow: visible;
 	position: absolute;
 	width: 1px;
@@ -1099,10 +1070,10 @@
 	top: 931px;
 	overflow: visible;
 }
-#Rectangle_4 {
+#new_entry_box {
 	fill: rgba(255,243,232,1);
 }
-.Rectangle_4 {
+.new_entry_box {
 	filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.161));
 	position: absolute;
 	overflow: visible;
@@ -1111,7 +1082,7 @@
 	left: 0px;
 	top: 0px;
 }
-#New_Entry {
+#new_entry_c {
 	left: 24px;
 	top: 14px;
 	position: absolute;
@@ -1145,10 +1116,10 @@
 	top: 335px;
 	overflow: visible;
 }
-#Rectangle_6 {
+#new_entry_box_c {
 	fill: rgba(254,249,244,1);
 }
-.Rectangle_6 {
+.new_entry_box_c {
 	position: absolute;
 	overflow: visible;
 	width: 832px;
@@ -1164,10 +1135,10 @@
 	top: 400px;
 	overflow: visible;
 }
-#Ellipse_5 {
+#plus_circle {
 	fill: rgba(255,243,232,1);
 }
-.Ellipse_5 {
+.plus_circle {
 	filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.161));
 	position: absolute;
 	overflow: visible;
@@ -1176,7 +1147,7 @@
 	left: 0px;
 	top: 0px;
 }
-#Icon_feather-plus {
+#plus_icon {
 	position: absolute;
 	width: 35.745px;
 	height: 32.622px;
@@ -1229,13 +1200,13 @@
 	overflow: visible;
 	--web-animation: fadein undefineds undefined;
 	--web-action-type: page;
-	--web-action-target: Journal_Empty.html;
+	--web-action-target: empty_prompt.html;
 	cursor: pointer;
 }
-#Rectangle_4_di {
+#empty_page_box {
 	fill: rgba(255,243,232,1);
 }
-.Rectangle_4_di {
+.empty_page_box {
 	filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.161));
 	position: absolute;
 	overflow: visible;
@@ -1244,7 +1215,7 @@
 	left: 0px;
 	top: 0px;
 }
-#New_Entry_dj {
+#empty_journal_page {
 	left: 24px;
 	top: 14px;
 	position: absolute;
@@ -1258,7 +1229,7 @@
 	font-size: 24px;
 	color: rgba(93,63,53,1);
 }
-#emo_check_in_dk {
+#emo_check_in_dg {
 	position: absolute;
 	width: 321px;
 	height: 65px;
@@ -1267,13 +1238,13 @@
 	overflow: visible;
 	--web-animation: fadein undefineds undefined;
 	--web-action-type: page;
-	--web-action-target: Journal_Check_In.html;
+	--web-action-target: emotional_check_in.html;
 	cursor: pointer;
 }
-#Rectangle_4_dl {
+#emo_check_in_box {
 	fill: rgba(255,243,232,1);
 }
-.Rectangle_4_dl {
+.emo_check_in_box {
 	filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.161));
 	position: absolute;
 	overflow: visible;
@@ -1282,7 +1253,7 @@
 	left: 0px;
 	top: 0px;
 }
-#New_Entry_dm {
+#emo_check_in_txt {
 	left: 24px;
 	top: 14px;
 	position: absolute;
@@ -1304,10 +1275,10 @@
 	top: 307px;
 	overflow: visible;
 }
-#Rectangle_4_do {
+#day_recap_box {
 	fill: rgba(255,243,232,1);
 }
-.Rectangle_4_do {
+.day_recap_box {
 	filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.161));
 	position: absolute;
 	overflow: visible;
@@ -1316,7 +1287,7 @@
 	left: 0px;
 	top: 0px;
 }
-#New_Entry_dp {
+#day_recap_txt {
 	left: 24px;
 	top: 14px;
 	position: absolute;
@@ -1330,7 +1301,7 @@
 	font-size: 24px;
 	color: rgba(93,63,53,1);
 }
-#daily_planner_dq {
+#daily_planner_dm {
 	position: absolute;
 	width: 321px;
 	height: 65px;
@@ -1339,13 +1310,13 @@
 	overflow: visible;
 	--web-animation: fadein undefineds undefined;
 	--web-action-type: page;
-	--web-action-target: Journal_Daily_Planner.html;
+	--web-action-target: daily_planner.html;
 	cursor: pointer;
 }
-#Rectangle_4_dr {
+#daily_planner_box_dn {
 	fill: rgba(255,243,232,1);
 }
-.Rectangle_4_dr {
+.daily_planner_box_dn {
 	filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.161));
 	position: absolute;
 	overflow: visible;
@@ -1354,7 +1325,7 @@
 	left: 0px;
 	top: 0px;
 }
-#New_Entry_ds {
+#daily_planner_txt {
 	left: 24px;
 	top: 14px;
 	position: absolute;
@@ -1368,7 +1339,7 @@
 	font-size: 24px;
 	color: rgba(93,63,53,1);
 }
-#morning_motivation_dt {
+#morning_motivation_dp {
 	position: absolute;
 	width: 321px;
 	height: 65px;
@@ -1377,13 +1348,13 @@
 	overflow: visible;
 	--web-animation: fadein undefineds undefined;
 	--web-action-type: page;
-	--web-action-target: Journal_Morning_Motivation.html;
+	--web-action-target: morning_motivation.html;
 	cursor: pointer;
 }
-#Rectangle_4_du {
+#morn_mot_box {
 	fill: rgba(255,243,232,1);
 }
-.Rectangle_4_du {
+.morn_mot_box {
 	filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.161));
 	position: absolute;
 	overflow: visible;
@@ -1392,7 +1363,7 @@
 	left: 0px;
 	top: 0px;
 }
-#New_Entry_dv {
+#morn_mot_txt {
 	left: 24px;
 	top: 14px;
 	position: absolute;
@@ -1406,7 +1377,7 @@
 	font-size: 24px;
 	color: rgba(93,63,53,1);
 }
-#What_would_you_like_to_journal {
+#journal_question {
 	left: 221px;
 	top: 27px;
 	position: absolute;
@@ -1429,6 +1400,6 @@
 	overflow: visible;
 	--web-animation: fadein undefineds undefined;
 	--web-action-type: page;
-	--web-action-target: Journal_Main.html;
+	--web-action-target: journal_main.html;
 	cursor: pointer;
 }

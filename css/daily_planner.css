@@ -1,11 +1,11 @@
 .mediaViewInfo {
-	--web-view-name: Journal_Check_In;
-	--web-view-id: Journal_Check_In;
+	--web-view-name: daily_planner;
+	--web-view-id: daily_planner;
 	--web-scale-on-resize: true;
 	--web-enable-deep-linking: true;
 }
 :root {
-	--web-view-ids: Journal_Check_In;
+	--web-view-ids: daily_planner;
 }
 * {
 	margin: 0;
@@ -13,22 +13,29 @@
 	box-sizing: border-box;
 	border: none;
 }
-#Journal_Check_In {
+#daily_planner {
 	position: absolute;
 	width: 1440px;
 	height: 1024px;
 	background-color: rgba(231,226,222,1);
 	overflow: hidden;
-	--web-view-name: Journal_Check_In;
-	--web-view-id: Journal_Check_In;
+	--web-view-name: daily_planner;
+	--web-view-id: daily_planner;
 	--web-scale-on-resize: true;
 	--web-enable-deep-linking: true;
 }
+@keyframes  {
 
-#Rectangle_1 {
+
+}
+@keyframes  {
+
+
+}
+#daily_planner_box {
 	fill: rgba(234,218,214,1);
 }
-.Rectangle_1 {
+.daily_planner_box {
 	filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.161));
 	position: absolute;
 	overflow: visible;
@@ -42,10 +49,10 @@
 	width: 566px;
 	height: 202px;
 	left: 264px;
-	top: 588px;
+	top: 731px;
 	overflow: visible;
 }
-#What_are_you_doing {
+#notes_question {
 	left: 0px;
 	top: 0px;
 	position: absolute;
@@ -53,13 +60,13 @@
 	width: 398px;
 	height: 27px;
 	text-align: left;
-	font-family: Poppins;
+	font-family: Helvetica Neue;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 24px;
 	color: rgba(93,63,53,0.6);
 }
-#Need_to_practice_my_presentati {
+#user_notes_entry {
 	left: 0px;
 	top: 37px;
 	position: absolute;
@@ -67,7 +74,7 @@
 	width: 567px;
 	height: 165px;
 	text-align: left;
-	font-family: Poppins;
+	font-family: Helvetica Neue;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 24px;
@@ -81,7 +88,7 @@
 	top: 612px;
 	overflow: visible;
 }
-#Classes_I_went_to_today {
+#classes_question {
 	left: 0px;
 	top: 0px;
 	position: absolute;
@@ -89,7 +96,7 @@
 	width: 315px;
 	height: 27px;
 	text-align: left;
-	font-family: Poppins;
+	font-family: Helvetica Neue;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 24px;
@@ -103,7 +110,7 @@
 	top: 206px;
 	overflow: visible;
 }
-#circle_check {
+#class_3_checked {
 	position: absolute;
 	width: 50px;
 	height: 50px;
@@ -111,10 +118,10 @@
 	top: 1px;
 	overflow: visible;
 }
-#Ellipse_1 {
+#class_3_checked_circle {
 	fill: rgba(198,180,168,1);
 }
-.Ellipse_1 {
+.class_3_checked_circle {
 	filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.161));
 	position: absolute;
 	overflow: visible;
@@ -123,7 +130,7 @@
 	left: 0px;
 	top: 0px;
 }
-#Icon_feather-check {
+#check_icon {
 	fill: transparent;
 	stroke: rgba(234,218,214,1);
 	stroke-width: 4px;
@@ -132,7 +139,7 @@
 	stroke-miterlimit: 4;
 	shape-rendering: auto;
 }
-.Icon_feather-check {
+.check_icon {
 	overflow: visible;
 	position: absolute;
 	width: 34.169px;
@@ -141,7 +148,7 @@
 	top: 15.199px;
 	transform: matrix(1,0,0,1,0,0);
 }
-#GUI_Programming_II {
+#class_3_name {
 	left: 77px;
 	top: 0px;
 	position: absolute;
@@ -149,13 +156,13 @@
 	width: 205px;
 	height: 27px;
 	text-align: left;
-	font-family: Poppins;
+	font-family: Helvetica Neue;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 20px;
 	color: rgba(93,63,53,1);
 }
-#sleep_entry {
+#class_3_time {
 	opacity: 0.45;
 	left: 77px;
 	top: 25px;
@@ -164,7 +171,7 @@
 	width: 205px;
 	height: 27px;
 	text-align: left;
-	font-family: Poppins;
+	font-family: Helvetica Neue;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 20px;
@@ -175,13 +182,13 @@
 	width: 281px;
 	height: 52px;
 	left: 0px;
-	top: 52px;
+	top: 129px;
 	overflow: visible;
 }
-#Ellipse_1_y {
+#class_2_circle {
 	fill: rgba(198,180,168,1);
 }
-.Ellipse_1_y {
+.class_2_circle {
 	filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.161));
 	position: absolute;
 	overflow: visible;
@@ -190,7 +197,7 @@
 	left: 0px;
 	top: 1px;
 }
-#Prob__Stats_1 {
+#class_2_name {
 	left: 77px;
 	top: 0px;
 	position: absolute;
@@ -198,13 +205,13 @@
 	width: 205px;
 	height: 27px;
 	text-align: left;
-	font-family: Poppins;
+	font-family: Helvetica Neue;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 20px;
 	color: rgba(93,63,53,1);
 }
-#sleep_entry_ {
+#class_2_time {
 	opacity: 0.45;
 	left: 77px;
 	top: 25px;
@@ -213,7 +220,7 @@
 	width: 205px;
 	height: 27px;
 	text-align: left;
-	font-family: Poppins;
+	font-family: Helvetica Neue;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 20px;
@@ -224,13 +231,13 @@
 	width: 281px;
 	height: 52px;
 	left: 0px;
-	top: 129px;
+	top: 52px;
 	overflow: visible;
 }
-#Ellipse_1_ {
+#class_1_circle {
 	fill: rgba(198,180,168,1);
 }
-.Ellipse_1_ {
+.class_1_circle {
 	filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.161));
 	position: absolute;
 	overflow: visible;
@@ -239,7 +246,7 @@
 	left: 0px;
 	top: 1px;
 }
-#Cloud_Computing {
+#class_1_name {
 	left: 77px;
 	top: 0px;
 	position: absolute;
@@ -247,13 +254,13 @@
 	width: 205px;
 	height: 27px;
 	text-align: left;
-	font-family: Poppins;
+	font-family: Helvetica Neue;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 20px;
 	color: rgba(93,63,53,1);
 }
-#sleep_entry_ba {
+#class_1_time {
 	opacity: 0.45;
 	left: 77px;
 	top: 25px;
@@ -262,7 +269,7 @@
 	width: 205px;
 	height: 27px;
 	text-align: left;
-	font-family: Poppins;
+	font-family: Helvetica Neue;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 20px;
@@ -271,20 +278,20 @@
 #tasks {
 	position: absolute;
 	width: 314px;
-	height: 163px;
+	height: 178px;
 	left: 874px;
 	top: 220px;
 	overflow: visible;
 }
-#tasks_ {
+#task_3 {
 	position: absolute;
-	width: 299px;
-	height: 122px;
+	width: 287px;
+	height: 37px;
 	left: 0px;
-	top: 41px;
+	top: 141px;
 	overflow: visible;
 }
-#Ellipse_2 {
+#task_3_circle {
 	fill: rgba(93,63,53,1);
 	stroke: rgba(0,0,0,0);
 	stroke-width: 1px;
@@ -293,7 +300,85 @@
 	stroke-miterlimit: 4;
 	shape-rendering: auto;
 }
-.Ellipse_2 {
+.task_3_circle {
+	position: absolute;
+	overflow: visible;
+	width: 6px;
+	height: 6px;
+	left: 0px;
+	top: 5px;
+}
+#task_3_entry {
+	left: 17px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 271px;
+	height: 37px;
+	text-align: left;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 22px;
+	color: rgba(93,63,53,1);
+}
+#task_2 {
+	position: absolute;
+	width: 299px;
+	height: 37px;
+	left: 0px;
+	top: 93px;
+	overflow: visible;
+}
+#task_2_circle {
+	fill: rgba(93,63,53,1);
+	stroke: rgba(0,0,0,0);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.task_2_circle {
+	position: absolute;
+	overflow: visible;
+	width: 6px;
+	height: 6px;
+	left: 0px;
+	top: 5px;
+}
+#task_2_entry {
+	left: 17px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 283px;
+	height: 37px;
+	text-align: left;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 22px;
+	color: rgba(93,63,53,1);
+}
+#task_1 {
+	position: absolute;
+	width: 293px;
+	height: 37px;
+	left: 0px;
+	top: 41px;
+	overflow: visible;
+}
+#task_1_circle {
+	fill: rgba(93,63,53,1);
+	stroke: rgba(0,0,0,0);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.task_1_circle {
 	position: absolute;
 	overflow: visible;
 	width: 6px;
@@ -301,83 +386,21 @@
 	left: 0px;
 	top: 9px;
 }
-#Print_resume_for_career_fair {
+#task_1_entry {
 	left: 17px;
 	top: 0px;
 	position: absolute;
 	overflow: visible;
 	width: 277px;
-	height: 26px;
+	height: 37px;
 	text-align: left;
-	font-family: Poppins;
+	font-family: Helvetica Neue;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 22px;
 	color: rgba(93,63,53,1);
 }
-#Ellipse_3 {
-	fill: rgba(93,63,53,1);
-	stroke: rgba(0,0,0,0);
-	stroke-width: 1px;
-	stroke-linejoin: miter;
-	stroke-linecap: butt;
-	stroke-miterlimit: 4;
-	shape-rendering: auto;
-}
-.Ellipse_3 {
-	position: absolute;
-	overflow: visible;
-	width: 6px;
-	height: 6px;
-	left: 0px;
-	top: 57px;
-}
-#Checkout_book_from_library {
-	left: 17px;
-	top: 48px;
-	position: absolute;
-	overflow: visible;
-	width: 283px;
-	height: 26px;
-	text-align: left;
-	font-family: Poppins;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 22px;
-	color: rgba(93,63,53,1);
-}
-#Ellipse_4 {
-	fill: rgba(93,63,53,1);
-	stroke: rgba(0,0,0,0);
-	stroke-width: 1px;
-	stroke-linejoin: miter;
-	stroke-linecap: butt;
-	stroke-miterlimit: 4;
-	shape-rendering: auto;
-}
-.Ellipse_4 {
-	position: absolute;
-	overflow: visible;
-	width: 6px;
-	height: 6px;
-	left: 0px;
-	top: 105px;
-}
-#Find_tutoring_center_hours {
-	left: 17px;
-	top: 96px;
-	position: absolute;
-	overflow: visible;
-	width: 271px;
-	height: 26px;
-	text-align: left;
-	font-family: Poppins;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 22px;
-	color: rgba(93,63,53,1);
-}
-#School_tasks {
+#tasks_question {
 	left: 0px;
 	top: 0px;
 	position: absolute;
@@ -385,18 +408,18 @@
 	width: 315px;
 	height: 27px;
 	text-align: left;
-	font-family: Poppins;
+	font-family: Helvetica Neue;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 24px;
 	color: rgba(93,63,53,0.6);
 }
-#description {
+#calendar {
 	position: absolute;
 	width: 541px;
 	height: 179.706px;
 	left: 264px;
-	top: 360.62px;
+	top: 462px;
 	overflow: visible;
 }
 #cal_3 {
@@ -407,7 +430,7 @@
 	top: 143px;
 	overflow: visible;
 }
-#sleep_entry_bg {
+#cal_3_entry {
 	left: 48px;
 	top: 3px;
 	position: absolute;
@@ -415,13 +438,13 @@
 	width: 489px;
 	height: 26px;
 	text-align: left;
-	font-family: Poppins;
+	font-family: Helvetica Neue;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 22px;
 	color: rgba(93,63,53,1);
 }
-#cal_empty {
+#cal_3_empty {
 	position: absolute;
 	width: 32px;
 	height: 36.706px;
@@ -437,7 +460,7 @@
 	top: 88px;
 	overflow: visible;
 }
-#sleep_entry_bj {
+#cal_2_entry {
 	left: 48px;
 	top: 7px;
 	position: absolute;
@@ -445,13 +468,13 @@
 	width: 489px;
 	height: 26px;
 	text-align: left;
-	font-family: Poppins;
+	font-family: Helvetica Neue;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 22px;
 	color: rgba(93,63,53,1);
 }
-#cal_empty_bk {
+#cal_2_empty {
 	position: absolute;
 	width: 32px;
 	height: 36.706px;
@@ -467,7 +490,7 @@
 	top: 37px;
 	overflow: visible;
 }
-#sleep_entry_bm {
+#cal_1_entry {
 	left: 48px;
 	top: 7px;
 	position: absolute;
@@ -475,13 +498,14 @@
 	width: 489px;
 	height: 26px;
 	text-align: left;
-	font-family: Poppins;
+	font-family: Helvetica Neue;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 22px;
 	color: rgba(93,63,53,1);
 }
-#cal_filled {
+#cal_1_filled {
+	opacity: 0.997;
 	position: absolute;
 	width: 32px;
 	height: 36.706px;
@@ -489,7 +513,7 @@
 	top: 0px;
 	overflow: visible;
 }
-#What_describes_your_feelings {
+#calendar_txt {
 	left: 0px;
 	top: 0px;
 	position: absolute;
@@ -497,82 +521,121 @@
 	width: 398px;
 	height: 27px;
 	text-align: left;
-	font-family: Poppins;
+	font-family: Helvetica Neue;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 24px;
 	color: rgba(93,63,53,0.6);
 }
-#feeling {
+#goals {
 	position: absolute;
-	width: 428px;
-	height: 102px;
+	width: 541px;
+	height: 176.108px;
 	left: 264px;
 	top: 220px;
 	overflow: visible;
 }
-#emoji_bar {
+#goal_3 {
 	position: absolute;
-	width: 428px;
-	height: 45px;
+	width: 537px;
+	height: 33.108px;
+	left: 4px;
+	top: 143px;
+	overflow: visible;
+}
+#goal_3_entry {
+	left: 49px;
+	top: 3px;
+	position: absolute;
+	overflow: visible;
+	width: 489px;
+	height: 26px;
+	text-align: left;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 22px;
+	color: rgba(93,63,53,1);
+}
+#chkbox_filled {
+	display: none;
+	position: absolute;
+	width: 43px;
+	height: 40.367px;
+	left: -4px;
+	top: -4px;
+	overflow: visible;
+}
+#chkbox_empty {
+	opacity: 0.6;
+	position: absolute;
+	width: 35px;
+	height: 33.108px;
 	left: 0px;
-	top: 57px;
+	top: 0px;
 	overflow: visible;
 }
-#pouting_emoji {
-	opacity: 0.304;
+#goal_2 {
 	position: absolute;
-	width: 45px;
-	height: 45px;
+	width: 541px;
+	height: 40.367px;
+	left: 0px;
+	top: 88px;
+	overflow: visible;
+}
+#goal_2_entry {
+	left: 53px;
+	top: 7px;
+	position: absolute;
+	overflow: visible;
+	width: 489px;
+	height: 26px;
+	text-align: left;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 22px;
+	color: rgba(93,63,53,1);
+}
+#chkbox_filled_b {
+	position: absolute;
+	width: 43px;
+	height: 40.367px;
 	left: 0px;
 	top: 0px;
 	overflow: visible;
 }
-#crying_emoji {
-	opacity: 0.302;
+#goal_1 {
 	position: absolute;
-	width: 45px;
-	height: 45px;
-	left: 77px;
+	width: 541px;
+	height: 40.367px;
+	left: 0px;
+	top: 37px;
+	overflow: visible;
+}
+#goal_1_entry {
+	left: 53px;
+	top: 7px;
+	position: absolute;
+	overflow: visible;
+	width: 489px;
+	height: 26px;
+	text-align: left;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 22px;
+	color: rgba(93,63,53,1);
+}
+#chkbox_filled_ca {
+	position: absolute;
+	width: 43px;
+	height: 40.367px;
+	left: 0px;
 	top: 0px;
 	overflow: visible;
 }
-#worried_emoji {
-	opacity: 0.299;
-	position: absolute;
-	width: 45px;
-	height: 45px;
-	left: 153px;
-	top: 0px;
-	overflow: visible;
-}
-#neutral_emoji {
-	opacity: 0.3;
-	position: absolute;
-	width: 45px;
-	height: 45px;
-	left: 230px;
-	top: 0px;
-	overflow: visible;
-}
-#smiling_emoji {
-	position: absolute;
-	width: 45.368px;
-	height: 44.72px;
-	left: 306.072px;
-	top: 0px;
-	overflow: visible;
-}
-#joyful_emoji {
-	opacity: 0.295;
-	position: absolute;
-	width: 45px;
-	height: 45px;
-	left: 383px;
-	top: 0px;
-	overflow: visible;
-}
-#How_are_you_feeling_right_now {
+#goals_question {
 	left: 0px;
 	top: 0px;
 	position: absolute;
@@ -580,13 +643,13 @@
 	width: 398px;
 	height: 27px;
 	text-align: left;
-	font-family: Poppins;
+	font-family: Helvetica Neue;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 24px;
 	color: rgba(93,63,53,0.6);
 }
-#divider {
+#page_divider {
 	opacity: 0.6;
 	fill: transparent;
 	stroke: rgba(198,180,168,1);
@@ -596,7 +659,7 @@
 	stroke-miterlimit: 4;
 	shape-rendering: auto;
 }
-.divider {
+.page_divider {
 	overflow: visible;
 	position: absolute;
 	width: 3px;
@@ -605,7 +668,7 @@
 	top: 193px;
 	transform: matrix(1,0,0,1,0,0);
 }
-#statement_date {
+#date_prompt {
 	left: 436px;
 	top: 120px;
 	position: absolute;
@@ -613,7 +676,7 @@
 	width: 560px;
 	height: 54px;
 	text-align: center;
-	font-family: Poppins;
+	font-family: Helvetica Neue;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 36px;
@@ -628,7 +691,7 @@
 	overflow: visible;
 	--web-animation: fadein undefineds undefined;
 	--web-action-type: page;
-	--web-action-target: Journal_Main.html;
+	--web-action-target: journal_main.html;
 	cursor: pointer;
 }
 #Nav_Bar {
@@ -639,10 +702,10 @@
 	top: 31px;
 	overflow: visible;
 }
-#Rectangle_2 {
+#nav_bar_box {
 	fill: rgba(254,249,244,1);
 }
-.Rectangle_2 {
+.nav_bar_box {
 	filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.161));
 	position: absolute;
 	overflow: visible;
@@ -661,7 +724,7 @@
 	line-height: 32px;
 	margin-top: -4px;
 	text-align: left;
-	font-family: Poppins;
+	font-family: Helvetica Neue;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 24px;
@@ -677,7 +740,7 @@
 	line-height: 32px;
 	margin-top: -4px;
 	text-align: left;
-	font-family: Poppins;
+	font-family: Helvetica Neue;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 24px;
@@ -690,10 +753,14 @@
 	overflow: visible;
 	width: 71px;
 	white-space: nowrap;
+	--web-animation: fadein undefineds undefined;
+	--web-action-type: page;
+	--web-action-target: fourm_main.html;
+	cursor: pointer;
 	line-height: 32px;
 	margin-top: -4px;
 	text-align: left;
-	font-family: Poppins;
+	font-family: Helvetica Neue;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 24px;
@@ -706,14 +773,10 @@
 	overflow: visible;
 	width: 84px;
 	white-space: nowrap;
-	--web-animation: fadein undefineds undefined;
-	--web-action-type: page;
-	--web-action-target: Journal_Main.html;
-	cursor: pointer;
 	line-height: 32px;
 	margin-top: -4px;
 	text-align: left;
-	font-family: Poppins;
+	font-family: Helvetica Neue;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 24px;
@@ -729,14 +792,13 @@
 	line-height: 32px;
 	margin-top: -4px;
 	text-align: left;
-	font-family: Poppins;
+	font-family: Helvetica Neue;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 24px;
 	color: rgba(135,95,74,1);
 }
 #Dashboard {
-	opacity: 0.997;
 	left: 157px;
 	top: 21px;
 	position: absolute;
@@ -746,7 +808,7 @@
 	line-height: 32px;
 	margin-top: -4px;
 	text-align: left;
-	font-family: Poppins;
+	font-family: Helvetica Neue;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 24px;
@@ -760,7 +822,7 @@
 	top: 9px;
 	overflow: visible;
 }
-#Line_1 {
+#nav_bar_divider {
 	fill: transparent;
 	stroke: rgba(240,222,203,1);
 	stroke-width: 1px;
@@ -769,7 +831,7 @@
 	stroke-miterlimit: 4;
 	shape-rendering: auto;
 }
-.Line_1 {
+.nav_bar_divider {
 	overflow: visible;
 	position: absolute;
 	width: 1px;

@@ -4,17 +4,17 @@
 <meta charset="utf-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>journal_main</title>
-<link rel="stylesheet" type="text/css" id="applicationStylesheet" href="css/journal_main.css"/>
+<title>new_entry</title>
+<link rel="stylesheet" type="text/css" id="applicationStylesheet" href="css/new_entry.css"/>
   <!-- Add Poppins font from main-->
   <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto+Condensed:ital,wght@0,400;1,700&display=swap"
         rel="stylesheet">
   <link rel="stylesheet" href="css/main.css" />
-<script id="applicationScript" type="text/javascript" src="js/journal_main.js"></script>
+<script id="applicationScript" type="text/javascript" src="js/new_entry.js"></script>
 </head>
 <body>
-<div id="journal_main">
-	<div onclick="application.goToTargetView(event)" id="journal_page">
+<div id="new_entry">
+	<div id="journal_page">
 		<svg class="journal_page_box">
 			<rect id="journal_page_box" rx="20" ry="20" x="0" y="0" width="476" height="309">
 			</rect>
@@ -34,7 +34,7 @@
 			<span>3:54pm</span>
 		</div>
 	</div>
-	<div onclick="application.goToTargetView(event)" id="daily_planner">
+	<div id="daily_planner">
 		<svg class="daily_planner_box">
 			<rect id="daily_planner_box" rx="20" ry="20" x="0" y="0" width="476" height="309">
 			</rect>
@@ -71,7 +71,7 @@
 			</div>
 		</div>
 	</div>
-	<div onclick="application.goToTargetView(event)" id="emo_check_in">
+	<div id="emo_check_in">
 		<svg class="check_in_box">
 			<rect id="check_in_box" rx="20" ry="20" x="0" y="0" width="476" height="309">
 			</rect>
@@ -110,7 +110,7 @@
 			</div>
 		</div>
 	</div>
-	<div onclick="application.goToTargetView(event)" id="morning_motivation">
+	<div id="morning_motivation">
 		<svg class="morning_motivation_box">
 			<rect id="morning_motivation_box" rx="20" ry="20" x="0" y="0" width="476" height="309">
 			</rect>
@@ -237,7 +237,7 @@
 		<div id="Analytics">
 			<span>Analytics</span>
 		</div>
-		<div onclick="application.goToTargetView(event)" id="Forms">
+		<div id="Forms">
 			<span>Forms</span>
 		</div>
 		<div id="Journal">
@@ -256,14 +256,90 @@
 			</path>
 		</svg>
 	</div>
-	<div onclick="application.goToTargetView(event)" id="btnNew_Entry">
-		<svg class="entry_box">
-			<rect id="entry_box" rx="20" ry="20" x="0" y="0" width="321" height="65">
+	<div id="btnNew_Entry">
+		<svg class="new_entry_box">
+			<rect id="new_entry_box" rx="20" ry="20" x="0" y="0" width="321" height="65">
 			</rect>
 		</svg>
-		<div id="entry_text">
+		<div id="new_entry_c">
 			<span>New Entry</span>
 		</div>
+	</div>
+	<svg class="shadow">
+		<rect id="shadow" rx="0" ry="0" x="0" y="0" width="1440" height="1024">
+		</rect>
+	</svg>
+	<div id="new_entry_prompt">
+		<svg class="new_entry_box_c">
+			<rect id="new_entry_box_c" rx="20" ry="20" x="0" y="0" width="832" height="489">
+			</rect>
+		</svg>
+		<div id="btn_plus">
+			<svg class="plus_circle">
+				<ellipse id="plus_circle" rx="38" ry="37.5" cx="38" cy="37.5">
+				</ellipse>
+			</svg>
+			<div id="plus_icon">
+				<svg class="Path_1" viewBox="18 7.5 3 32.622">
+					<path id="Path_1" d="M 18 7.500000953674316 L 18 40.1221923828125">
+					</path>
+				</svg>
+				<svg class="Path_2" viewBox="7.5 18 35.745 3">
+					<path id="Path_2" d="M 7.499999523162842 18 L 43.2449951171875 18">
+					</path>
+				</svg>
+			</div>
+		</div>
+		<div onclick="application.goToTargetView(event)" id="empty_page">
+			<svg class="empty_page_box">
+				<rect id="empty_page_box" rx="20" ry="20" x="0" y="0" width="321" height="65">
+				</rect>
+			</svg>
+			<div id="empty_journal_page">
+				<span>Empty journal page</span>
+			</div>
+		</div>
+		<div onclick="application.goToTargetView(event)" id="emo_check_in_dg">
+			<svg class="emo_check_in_box">
+				<rect id="emo_check_in_box" rx="20" ry="20" x="0" y="0" width="321" height="65">
+				</rect>
+			</svg>
+			<div id="emo_check_in_txt">
+				<span>Emotional check-in</span>
+			</div>
+		</div>
+		<div id="day_recap">
+			<svg class="day_recap_box">
+				<rect id="day_recap_box" rx="20" ry="20" x="0" y="0" width="321" height="65">
+				</rect>
+			</svg>
+			<div id="day_recap_txt">
+				<span>Day recap</span>
+			</div>
+		</div>
+		<div onclick="application.goToTargetView(event)" id="daily_planner_dm">
+			<svg class="daily_planner_box_dn">
+				<rect id="daily_planner_box_dn" rx="20" ry="20" x="0" y="0" width="321" height="65">
+				</rect>
+			</svg>
+			<div id="daily_planner_txt">
+				<span>Daily planner</span>
+			</div>
+		</div>
+		<div onclick="application.goToTargetView(event)" id="morning_motivation_dp">
+			<svg class="morn_mot_box">
+				<rect id="morn_mot_box" rx="20" ry="20" x="0" y="0" width="321" height="65">
+				</rect>
+			</svg>
+			<div id="morn_mot_txt">
+				<span>Morning motivation</span>
+			</div>
+		</div>
+		<div id="journal_question">
+			<span>What would you like to journal?</span>
+		</div>
+		<img onclick="application.goToTargetView(event)" id="back_arrow_icon" src="img/back_arrow_icon.png" srcset="img/back_arrow_icon.png img/back_arrow_icon@2x.png.png 2x">
+
 	</div>
 </div>
 </body>
