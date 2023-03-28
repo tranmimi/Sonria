@@ -1,11 +1,11 @@
 .mediaViewInfo {
-	--web-view-name: Journal_Daily_Planner;
-	--web-view-id: Journal_Daily_Planner;
+	--web-view-name: Journal_Check_In;
+	--web-view-id: Journal_Check_In;
 	--web-scale-on-resize: true;
 	--web-enable-deep-linking: true;
 }
 :root {
-	--web-view-ids: Journal_Daily_Planner;
+	--web-view-ids: Journal_Check_In;
 }
 * {
 	margin: 0;
@@ -13,14 +13,14 @@
 	box-sizing: border-box;
 	border: none;
 }
-#Journal_Daily_Planner {
+#Journal_Check_In {
 	position: absolute;
 	width: 1440px;
 	height: 1024px;
 	background-color: rgba(231,226,222,1);
 	overflow: hidden;
-	--web-view-name: Journal_Daily_Planner;
-	--web-view-id: Journal_Daily_Planner;
+	--web-view-name: Journal_Check_In;
+	--web-view-id: Journal_Check_In;
 	--web-scale-on-resize: true;
 	--web-enable-deep-linking: true;
 }
@@ -42,10 +42,10 @@
 	width: 566px;
 	height: 202px;
 	left: 264px;
-	top: 731px;
+	top: 588px;
 	overflow: visible;
 }
-#Notes_n {
+#What_are_you_doing {
 	left: 0px;
 	top: 0px;
 	position: absolute;
@@ -53,7 +53,7 @@
 	width: 398px;
 	height: 27px;
 	text-align: left;
-	font-family: Helvetica Neue;
+	font-family: Poppins;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 24px;
@@ -67,7 +67,7 @@
 	width: 567px;
 	height: 165px;
 	text-align: left;
-	font-family: Helvetica Neue;
+	font-family: Poppins;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 24px;
@@ -89,7 +89,7 @@
 	width: 315px;
 	height: 27px;
 	text-align: left;
-	font-family: Helvetica Neue;
+	font-family: Poppins;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 24px;
@@ -149,7 +149,7 @@
 	width: 205px;
 	height: 27px;
 	text-align: left;
-	font-family: Helvetica Neue;
+	font-family: Poppins;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 20px;
@@ -164,7 +164,7 @@
 	width: 205px;
 	height: 27px;
 	text-align: left;
-	font-family: Helvetica Neue;
+	font-family: Poppins;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 20px;
@@ -198,7 +198,7 @@
 	width: 205px;
 	height: 27px;
 	text-align: left;
-	font-family: Helvetica Neue;
+	font-family: Poppins;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 20px;
@@ -213,7 +213,7 @@
 	width: 205px;
 	height: 27px;
 	text-align: left;
-	font-family: Helvetica Neue;
+	font-family: Poppins;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 20px;
@@ -247,7 +247,7 @@
 	width: 205px;
 	height: 27px;
 	text-align: left;
-	font-family: Helvetica Neue;
+	font-family: Poppins;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 20px;
@@ -262,7 +262,7 @@
 	width: 205px;
 	height: 27px;
 	text-align: left;
-	font-family: Helvetica Neue;
+	font-family: Poppins;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 20px;
@@ -309,7 +309,7 @@
 	width: 277px;
 	height: 26px;
 	text-align: left;
-	font-family: Helvetica Neue;
+	font-family: Poppins;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 22px;
@@ -340,7 +340,7 @@
 	width: 283px;
 	height: 26px;
 	text-align: left;
-	font-family: Helvetica Neue;
+	font-family: Poppins;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 22px;
@@ -371,7 +371,7 @@
 	width: 271px;
 	height: 26px;
 	text-align: left;
-	font-family: Helvetica Neue;
+	font-family: Poppins;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 22px;
@@ -385,18 +385,18 @@
 	width: 315px;
 	height: 27px;
 	text-align: left;
-	font-family: Helvetica Neue;
+	font-family: Poppins;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 24px;
 	color: rgba(93,63,53,0.6);
 }
-#calendar {
+#description {
 	position: absolute;
 	width: 541px;
 	height: 179.706px;
 	left: 264px;
-	top: 462px;
+	top: 360.62px;
 	overflow: visible;
 }
 #cal_3 {
@@ -415,7 +415,7 @@
 	width: 489px;
 	height: 26px;
 	text-align: left;
-	font-family: Helvetica Neue;
+	font-family: Poppins;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 22px;
@@ -445,7 +445,7 @@
 	width: 489px;
 	height: 26px;
 	text-align: left;
-	font-family: Helvetica Neue;
+	font-family: Poppins;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 22px;
@@ -475,7 +475,7 @@
 	width: 489px;
 	height: 26px;
 	text-align: left;
-	font-family: Helvetica Neue;
+	font-family: Poppins;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 22px;
@@ -489,7 +489,7 @@
 	top: 0px;
 	overflow: visible;
 }
-#Calendar_bo {
+#What_describes_your_feelings {
 	left: 0px;
 	top: 0px;
 	position: absolute;
@@ -497,121 +497,82 @@
 	width: 398px;
 	height: 27px;
 	text-align: left;
-	font-family: Helvetica Neue;
+	font-family: Poppins;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 24px;
 	color: rgba(93,63,53,0.6);
 }
-#goals {
+#feeling {
 	position: absolute;
-	width: 541px;
-	height: 176.108px;
+	width: 428px;
+	height: 102px;
 	left: 264px;
 	top: 220px;
 	overflow: visible;
 }
-#goal_3 {
+#emoji_bar {
 	position: absolute;
-	width: 537px;
-	height: 33.108px;
-	left: 4px;
-	top: 143px;
+	width: 428px;
+	height: 45px;
+	left: 0px;
+	top: 57px;
 	overflow: visible;
 }
-#sleep_entry_br {
-	left: 49px;
-	top: 3px;
+#pouting_emoji {
+	opacity: 0.304;
 	position: absolute;
-	overflow: visible;
-	width: 489px;
-	height: 26px;
-	text-align: left;
-	font-family: Helvetica Neue;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 22px;
-	color: rgba(93,63,53,1);
-}
-#chkbox_filled {
-	display: none;
-	position: absolute;
-	width: 43px;
-	height: 40.367px;
-	left: -4px;
-	top: -4px;
-	overflow: visible;
-}
-#chkbox_empty {
-	opacity: 0.6;
-	position: absolute;
-	width: 35px;
-	height: 33.108px;
+	width: 45px;
+	height: 45px;
 	left: 0px;
 	top: 0px;
 	overflow: visible;
 }
-#goal_2 {
+#crying_emoji {
+	opacity: 0.302;
 	position: absolute;
-	width: 541px;
-	height: 40.367px;
-	left: 0px;
-	top: 88px;
-	overflow: visible;
-}
-#sleep_entry_bv {
-	left: 53px;
-	top: 7px;
-	position: absolute;
-	overflow: visible;
-	width: 489px;
-	height: 26px;
-	text-align: left;
-	font-family: Helvetica Neue;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 22px;
-	color: rgba(93,63,53,1);
-}
-#chkbox_filled_bw {
-	position: absolute;
-	width: 43px;
-	height: 40.367px;
-	left: 0px;
+	width: 45px;
+	height: 45px;
+	left: 77px;
 	top: 0px;
 	overflow: visible;
 }
-#goal_1 {
+#worried_emoji {
+	opacity: 0.299;
 	position: absolute;
-	width: 541px;
-	height: 40.367px;
-	left: 0px;
-	top: 37px;
-	overflow: visible;
-}
-#sleep_entry_by {
-	left: 53px;
-	top: 7px;
-	position: absolute;
-	overflow: visible;
-	width: 489px;
-	height: 26px;
-	text-align: left;
-	font-family: Helvetica Neue;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 22px;
-	color: rgba(93,63,53,1);
-}
-#chkbox_filled_bz {
-	position: absolute;
-	width: 43px;
-	height: 40.367px;
-	left: 0px;
+	width: 45px;
+	height: 45px;
+	left: 153px;
 	top: 0px;
 	overflow: visible;
 }
-#Goals_for_the_day {
+#neutral_emoji {
+	opacity: 0.3;
+	position: absolute;
+	width: 45px;
+	height: 45px;
+	left: 230px;
+	top: 0px;
+	overflow: visible;
+}
+#smiling_emoji {
+	position: absolute;
+	width: 45.368px;
+	height: 44.72px;
+	left: 306.072px;
+	top: 0px;
+	overflow: visible;
+}
+#joyful_emoji {
+	opacity: 0.295;
+	position: absolute;
+	width: 45px;
+	height: 45px;
+	left: 383px;
+	top: 0px;
+	overflow: visible;
+}
+#How_are_you_feeling_right_now {
 	left: 0px;
 	top: 0px;
 	position: absolute;
@@ -619,7 +580,7 @@
 	width: 398px;
 	height: 27px;
 	text-align: left;
-	font-family: Helvetica Neue;
+	font-family: Poppins;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 24px;
@@ -644,7 +605,7 @@
 	top: 193px;
 	transform: matrix(1,0,0,1,0,0);
 }
-#Today_is_Saturday_February_25 {
+#statement_date {
 	left: 436px;
 	top: 120px;
 	position: absolute;
@@ -652,7 +613,7 @@
 	width: 560px;
 	height: 54px;
 	text-align: center;
-	font-family: Helvetica Neue;
+	font-family: Poppins;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 36px;
@@ -700,7 +661,7 @@
 	line-height: 32px;
 	margin-top: -4px;
 	text-align: left;
-	font-family: Helvetica Neue;
+	font-family: Poppins;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 24px;
@@ -716,7 +677,7 @@
 	line-height: 32px;
 	margin-top: -4px;
 	text-align: left;
-	font-family: Helvetica Neue;
+	font-family: Poppins;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 24px;
@@ -732,7 +693,7 @@
 	line-height: 32px;
 	margin-top: -4px;
 	text-align: left;
-	font-family: Helvetica Neue;
+	font-family: Poppins;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 24px;
@@ -752,7 +713,7 @@
 	line-height: 32px;
 	margin-top: -4px;
 	text-align: left;
-	font-family: Helvetica Neue;
+	font-family: Poppins;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 24px;
@@ -768,7 +729,7 @@
 	line-height: 32px;
 	margin-top: -4px;
 	text-align: left;
-	font-family: Helvetica Neue;
+	font-family: Poppins;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 24px;
@@ -785,7 +746,7 @@
 	line-height: 32px;
 	margin-top: -4px;
 	text-align: left;
-	font-family: Helvetica Neue;
+	font-family: Poppins;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 24px;

@@ -4,13 +4,18 @@
 <meta charset="utf-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Journal_New_Entry</title>
-<link rel="stylesheet" type="text/css" id="applicationStylesheet" href="css/Journal_New_Entry.css"/>
-<script id="applicationScript" type="text/javascript" src="js/Journal_New_Entry.js"></script>
+<title>Journal_Main</title>
+<link rel="stylesheet" type="text/css" id="applicationStylesheet" href="css/journal_main.css"/>
+<!-- Add Poppins font-->
+<link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto+Condensed:ital,wght@0,400;1,700&display=swap"
+	rel="stylesheet">
+<link rel="stylesheet" href="css/main.css" />
+
+<script id="applicationScript" type="text/javascript" src="js/Journal_Main.js"></script>
 </head>
 <body>
-<div id="Journal_New_Entry">
-	<div id="journal_page">
+<div id="Journal_Main">
+	<div onclick="application.goToTargetView(event)" id="journal_page">
 		<svg class="Rectangle_1">
 			<rect id="Rectangle_1" rx="20" ry="20" x="0" y="0" width="476" height="309">
 			</rect>
@@ -32,7 +37,7 @@
 			</div>
 		</div>
 	</div>
-	<div id="daily_planner">
+	<div onclick="application.goToTargetView(event)" id="daily_planner">
 		<div id="daily_planner_u">
 			<svg class="Rectangle_1_v">
 				<rect id="Rectangle_1_v" rx="20" ry="20" x="0" y="0" width="476" height="309">
@@ -71,7 +76,7 @@
 			</div>
 		</div>
 	</div>
-	<div id="emo_check_in">
+	<div onclick="application.goToTargetView(event)" id="emo_check_in">
 		<div id="check_in_prompt">
 			<div id="emo_check_in_">
 				<svg class="Rectangle_1_ba">
@@ -91,17 +96,17 @@
 				<span>How are you feeling right now?</span>
 			</div>
 			<div id="emoji_feeling_bf">
-				<img id="pouting_emoji" src="img/pouting_emoji.png" srcset="img/pouting_emoji.png 1x, img/pouting_emoji@2x.png 2x">
+				<img id="pouting_emoji" src="img/pouting_emoji.png" srcset="img/pouting_emoji.png img/pouting_emoji@2x.png.png 2x">
 					
-				<img id="crying_emoji" src="img/crying_emoji.png" srcset="img/crying_emoji.png 1x, img/crying_emoji@2x.png 2x">
+				<img id="crying_emoji" src="img/crying_emoji.png" srcset="img/crying_emoji.png img/crying_emoji@2x.png.png 2x">
 					
-				<img id="worried_emoji" src="img/worried_emoji.png" srcset="img/worried_emoji.png 1x, img/worried_emoji@2x.png 2x">
+				<img id="worried_emoji" src="img/worried_emoji.png" srcset="img/worried_emoji.png img/worried_emoji@2x.png.png 2x">
 					
-				<img id="neutral_emoji" src="img/neutral_emoji.png" srcset="img/neutral_emoji.png 1x, img/neutral_emoji@2x.png 2x">
+				<img id="neutral_emoji" src="img/neutral_emoji.png" srcset="img/neutral_emoji.png img/neutral_emoji@2x.png.png 2x">
 					
-				<img id="smiling_emoji" src="img/smiling_emoji.png" srcset="img/smiling_emoji.png 1x, img/smiling_emoji@2x.png 2x">
+				<img id="smiling_emoji" src="img/smiling_emoji.png" srcset="img/smiling_emoji.png img/smiling_emoji@2x.png.png 2x">
 					
-				<img id="joyful_emoji" src="img/joyful_emoji.png" srcset="img/joyful_emoji.png 1x, img/joyful_emoji@2x.png 2x">
+				<img id="joyful_emoji" src="img/joyful_emoji.png" srcset="img/joyful_emoji.png img/joyful_emoji@2x.png.png 2x">
 					
 			</div>
 		</div>
@@ -114,7 +119,7 @@
 			</div>
 		</div>
 	</div>
-	<div id="morning_motivation">
+	<div onclick="application.goToTargetView(event)" id="morning_motivation">
 		<div id="morn_mot">
 			<svg class="Rectangle_1_br">
 				<rect id="Rectangle_1_br" rx="20" ry="20" x="0" y="0" width="476" height="309">
@@ -159,9 +164,9 @@
 	</div>
 	<div id="date_scroll_bar">
 		<div id="change_date">
-			<img id="left_date" src="img/left_date.png" srcset="img/left_date.png 1x, img/left_date@2x.png 2x">
+			<img id="left_date" src="img/left_date.png" srcset="img/left_date.png img/left_date@2x.png.png 2x">
 				
-			<img id="right_date" src="img/right_date.png" srcset="img/right_date.png 1x, img/right_date@2x.png 2x">
+			<img id="right_date" src="img/right_date.png" srcset="img/right_date.png img/right_date@2x.png.png 2x">
 				
 		</div>
 		<div id="dates">
@@ -264,7 +269,7 @@
 			</path>
 		</svg>
 	</div>
-	<div id="btnNew_Entry">
+	<div onclick="application.goToTargetView(event)" id="btnNew_Entry">
 		<svg class="Rectangle_4">
 			<rect id="Rectangle_4" rx="20" ry="20" x="0" y="0" width="321" height="65">
 			</rect>
@@ -272,82 +277,6 @@
 		<div id="New_Entry">
 			<span>New Entry</span>
 		</div>
-	</div>
-	<svg class="shadow">
-		<rect id="shadow" rx="0" ry="0" x="0" y="0" width="1440" height="1024">
-		</rect>
-	</svg>
-	<div id="new_entry_prompt">
-		<svg class="Rectangle_6">
-			<rect id="Rectangle_6" rx="20" ry="20" x="0" y="0" width="832" height="489">
-			</rect>
-		</svg>
-		<div id="btn_plus">
-			<svg class="Ellipse_5">
-				<ellipse id="Ellipse_5" rx="38" ry="37.5" cx="38" cy="37.5">
-				</ellipse>
-			</svg>
-			<div id="Icon_feather-plus">
-				<svg class="Path_1" viewBox="18 7.5 3 32.622">
-					<path id="Path_1" d="M 18 7.500000953674316 L 18 40.1221923828125">
-					</path>
-				</svg>
-				<svg class="Path_2" viewBox="7.5 18 35.745 3">
-					<path id="Path_2" d="M 7.499999523162842 18 L 43.2449951171875 18">
-					</path>
-				</svg>
-			</div>
-		</div>
-		<div onclick="application.goToTargetView(event)" id="empty_page">
-			<svg class="Rectangle_4_di">
-				<rect id="Rectangle_4_di" rx="20" ry="20" x="0" y="0" width="321" height="65">
-				</rect>
-			</svg>
-			<div id="New_Entry_dj">
-				<span>Empty journal page</span>
-			</div>
-		</div>
-		<div onclick="application.goToTargetView(event)" id="emo_check_in_dk">
-			<svg class="Rectangle_4_dl">
-				<rect id="Rectangle_4_dl" rx="20" ry="20" x="0" y="0" width="321" height="65">
-				</rect>
-			</svg>
-			<div id="New_Entry_dm">
-				<span>Emotional check-in</span>
-			</div>
-		</div>
-		<div id="day_recap">
-			<svg class="Rectangle_4_do">
-				<rect id="Rectangle_4_do" rx="20" ry="20" x="0" y="0" width="321" height="65">
-				</rect>
-			</svg>
-			<div id="New_Entry_dp">
-				<span>Day recap</span>
-			</div>
-		</div>
-		<div onclick="application.goToTargetView(event)" id="daily_planner_dq">
-			<svg class="Rectangle_4_dr">
-				<rect id="Rectangle_4_dr" rx="20" ry="20" x="0" y="0" width="321" height="65">
-				</rect>
-			</svg>
-			<div id="New_Entry_ds">
-				<span>Daily planner</span>
-			</div>
-		</div>
-		<div onclick="application.goToTargetView(event)" id="morning_motivation_dt">
-			<svg class="Rectangle_4_du">
-				<rect id="Rectangle_4_du" rx="20" ry="20" x="0" y="0" width="321" height="65">
-				</rect>
-			</svg>
-			<div id="New_Entry_dv">
-				<span>Morning motivation</span>
-			</div>
-		</div>
-		<div id="What_would_you_like_to_journal">
-			<span>What would you like to journal?</span>
-		</div>
-		<img onclick="application.goToTargetView(event)" id="back_arrow_icon" src="img/back_arrow_icon.png" srcset="img/back_arrow_icon.png 1x, img/back_arrow_icon@2x.png 2x">
-			
 	</div>
 </div>
 </body>

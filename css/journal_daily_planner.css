@@ -1,11 +1,11 @@
 .mediaViewInfo {
-	--web-view-name: Journal_Check_In;
-	--web-view-id: Journal_Check_In;
+	--web-view-name: Journal_Daily_Planner;
+	--web-view-id: Journal_Daily_Planner;
 	--web-scale-on-resize: true;
 	--web-enable-deep-linking: true;
 }
 :root {
-	--web-view-ids: Journal_Check_In;
+	--web-view-ids: Journal_Daily_Planner;
 }
 * {
 	margin: 0;
@@ -13,14 +13,14 @@
 	box-sizing: border-box;
 	border: none;
 }
-#Journal_Check_In {
+#Journal_Daily_Planner {
 	position: absolute;
 	width: 1440px;
 	height: 1024px;
 	background-color: rgba(231,226,222,1);
 	overflow: hidden;
-	--web-view-name: Journal_Check_In;
-	--web-view-id: Journal_Check_In;
+	--web-view-name: Journal_Daily_Planner;
+	--web-view-id: Journal_Daily_Planner;
 	--web-scale-on-resize: true;
 	--web-enable-deep-linking: true;
 }
@@ -42,10 +42,10 @@
 	width: 566px;
 	height: 202px;
 	left: 264px;
-	top: 588px;
+	top: 731px;
 	overflow: visible;
 }
-#What_are_you_doing {
+#Notes_n {
 	left: 0px;
 	top: 0px;
 	position: absolute;
@@ -391,12 +391,12 @@
 	font-size: 24px;
 	color: rgba(93,63,53,0.6);
 }
-#description {
+#calendar {
 	position: absolute;
 	width: 541px;
 	height: 179.706px;
 	left: 264px;
-	top: 360.62px;
+	top: 462px;
 	overflow: visible;
 }
 #cal_3 {
@@ -489,7 +489,7 @@
 	top: 0px;
 	overflow: visible;
 }
-#What_describes_your_feelings {
+#Calendar_bo {
 	left: 0px;
 	top: 0px;
 	position: absolute;
@@ -503,76 +503,115 @@
 	font-size: 24px;
 	color: rgba(93,63,53,0.6);
 }
-#feeling {
+#goals {
 	position: absolute;
-	width: 428px;
-	height: 102px;
+	width: 541px;
+	height: 176.108px;
 	left: 264px;
 	top: 220px;
 	overflow: visible;
 }
-#emoji_bar {
+#goal_3 {
 	position: absolute;
-	width: 428px;
-	height: 45px;
+	width: 537px;
+	height: 33.108px;
+	left: 4px;
+	top: 143px;
+	overflow: visible;
+}
+#sleep_entry_br {
+	left: 49px;
+	top: 3px;
+	position: absolute;
+	overflow: visible;
+	width: 489px;
+	height: 26px;
+	text-align: left;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 22px;
+	color: rgba(93,63,53,1);
+}
+#chkbox_filled {
+	display: none;
+	position: absolute;
+	width: 43px;
+	height: 40.367px;
+	left: -4px;
+	top: -4px;
+	overflow: visible;
+}
+#chkbox_empty {
+	opacity: 0.6;
+	position: absolute;
+	width: 35px;
+	height: 33.108px;
 	left: 0px;
-	top: 57px;
+	top: 0px;
 	overflow: visible;
 }
-#pouting_emoji {
-	opacity: 0.304;
+#goal_2 {
 	position: absolute;
-	width: 45px;
-	height: 45px;
+	width: 541px;
+	height: 40.367px;
+	left: 0px;
+	top: 88px;
+	overflow: visible;
+}
+#sleep_entry_bv {
+	left: 53px;
+	top: 7px;
+	position: absolute;
+	overflow: visible;
+	width: 489px;
+	height: 26px;
+	text-align: left;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 22px;
+	color: rgba(93,63,53,1);
+}
+#chkbox_filled_bw {
+	position: absolute;
+	width: 43px;
+	height: 40.367px;
 	left: 0px;
 	top: 0px;
 	overflow: visible;
 }
-#crying_emoji {
-	opacity: 0.302;
+#goal_1 {
 	position: absolute;
-	width: 45px;
-	height: 45px;
-	left: 77px;
+	width: 541px;
+	height: 40.367px;
+	left: 0px;
+	top: 37px;
+	overflow: visible;
+}
+#sleep_entry_by {
+	left: 53px;
+	top: 7px;
+	position: absolute;
+	overflow: visible;
+	width: 489px;
+	height: 26px;
+	text-align: left;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 22px;
+	color: rgba(93,63,53,1);
+}
+#chkbox_filled_bz {
+	position: absolute;
+	width: 43px;
+	height: 40.367px;
+	left: 0px;
 	top: 0px;
 	overflow: visible;
 }
-#worried_emoji {
-	opacity: 0.299;
-	position: absolute;
-	width: 45px;
-	height: 45px;
-	left: 153px;
-	top: 0px;
-	overflow: visible;
-}
-#neutral_emoji {
-	opacity: 0.3;
-	position: absolute;
-	width: 45px;
-	height: 45px;
-	left: 230px;
-	top: 0px;
-	overflow: visible;
-}
-#smiling_emoji {
-	position: absolute;
-	width: 45.368px;
-	height: 44.72px;
-	left: 306.072px;
-	top: 0px;
-	overflow: visible;
-}
-#joyful_emoji {
-	opacity: 0.295;
-	position: absolute;
-	width: 45px;
-	height: 45px;
-	left: 383px;
-	top: 0px;
-	overflow: visible;
-}
-#How_are_you_feeling_right_now {
+#Goals_for_the_day {
 	left: 0px;
 	top: 0px;
 	position: absolute;
@@ -605,7 +644,7 @@
 	top: 193px;
 	transform: matrix(1,0,0,1,0,0);
 }
-#Today_is_Saturday_February_25 {
+#statement_date {
 	left: 436px;
 	top: 120px;
 	position: absolute;

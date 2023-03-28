@@ -1,11 +1,11 @@
 .mediaViewInfo {
-	--web-view-name: Journal_Main;
-	--web-view-id: Journal_Main;
+	--web-view-name: Journal_New_Entry;
+	--web-view-id: Journal_New_Entry;
 	--web-scale-on-resize: true;
 	--web-enable-deep-linking: true;
 }
 :root {
-	--web-view-ids: Journal_Main;
+	--web-view-ids: Journal_New_Entry;
 }
 * {
 	margin: 0;
@@ -13,14 +13,14 @@
 	box-sizing: border-box;
 	border: none;
 }
-#Journal_Main {
+#Journal_New_Entry {
 	position: absolute;
 	width: 1440px;
 	height: 1024px;
 	background-color: rgba(231,226,222,1);
 	overflow: hidden;
-	--web-view-name: Journal_Main;
-	--web-view-id: Journal_Main;
+	--web-view-name: Journal_New_Entry;
+	--web-view-id: Journal_New_Entry;
 	--web-scale-on-resize: true;
 	--web-enable-deep-linking: true;
 }
@@ -32,10 +32,6 @@
 	left: 728px;
 	top: 708px;
 	overflow: visible;
-	--web-animation: fadein undefineds undefined;
-	--web-action-type: page;
-	--web-action-target: Journal_Empty.html;
-	cursor: pointer;
 }
 #Rectangle_1 {
 	fill: rgba(234,218,214,1);
@@ -128,10 +124,6 @@
 	left: 225px;
 	top: 708px;
 	overflow: visible;
-	--web-animation: fadein undefineds undefined;
-	--web-action-type: page;
-	--web-action-target: Journal_Daily_Planner.html;
-	cursor: pointer;
 }
 #daily_planner_u {
 	position: absolute;
@@ -295,10 +287,6 @@
 	left: 730px;
 	top: 375px;
 	overflow: visible;
-	--web-animation: fadein undefineds undefined;
-	--web-action-type: page;
-	--web-action-target: Journal_Check_In.html;
-	cursor: pointer;
 }
 #check_in_prompt {
 	position: absolute;
@@ -482,10 +470,6 @@
 	left: 225px;
 	top: 375px;
 	overflow: visible;
-	--web-animation: fadein undefineds undefined;
-	--web-action-type: page;
-	--web-action-target: Journal_Morning_Motivation.html;
-	cursor: pointer;
 }
 #morn_mot {
 	position: absolute;
@@ -951,7 +935,7 @@
 	font-size: 22px;
 	color: rgba(254,249,244,1);
 }
-#Today_is_Saturday_February_25 {
+#statement_date {
 	left: 436px;
 	top: 120px;
 	position: absolute;
@@ -1114,10 +1098,6 @@
 	left: 560px;
 	top: 931px;
 	overflow: visible;
-	--web-animation: fadein undefineds undefined;
-	--web-action-type: page;
-	--web-action-target: Journal_New_Entry.html;
-	cursor: pointer;
 }
 #Rectangle_4 {
 	fill: rgba(255,243,232,1);
@@ -1144,4 +1124,311 @@
 	font-weight: normal;
 	font-size: 24px;
 	color: rgba(93,63,53,1);
+}
+#shadow {
+	opacity: 0.304;
+	fill: rgba(0,0,0,1);
+}
+.shadow {
+	position: absolute;
+	overflow: visible;
+	width: 1440px;
+	height: 1024px;
+	left: 0px;
+	top: 0px;
+}
+#new_entry_prompt {
+	position: absolute;
+	width: 832px;
+	height: 489px;
+	left: 304px;
+	top: 335px;
+	overflow: visible;
+}
+#Rectangle_6 {
+	fill: rgba(254,249,244,1);
+}
+.Rectangle_6 {
+	position: absolute;
+	overflow: visible;
+	width: 832px;
+	height: 489px;
+	left: 0px;
+	top: 0px;
+}
+#btn_plus {
+	position: absolute;
+	width: 76px;
+	height: 75px;
+	left: 378px;
+	top: 400px;
+	overflow: visible;
+}
+#Ellipse_5 {
+	fill: rgba(255,243,232,1);
+}
+.Ellipse_5 {
+	filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.161));
+	position: absolute;
+	overflow: visible;
+	width: 106px;
+	height: 105px;
+	left: 0px;
+	top: 0px;
+}
+#Icon_feather-plus {
+	position: absolute;
+	width: 35.745px;
+	height: 32.622px;
+	left: 20.127px;
+	top: 21.189px;
+	overflow: visible;
+}
+#Path_1 {
+	fill: transparent;
+	stroke: rgba(93,63,53,1);
+	stroke-width: 3px;
+	stroke-linejoin: round;
+	stroke-linecap: round;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Path_1 {
+	overflow: visible;
+	position: absolute;
+	width: 3px;
+	height: 35.622px;
+	left: 17.873px;
+	top: 0px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Path_2 {
+	fill: transparent;
+	stroke: rgba(93,63,53,1);
+	stroke-width: 3px;
+	stroke-linejoin: round;
+	stroke-linecap: round;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Path_2 {
+	overflow: visible;
+	position: absolute;
+	width: 38.745px;
+	height: 3px;
+	left: 0px;
+	top: 16.311px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#empty_page {
+	position: absolute;
+	width: 321px;
+	height: 65px;
+	left: 452px;
+	top: 217px;
+	overflow: visible;
+	--web-animation: fadein undefineds undefined;
+	--web-action-type: page;
+	--web-action-target: Journal_Empty.html;
+	cursor: pointer;
+}
+#Rectangle_4_di {
+	fill: rgba(255,243,232,1);
+}
+.Rectangle_4_di {
+	filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.161));
+	position: absolute;
+	overflow: visible;
+	width: 351px;
+	height: 95px;
+	left: 0px;
+	top: 0px;
+}
+#New_Entry_dj {
+	left: 24px;
+	top: 14px;
+	position: absolute;
+	overflow: visible;
+	width: 274px;
+	height: 37px;
+	text-align: center;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	color: rgba(93,63,53,1);
+}
+#emo_check_in_dk {
+	position: absolute;
+	width: 321px;
+	height: 65px;
+	left: 452px;
+	top: 127px;
+	overflow: visible;
+	--web-animation: fadein undefineds undefined;
+	--web-action-type: page;
+	--web-action-target: Journal_Check_In.html;
+	cursor: pointer;
+}
+#Rectangle_4_dl {
+	fill: rgba(255,243,232,1);
+}
+.Rectangle_4_dl {
+	filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.161));
+	position: absolute;
+	overflow: visible;
+	width: 351px;
+	height: 95px;
+	left: 0px;
+	top: 0px;
+}
+#New_Entry_dm {
+	left: 24px;
+	top: 14px;
+	position: absolute;
+	overflow: visible;
+	width: 274px;
+	height: 37px;
+	text-align: center;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	color: rgba(93,63,53,1);
+}
+#day_recap {
+	position: absolute;
+	width: 321px;
+	height: 65px;
+	left: 61px;
+	top: 307px;
+	overflow: visible;
+}
+#Rectangle_4_do {
+	fill: rgba(255,243,232,1);
+}
+.Rectangle_4_do {
+	filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.161));
+	position: absolute;
+	overflow: visible;
+	width: 351px;
+	height: 95px;
+	left: 0px;
+	top: 0px;
+}
+#New_Entry_dp {
+	left: 24px;
+	top: 14px;
+	position: absolute;
+	overflow: visible;
+	width: 274px;
+	height: 37px;
+	text-align: center;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	color: rgba(93,63,53,1);
+}
+#daily_planner_dq {
+	position: absolute;
+	width: 321px;
+	height: 65px;
+	left: 61px;
+	top: 217px;
+	overflow: visible;
+	--web-animation: fadein undefineds undefined;
+	--web-action-type: page;
+	--web-action-target: Journal_Daily_Planner.html;
+	cursor: pointer;
+}
+#Rectangle_4_dr {
+	fill: rgba(255,243,232,1);
+}
+.Rectangle_4_dr {
+	filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.161));
+	position: absolute;
+	overflow: visible;
+	width: 351px;
+	height: 95px;
+	left: 0px;
+	top: 0px;
+}
+#New_Entry_ds {
+	left: 24px;
+	top: 14px;
+	position: absolute;
+	overflow: visible;
+	width: 274px;
+	height: 37px;
+	text-align: center;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	color: rgba(93,63,53,1);
+}
+#morning_motivation_dt {
+	position: absolute;
+	width: 321px;
+	height: 65px;
+	left: 61px;
+	top: 127px;
+	overflow: visible;
+	--web-animation: fadein undefineds undefined;
+	--web-action-type: page;
+	--web-action-target: Journal_Morning_Motivation.html;
+	cursor: pointer;
+}
+#Rectangle_4_du {
+	fill: rgba(255,243,232,1);
+}
+.Rectangle_4_du {
+	filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.161));
+	position: absolute;
+	overflow: visible;
+	width: 351px;
+	height: 95px;
+	left: 0px;
+	top: 0px;
+}
+#New_Entry_dv {
+	left: 24px;
+	top: 14px;
+	position: absolute;
+	overflow: visible;
+	width: 274px;
+	height: 37px;
+	text-align: center;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	color: rgba(93,63,53,1);
+}
+#What_would_you_like_to_journal {
+	left: 221px;
+	top: 27px;
+	position: absolute;
+	overflow: visible;
+	width: 392px;
+	height: 49px;
+	text-align: center;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	color: rgba(93,63,53,1);
+}
+#back_arrow_icon {
+	position: absolute;
+	width: 45px;
+	height: 45px;
+	left: 68px;
+	top: 18px;
+	overflow: visible;
+	--web-animation: fadein undefineds undefined;
+	--web-action-type: page;
+	--web-action-target: Journal_Main.html;
+	cursor: pointer;
 }

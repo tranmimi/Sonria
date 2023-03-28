@@ -1,11 +1,11 @@
 .mediaViewInfo {
-	--web-view-name: Journal_Empty;
-	--web-view-id: Journal_Empty;
+	--web-view-name: Journal_Morning_Motivation;
+	--web-view-id: Journal_Morning_Motivation;
 	--web-scale-on-resize: true;
 	--web-enable-deep-linking: true;
 }
 :root {
-	--web-view-ids: Journal_Empty;
+	--web-view-ids: Journal_Morning_Motivation;
 }
 * {
 	margin: 0;
@@ -13,19 +13,19 @@
 	box-sizing: border-box;
 	border: none;
 }
-#Journal_Empty {
+#Journal_Morning_Motivation {
 	position: absolute;
 	width: 1440px;
 	height: 1024px;
 	background-color: rgba(231,226,222,1);
 	overflow: hidden;
-	--web-view-name: Journal_Empty;
-	--web-view-id: Journal_Empty;
+	--web-view-name: Journal_Morning_Motivation;
+	--web-view-id: Journal_Morning_Motivation;
 	--web-scale-on-resize: true;
 	--web-enable-deep-linking: true;
 }
 
-#entry {
+#Entry {
 	position: absolute;
 	width: 977px;
 	height: 760px;
@@ -45,23 +45,17 @@
 	left: 0px;
 	top: 0px;
 }
-#sleep_entry {
-	left: 39px;
-	top: 64px;
+#sleep {
 	position: absolute;
-	overflow: visible;
-	width: 905px;
-	height: 682px;
-	text-align: left;
-	font-family: Helvetica Neue;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 24px;
-	color: rgba(93,63,53,1);
-}
-#Write_however_you_are_feeling {
-	left: 41px;
+	width: 904px;
+	height: 157px;
+	left: 39px;
 	top: 27px;
+	overflow: visible;
+}
+#How_did_you_sleep {
+	left: 2px;
+	top: 0px;
 	position: absolute;
 	overflow: hidden;
 	width: 398px;
@@ -72,6 +66,92 @@
 	font-weight: normal;
 	font-size: 24px;
 	color: rgba(93,63,53,0.6);
+}
+#sleep_entry {
+	left: 0px;
+	top: 37px;
+	position: absolute;
+	overflow: visible;
+	width: 905px;
+	height: 120px;
+	text-align: left;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	color: rgba(93,63,53,1);
+}
+#grateful {
+	position: absolute;
+	width: 904px;
+	height: 157px;
+	left: 39px;
+	top: 197px;
+	overflow: visible;
+}
+#What_are_you_grateful_for {
+	left: 2px;
+	top: 0px;
+	position: absolute;
+	overflow: hidden;
+	width: 398px;
+	height: 27px;
+	text-align: left;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	color: rgba(93,63,53,0.6);
+}
+#sleep_entry_s {
+	left: 0px;
+	top: 37px;
+	position: absolute;
+	overflow: visible;
+	width: 905px;
+	height: 120px;
+	text-align: left;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	color: rgba(93,63,53,1);
+}
+#motivated {
+	position: absolute;
+	width: 904px;
+	height: 157px;
+	left: 39px;
+	top: 354px;
+	overflow: visible;
+}
+#How_motivated_are_you {
+	left: 2px;
+	top: 0px;
+	position: absolute;
+	overflow: hidden;
+	width: 398px;
+	height: 27px;
+	text-align: left;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	color: rgba(93,63,53,0.6);
+}
+#sleep_entry_v {
+	left: 0px;
+	top: 37px;
+	position: absolute;
+	overflow: visible;
+	width: 905px;
+	height: 120px;
+	text-align: left;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	color: rgba(93,63,53,1);
 }
 #Nav_Bar {
 	position: absolute;
@@ -220,7 +300,7 @@
 	top: 11px;
 	transform: matrix(1,0,0,1,0,0);
 }
-#Today_is_Saturday_February_25 {
+#statement_date {
 	left: 436px;
 	top: 120px;
 	position: absolute;
