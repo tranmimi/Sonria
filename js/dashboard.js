@@ -25,7 +25,7 @@
 
 // Get the modal box and Confirm button
 var modal = document.getElementById("mood-tracker-modal-box");
-var confirm_btn = document.getElementById("modal-confirm");
+var confirm_btn = document.getElementById("mood-confirm");
 
 // Get individual emoji Moods
 var angry = document.getElementById("angry-face");
@@ -36,96 +36,96 @@ var smile = document.getElementById("smiling-face");
 var happy = document.getElementById("happy-face");
 
 // After selecting a Mood, make it shake to indicate selection
-angry.onclick = function() {
-    angry.setAttribute("id", "wiggle");
+// angry.onclick = function() {
+//     angry.setAttribute("id", "wiggle");
 
-    // Remove "wiggle" id from all other Moods if there was a previous selection.
-    sad.removeAttribute("id");
-    sad.setAttribute("id", "crying-face");
-    worried.removeAttribute("id");
-    worried.setAttribute("id", "worried-face");
-    neutral.removeAttribute("id");
-    neutral.setAttribute("id", "neutral-face");
-    smile.removeAttribute("id");
-    smile.setAttribute("id", "smiling-face");
-    happy.removeAttribute("id");
-    happy.setAttribute("id", "happy-face");
-}
-sad.onclick = function() {
-    sad.setAttribute("id", "wiggle");
+//     // Remove "wiggle" id from all other Moods if there was a previous selection.
+//     sad.removeAttribute("id");
+//     sad.setAttribute("id", "crying-face");
+//     worried.removeAttribute("id");
+//     worried.setAttribute("id", "worried-face");
+//     neutral.removeAttribute("id");
+//     neutral.setAttribute("id", "neutral-face");
+//     smile.removeAttribute("id");
+//     smile.setAttribute("id", "smiling-face");
+//     happy.removeAttribute("id");
+//     happy.setAttribute("id", "happy-face");
+// }
+// sad.onclick = function() {
+//     sad.setAttribute("id", "wiggle");
 
-    // Remove "wiggle" id from all other Moods if there was a previous selection.
-    angry.removeAttribute("id");
-    angry.setAttribute("id", "angry-face");
-    worried.removeAttribute("id");
-    worried.setAttribute("id", "worried-face");
-    neutral.removeAttribute("id");
-    neutral.setAttribute("id", "neutral-face");
-    smile.removeAttribute("id");
-    smile.setAttribute("id", "smiling-face");
-    happy.removeAttribute("id");
-    happy.setAttribute("id", "happy-face");
-}
-worried.onclick = function() {
-    worried.setAttribute("id", "wiggle");
+//     // Remove "wiggle" id from all other Moods if there was a previous selection.
+//     angry.removeAttribute("id");
+//     angry.setAttribute("id", "angry-face");
+//     worried.removeAttribute("id");
+//     worried.setAttribute("id", "worried-face");
+//     neutral.removeAttribute("id");
+//     neutral.setAttribute("id", "neutral-face");
+//     smile.removeAttribute("id");
+//     smile.setAttribute("id", "smiling-face");
+//     happy.removeAttribute("id");
+//     happy.setAttribute("id", "happy-face");
+// }
+// worried.onclick = function() {
+//     worried.setAttribute("id", "wiggle");
 
-    // Remove "wiggle" id from all other Moods if there was a previous selection.
-    sad.removeAttribute("id");
-    sad.setAttribute("id", "crying-face");
-    angry.removeAttribute("id");
-    angry.setAttribute("id", "angry-face");
-    neutral.removeAttribute("id");
-    neutral.setAttribute("id", "neutral-face");
-    smile.removeAttribute("id");
-    smile.setAttribute("id", "smiling-face");
-    happy.removeAttribute("id");
-    happy.setAttribute("id", "happy-face");
-}
-neutral.onclick = function() {
-    neutral.setAttribute("id", "wiggle");
+//     // Remove "wiggle" id from all other Moods if there was a previous selection.
+//     sad.removeAttribute("id");
+//     sad.setAttribute("id", "crying-face");
+//     angry.removeAttribute("id");
+//     angry.setAttribute("id", "angry-face");
+//     neutral.removeAttribute("id");
+//     neutral.setAttribute("id", "neutral-face");
+//     smile.removeAttribute("id");
+//     smile.setAttribute("id", "smiling-face");
+//     happy.removeAttribute("id");
+//     happy.setAttribute("id", "happy-face");
+// }
+// neutral.onclick = function() {
+//     neutral.setAttribute("id", "wiggle");
 
-    // Remove "wiggle" id from all other Moods if there was a previous selection.
-    sad.removeAttribute("id");
-    sad.setAttribute("id", "crying-face");
-    worried.removeAttribute("id");
-    worried.setAttribute("id", "worried-face");
-    angry.removeAttribute("id");
-    angry.setAttribute("id", "angry-face");
-    smile.removeAttribute("id");
-    smile.setAttribute("id", "smiling-face");
-    happy.removeAttribute("id");
-    happy.setAttribute("id", "happy-face");
-}
-smile.onclick = function() {
-    angry.setAttribute("id", "wiggle");
+//     // Remove "wiggle" id from all other Moods if there was a previous selection.
+//     sad.removeAttribute("id");
+//     sad.setAttribute("id", "crying-face");
+//     worried.removeAttribute("id");
+//     worried.setAttribute("id", "worried-face");
+//     angry.removeAttribute("id");
+//     angry.setAttribute("id", "angry-face");
+//     smile.removeAttribute("id");
+//     smile.setAttribute("id", "smiling-face");
+//     happy.removeAttribute("id");
+//     happy.setAttribute("id", "happy-face");
+// }
+// smile.onclick = function() {
+//     angry.setAttribute("id", "wiggle");
 
-    // Remove "wiggle" id from all other Moods if there was a previous selection.
-    sad.removeAttribute("id");
-    sad.setAttribute("id", "crying-face");
-    worried.removeAttribute("id");
-    worried.setAttribute("id", "worried-face");
-    neutral.removeAttribute("id");
-    neutral.setAttribute("id", "neutral-face");
-    angry.removeAttribute("id");
-    angry.setAttribute("id", "angry-face");
-    happy.removeAttribute("id");
-    happy.setAttribute("id", "happy-face");
-}
-happy.onclick = function() {
-    happy.setAttribute("id", "wiggle");
+//     // Remove "wiggle" id from all other Moods if there was a previous selection.
+//     sad.removeAttribute("id");
+//     sad.setAttribute("id", "crying-face");
+//     worried.removeAttribute("id");
+//     worried.setAttribute("id", "worried-face");
+//     neutral.removeAttribute("id");
+//     neutral.setAttribute("id", "neutral-face");
+//     angry.removeAttribute("id");
+//     angry.setAttribute("id", "angry-face");
+//     happy.removeAttribute("id");
+//     happy.setAttribute("id", "happy-face");
+// }
+// happy.onclick = function() {
+//     happy.setAttribute("id", "wiggle");
 
-    // Remove "wiggle" id from all other Moods if there was a previous selection.
-    sad.removeAttribute("id");
-    sad.setAttribute("id", "crying-face");
-    worried.removeAttribute("id");
-    worried.setAttribute("id", "worried-face");
-    neutral.removeAttribute("id");
-    neutral.setAttribute("id", "neutral-face");
-    smile.removeAttribute("id");
-    smile.setAttribute("id", "smiling-face");
-    angry.removeAttribute("id");
-    angry.setAttribute("id", "angry-face");
-}
+//     // Remove "wiggle" id from all other Moods if there was a previous selection.
+//     sad.removeAttribute("id");
+//     sad.setAttribute("id", "crying-face");
+//     worried.removeAttribute("id");
+//     worried.setAttribute("id", "worried-face");
+//     neutral.removeAttribute("id");
+//     neutral.setAttribute("id", "neutral-face");
+//     smile.removeAttribute("id");
+//     smile.setAttribute("id", "smiling-face");
+//     angry.removeAttribute("id");
+//     angry.setAttribute("id", "angry-face");
+// }
 
 
 // After clicking the Confirm button, close the modal box
@@ -269,3 +269,118 @@ var Cal = function(divId) {
   function getId(id) {
     return document.getElementById(id);
   }
+
+
+/* */
+$(document).ready(function(){
+  const calender = document.querySelector(".calender");
+  date = document.querySelector(".date");
+  daysCont = document.querySelector(".days");
+  prev = document.querySelector(".prev");
+  next = document.querySelector(".next");
+  displayDate = document.querySelector(".today-date");
+
+  let todayDate = new Date();
+  let month = todayDate.getMonth();
+  let year = todayDate.getFullYear();
+  let day = todayDate.getDate();
+
+  const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+  // date = month + year;
+  // console.log(date);
+
+ 
+  
+  initCal(month, year, daysCont);
+
+  $(".prev").click(function(){
+      // console.log("prev");
+      month--;
+      if(month < 0 || month > 11){
+          todayDate = new Date(year, month, new Date().getDate());
+          year = date.getFullYear();
+          month = date.getMonth();
+      }
+      else{
+          todayDate = new Date();
+      }
+      initCal(month, year, daysCont);
+
+  });
+  $(".next").click(function(){
+      //        currMonth = icon.id === "prev" ? currMonth - 1 : currMonth + 1;
+      month++;
+      if(month < 0 || month > 11){
+          todayDate = new Date(year, month, new Date().getDate());
+          year = todayDate.getFullYear();
+          month = todayDate.getMonth();
+      }
+      else{
+          todayDate = new Date();
+          console.log(todayDate);
+      }
+      initCal(month, year, daysCont);
+
+  });
+});
+
+// function newPage(){
+
+// }
+function initCal(month, year, daysCont){
+  // const firstDay = new Date(year, month, 1);
+  // const lastDay = new Date(year, month + 1, 0);
+  // const prevLastDay = new Date (year, month, 0);
+  // const prevDays = prevLastDay.getDate();
+  // const lastDayDate= lastDay.getDate();
+  // const day = firstDay.getDate();
+  // const nextDays = 7 - lastDay.getDay() - 1; 
+  const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+  date.innerHTML = months[month] + " " + year; 
+  // // console.log(prevDays);
+  // let days = "";
+  
+  // for(let i = day; i > 0; i--){
+  //     days += '<div class="day prev-date">' + (prevDays - i + 1) + '</div>';
+  //     // console.log(days);
+
+  // }
+  // for(let i = 1; i <lastDayDate; i++){
+  //     if(i === new Date().getDate() && year === new Date().getFullYear() && month === new Date().getMonth()){
+  //         days += '<div class ="day today">' + i  + '</div>';
+  //     }
+  //     else{
+  //         days += '<div class ="day">' + i  + '</div>';
+  //     }
+  // }
+  // daysCont.innerHTML = days;
+  let firstDay = new Date(year, month, 1).getDay();
+  let lastDate= new Date(year, month + 1, 0).getDate();
+  let lastDay = new Date(year, month, lastDate).getDay();
+  let lastDatePrev = new Date(year, month, 0).getDate();
+
+  let days = "";
+
+  for (let i = firstDay; i > 0; i--) {
+      days += '<div class="day inactive">' + (lastDatePrev - i + 1) + '</div>';
+      // console.log(days);
+
+  }
+  for (let i = 1; i <= lastDate; i++) {
+      if (i === new Date().getDate() && year === new Date().getFullYear() && month === new Date().getMonth()) {
+          days += '<div class ="day today">' + i + '</div>';
+      }
+      else {
+          days += '<div class ="day">' + i + '</div>';
+      }
+  }
+  for(let i = lastDay; i < 6; i++){
+      days += '<div class ="day inactive">' + (i - lastDay + 1) + '</div>';
+
+  }
+  daysCont.innerHTML = days;
+}
+
+  

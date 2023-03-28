@@ -14,7 +14,11 @@
 
         <!-- Styles -->
         <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto+Condensed:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="../css/main.css"/>
+        <!-- <link rel="stylesheet" href="../css/reminders-style.css"/> -->
         <link rel="stylesheet" href="../css/dashboard.css"/>
     </head>
     <body>
@@ -30,7 +34,6 @@
                     <li><button class="emoji" id="smiling-face"><img src="..\img\🦆 emoji _slightly smiling face_.png"></button></li>
                     <li><button class="emoji" id="happy-face"><img src="..\img\🦆 emoji _smiling face with open mouth and smiling eyes_.png"></button></li>
                 </ul>
-                <br>
                 <button class="normal-btn" id="mood-confirm">Confirm</button>
             </div>
         </div>
@@ -57,26 +60,66 @@
         <br> 
 
         <div id="main-area">
-            <!-- Mood Tracker Calendar -->
-            <div class="main-area-child" id="mood-tracker-calendar">
-                <h2>March</h2>
-                <div class="calendar-wrapper">
-                    <button id="btnPrev" type="button">Prev</button>
-                    <button id="btnNext" type="button">Next</button>
-                <div id="divCal"></div>
-                </div>    
-            </div>
-
-            <!-- Tracked Reminders -->
-            <div class="main-area-child" id="reminders-bar">
-                <h3>Did you miss anything?</h3>
-                <p id="no-reminders">Nope, you're all set!</p>
+            <div id="left">
+                <div class="calender">
+                    <div class="month">
+                        <i class="fa fa-angle-left prev"></i>
+                        <div class="date">hi</div>
+                        <i class="fa fa-angle-right next"></i>
+                    </div>
+                    <div class="weekdays">
+                        <div>Sun</div>
+                        <div>Mon</div>
+                        <div>Tue</div>
+                        <div>Wed</div>
+                        <div>Thu</div>
+                        <div>Fri</div>
+                        <div>Sat</div>
+                    </div>
+                    <div class="days">
+                        <div class="day"></div>
+                        <!-- <div class="day today">1</div>
+                        <div class="day">2
+                            <span class="event"></span>
+                        </div>
+                        <div class="day">3</div>
+                        <div class="day">4</div>
+                        <div class="day">5</div>
+                        <div class="day">6</div>
+                    </div> -->
+                    <!-- <div class="days">1</div>
+                    <div class="days">2</div>
+                    <div class="days">3</div>
+                    <div class="days">4</div>
+                    <div class="days">5</div>
+                    <div class="days">6</div> -->
+                </div>
             </div>
         </div>
 
-        <br><hr><br>
+        <div id="right">
+            <h2 id="reminders-title">Did you miss anything?</h2>
+            <br>
+            <p id="no-reminders">Nope, you're all set!</p>
+        </div>
 
-        <footer>Copyright © 2023 Hannah Guillen, Mimi Tran, Aria Siriouthay, Tashia Boddu</footer>
+        <div class="container">
+            <div class="left">
+                <div class="today-date"></div>
+                
+                
+    
+                </div>
+                
+            </div>
+            
+        </div>
+             
+
+        <br>
+        <!-- <footer>Copyright © 2023 Hannah Guillen, Mimi Tran, Aria Siriouthay, Tashia Boddu</footer> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script src="../js/dashboard.js"></script>
+        <!-- <script src="../js/reminders-script.js"></script> -->
     </body>
 </html>
