@@ -1,0 +1,418 @@
+.mediaViewInfo {
+	--web-view-name: fourm_post_1;
+	--web-view-id: fourm_post_1;
+	--web-scale-on-resize: true;
+	--web-enable-deep-linking: true;
+}
+:root {
+	--web-view-ids: fourm_post_1;
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	border: none;
+}
+#form_post_1 {
+	position: absolute;
+	width: 1440px;
+	height: 1024px;
+	background-color: rgba(231,226,222,1);
+	overflow: hidden;
+	--web-view-name: fourm_post_1;
+	--web-view-id: fourm_post_1;
+	--web-scale-on-resize: true;
+	--web-enable-deep-linking: true;
+}
+
+#first_post {
+	position: absolute;
+	width: 981px;
+	height: 813.799px;
+	left: 225px;
+	top: 192.38px;
+	overflow: visible;
+}
+#post_1_box {
+	fill: rgba(255,255,255,1);
+}
+.post_1_box {
+	filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.161));
+	overflow: visible;
+	position: absolute;
+	width: 999px;
+	height: 831.799px;
+	left: 0px;
+	top: 0px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#study_habits {
+	left: 116px;
+	top: 13px;
+	position: absolute;
+	overflow: visible;
+	width: 205px;
+	height: 48px;
+	text-align: left;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 32px;
+	color: rgba(30,30,30,1);
+}
+#topic_avatar {
+	fill: rgba(249,235,214,1);
+}
+.topic_avatar {
+	position: absolute;
+	overflow: visible;
+	width: 53px;
+	height: 57px;
+	left: 29px;
+	top: 7px;
+}
+#first_comment {
+	position: absolute;
+	width: 878px;
+	height: 376.572px;
+	left: 56px;
+	top: 410px;
+	overflow: visible;
+}
+#first_post_s {
+	fill: rgba(254,249,244,1);
+}
+.first_post_s {
+	filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.161));
+	position: absolute;
+	overflow: visible;
+	width: 908px;
+	height: 378.572px;
+	left: 0px;
+	top: 28px;
+}
+#first_user_avatar {
+	fill: rgba(165,165,142,1);
+}
+.first_user_avatar {
+	position: absolute;
+	overflow: visible;
+	width: 66px;
+	height: 72px;
+	left: 26px;
+	top: 0px;
+}
+#first_user_comment {
+	left: 31px;
+	top: 78.672px;
+	position: absolute;
+	overflow: visible;
+	width: 827px;
+	height: 284px;
+	text-align: left;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	color: rgba(30,30,30,1);
+}
+#post_1 {
+	position: absolute;
+	width: 981px;
+	height: 315.686px;
+	left: 0px;
+	top: 69px;
+	overflow: visible;
+}
+#post_1_image {
+	position: absolute;
+	width: 981px;
+	height: 270px;
+	left: 0px;
+	top: 0px;
+	overflow: visible;
+}
+#post_1_question {
+	left: 70px;
+	top: 54px;
+	position: absolute;
+	overflow: visible;
+	width: 851px;
+	height: 163px;
+	line-height: 51px;
+	margin-top: -5.5px;
+	text-align: center;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 40px;
+	color: rgba(30,30,30,1);
+}
+#post_1_likes {
+	position: absolute;
+	width: 106.625px;
+	height: 32.686px;
+	left: 132.375px;
+	top: 283px;
+	overflow: visible;
+}
+#n_5k {
+	left: 38.625px;
+	top: 1px;
+	position: absolute;
+	overflow: visible;
+	width: 69px;
+	height: 30px;
+	text-align: right;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 23px;
+	color: rgba(0,0,0,1);
+}
+#like_icon {
+	fill: rgba(0,0,0,1);
+}
+.like_icon {
+	overflow: visible;
+	position: absolute;
+	width: 38.219px;
+	height: 32.686px;
+	left: 0px;
+	top: 0px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#post_1_comments {
+	position: absolute;
+	width: 119.5px;
+	height: 38.686px;
+	left: 274.5px;
+	top: 277px;
+	overflow: visible;
+}
+#comment_icon {
+	fill: rgba(255,255,255,1);
+	stroke: rgba(0,0,0,1);
+	stroke-width: 2px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.comment_icon {
+	overflow: visible;
+	position: absolute;
+	width: 53.681px;
+	height: 36.686px;
+	left: 0px;
+	top: 0px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#n_2k {
+	left: 51.5px;
+	top: 8.686px;
+	position: absolute;
+	overflow: visible;
+	width: 69px;
+	height: 30px;
+	text-align: right;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 23px;
+	color: rgba(0,0,0,1);
+}
+#bookmark_icon {
+	fill: transparent;
+	stroke: rgba(0,0,0,1);
+	stroke-width: 3px;
+	stroke-linejoin: round;
+	stroke-linecap: round;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.bookmark_icon {
+	overflow: visible;
+	position: absolute;
+	width: 28.132px;
+	height: 33.479px;
+	left: 859.868px;
+	top: 283px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#follow_txt {
+	left: 712px;
+	top: 15px;
+	position: absolute;
+	overflow: visible;
+	width: 223px;
+	height: 42px;
+	text-align: right;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 30px;
+	color: rgba(93,63,53,1);
+}
+#Nav_Bar {
+	position: absolute;
+	width: 981px;
+	height: 70px;
+	left: 225px;
+	top: 31px;
+	overflow: visible;
+}
+#nav_bar_box {
+	fill: rgba(254,249,244,1);
+}
+.nav_bar_box {
+	filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.161));
+	position: absolute;
+	overflow: visible;
+	width: 999px;
+	height: 88px;
+	left: 0px;
+	top: 0px;
+}
+#Settings {
+	left: 847px;
+	top: 19px;
+	position: absolute;
+	overflow: visible;
+	width: 92px;
+	white-space: nowrap;
+	line-height: 32px;
+	margin-top: -4px;
+	text-align: left;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	color: rgba(135,95,74,1);
+}
+#Analytics {
+	left: 709px;
+	top: 21px;
+	position: absolute;
+	overflow: visible;
+	width: 102px;
+	white-space: nowrap;
+	line-height: 32px;
+	margin-top: -4px;
+	text-align: left;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	color: rgba(135,95,74,1);
+}
+#Forms {
+	left: 592px;
+	top: 21px;
+	position: absolute;
+	overflow: visible;
+	width: 71px;
+	white-space: nowrap;
+	--web-animation: fadein undefineds undefined;
+	--web-action-type: page;
+	--web-action-target: fourm_main.html;
+	cursor: pointer;
+	line-height: 32px;
+	margin-top: -4px;
+	text-align: left;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	color: rgba(135,95,74,1);
+}
+#Journal {
+	left: 474px;
+	top: 21px;
+	position: absolute;
+	overflow: visible;
+	width: 84px;
+	white-space: nowrap;
+	--web-animation: fadein undefineds undefined;
+	--web-action-type: page;
+	--web-action-target: journal_main.html;
+	cursor: pointer;
+	line-height: 32px;
+	margin-top: -4px;
+	text-align: left;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	color: rgba(135,95,74,1);
+}
+#Reminders {
+	left: 318px;
+	top: 21px;
+	position: absolute;
+	overflow: visible;
+	width: 121px;
+	white-space: nowrap;
+	line-height: 32px;
+	margin-top: -4px;
+	text-align: left;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	color: rgba(135,95,74,1);
+}
+#Dashboard {
+	left: 157px;
+	top: 21px;
+	position: absolute;
+	overflow: visible;
+	width: 123px;
+	white-space: nowrap;
+	line-height: 32px;
+	margin-top: -4px;
+	text-align: left;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	color: rgba(135,95,74,1);
+}
+#sonria_logo {
+	position: absolute;
+	width: 55px;
+	height: 49.42px;
+	left: 36px;
+	top: 9px;
+	overflow: visible;
+}
+#nav_bar_divider {
+	fill: transparent;
+	stroke: rgba(240,222,203,1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.nav_bar_divider {
+	overflow: visible;
+	position: absolute;
+	width: 1px;
+	height: 51px;
+	left: 124px;
+	top: 11px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#back_arrow_icon {
+	position: absolute;
+	width: 51.38px;
+	height: 51.38px;
+	left: 225px;
+	top: 121px;
+	overflow: visible;
+	--web-animation: fadein undefineds undefined;
+	--web-action-type: page;
+	--web-action-target: fourm_main.html;
+	cursor: pointer;
+}

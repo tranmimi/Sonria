@@ -1,0 +1,125 @@
+<!--
+    File: dashboard.html
+
+    This is the Dashboard page of Sonria!
+    This is the Home page for the Sonria! website, where new users can register and current users can log into their accounts.
+    Home also contains the Features Highlight for Sonria!
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Sonria! Dashboard</title>
+
+        <!-- Styles -->
+        <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto+Condensed:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="../css/main.css"/>
+        <link rel="stylesheet" href="../css/dashboard.css"/>
+    </head>
+    <body>
+        <!-- Navigation Bar-->
+        <ul id="nav-bar">
+            <li><img src="..\img\logo.png" height="50px" width="56px" id="logo"></li>
+            <li><a href="..\pages\dashboard.html" class="nav-link" id="current-page">Dashboard</a></li>
+            <li><a href="..\pages\reminders.html" class="nav-link">Reminders</a></li>
+            <li><a href="..\pages\journal.html" class="nav-link">Journal</a></li>
+            <li><a href="..\pages\form.html" class="nav-link">Forums</a></li>
+            <li><a href="..\pages\analytics.html" class="nav-link">Analytics</a></li>
+            <li><a href="..\pages\settings.html" class="nav-link">Settings</a></li>
+        </ul>
+
+        <br><hr><br>
+
+        <!-- Profile Bar -->
+        <div id="profile-bar">
+            <img src="..\img\logo.png" height="50px" width="56px" id="logo">
+            <h1 id="users-name">Your Name</h1>
+        </div>
+
+        <br> 
+
+        <!-- Main Area -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+        <div class="main-area">
+          <!-- Mood Tracker Calendar -->
+          <!-- Code referenced (and slightly modified) from 
+                https://gosnippets.com/snippets/dynamic-calendar-with-pure-css-and-javascript -->
+          <div class="tracker-calendar">
+              <header>
+                  <div class="icons">
+                      <span id="prev" class="material-symbols-rounded">chevron_left</span>
+                      <p class="current-date"></p>
+                      <span id="next" class="material-symbols-rounded">chevron_right</span>
+                  </div>
+              </header>
+              <div class="calendar">
+                  <ul class="weeks">
+                      <li>Sun</li>
+                      <li>Mon</li>
+                      <li>Tue</li>
+                      <li>Wed</li>
+                      <li>Thu</li>
+                      <li>Fri</li>
+                      <li>Sat</li>
+                  </ul>
+                  <ul class="days"></ul>
+              </div>
+          </div>
+          <div id="reminders">
+            <header>
+              <p id="reminders-header">Did you miss anything?</p>
+            </header>
+            <div id="list-of-reminders">
+              <span>Nope, you're all set!</span>
+            </div>
+            
+            </div>
+        </div>
+
+        <!-- Second Mood Tracker Modal Box (for non-current days) -->
+        <div id="second-mood-tracker-modal-box">
+
+            <!-- Modal content -->
+            <div id="second-mood-tracker-content">
+                <h2>How did you feel on this day?</h2>
+                <ul id="emoji-lineup">
+                    <li><button class="emoji-this-day" id="angry-face"><img src="..\img\🦆 emoji _pouting face_.png"></button></li>
+                    <li><button class="emoji-this-day" id="crying-face"><img src="..\img\🦆 emoji _loudly crying face_.png"></button></li>
+                    <li><button class="emoji-this-day" id="worried-face"><img src="..\img\🦆 emoji _worried face_.png"></button></li>
+                    <li><button class="emoji-this-day" id="neutral-face"><img src="..\img\🦆 emoji _neutral face_.png"></button></li>
+                    <li><button class="emoji-this-day" id="smiling-face"><img src="..\img\🦆 emoji _slightly smiling face_.png"></button></li>
+                    <li><button class="emoji-this-day" id="happy-face"><img src="..\img\🦆 emoji _smiling face with open mouth and smiling eyes_.png"></button></li>
+                </ul>
+                <button class="normal-btn" id="second-mood-confirm" disabled>Confirm</button>
+            </div>
+        </div>
+
+        <!-- Mood Tracker Modal Box -->
+        <div id="mood-tracker-modal-box">
+
+            <!-- Modal content -->
+            <div id="mood-tracker-content">
+                <h2>How are you feeling today?</h2>
+                <ul id="emoji-lineup">
+                    <li><button class="emoji-today" id="angry-face"><img src="..\img\🦆 emoji _pouting face_.png"></button></li>
+                    <li><button class="emoji-today" id="crying-face"><img src="..\img\🦆 emoji _loudly crying face_.png"></button></li>
+                    <li><button class="emoji-today" id="worried-face"><img src="..\img\🦆 emoji _worried face_.png"></button></li>
+                    <li><button class="emoji-today" id="neutral-face"><img src="..\img\🦆 emoji _neutral face_.png"></button></li>
+                    <li><button class="emoji-today" id="smiling-face"><img src="..\img\🦆 emoji _slightly smiling face_.png"></button></li>
+                    <li><button class="emoji-today" id="happy-face"><img src="..\img\🦆 emoji _smiling face with open mouth and smiling eyes_.png"></button></li>
+                </ul>
+                <button class="normal-btn" id="mood-confirm" disabled>Confirm</button>
+            </div>
+        </div>
+
+        <br>
+
+        <footer>Copyright © 2023 Hannah Guillen, Mimi Tran, Aria Siriouthay, Tashia Boddu</footer>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="../js/dashboard.js"></script>
+    </body>
+</html>

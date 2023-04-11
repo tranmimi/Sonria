@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Add a New Entry</title>
+<link rel="stylesheet" type="text/css" id="applicationStylesheet" href="../css/new_entry.css"/>
+  <!-- Add Poppins font from main-->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto+Condensed:ital,wght@0,400;1,700&display=swap"
+        rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css" />
+<!-- <script id="applicationScript" type="text/javascript" src="js/new_entry.js"></script> -->
+</head>
+<body>
+<div id="new_entry">
+	<div id="journal_page">
+		<svg class="journal_page_box">
+			<rect id="journal_page_box" rx="20" ry="20" x="0" y="0" width="476" height="309">
+			</rect>
+		</svg>
+		<div id="user_prompt">
+			<div id="user_page_entry">
+				<span>I woke up feeling refreshed and ready to tackle my classes. I went for a run before my morning
+					lecture, and it felt amazing. There’s something about getting outside and moving my body that just
+					makes me feel so much better. In my first class, I</span>
+			</div>
+			<div id="btn_continue">
+				<span>…Continue</span>
+			</div>
+		</div>
+		<div id="journal_page_s">
+			<span>Journal page:</span>
+		</div>
+		<div id="entry_time">
+			<span>3:54pm</span>
+		</div>
+	</div>
+	<div id="daily_planner">
+		<svg class="daily_planner_box">
+			<rect id="daily_planner_box" rx="20" ry="20" x="0" y="0" width="476" height="309">
+			</rect>
+		</svg>
+		<div id="daily_planner_w">
+			<span>Daily planner:</span>
+		</div>
+		<div id="goals_entry_time">
+			<span>8:00am</span>
+		</div>
+		<div id="user_goals">
+			<div id="goals_prompt">
+				<span>Goals for the day:</span>
+			</div>
+			<div id="goals_entry">
+				<span>Do laundry<br/>Remember to email Prof. Zhou<br/>Study for Prob & Stats exam!</span>
+			</div>
+		</div>
+		<div id="user_classes">
+			<div id="classes_prompt">
+				<span>Classes to go to today:</span>
+			</div>
+			<div id="class_1">
+				<svg class="class_1_circle">
+					<ellipse id="class_1_circle" rx="25" ry="25" cx="25" cy="25">
+					</ellipse>
+				</svg>
+				<div id="class_1_name">
+					<span>Prob & Stats 1</span>
+				</div>
+				<div id="class_1_time">
+					<span>12:30 PM - 1:45 PM</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="emo_check_in">
+		<svg class="check_in_box">
+			<rect id="check_in_box" rx="20" ry="20" x="0" y="0" width="476" height="309">
+			</rect>
+		</svg>
+		<div id="ci_prompt">
+			<span>Emotional check-in:</span>
+		</div>
+		<div id="entry_time_ba">
+			<span>7:33am</span>
+		</div>
+		<div id="emoji_feeling">
+			<div id="emoji_question">
+				<span>How are you feeling right now?</span>
+			</div>
+			<div id="emoji_icons">
+				<img id="pouting_emoji" src="../img/pouting_emoji.png" srcset="../img/pouting_emoji.png">
+
+				<img id="crying_emoji" src="../img/crying_emoji.png" srcset="../img/crying_emoji.png">
+
+				<img id="worried_emoji" src="../img/worried_emoji.png" srcset="../img/worried_emoji.png">
+
+				<img id="neutral_emoji" src="../img/neutral_emoji.png" srcset="../img/neutral_emoji.png">
+
+				<img id="smiling_emoji" src="../img/smiling_emoji.png" srcset="../img/smiling_emoji.png">
+
+				<img id="joyful_emoji" src="../img/joyful_emoji.png" srcset="../img/joyful_emoji.png">
+
+			</div>
+		</div>
+		<div id="feeling_description">
+			<div id="feeling_description_question">
+				<span>What describes your feelings?</span>
+			</div>
+			<div id="feeling_description_entry">
+				<span>- Motivated<br/>- Grateful<br/>- Friends</span>
+			</div>
+		</div>
+	</div>
+	<div id="morning_motivation">
+		<svg class="morning_motivation_box">
+			<rect id="morning_motivation_box" rx="20" ry="20" x="0" y="0" width="476" height="309">
+			</rect>
+		</svg>
+		<div id="morning_motivation_prompt">
+			<span>Morning motivation:</span>
+		</div>
+		<div id="entry_time_bq">
+			<span>5:06am</span>
+		</div>
+		<div id="sleep_entry">
+			<div id="sleep_question">
+				<span>How did you sleep?</span>
+			</div>
+			<div id="sleep_entry_bt">
+				<span>I feel good about my sleep last nig…..</span>
+			</div>
+		</div>
+		<div id="grateful_entry">
+			<div id="grateful_question">
+				<span>What are you grateful for?</span>
+			</div>
+			<div id="grateful_entry_bw">
+				<span>I have a great support system of f…..</span>
+			</div>
+		</div>
+		<div id="motivated_entry">
+			<div id="motivation_question">
+				<span>How motivated are you?</span>
+			</div>
+			<div id="motivation_entry">
+				<span>I’m excited to tackle my to-do list a…..</span>
+			</div>
+		</div>
+	</div>
+	<div id="entries_prompt">
+		<span>Your entries for the day:</span>
+	</div>
+	<div id="date_scroll_bar">
+		<div id="change_date">
+			<img id="left_date" src="../img/left_date.png" srcset="../img/left_date.png">
+
+			<img id="right_date" src="../img/right_date.png" srcset="../img/right_date.png">
+
+		</div>
+		<div id="dates">
+			<div id="date_2_before">
+				<svg class="date_2_before_b">
+					<ellipse id="date_2_before_b" rx="25" ry="25" cx="25" cy="25">
+					</ellipse>
+				</svg>
+				<div id="Th">
+					<span>Th</span>
+				</div>
+				<div id="n_3">
+					<span>23</span>
+				</div>
+			</div>
+			<div id="date_yesterday">
+				<svg class="date_yesterday_cb">
+					<ellipse id="date_yesterday_cb" rx="25" ry="25" cx="25" cy="25">
+					</ellipse>
+				</svg>
+				<div id="Fr">
+					<span>Fr</span>
+				</div>
+				<div id="n_4">
+					<span>24</span>
+				</div>
+			</div>
+			<div id="date_today">
+				<svg class="Rectangle_3">
+					<rect id="Rectangle_3" rx="20" ry="20" x="0" y="0" width="57" height="114">
+					</rect>
+				</svg>
+				<svg class="date_today_cg">
+					<ellipse id="date_today_cg" rx="25" ry="25" cx="25" cy="25">
+					</ellipse>
+				</svg>
+				<div id="Sa">
+					<span>Sa</span>
+				</div>
+				<div id="n_5">
+					<span>25</span>
+				</div>
+			</div>
+			<div id="date_tmrw">
+				<svg class="date_tomorrow">
+					<ellipse id="date_tomorrow" rx="25" ry="25" cx="25" cy="25">
+					</ellipse>
+				</svg>
+				<div id="Su">
+					<span>Su</span>
+				</div>
+				<div id="n_6">
+					<span>26</span>
+				</div>
+			</div>
+			<div id="date_2_after">
+				<svg class="date_2_after_co">
+					<ellipse id="date_2_after_co" rx="25" ry="25" cx="25" cy="25">
+					</ellipse>
+				</svg>
+				<div id="Mo">
+					<span>Mo</span>
+				</div>
+				<div id="n_7">
+					<span>27</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="date_prompt">
+		<span>Today is Saturday, February 25</span>
+	</div>
+
+	<!-- Navigation Bar -->
+	<div id="Nav_Bar">
+		<svg class="nav_bar_box">
+			<rect id="nav_bar_box" rx="20" ry="20" x="0" y="0" width="981" height="70">
+			</rect>
+		</svg>
+		<div id="Settings" onclick="window.location.href='../pages/settings.html'">
+			<span>Settings</span>
+		</div>
+		<div id="Analytics" onclick="window.location.href='../pages/analytics.html'">
+			<span>Analytics</span>
+		</div>
+		<div id="Forms" onclick="window.location.href='../pages/form.html'">
+			<span>Forms</span>
+		</div>
+		<div id="Journal" onclick="window.location.href='../pages/journal.html'">
+			<span>Journal</span>
+		</div>
+		<div id="Reminders" onclick="window.location.href='../pages/reminders.html'">
+			<span>Reminders</span>
+		</div>
+		<div id="Dashboard" onclick="window.location.href='../pages/dashboard.html'">
+			<span>Dashboard</span>
+		</div>
+
+		<img id="sonria_logo" src="../img/sonria_logo.png" srcset="../img/sonria_logo.png">
+
+		<svg class="nav_bar_divider" viewBox="0 0 1 51">
+			<path id="nav_bar_divider" d="M 0 0 L 0 51">
+			</path>
+		</svg>
+	</div>
+	<div id="btnNew_Entry">
+		<svg class="new_entry_box">
+			<rect id="new_entry_box" rx="20" ry="20" x="0" y="0" width="321" height="65">
+			</rect>
+		</svg>
+		<div id="new_entry_c">
+			<span>New Entry</span>
+		</div>
+	</div>
+	<svg class="shadow">
+		<rect id="shadow" rx="0" ry="0" x="0" y="0" width="1440" height="1024">
+		</rect>
+	</svg>
+	<div id="new_entry_prompt">
+		<svg class="new_entry_box_c">
+			<rect id="new_entry_box_c" rx="20" ry="20" x="0" y="0" width="832" height="489">
+			</rect>
+		</svg>
+		<div id="btn_plus">
+			<svg class="plus_circle">
+				<ellipse id="plus_circle" rx="38" ry="37.5" cx="38" cy="37.5">
+				</ellipse>
+			</svg>
+			<div id="plus_icon">
+				<svg class="Path_1" viewBox="18 7.5 3 32.622">
+					<path id="Path_1" d="M 18 7.500000953674316 L 18 40.1221923828125">
+					</path>
+				</svg>
+				<svg class="Path_2" viewBox="7.5 18 35.745 3">
+					<path id="Path_2" d="M 7.499999523162842 18 L 43.2449951171875 18">
+					</path>
+				</svg>
+			</div>
+		</div>
+		<div onclick="application.goToTargetView(event)" id="empty_page">
+			<svg class="empty_page_box">
+				<rect id="empty_page_box" rx="20" ry="20" x="0" y="0" width="321" height="65">
+				</rect>
+			</svg>
+			<div id="empty_journal_page">
+				<span>Empty journal page</span>
+			</div>
+		</div>
+		<div onclick="application.goToTargetView(event)" id="emo_check_in_dg">
+			<svg class="emo_check_in_box">
+				<rect id="emo_check_in_box" rx="20" ry="20" x="0" y="0" width="321" height="65">
+				</rect>
+			</svg>
+			<div id="emo_check_in_txt">
+				<span>Emotional check-in</span>
+			</div>
+		</div>
+		<div id="day_recap">
+			<svg class="day_recap_box">
+				<rect id="day_recap_box" rx="20" ry="20" x="0" y="0" width="321" height="65">
+				</rect>
+			</svg>
+			<div id="day_recap_txt">
+				<span>Day recap</span>
+			</div>
+		</div>
+		<div onclick="application.goToTargetView(event)" id="daily_planner_dm">
+			<svg class="daily_planner_box_dn">
+				<rect id="daily_planner_box_dn" rx="20" ry="20" x="0" y="0" width="321" height="65">
+				</rect>
+			</svg>
+			<div id="daily_planner_txt">
+				<span>Daily planner</span>
+			</div>
+		</div>
+		<div onclick="application.goToTargetView(event)" id="morning_motivation_dp">
+			<svg class="morn_mot_box">
+				<rect id="morn_mot_box" rx="20" ry="20" x="0" y="0" width="321" height="65">
+				</rect>
+			</svg>
+			<div id="morn_mot_txt">
+				<span>Morning motivation</span>
+			</div>
+		</div>
+		<div id="journal_question">
+			<span>What would you like to journal?</span>
+		</div>
+		<img id="back_arrow_icon" src="../img/back_arrow_icon.png" srcset="../img/back_arrow_icon.png"
+			 onclick="window.location.href='../pages/journal.html'">
+
+	</div>
+</div>
+</body>
+</html>
