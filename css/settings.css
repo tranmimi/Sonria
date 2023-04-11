@@ -112,48 +112,6 @@ button {
   color: white;
 }
 
-/* SECTION 2 */
-.custom {
-  color: #A47B65;
-}
-/* change 'Choose a Theme' */
-h3 {
-  font-family: Poppins;
-  font-size: 20px;
-  margin-left: 170px;
-  color: #5F5B36;
-}
-.foo { /* size for all boxes */
-   float: left;
-   width: 80px;
-   height: 35px;
-   margin-bottom: 35px;
-}
-
-/* colors for dark mode */
-.white {
-  margin-left: 170px;
-  background: white;
-}
-.grey {
-  background: grey;
-}
-.black {
-  background: black;
-}
-
-/* colors for blue mode */
-.blue1 {
-  margin-left: 200px;
-  background: #D3D8E3;
-}
-.blue2 {
-  background: #ABC5E0;
-}
-.blue3 {
-  background: #3C5D82;
-}
-
 /* SECTION 3 */
 .notify {
   color: #5F5B36;
@@ -230,4 +188,14 @@ input:checked + .slider:before {
 .deleteBtn {
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+#icon {
+  width: 30px;
+  cursor: pointer;
+  margin-left: 900px;
+  margin-top: 20px;
+}
+.dark-mode {
+  background-color: #111010;
 }
