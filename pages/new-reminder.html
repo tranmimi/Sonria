@@ -26,25 +26,28 @@
 <div class="container">
     <div class="left">
         <div class="form-container">
-            <form action="#">
+            <form id = "form" action="#">
                 <p>Title</p>
-                <div class="input-box" id="title">
-                    <input type="text" placeholder="Title" required>
+                <div class="input-box" >
+                    <input type="text" id="input-title" placeholder="Title" required>
                 </div>
                 <p>Date</p>
-                <div class="input-box" id="date">
-                    <input type="date" placeholder="Date" required>
+                <div class="input-box" >
+                    <input type="date" id="input-date" placeholder="Date" required>
                 </div>
                 <p>Start</p>
-                <div class="input-box" id="start-time">
-                    <input type="time" placeholder="Time"required>
+                <div class="input-box" >
+                    <input type="time" id="start-time" placeholder="Time"required>
                 </div>
                 <p>End</p>
-                <div class="input-box" id="end-time">
-                    <input type="time" placeholder="Time" required>
+                <div class="input-box" >
+                    <input type="time" id="end-time" placeholder="Time" required>
+                </div>
+                <div class="btn-contaner">
+                    <button type="submit" class="submit-btn">Create</button>
                 </div>
             </form>
-            <div class="repeat-container">
+            <!-- <div class="repeat-container">
                 <h4>Repeat</h4>
                 <label class="switch">
                     <input type="checkbox">
@@ -58,7 +61,7 @@
                     <button type="submit" class="btn">!</button>
                     <button type="submit" class="btn">x</button>
                 </div>
-            </div>
+            </div> -->
             <div class="notes-container">
                 <div class="notes">
                     <h3>Notes</h3>
@@ -92,9 +95,6 @@
             </div>
             <div class="days">
                 <div class="day"></div>
-        </div>
-        <div class="btn-contaner">
-            <button type="submit" class="submit-btn">Create</button>
         </div>
     </div>
     </div>

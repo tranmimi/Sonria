@@ -1,3 +1,4 @@
+
 $(document).ready(function(){
     const calender = document.querySelector(".calender");
     date = document.querySelector(".date");
@@ -17,9 +18,46 @@ $(document).ready(function(){
     // console.log(date);
     displayDate.innerHTML =  months[month] + " " + day + "th " + year;
 
-   
-    
+
     initCal(month, year, daysCont);
+    clickDays(month, year);
+    markEvents(month, year);
+
+    // const inputTitle = localStorage.getItem("input-title");
+    // const inputDate = localStorage.getItem("input-date");
+    // const inputStartTime = localStorage.getItem("input-starttime");
+    // const inputEndTime = localStorage.getItem("input-endtime");
+
+    // const startDate =  new Date(inputDate + "T" + inputStartTime + "Z");
+    // const endDate =  new Date(inputDate + "T" + inputEndTime + "Z");
+
+    // const startTimeStr = startDate.toLocaleTimeString('en-US',
+    // {timeZone:'UTC',hour12:true,hour:'numeric',minute:'numeric'});
+    // const endTimeStr = endDate.toLocaleTimeString('en-US',
+    // {timeZone:'UTC',hour12:true,hour:'numeric',minute:'numeric'});
+
+    // //check if the input date is the same as current (today)
+    // if(startDate.getDate() == todayDate.getDate()){
+    //     const todayTask = document.getElementsByClassName("today-task");
+    //     todayTask[0].innerHTML += '<div class ="task"><div id="eventTitle">' + inputTitle + '</div>' + "<div class='task-time' id='eventTime'>" + startTimeStr + " - " + endTimeStr + "</div>"
+
+    //     // document.getElementById("eventTitle").textContent = inputTitle;
+    //     // document.getElementById("eventTime").textContent = startTimeStr + " - " + endTimeStr;
+    // }
+    // else{
+    //     const upcomingTask = document.getElementsByClassName("upcoming-task");
+    //     upcomingTask[0].innerHTML += '<div class ="task"><div id="eventTitle">' + inputTitle + '</div>' + "<div class='task-time' id='eventTime'>" + startTimeStr + " - " + endTimeStr + "</div>"
+    // }
+    // console.log(JSON.parse(localStorage.getItem("eventObj")));
+    // const eventObj = JSON.parse(localStorage.getItem("eventObj"));
+    // if(JSON.stringify(eventObj) !== "{}"){
+
+    // }
+
+    
+    
+    getEvents(todayDate, month, year);
+
 
     $(".btn").click(function(){
         // console.log("hello");
@@ -37,6 +75,9 @@ $(document).ready(function(){
             todayDate = new Date();
         }
         initCal(month, year, daysCont);
+        clickDays(month, year);
+        markEvents(month, year);
+        // getEvents(todayDate, month, year);
 
     });
     $(".next").click(function(){
@@ -52,6 +93,9 @@ $(document).ready(function(){
             console.log(todayDate);
         }
         initCal(month, year, daysCont);
+        clickDays(month, year);
+        markEvents(month, year);
+        // getEvents(todayDate, month, year);
 
     });
 });
@@ -59,6 +103,110 @@ $(document).ready(function(){
 // function newPage(){
 
 // }
+function markEvents(month, year){
+
+    let obj = JSON.parse(localStorage.getItem("eventObj"));
+    const days = document.getElementsByClassName("day");
+    for(let i = 0; i < obj.length; i++){
+        const event = obj[i];
+        for(let i = 0; i < days.length; i++){
+            let objDate = new Date(event.date + "T" + event.start);
+            if((objDate.getDate() == days[i].textContent) && (objDate.getFullYear() == year) && (objDate.getMonth() == month)){
+                // console.log("has event logged");
+                // alert("Title: " + event.title + " Time: " + event.start + " - " + event.end);
+                if(!days[i].classList.contains("hasEvent")){
+                    days[i].className += " hasEvent";
+                }
+            }
+        }
+    }
+
+}
+function getEvents(todayDate, month, year){
+
+    let obj = JSON.parse(localStorage.getItem("eventObj"));
+    for(let i = 0; i < obj.length; i++){
+        const event = obj[i];
+        // console.log(obj[i]);
+        const inputTitle = event.title;
+        const inputDate = event.date;
+        console.log("input" + inputDate);
+        const inputStartTime = event.start;
+        const inputEndTime = event.end;
+
+        const startDate = new Date(inputDate + "T" + inputStartTime);
+        console.log("start" + startDate);
+        console.log("starttime" + inputStartTime);
+
+        const endDate = new Date(inputDate + "T" + inputEndTime);
+
+        const startTimeStr = startDate.toLocaleTimeString('en-US',
+            { hour12: true, hour: 'numeric', minute: 'numeric' });
+        const endTimeStr = endDate.toLocaleTimeString('en-US',
+            { hour12: true, hour: 'numeric', minute: 'numeric' });
+
+        //check if the input date is the same as current (today)
+
+        if ((startDate.getDate() == todayDate.getDate()) && (startDate.getMonth() == todayDate.getMonth()) && (startDate.getFullYear() == todayDate.getFullYear())) {
+            const todayTask = document.getElementsByClassName("today-task");
+            todayTask[0].innerHTML += '<div class ="task"><div id="eventTitle">' + inputTitle + '</div>' + "<div class='task-time' id='eventTime'>" + startTimeStr + " - " + endTimeStr + "</div>";
+        }
+        // else {
+        //     const upcomingTask = document.getElementsByClassName("upcoming-task");
+        //     upcomingTask[0].innerHTML += '<div class ="task"><div id="eventTitle">' + inputTitle + '</div>' + "<div class='task-time' id='eventTime'>" + startTimeStr + " - " + endTimeStr + "</div>"
+        // }
+        else if ((startDate.getMonth() == todayDate.getMonth()) && (startDate.getFullYear() == todayDate.getFullYear()) && (startDate.getDate() > todayDate.getDate())){
+            const upcomingTask = document.getElementsByClassName("upcoming-task");
+            upcomingTask[0].innerHTML += '<div class ="task"><div id="eventTitle">' + inputTitle + '</div>' + "<div class='task-time' id='eventTime'>" + startTimeStr + " - " + endTimeStr + "</div>";
+        }
+        else{
+            continue;
+        }
+
+        // const days = document.getElementsByClassName("day");
+        // for(let i = 0; i < days.length; i++){
+        //     let objDate = new Date(event.date + "T" + event.start);
+        //     if((objDate.getDate() == days[i].textContent) && (objDate.getFullYear() == year) && (objDate.getMonth() == month)){
+        //         // console.log("has event logged");
+        //         // alert("Title: " + event.title + " Time: " + event.start + " - " + event.end);
+        //         if(!days[i].classList.contains("hasEvent")){
+        //             days[i].className += " hasEvent";
+        //         }
+        //     }
+        // }
+
+    }
+    // const event = JSON.parse(localStorage.getItem("eventObj"));
+
+    // const inputTitle = event.title;
+    // const inputDate = event.date;
+    // console.log("input" + inputDate);
+    // const inputStartTime = event.start;
+    // const inputEndTime = event.end;
+
+    // const startDate =  new Date(inputDate + "T" + inputStartTime);
+    // console.log("start" + startDate);
+    // console.log("starttime" + inputStartTime);
+
+    // const endDate =  new Date(inputDate + "T" + inputEndTime);
+
+    // const startTimeStr = startDate.toLocaleTimeString('en-US',
+    // {hour12:true,hour:'numeric',minute:'numeric'});
+    // const endTimeStr = endDate.toLocaleTimeString('en-US',
+    // {hour12:true,hour:'numeric',minute:'numeric'});
+
+    // //check if the input date is the same as current (today)
+
+    // if(startDate.getDate() == todayDate.getDate()){
+    //     const todayTask = document.getElementsByClassName("today-task");
+    //     todayTask[0].innerHTML += '<div class ="task"><div id="eventTitle">' + inputTitle + '</div>' + "<div class='task-time' id='eventTime'>" + startTimeStr + " - " + endTimeStr + "</div>"
+    // }
+    // else{
+    //     const upcomingTask = document.getElementsByClassName("upcoming-task");
+    //     upcomingTask[0].innerHTML += '<div class ="task"><div id="eventTitle">' + inputTitle + '</div>' + "<div class='task-time' id='eventTime'>" + startTimeStr + " - " + endTimeStr + "</div>"
+    // }
+}
+
  function initCal(month, year, daysCont){
     // const firstDay = new Date(year, month, 1);
     // const lastDay = new Date(year, month + 1, 0);
@@ -112,4 +260,27 @@ $(document).ready(function(){
 
     }
     daysCont.innerHTML = days;
+ }
+
+ function clickDays(month, year){
+    const days = document.getElementsByClassName("day");
+    const obj = JSON.parse(localStorage.getItem("eventObj"));
+   
+    for(let i = 0; i < days.length; i++){
+        days[i].addEventListener("click", function(){
+            // console.log("clicked day");
+            for(let j = 0; j < obj.length; j++){
+                let event = obj[j];
+                let objDate = new Date(event.date + "T" + event.start);
+                if((objDate.getDate() == days[i].textContent) && (objDate.getFullYear() == year) && (objDate.getMonth() == month)){
+                    console.log("has event logged");
+                    alert("Title: " + event.title + " Time: " + event.start + " - " + event.end);
+                    // if(!days[i].classList.contains("hasEvent")){
+                    //     days[i].className += " hasEvent";
+                    // }
+                }
+            }
+        });
+    }
+
  }
