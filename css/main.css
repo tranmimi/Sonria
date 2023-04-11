@@ -65,10 +65,12 @@ h1, h2, h3 {
 /* Style navigation bar (Dashboard, Reminders, Journal, Forums, Analytics, Settings) */
 #nav-bar {
     background-color: #FEF9F4;
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.12);
     border-radius: 20px;
     list-style: none;
 
     margin: auto;
+    margin-top: 20px;
     width: 75%;
 
     transition-duration: 0.3s;
