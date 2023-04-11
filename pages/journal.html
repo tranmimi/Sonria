@@ -9,9 +9,9 @@
 	<!-- Add Poppins font from main-->
 	<link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto+Condensed:ital,wght@0,400;1,700&display=swap"
 		  rel="stylesheet">
-	<link rel="stylesheet" href="css/main.css" />
-	<!-- <script id="applicationScript" type="text/javascript" src="js/journal_main.js"></script> -->
+	<link rel="stylesheet" href="../css/main.css" />
 </head>
+
 <body>
 <div id="journal_main">
 	<div id="journal_page" onclick="window.location.href='../pages/empty_prompt.html'">
@@ -20,21 +20,19 @@
 			</rect>
 		</svg>
 		<div id="user_prompt">
-			<div id="user_page_entry">
+			<!-- <div id="user_page_entry">
 				<span>I woke up feeling refreshed and ready to tackle my classes. I went for a run before my morning
 					lecture, and it felt amazing. There’s something about getting outside and moving my body that just
 					makes me feel so much better. In my first class, I</span>
 			</div>
 			<div id="btn_continue">
 				<span>…Continue</span>
-			</div>
+			</div> -->
 		</div>
 		<div id="journal_page_s">
 			<span>Journal page:</span>
 		</div>
-		<div id="entry_time">
-			<span>3:54pm</span>
-		</div>
+		<div id="entry_time"></div>
 	</div>
 	<div id="daily_planner" onclick="window.location.href='../pages/daily_planner.html'">
 		<svg class="daily_planner_box">
@@ -120,38 +118,38 @@
 		<div id="morning_motivation_prompt">
 			<span>Morning motivation:</span>
 		</div>
-		<div id="entry_time_bq">
+		<div id="mm_entry_time">
 			<span>5:06am</span>
 		</div>
 		<div id="sleep_entry">
 			<div id="sleep_question">
 				<span>How did you sleep?</span>
 			</div>
-			<div id="sleep_entry_bt">
+			<!-- <div id="sleep_entry_bt">
 				<span>I feel good about my sleep last nig…..</span>
-			</div>
+			</div> -->
 		</div>
 		<div id="grateful_entry">
 			<div id="grateful_question">
 				<span>What are you grateful for?</span>
 			</div>
-			<div id="grateful_entry_bw">
+			<!-- <div id="grateful_entry_bw">
 				<span>I have a great support system of f…..</span>
-			</div>
+			</div> -->
 		</div>
 		<div id="motivated_entry">
 			<div id="motivation_question">
 				<span>How motivated are you?</span>
 			</div>
-			<div id="motivation_entry">
+			<!-- <div id="motivation_entry">
 				<span>I’m excited to tackle my to-do list a…..</span>
-			</div>
+			</div> -->
 		</div>
 	</div>
 	<div id="entries_prompt">
-		<span>Your entries for the day:</span>
+		<span>Your entries for today:</span>
 	</div>
-	<div id="date_scroll_bar">
+	<!-- <div id="date_scroll_bar">
 		<div id="change_date">
 			<img id="left_date" src="../img/left_date.png" srcset="../img/left_date.png">
 
@@ -224,50 +222,29 @@
 				</div>
 			</div>
 		</div>
-	</div>
-	<div id="date_prompt">
-		<span>Today is Saturday, February 25</span>
-	</div>
-	<!-- Navigation Bar -->
-	<div id="Nav_Bar">
-		<svg class="nav_bar_box">
-			<rect id="nav_bar_box" rx="20" ry="20" x="0" y="0" width="981" height="70">
-			</rect>
-		</svg>
-		<div id="Settings" onclick="window.location.href='../pages/settings.html'">
-			<span>Settings</span>
-		</div>
-		<div id="Analytics" onclick="window.location.href='../pages/analytics.html'">
-			<span>Analytics</span>
-		</div>
-		<div id="Forms" onclick="window.location.href='../pages/form.html'">
-			<span>Forms</span>
-		</div>
-		<div id="Journal" onclick="window.location.href='../pages/journal.html'">
-			<span>Journal</span>
-		</div>
-		<div id="Reminders" onclick="window.location.href='../pages/reminders.html'">
-			<span>Reminders</span>
-		</div>
-		<div id="Dashboard" onclick="window.location.href='../pages/dashboard.html'">
-			<span>Dashboard</span>
-		</div>
-		<img id="sonria_logo" src="../img/sonria_logo.png" srcset="../img/sonria_logo.png">
+	</div> -->
+	<div class="date_prompt"></div>
 
-		<svg class="nav_bar_divider" viewBox="0 0 1 51">
-			<path id="nav_bar_divider" d="M 0 0 L 0 51">
-			</path>
-		</svg>
-	</div>
+	<!-- Navigation Bar-->
+	<ul id="nav-bar">
+		<li><img src="..\img\sonria_logo.png" height="50px" width="56px" id="logo"></li>
+		<li><a href="..\pages\dashboard.html" class="nav-link">Dashboard</a></li>
+		<li><a href="..\pages\reminders.html" class="nav-link">Reminders</a></li>
+		<li><a href="..\pages\journal.html" class="nav-link" id="current-page">Journal</a></li>
+		<li><a href="..\pages\forums.html" class="nav-link">Forums</a></li>
+		<li><a href="..\pages\analytics.html" class="nav-link">Analytics</a></li>
+		<li><a href="..\pages\settings.html" class="nav-link">Settings</a></li>
+	</ul>
+
 	<div id="btnNew_Entry" onclick="window.location.href='../pages/new_entry.html'">
 		<svg class="entry_box">
-			<rect id="entry_box" rx="20" ry="20" x="0" y="0" width="321" height="65">
-			</rect>
+			<rect id="entry_box" rx="20" ry="20" x="0" y="0" width="321" height="65"></rect>
 		</svg>
 		<div id="entry_text">
 			<span>New Entry</span>
 		</div>
 	</div>
 </div>
+<script id="applicationScript" type="text/javascript" src="../js/journal.js"></script>
 </body>
 </html>

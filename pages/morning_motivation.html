@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Morning Motivation</title>
-<link rel="stylesheet" type="text/css" id="applicationStylesheet" href="../css/morning_motivation.css"/><!-- Add Poppins font from main-->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto+Condensed:ital,wght@0,400;1,700&display=swap"
-        rel="stylesheet">
-  <link rel="stylesheet" href="css/main.css" />
-<!-- <script id="applicationScript" type="text/javascript" src="js/morning_motivation.js"></script> -->
+	<meta charset="utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Morning Motivation</title>
+	<link rel="stylesheet" type="text/css" id="applicationStylesheet" href="../css/morning_motivation.css"/><!-- Add Poppins font from main-->
+	<link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto+Condensed:ital,wght@0,400;1,700&display=swap"
+		  rel="stylesheet">
+	<link rel="stylesheet" href="../css/main.css" />
 </head>
 <body>
 <div id="morning_motivation">
@@ -22,66 +21,53 @@
 			<div id="sleep_question">
 				<span>How did you sleep?</span>
 			</div>
-			<div id="sleep_entry">
-				<span>I feel good about my sleep last night. I went to bed at my usual time and was able to fall asleep
-					quickly. I woke up feeling refreshed and energized. I’m glad that I’m starting to get into a
-					consistent sleep routine, as I know how important it is for my health and academic performance.</span>
-			</div>
+			<!-- <div id="sleep_entry"></div> -->
+			<label for="sleep_entry"></label>
+			<textarea id="sleep_entry" cols="64" rows="3"></textarea>
 		</div>
 		<div id="grateful">
 			<div id="grateful_question">
 				<span>What are you grateful for?</span>
 			</div>
-			<div id="grateful_entry">
-				<span>I have a great support system of friends and family who are always there for me, and that’s something that not everyone has. I’m also grateful for my good health, which allows me to pursue my passions and dreams.</span>
-			</div>
+			<!-- <div id="grateful_entry"></div> -->
+			<label for="grateful_entry"></label>
+			<textarea id="grateful_entry" cols="64" rows="3"></textarea>
 		</div>
 		<div id="motivated">
 			<div id="motivated_question">
 				<span>How motivated are you?</span>
 			</div>
-			<div id="motivated_entry">
-				<span>I’m excited to tackle my to-do list and make progress towards my academic and personal goals. Lately, I’ve been trying to cultivate a more positive and proactive mindset, and I think it’s really paying off. I feel more focused and determined than I have in a long time.</span>
-			</div>
+			<!-- <div id="motivated_entry"></div> -->
+			<label for="motivated_entry"></label>
+			<textarea id="motivated_entry" cols="64" rows="3"></textarea>
 		</div>
 	</div>
-	<div id="date_prompt">
-		<span>Today is Saturday, February 25</span>
+
+	<div id="btn_Done" onclick="window.location.href = '../pages/journal.html'" >
+		<svg class="done_box">
+			<rect id="done_box" rx="20" ry="20" x="0" y="0" width="321" height="65"></rect>
+		</svg>
+		<div id="done_text">
+			<span>Done</span>
+		</div>
 	</div>
+
+	<div class="date_prompt"></div>
 	<img id="back_arrow_icon" src="../img/back_arrow_icon.png" srcset="../img/back_arrow_icon.png"
-		 onclick="window.location.href='../pages/journal.html'">
+		 onclick="window.location.href='../pages/journal.html'" alt="">
 
-	<!-- Navigation Bar -->
-	<div id="Nav_Bar">
-		<svg class="nav_bar_box">
-			<rect id="nav_bar_box" rx="20" ry="20" x="0" y="0" width="981" height="70">
-			</rect>
-		</svg>
-		<div id="Settings" onclick="window.location.href='../pages/settings.html'">
-			<span>Settings</span>
-		</div>
-		<div id="Analytics" onclick="window.location.href='../pages/analytics.html'">
-			<span>Analytics</span>
-		</div>
-		<div id="Forms" onclick="window.location.href='../pages/form.html'">
-			<span>Forms</span>
-		</div>
-		<div id="Journal" onclick="window.location.href='../pages/journal.html'">
-			<span>Journal</span>
-		</div>
-		<div id="Reminders" onclick="window.location.href='../pages/reminders.html'">
-			<span>Reminders</span>
-		</div>
-		<div id="Dashboard" onclick="window.location.href='../pages/dashboard.html'">
-			<span>Dashboard</span>
-		</div>
-		<img id="sonria_logo" src="../img/sonria_logo.png" srcset="../img/sonria_logo.png">
-
-		<svg class="nav_bar_divider" viewBox="0 0 1 51">
-			<path id="nav_bar_divider" d="M 0 0 L 0 51">
-			</path>
-		</svg>
-	</div>
+	<!-- Navigation Bar-->
+	<ul id="nav-bar">
+		<li><img src="..\img\sonria_logo.png" height="50px" width="56px" id="logo"></li>
+		<li><a href="..\pages\dashboard.html" class="nav-link">Dashboard</a></li>
+		<li><a href="..\pages\reminders.html" class="nav-link">Reminders</a></li>
+		<li><a href="..\pages\journal.html" class="nav-link"> <!--id="current-page"--> Journal</a></li>
+		<li><a href="..\pages\forums.html" class="nav-link">Forums</a></li>
+		<li><a href="..\pages\analytics.html" class="nav-link">Analytics</a></li>
+		<li><a href="..\pages\settings.html" class="nav-link">Settings</a></li>
+	</ul>
 </div>
+
+<script id="applicationScript" type="text/javascript" src="../js/morning_motivation.js"></script>
 </body>
 </html>
