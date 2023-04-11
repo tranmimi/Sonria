@@ -1,0 +1,109 @@
+/*
+    File: main.css
+
+    Styling from this page will be universal across all web pages associated with Sonria!
+*/
+
+/*
+    - Import Poppins font from https://fonts.google.com/specimen/Poppins?query=poppins.
+    - Set primary background and font colors.
+*/
+body {
+    background-color: #E7E2DE;
+    color: #875F4A;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Style dividers. */
+hr {
+    border: 1px solid white;
+    width: 75%;
+}
+
+/* Style headings. */
+h1, h2, h3 {
+    color: #5D3F35;
+}
+
+/* Style buttons. */
+.normal-btn {
+    background-color: #A5A58E;
+    border: 1px solid #A5A58E;
+    border-radius: 20px;
+    color: white;
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+
+    margin-bottom: 25px;
+    padding-left: 3%;
+    padding-right: 3%;
+
+    transition-duration: 0.3s;
+}
+
+.normal-btn:hover {
+    background-color: #8b8b6f;
+    color: #d1d1c4;
+    cursor: pointer;
+}
+
+.normal-btn:active {
+    background-color: #707058;
+    color: #bdbdac;
+    cursor: pointer;
+}
+
+.normal-btn:disabled {
+    background-color: #cacabb;
+    border: none;
+    color: white;
+    cursor: not-allowed;
+}
+
+/* Style navigation bar (Dashboard, Reminders, Journal, Forums, Analytics, Settings) */
+#nav-bar {
+    background-color: #FEF9F4;
+    border-radius: 20px;
+    list-style: none;
+
+    margin: auto;
+    width: 75%;
+
+    transition-duration: 0.3s;
+}
+
+li {
+    display: inline-block;
+    padding: 10px;
+}
+
+#logo {
+    vertical-align: middle;
+}
+
+a {
+    color: #875F4A;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #A5A58E;
+    cursor: pointer;
+}
+
+a:active {
+    color: #707058;
+    cursor: pointer;
+}
+
+#current-page {
+    color: #A5A58E;
+}
+
+/* Style copyright footer. */
+footer {
+    color: white;
+}

@@ -45,35 +45,25 @@
 	left: 0px;
 	top: 0px;
 }
-#user_empty {
+textarea {
+	border: none;
+	background-color: rgba(234,218,214,1);
+	text-indent: 5px;
+}
+#user_entry {
 	left: 39px;
-	top: 64px;
+	top: 40px;
 	position: absolute;
 	overflow: visible;
 	width: 905px;
 	height: 682px;
 	text-align: left;
-	font-family: Helvetica Neue;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 24px;
 	color: rgba(93,63,53,1);
 }
-#empty_prompt_q {
-	left: 41px;
-	top: 27px;
-	position: absolute;
-	overflow: hidden;
-	width: 398px;
-	height: 27px;
-	text-align: left;
-	font-family: Helvetica Neue;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 24px;
-	color: rgba(93,63,53,0.6);
-}
-#date_prompt {
+.date_prompt {
 	left: 436px;
 	top: 120px;
 	position: absolute;
@@ -81,7 +71,6 @@
 	width: 560px;
 	height: 54px;
 	text-align: center;
-	font-family: Helvetica Neue;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 36px;
@@ -99,149 +88,57 @@
 	--web-action-target: journal_main.html;
 	cursor: pointer;
 }
-#Nav_Bar {
+
+#btn_Done {
 	position: absolute;
-	width: 981px;
-	height: 70px;
-	left: 225px;
-	top: 31px;
+	width: 321px;
+	height: 65px;
+	left: 560px;
+	/*top: 931px;*/
+	top: 960px;
 	overflow: visible;
+	--web-animation: fadein undefineds undefined;
+	--web-action-type: page;
+	--web-action-target: new_entry.html;
+	cursor: pointer;
+	padding-bottom: 20px;
 }
-#nav_bar_box {
-	fill: rgba(254,249,244,1);
+#done_box {
+	fill: rgba(255,243,232,1);
 }
-.nav_bar_box {
-	filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.161));
+.done_box {
+	/* filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.161)); */
 	position: absolute;
 	overflow: visible;
-	width: 999px;
-	height: 88px;
+	width: 351px;
+	height: 95px;
 	left: 0px;
 	top: 0px;
 }
-#Settings {
-	left: 847px;
-	top: 19px;
+#done_text {
+	left: 24px;
+	top: 14px;
 	position: absolute;
 	overflow: visible;
-	width: 92px;
-	white-space: nowrap;
-	line-height: 32px;
-	margin-top: -4px;
-	text-align: left;
-	font-family: Helvetica Neue;
+	width: 274px;
+	height: 37px;
+	text-align: center;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 24px;
-	color: rgba(135,95,74,1);
+	color: rgba(93,63,53,1);
 }
-#Analytics {
-	left: 709px;
-	top: 21px;
-	position: absolute;
-	overflow: visible;
-	width: 102px;
-	white-space: nowrap;
-	line-height: 32px;
-	margin-top: -4px;
-	text-align: left;
-	font-family: Helvetica Neue;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 24px;
-	color: rgba(135,95,74,1);
+
+/***** Navigation Bar *****/
+#nav-bar{
+	background-color: #FEF9F4;
+	border-radius: 20px;
+	list-style: none;
+	margin: auto;
+	width: 75%;
+	transition-duration: 0.3s;
 }
-#Forms {
-	left: 592px;
-	top: 21px;
-	position: absolute;
-	overflow: visible;
-	width: 71px;
-	white-space: nowrap;
-	--web-animation: fadein undefineds undefined;
-	--web-action-type: page;
-	--web-action-target: fourm_main.html;
-	cursor: pointer;
-	line-height: 32px;
-	margin-top: -4px;
-	text-align: left;
-	font-family: Helvetica Neue;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 24px;
-	color: rgba(135,95,74,1);
-}
-#Journal {
-	left: 474px;
-	top: 21px;
-	position: absolute;
-	overflow: visible;
-	width: 84px;
-	white-space: nowrap;
-	line-height: 32px;
-	margin-top: -4px;
-	text-align: left;
-	font-family: Helvetica Neue;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 24px;
-	color: rgba(135,95,74,1);
-}
-#Reminders {
-	left: 318px;
-	top: 21px;
-	position: absolute;
-	overflow: visible;
-	width: 121px;
-	white-space: nowrap;
-	line-height: 32px;
-	margin-top: -4px;
-	text-align: left;
-	font-family: Helvetica Neue;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 24px;
-	color: rgba(135,95,74,1);
-}
-#Dashboard {
-	left: 157px;
-	top: 21px;
-	position: absolute;
-	overflow: visible;
-	width: 123px;
-	white-space: nowrap;
-	line-height: 32px;
-	margin-top: -4px;
-	text-align: left;
-	font-family: Helvetica Neue;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 24px;
-	color: rgba(135,95,74,1);
-}
-#sonria_logo {
-	position: absolute;
-	width: 55px;
-	height: 49.42px;
-	left: 36px;
-	top: 9px;
-	overflow: visible;
-}
-#nav_bar_divider {
-	fill: transparent;
-	stroke: rgba(240,222,203,1);
-	stroke-width: 1px;
-	stroke-linejoin: miter;
-	stroke-linecap: butt;
-	stroke-miterlimit: 4;
-	shape-rendering: auto;
-}
-.nav_bar_divider {
-	overflow: visible;
-	position: absolute;
-	width: 1px;
-	height: 51px;
-	left: 124px;
-	top: 11px;
-	transform: matrix(1,0,0,1,0,0);
+
+#logo {
+	vertical-align: middle;
 }
