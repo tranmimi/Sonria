@@ -45,18 +45,16 @@ $(document).ready(function(){
         //     }
         // ];
     
-        //where local storage obj is created
-        let eventHistory = localStorage.getItem("eventObj") || [];
-        eventHistory = JSON.parse(eventHistory);
+        let eventHistory = JSON.parse(localStorage.getItem("eventObj")) || [];
+        // eventHistory = JSON.parse(eventHistory);
         if(!(eventHistory instanceof Array)){
             eventHistory = [eventHistory];
         }
-        //saving array of input elements
         eventHistory.push({
                     title: titleVal,
                     date: inputDateVal,
                     start: startTimeVal,
-                    end: endTimeVal,
+                    end: endTimeVal
                 });
         // getEvents();
         // console.log(eventArr);
@@ -64,7 +62,6 @@ $(document).ready(function(){
 
         // localStorage.setItem("eventObj", JSON.stringify({title: titleVal, date: inputDateVal, start: startTimeVal, end:endTimeVal}));
 
-        //saving obj
         localStorage.setItem("eventObj", JSON.stringify(eventHistory));
         window.location.href = "../pages/reminders.html";
         

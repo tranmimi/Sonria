@@ -20,8 +20,13 @@ $(document).ready(function(){
 
 
     initCal(month, year, daysCont);
+    getEvents(todayDate, month, year);
     clickDays(month, year);
     markEvents(month, year);
+
+    // let obj = JSON.parse(localStorage.getItem("eventObj"));
+    // localStorage.clear();
+
 
     // const inputTitle = localStorage.getItem("input-title");
     // const inputDate = localStorage.getItem("input-date");
@@ -56,7 +61,7 @@ $(document).ready(function(){
 
     
     
-    getEvents(todayDate, month, year);
+    // getEvents(todayDate, month, year);
 
 
     $(".btn").click(function(){
@@ -105,63 +110,81 @@ $(document).ready(function(){
 // }
 function markEvents(month, year){
 
-    let obj = JSON.parse(localStorage.getItem("eventObj"));
+    // let obj = localStorage.getItem("eventObj") || [];
+    // obj = JSON.parse(obj);
+    // let obj = JSON.parse(localStorage.getItem("eventObj"));
     const days = document.getElementsByClassName("day");
-    for(let i = 0; i < obj.length; i++){
-        const event = obj[i];
-        for(let i = 0; i < days.length; i++){
-            let objDate = new Date(event.date + "T" + event.start);
-            if((objDate.getDate() == days[i].textContent) && (objDate.getFullYear() == year) && (objDate.getMonth() == month)){
-                // console.log("has event logged");
-                // alert("Title: " + event.title + " Time: " + event.start + " - " + event.end);
-                if(!days[i].classList.contains("hasEvent")){
-                    days[i].className += " hasEvent";
+    if(localStorage.getItem("eventObj") != null){
+        let obj = JSON.parse(localStorage.getItem("eventObj"));
+        for(let i = 0; i < obj.length; i++){
+            const event = obj[i];
+            for(let i = 0; i < days.length; i++){
+                let objDate = new Date(event.date + "T" + event.start);
+                if((objDate.getDate() == days[i].textContent) && (objDate.getFullYear() == year) && (objDate.getMonth() == month)){
+                    // console.log("has event logged");
+                    // alert("Title: " + event.title + " Time: " + event.start + " - " + event.end);
+                    if(!days[i].classList.contains("hasEvent")){
+                        days[i].className += " hasEvent";
+                    }
                 }
             }
         }
     }
+    // if(obj.length != null){
+       
+    // }
+    
 
 }
 function getEvents(todayDate, month, year){
 
-    let obj = JSON.parse(localStorage.getItem("eventObj"));
-    for(let i = 0; i < obj.length; i++){
-        const event = obj[i];
-        // console.log(obj[i]);
-        const inputTitle = event.title;
-        const inputDate = event.date;
-        console.log("input" + inputDate);
-        const inputStartTime = event.start;
-        const inputEndTime = event.end;
+    // let obj = localStorage.getItem("eventObj") || [];
+    // let obj = JSON.parse(localStorage.getItem("eventObj"));
+    if(localStorage.getItem("eventObj") != null){
+        let obj = JSON.parse(localStorage.getItem("eventObj"));
+        for(let i = 0; i < obj.length; i++){
+            const event = obj[i];
+            // console.log(obj[i]);
+            const inputTitle = event.title;
+            const inputDate = event.date;
+            console.log("input" + inputDate);
+            const inputStartTime = event.start;
+            const inputEndTime = event.end;
+    
+            const startDate = new Date(inputDate + "T" + inputStartTime);
+            console.log("start" + startDate);
+            console.log("starttime" + inputStartTime);
+    
+            const endDate = new Date(inputDate + "T" + inputEndTime);
+    
+            const startTimeStr = startDate.toLocaleTimeString('en-US',
+                { hour12: true, hour: 'numeric', minute: 'numeric' });
+            const endTimeStr = endDate.toLocaleTimeString('en-US',
+                { hour12: true, hour: 'numeric', minute: 'numeric' });
+    
+            //check if the input date is the same as current (today)
+    
+            if ((startDate.getDate() == todayDate.getDate()) && (startDate.getMonth() == todayDate.getMonth()) && (startDate.getFullYear() == todayDate.getFullYear())) {
+                const todayTask = document.getElementsByClassName("today-task");
+                todayTask[0].innerHTML += '<div class ="task"><div id="eventTitle">' + inputTitle + '</div>' + "<div class='task-time' id='eventTime'>" + startTimeStr + " - " + endTimeStr + "</div>";
+            }
+            // else {
+            //     const upcomingTask = document.getElementsByClassName("upcoming-task");
+            //     upcomingTask[0].innerHTML += '<div class ="task"><div id="eventTitle">' + inputTitle + '</div>' + "<div class='task-time' id='eventTime'>" + startTimeStr + " - " + endTimeStr + "</div>"
+            // }
+            else if ((startDate.getMonth() == todayDate.getMonth()) && (startDate.getFullYear() == todayDate.getFullYear()) && (startDate.getDate() > todayDate.getDate())){
+                const upcomingTask = document.getElementsByClassName("upcoming-task");
+                upcomingTask[0].innerHTML += '<div class ="task"><div id="eventTitle">' + inputTitle + '</div>' + "<div class='task-time' id='eventTime'>" + startTimeStr + " - " + endTimeStr + "</div>";
+            }
+            else{
+                continue;
+            }
 
-        const startDate = new Date(inputDate + "T" + inputStartTime);
-        console.log("start" + startDate);
-        console.log("starttime" + inputStartTime);
-
-        const endDate = new Date(inputDate + "T" + inputEndTime);
-
-        const startTimeStr = startDate.toLocaleTimeString('en-US',
-            { hour12: true, hour: 'numeric', minute: 'numeric' });
-        const endTimeStr = endDate.toLocaleTimeString('en-US',
-            { hour12: true, hour: 'numeric', minute: 'numeric' });
-
-        //check if the input date is the same as current (today)
-
-        if ((startDate.getDate() == todayDate.getDate()) && (startDate.getMonth() == todayDate.getMonth()) && (startDate.getFullYear() == todayDate.getFullYear())) {
-            const todayTask = document.getElementsByClassName("today-task");
-            todayTask[0].innerHTML += '<div class ="task"><div id="eventTitle">' + inputTitle + '</div>' + "<div class='task-time' id='eventTime'>" + startTimeStr + " - " + endTimeStr + "</div>";
         }
-        // else {
-        //     const upcomingTask = document.getElementsByClassName("upcoming-task");
-        //     upcomingTask[0].innerHTML += '<div class ="task"><div id="eventTitle">' + inputTitle + '</div>' + "<div class='task-time' id='eventTime'>" + startTimeStr + " - " + endTimeStr + "</div>"
+        // if(obj.length != null){
+            
         // }
-        else if ((startDate.getMonth() == todayDate.getMonth()) && (startDate.getFullYear() == todayDate.getFullYear()) && (startDate.getDate() > todayDate.getDate())){
-            const upcomingTask = document.getElementsByClassName("upcoming-task");
-            upcomingTask[0].innerHTML += '<div class ="task"><div id="eventTitle">' + inputTitle + '</div>' + "<div class='task-time' id='eventTime'>" + startTimeStr + " - " + endTimeStr + "</div>";
-        }
-        else{
-            continue;
-        }
+    
 
         // const days = document.getElementsByClassName("day");
         // for(let i = 0; i < days.length; i++){
