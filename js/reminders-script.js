@@ -286,24 +286,24 @@ function getEvents(todayDate, month, year){
  }
 
  function clickDays(month, year){
-    const days = document.getElementsByClassName("day");
-    const obj = JSON.parse(localStorage.getItem("eventObj"));
-   
-    for(let i = 0; i < days.length; i++){
-        days[i].addEventListener("click", function(){
-            // console.log("clicked day");
-            for(let j = 0; j < obj.length; j++){
-                let event = obj[j];
-                let objDate = new Date(event.date + "T" + event.start);
-                if((objDate.getDate() == days[i].textContent) && (objDate.getFullYear() == year) && (objDate.getMonth() == month)){
-                    console.log("has event logged");
-                    alert("Title: " + event.title + " Time: " + event.start + " - " + event.end);
-                    // if(!days[i].classList.contains("hasEvent")){
-                    //     days[i].className += " hasEvent";
-                    // }
+    const days = document.getElementsByClassName("day");;
+    if(localStorage.getItem("eventObj") != null){
+        const obj = JSON.parse(localStorage.getItem("eventObj"))
+        for(let i = 0; i < days.length; i++){
+            days[i].addEventListener("click", function(){
+                // console.log("clicked day");
+                for(let j = 0; j < obj.length; j++){
+                    let event = obj[j];
+                    let objDate = new Date(event.date + "T" + event.start);
+                    if((objDate.getDate() == days[i].textContent) && (objDate.getFullYear() == year) && (objDate.getMonth() == month)){
+                        console.log("has event logged");
+                        alert("Title: " + event.title + " Time: " + event.start + " - " + event.end);
+                        // if(!days[i].classList.contains("hasEvent")){
+                        //     days[i].className += " hasEvent";
+                        // }
+                    }
                 }
-            }
-        });
+            });
+        }
     }
-
  }
