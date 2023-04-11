@@ -248,8 +248,8 @@ li span{
     width: 100px;
     height: 40px;
     position: relative;
-    top: 50px;
-    left: 0px;
+    /* top: 50px;
+    left: 0px; */
     background-color: #FFF3E8;
     border: 1px solid lightgrey;
     border-radius: 10px;

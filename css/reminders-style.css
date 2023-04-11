@@ -236,3 +236,6 @@ li span{
     margin: 5px;
     text-align: center;
 }
+.hasEvent{
+    background-color: rgb(148, 124, 118);
+}

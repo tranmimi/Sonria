@@ -17,14 +17,65 @@ $(document).ready(function(){
     // console.log(date);
     // displayDate.innerHTML =  months[month] + " " + day + "th " + year;
 
-   
+    const form = document.getElementById("form");
+    const title = document.getElementById("input-title");
+    const inputDate = document.getElementById("input-date");
+    const startTime = document.getElementById("start-time");
+    const endTime = document.getElementById("end-time");
+    form.addEventListener("submit", function(e){
+        e.preventDefault();
+        const titleVal = title.value;
+        const inputDateVal = inputDate.value;
+        const startTimeVal = startTime.value;
+        const endTimeVal = endTime.value;
+
+        // localStorage.setItem("input-title", titleVal);
+        // localStorage.setItem("input-date", inputDateVal);
+        // localStorage.setItem("input-starttime", startTimeVal);
+        // localStorage.setItem("input-endtime", endTimeVal);
+        //change to json
+        //yt vid 45:21
+        // let eventArr = [];
+        // var eventArr = [
+        //     {
+        //         title: titleVal,
+        //         date: inputDateVal,
+        //         start: startTimeVal,
+        //         end: endTimeVal
+        //     }
+        // ];
+    
+        //where local storage obj is created
+        let eventHistory = localStorage.getItem("eventObj") || [];
+        eventHistory = JSON.parse(eventHistory);
+        if(!(eventHistory instanceof Array)){
+            eventHistory = [eventHistory];
+        }
+        //saving array of input elements
+        eventHistory.push({
+                    title: titleVal,
+                    date: inputDateVal,
+                    start: startTimeVal,
+                    end: endTimeVal,
+                });
+        // getEvents();
+        // console.log(eventArr);
+        // saveEvents();
+
+        // localStorage.setItem("eventObj", JSON.stringify({title: titleVal, date: inputDateVal, start: startTimeVal, end:endTimeVal}));
+
+        //saving obj
+        localStorage.setItem("eventObj", JSON.stringify(eventHistory));
+        window.location.href = "../pages/reminders.html";
+        
+    });
     
     initCal(month, year, daysCont);
 
-    $(".submit-btn").click(function(){
-        // console.log("hello");
-        window.location.href = "../pages/reminders.html";
-    });
+    // $(".submit-btn").click(function(){
+    //     // console.log("hello");
+    //     window.location.href = "../pages/reminders.html";
+    // });
     $(".prev").click(function(){
         // console.log("prev");
         month--;
@@ -55,6 +106,15 @@ $(document).ready(function(){
 
     });
 });
+// function getEvents(){
+//     if(localStorage.getItem("eventObj") === null){
+//         return;
+//     }   
+//     eventArr.push(...JSON.parse(localStorage.getItem("eventObj")));
+// }
+// function saveEvents(){
+//     localStorage.setItem("eventObj", JSON.stringify(eventArr));
+// }
 
 // function newPage(){
 
