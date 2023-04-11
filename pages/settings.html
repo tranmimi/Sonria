@@ -50,19 +50,6 @@
   <button onclick = "window.location.href='login.html';" type="button" name="Log Out">Log Out</button>
   <hr>
 
-  <!-- Customization - SECTION 2 -->
-  <h2 class = "custom">Customization</h2> 
-  <h3>Choose a Theme </h3>
-  <!-- dark mode -->
-  <div class="foo white"></div>
-  <div class="foo grey"></div>
-  <div class="foo black"></div>
-  <!-- blue mode -->
-  <div class="foo blue1"></div>
-  <div class="foo blue2"></div>
-  <div class="foo blue3"></div>
-
-  <hr>
   <!-- Notifications - SECTION 3 -->
   <h2 class = "notify">Notifications</h2>
   <!-- use div instead, or use break in between  -->
@@ -79,8 +66,24 @@
     <span class="slider round"></span>
   </label>
   <hr>
-  <button type="button" name="button" class = "deleteBtn">Delete Account</button>
+  <button onclick = "window.location.href='account-creation.html';"
+    type="button" name="button" class = "deleteBtn">Delete Account</button>
 
+    <img src="moon.png" id= "icon" alt="moon">
+
+      <script>
+        var icon = document.getElementById("icon");
+        icon.onclick = function () {
+          document.body.classList.toggle("dark-mode");
+          if(document.body.classList.contains("dark-mode")) {
+            icon.src = "sun.png";
+          }
+          else {
+            icon.src = "moon.png";
+          }
+        }
+
+      </script>
 
 </body>
 </html>
