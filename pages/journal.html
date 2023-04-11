@@ -4,7 +4,7 @@
 	<meta charset="utf-8"/>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>journal_main</title>
+	<title>Journal</title>
 	<link rel="stylesheet" type="text/css" id="applicationStylesheet" href="../css/journal.css"/>
 	<!-- Add Poppins font from main-->
 	<link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto+Condensed:ital,wght@0,400;1,700&display=swap"
@@ -14,7 +14,7 @@
 </head>
 <body>
 <div id="journal_main">
-	<div onclick="application.goToTargetView(event)" id="journal_page">
+	<div id="journal_page" onclick="window.location.href='../pages/empty_prompt.html'">
 		<svg class="journal_page_box">
 			<rect id="journal_page_box" rx="20" ry="20" x="0" y="0" width="476" height="309">
 			</rect>
@@ -36,7 +36,7 @@
 			<span>3:54pm</span>
 		</div>
 	</div>
-	<div onclick="application.goToTargetView(event)" id="daily_planner">
+	<div id="daily_planner" onclick="window.location.href='../pages/daily_planner.html'">
 		<svg class="daily_planner_box">
 			<rect id="daily_planner_box" rx="20" ry="20" x="0" y="0" width="476" height="309">
 			</rect>
@@ -73,7 +73,7 @@
 			</div>
 		</div>
 	</div>
-	<div onclick="application.goToTargetView(event)" id="emo_check_in">
+	<div id="emo_check_in" onclick="window.location.href='../pages/emotional_check_in.html'">
 		<svg class="check_in_box">
 			<rect id="check_in_box" rx="20" ry="20" x="0" y="0" width="476" height="309">
 			</rect>
@@ -112,7 +112,7 @@
 			</div>
 		</div>
 	</div>
-	<div onclick="application.goToTargetView(event)" id="morning_motivation">
+	<div id="morning_motivation" onclick="window.location.href='../pages/morning_motivation.html'">
 		<svg class="morning_motivation_box">
 			<rect id="morning_motivation_box" rx="20" ry="20" x="0" y="0" width="476" height="309">
 			</rect>
@@ -259,7 +259,7 @@
 			</path>
 		</svg>
 	</div>
-	<div onclick="application.goToTargetView(event)" id="btnNew_Entry">
+	<div id="btnNew_Entry" onclick="window.location.href='../pages/new_entry.html'">
 		<svg class="entry_box">
 			<rect id="entry_box" rx="20" ry="20" x="0" y="0" width="321" height="65">
 			</rect>
