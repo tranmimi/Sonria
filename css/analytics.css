@@ -71,7 +71,10 @@ button {
 .button1:hover, .button2:hover, .button3:hover {
   background-color: #A36361;
 }
-canvas{
-  margin-left: 220px;
-  margin-top: 30px;
+
+#main {
+  margin-left: 200px;
+  background-color: white;
+  border-radius: 20px;
+  margin-bottom: 30px;
 }
