@@ -2,18 +2,6 @@
     File: dashboard.js
 
     A file which adds dynamic functionality to the Dashboard. 
-
-    Features completed:
-    - Mood tracker modal box. (no data collection yet)
-    - 
-
-    Features TODO:
-    - When an emoji is selected, either:
-        - ENLARGE emoji to show which emoji the user selected.
-        - Fade other emojis that were not clicked.
-    - Mood tracker data collection. (connect with Firebase)
-    - Sync data recorded in Reminders to "Did you miss anything?" box.
-
 */
 
 /*
@@ -23,9 +11,12 @@
             https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_modal
 */
 
-// Get the modal box and Confirm button
+// Get the Modal Box and Confirm button
 var modal = document.getElementById("mood-tracker-modal-box");
+var second_modal = document.getElementById("second-mood-tracker-modal-box");
+var second_modal_content = document.getElementById("second-mood-tracker-content");
 var confirm_btn = document.getElementById("mood-confirm");
+var second_confirm_btn = document.getElementById("second-mood-confirm");
 
 // Get individual emoji Moods
 var angry = document.getElementById("angry-face");
@@ -35,352 +26,136 @@ var neutral = document.getElementById("neutral-face");
 var smile = document.getElementById("smiling-face");
 var happy = document.getElementById("happy-face");
 
-// After selecting a Mood, make it shake to indicate selection
-// angry.onclick = function() {
-//     angry.setAttribute("id", "wiggle");
 
-//     // Remove "wiggle" id from all other Moods if there was a previous selection.
-//     sad.removeAttribute("id");
-//     sad.setAttribute("id", "crying-face");
-//     worried.removeAttribute("id");
-//     worried.setAttribute("id", "worried-face");
-//     neutral.removeAttribute("id");
-//     neutral.setAttribute("id", "neutral-face");
-//     smile.removeAttribute("id");
-//     smile.setAttribute("id", "smiling-face");
-//     happy.removeAttribute("id");
-//     happy.setAttribute("id", "happy-face");
-// }
-// sad.onclick = function() {
-//     sad.setAttribute("id", "wiggle");
+// 
 
-//     // Remove "wiggle" id from all other Moods if there was a previous selection.
-//     angry.removeAttribute("id");
-//     angry.setAttribute("id", "angry-face");
-//     worried.removeAttribute("id");
-//     worried.setAttribute("id", "worried-face");
-//     neutral.removeAttribute("id");
-//     neutral.setAttribute("id", "neutral-face");
-//     smile.removeAttribute("id");
-//     smile.setAttribute("id", "smiling-face");
-//     happy.removeAttribute("id");
-//     happy.setAttribute("id", "happy-face");
-// }
-// worried.onclick = function() {
-//     worried.setAttribute("id", "wiggle");
+/*
+    For the Mood Tracker Calendar
+        Code referenced and modified from https://gosnippets.com/snippets/dynamic-calendar-with-pure-css-and-javascript
+*/
+const daysTag = document.querySelector(".days"),
+currentDate = document.querySelector(".current-date"),
+prevNextIcon = document.querySelectorAll(".icons span");
 
-//     // Remove "wiggle" id from all other Moods if there was a previous selection.
-//     sad.removeAttribute("id");
-//     sad.setAttribute("id", "crying-face");
-//     angry.removeAttribute("id");
-//     angry.setAttribute("id", "angry-face");
-//     neutral.removeAttribute("id");
-//     neutral.setAttribute("id", "neutral-face");
-//     smile.removeAttribute("id");
-//     smile.setAttribute("id", "smiling-face");
-//     happy.removeAttribute("id");
-//     happy.setAttribute("id", "happy-face");
-// }
-// neutral.onclick = function() {
-//     neutral.setAttribute("id", "wiggle");
+let date = new Date(),
+currYear = date.getFullYear(),
+currMonth = date.getMonth();
 
-//     // Remove "wiggle" id from all other Moods if there was a previous selection.
-//     sad.removeAttribute("id");
-//     sad.setAttribute("id", "crying-face");
-//     worried.removeAttribute("id");
-//     worried.setAttribute("id", "worried-face");
-//     angry.removeAttribute("id");
-//     angry.setAttribute("id", "angry-face");
-//     smile.removeAttribute("id");
-//     smile.setAttribute("id", "smiling-face");
-//     happy.removeAttribute("id");
-//     happy.setAttribute("id", "happy-face");
-// }
-// smile.onclick = function() {
-//     angry.setAttribute("id", "wiggle");
+const months = ["January", "February", "March", "April", "May", "June", "July",
+"August", "September", "October", "November", "December"];
 
-//     // Remove "wiggle" id from all other Moods if there was a previous selection.
-//     sad.removeAttribute("id");
-//     sad.setAttribute("id", "crying-face");
-//     worried.removeAttribute("id");
-//     worried.setAttribute("id", "worried-face");
-//     neutral.removeAttribute("id");
-//     neutral.setAttribute("id", "neutral-face");
-//     angry.removeAttribute("id");
-//     angry.setAttribute("id", "angry-face");
-//     happy.removeAttribute("id");
-//     happy.setAttribute("id", "happy-face");
-// }
-// happy.onclick = function() {
-//     happy.setAttribute("id", "wiggle");
+const renderCalendar = () => {
+let firstDayofMonth = new Date(currYear, currMonth, 1).getDay(),
+lastDateofMonth = new Date(currYear, currMonth + 1, 0).getDate(),
+lastDayofMonth = new Date(currYear, currMonth, lastDateofMonth).getDay(),
+lastDateofLastMonth = new Date(currYear, currMonth, 0).getDate();
+let liTag = "";
 
-//     // Remove "wiggle" id from all other Moods if there was a previous selection.
-//     sad.removeAttribute("id");
-//     sad.setAttribute("id", "crying-face");
-//     worried.removeAttribute("id");
-//     worried.setAttribute("id", "worried-face");
-//     neutral.removeAttribute("id");
-//     neutral.setAttribute("id", "neutral-face");
-//     smile.removeAttribute("id");
-//     smile.setAttribute("id", "smiling-face");
-//     angry.removeAttribute("id");
-//     angry.setAttribute("id", "angry-face");
-// }
-
-
-// After clicking the Confirm button, close the modal box
-confirm_btn.onclick = function() {
-    modal.style.display = "none";
+for (let i = firstDayofMonth; i > 0; i--) {
+liTag += `<li class="inactive">${lastDateofLastMonth - i + 1}</li>`;
 }
 
+for (let i = 1; i <= lastDateofMonth; i++) { let isToday=i===date.getDate() && currMonth===new Date().getMonth() && currYear===new Date().getFullYear() ? "active today-mood" : "" ; liTag +=`<li class="${isToday} other-day" id="day${i}">${i}</li>`;
+    }
 
-/* */
-
-var Cal = function(divId) {
-    //Store div id
-    this.divId = divId;
-    // Days of week, starting on Sunday
-    this.DaysOfWeek = [
-      'Sun',
-      'Mon',
-      'Tue',
-      'Wed',
-      'Thu',
-      'Fri',
-      'Sat'
-    ];
-    // Months, stating on January
-    this.Months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December' ];
-    // Set the current month, year
-    var d = new Date();
-    this.currMonth = d.getMonth();
-    this.currYear = d.getFullYear();
-    this.currDay = d.getDate();
-   
-  };
-  // Goes to next month
-  Cal.prototype.nextMonth = function() {
-    if ( this.currMonth == 11 ) {
-      this.currMonth = 0;
-      this.currYear = this.currYear + 1;
-    }
-    else {
-      this.currMonth = this.currMonth + 1;
-    }
-    this.showcurr();
-  };
-  // Goes to previous month
-  Cal.prototype.previousMonth = function() {
-    if ( this.currMonth == 0 ) {
-      this.currMonth = 11;
-      this.currYear = this.currYear - 1;
-    }
-    else {
-      this.currMonth = this.currMonth - 1;
-    }
-    this.showcurr();
-  };
-  // Show current month
-  Cal.prototype.showcurr = function() {
-    this.showMonth(this.currYear, this.currMonth);
-  };
-  // Show month (year, month)
-  Cal.prototype.showMonth = function(y, m) {
-    var d = new Date()
-    // First day of the week in the selected month
-    , firstDayOfMonth = new Date(y, m, 1).getDay()
-    // Last day of the selected month
-    , lastDateOfMonth =  new Date(y, m+1, 0).getDate()
-    // Last day of the previous month
-    , lastDayOfLastMonth = m == 0 ? new Date(y-1, 11, 0).getDate() : new Date(y, m, 0).getDate();
-    var html = '<table>';
-    // Write selected month and year
-    html += '<thead><tr>';
-    html += '<td colspan="7">' + this.Months[m] + ' ' + y + '</td>';
-    html += '</tr></thead>';
-    // Write the header of the days of the week
-    html += '<tr class="days">';
-    for(var i=0; i < this.DaysOfWeek.length;i++) {
-      html += '<td>' + this.DaysOfWeek[i] + '</td>';
-    }
-    html += '</tr>';
-   
-    // Write the days
-    var i=1;
-    do {
-      var dow = new Date(y, m, i).getDay();
-      // If Sunday, start new row
-      if ( dow == 0 ) {
-        html += '<tr>';
-      }
-      // If not Sunday but first day of the month
-      // it will write the last days from the previous month
-      else if ( i == 1 ) {
-        html += '<tr>';
-        var k = lastDayOfLastMonth - firstDayOfMonth+1;
-        for(var j=0; j < firstDayOfMonth; j++) {
-          html += '<td class="not-current">' + k + '</td>';
-          k++;
+    for (let i = lastDayofMonth; i < 6; i++) { liTag +=`<li class="inactive">${i - lastDayofMonth + 1}</li>`
         }
-      }
-      // Write the current day in the loop
-      var chk = new Date();
-      var chkY = chk.getFullYear();
-      var chkM = chk.getMonth();
-      if (chkY == this.currYear && chkM == this.currMonth && i == this.currDay) {
-        html += '<td class="today">' + i + '</td>';
-      } else {
-        html += '<td class="normal">' + i + '</td>';
-      }
-      // If Saturday, closes the row
-      if ( dow == 6 ) {
-        html += '</tr>';
-      }
-      // If not Saturday, but last day of the selected month
-      // it will write the next few days from the next month
-      else if ( i == lastDateOfMonth ) {
-        var k=1;
-        for(dow; dow < 6; dow++) {
-          html += '<td class="not-current">' + k + '</td>';
-          k++;
+        currentDate.innerText = `${months[currMonth]} ${currYear}`;
+        daysTag.innerHTML = liTag;
         }
-      }
-      i++;
-    }while(i <= lastDateOfMonth);
-    // Closes table
-    html += '</table>';
-    // Write HTML to the div
-    document.getElementById(this.divId).innerHTML = html;
-  };
-  // On Load of the window
-  window.onload = function() {
-    // Start calendar
-    var c = new Cal("divCal");			
-    c.showcurr();
-    // Bind next and previous button clicks
-    getId('btnNext').onclick = function() {
-      c.nextMonth();
-    };
-    getId('btnPrev').onclick = function() {
-      c.previousMonth();
-    };
-  }
-  // Get element by id
-  function getId(id) {
-    return document.getElementById(id);
-  }
+        renderCalendar();
 
+        prevNextIcon.forEach(icon => {
+        icon.addEventListener("click", () => {
+        currMonth = icon.id === "prev" ? currMonth - 1 : currMonth + 1;
 
-/* */
-$(document).ready(function(){
-  const calender = document.querySelector(".calender");
-  date = document.querySelector(".date");
-  daysCont = document.querySelector(".days");
-  prev = document.querySelector(".prev");
-  next = document.querySelector(".next");
-  displayDate = document.querySelector(".today-date");
+        if(currMonth < 0 || currMonth> 11) {
+            date = new Date(currYear, currMonth);
+            currYear = date.getFullYear();
+            currMonth = date.getMonth();
+            } else {
+            date = new Date();
+            }
+            renderCalendar();
+            });
+            });
 
-  let todayDate = new Date();
-  let month = todayDate.getMonth();
-  let year = todayDate.getFullYear();
-  let day = todayDate.getDate();
+$(document).ready(function() {
+  // Retrieve the id of the selected Mood
+  // Enable Confirm button after selection
+  // Make Confirm button close the modal box
 
-  const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+    $(".emoji-today").click(function(e) {
+        var selected_mood = this.id;
+        //console.log(selected_mood);
+        confirm_btn.disabled = false;
+        if(confirm_btn.disabled === false) {
+            $("#mood-confirm").click(function(e) {
+                modal.style.display = "none";
+                // Replace today's date with selected Mood
+                switch(selected_mood) {
+                    case "angry-face":
+                        $(".today-mood").html('<img src="../img/🦆 emoji _pouting face_.png" style="height:40px;width:40px;">');
+                        // $("#day1").html('<img src="../img/🦆 emoji _pouting face_.png" style="height:40px;width:40px;">');
+                        break;
+                    case "crying-face":
+                        $(".today-mood").html('<img src="../img/🦆 emoji _loudly crying face_.png" style="height:40px;width:40px;">');
+                        break;
+                    case "worried-face":
+                        $(".today-mood").html('<img src="../img/🦆 emoji _worried face_.png" style="height:40px;width:40px;">');
+                        break;
+                    case "neutral-face":
+                        $(".today-mood").html('<img src="../img/🦆 emoji _neutral face_.png" style="height:40px;width:40px;">');
+                        break;
+                    case "smiling-face":
+                        $(".today-mood").html('<img src="../img/🦆 emoji _slightly smiling face_.png" style="height:40px;width:40px;">');
+                        break;
+                    case "happy-face":
+                        $(".today-mood").html('<img src="../img/🦆 emoji _smiling face with open mouth and smiling eyes_.png" style="height:40px;width:40px;">');
+                        break;
+                }
+            });
+        }
+    })
 
-  // date = month + year;
-  // console.log(date);
-
- 
-  
-  initCal(month, year, daysCont);
-
-  $(".prev").click(function(){
-      // console.log("prev");
-      month--;
-      if(month < 0 || month > 11){
-          todayDate = new Date(year, month, new Date().getDate());
-          year = date.getFullYear();
-          month = date.getMonth();
-      }
-      else{
-          todayDate = new Date();
-      }
-      initCal(month, year, daysCont);
-
-  });
-  $(".next").click(function(){
-      //        currMonth = icon.id === "prev" ? currMonth - 1 : currMonth + 1;
-      month++;
-      if(month < 0 || month > 11){
-          todayDate = new Date(year, month, new Date().getDate());
-          year = todayDate.getFullYear();
-          month = todayDate.getMonth();
-      }
-      else{
-          todayDate = new Date();
-          console.log(todayDate);
-      }
-      initCal(month, year, daysCont);
-
-  });
+    // Change any other day's Mood
+    $(".other-day").click(function(e) {
+        let day_id = "#" + this.id;
+        if(this.id == day_id)
+        second_modal.style.display = "block";
+        second_modal_content.style.display = "block";
+        $(".emoji-this-day").click(function(e) {
+            var selected_mood = this.id;
+            second_confirm_btn.disabled = false;
+            if(second_confirm_btn.disabled === false) {
+                $("#second-mood-confirm").click(function(e) {
+                    second_modal.style.display = "none";
+                    second_modal_content.style.display = "none";
+                    // Replace today's date with selected Mood
+                    switch(selected_mood) {
+                        case "angry-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _pouting face_.png" style="height:40px;width:40px;">');
+                            // $("#day1").html('<img src="../img/🦆 emoji _pouting face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "crying-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _loudly crying face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "worried-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _worried face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "neutral-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _neutral face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "smiling-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _slightly smiling face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "happy-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _smiling face with open mouth and smiling eyes_.png" style="height:40px;width:40px;">');
+                            break;
+                    }
+                });
+            }
+        })
+    })
 });
 
-// function newPage(){
-
-// }
-function initCal(month, year, daysCont){
-  // const firstDay = new Date(year, month, 1);
-  // const lastDay = new Date(year, month + 1, 0);
-  // const prevLastDay = new Date (year, month, 0);
-  // const prevDays = prevLastDay.getDate();
-  // const lastDayDate= lastDay.getDate();
-  // const day = firstDay.getDate();
-  // const nextDays = 7 - lastDay.getDay() - 1; 
-  const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-
-  date.innerHTML = months[month] + " " + year; 
-  // // console.log(prevDays);
-  // let days = "";
-  
-  // for(let i = day; i > 0; i--){
-  //     days += '<div class="day prev-date">' + (prevDays - i + 1) + '</div>';
-  //     // console.log(days);
-
-  // }
-  // for(let i = 1; i <lastDayDate; i++){
-  //     if(i === new Date().getDate() && year === new Date().getFullYear() && month === new Date().getMonth()){
-  //         days += '<div class ="day today">' + i  + '</div>';
-  //     }
-  //     else{
-  //         days += '<div class ="day">' + i  + '</div>';
-  //     }
-  // }
-  // daysCont.innerHTML = days;
-  let firstDay = new Date(year, month, 1).getDay();
-  let lastDate= new Date(year, month + 1, 0).getDate();
-  let lastDay = new Date(year, month, lastDate).getDay();
-  let lastDatePrev = new Date(year, month, 0).getDate();
-
-  let days = "";
-
-  for (let i = firstDay; i > 0; i--) {
-      days += '<div class="day inactive">' + (lastDatePrev - i + 1) + '</div>';
-      // console.log(days);
-
-  }
-  for (let i = 1; i <= lastDate; i++) {
-      if (i === new Date().getDate() && year === new Date().getFullYear() && month === new Date().getMonth()) {
-          days += '<div class ="day today">' + i + '</div>';
-      }
-      else {
-          days += '<div class ="day">' + i + '</div>';
-      }
-  }
-  for(let i = lastDay; i < 6; i++){
-      days += '<div class ="day inactive">' + (i - lastDay + 1) + '</div>';
-
-  }
-  daysCont.innerHTML = days;
-}
-
-  
