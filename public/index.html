@@ -1,283 +1,91 @@
+<!--
+    File: home.html
+
+    This is the Home page of Sonria!, where new users can register and current users can log into their accounts.
+    Home also contains the Features Highlight for Sonria!
+-->
+
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8"/>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Journal_Main</title>
-  <link rel="stylesheet" type="text/css" id="applicationStylesheet" href="css/journal_main.css"/>
-  <!-- Add Poppins font-->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto+Condensed:ital,wght@0,400;1,700&display=swap"
-        rel="stylesheet">
-  <link rel="stylesheet" href="css/main.css" />
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Sonria!</title>
 
-  <script id="applicationScript" type="text/javascript" src="js/Journal_Main.js"></script>
-</head>
-<body>
-<div id="Journal_Main">
-  <div onclick="application.goToTargetView(event)" id="journal_page">
-    <svg class="main_box">
-      <rect id="main_box" rx="20" ry="20" x="0" y="0" width="476" height="309">
-      </rect>
-    </svg>
-    <div id="user_prompt">
-      <div id="Journal_page_o">
-        <span>Journal page:</span>
-      </div>
-      <div id="entry_time">
-        <span>3:54pm</span>
-      </div>
-      <div id="user_prompt_q">
-        <div id="sleep_entry">
-          <span>I woke up feeling refreshed and ready to tackle my classes. I went for a run before my morning lecture, and it felt amazing. There’s something about getting outside and moving my body that just makes me feel so much better. In my first class, I</span>
+        <!-- Styles -->
+        <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto+Condensed:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/main.css"/>
+        <link rel="stylesheet" href="css/home.css"/>
+    </head>
+    <body>
+        <!-- Header -->
+        <div>
+            <img src="img\logo.png" height="50px" width="56px" id="logo">
+            <h1>Sonria!</h1>
         </div>
-        <div id="Continue">
-          <span>…Continue</span>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div onclick="application.goToTargetView(event)" id="daily_planner">
-    <div id="daily_planner_u">
-      <svg class="Rectangle_1_v">
-        <rect id="Rectangle_1_v" rx="20" ry="20" x="0" y="0" width="476" height="309">
-        </rect>
-      </svg>
-    </div>
-    <div id="Daily_planner_w">
-      <span>Daily planner:</span>
-    </div>
-    <div id="entry_time_x">
-      <span>8:00am</span>
-    </div>
-    <div id="goals_entry">
-      <div id="goals_prompt">
-        <span>Goals for the day:</span>
-      </div>
-      <div id="sleep_entry_">
-        <span>Do laundry<br/>Remember to email Prof. Zhou<br/>Study for Prob & Stats exam!</span>
-      </div>
-    </div>
-    <div id="class_1">
-      <div id="Classes_to_go_to_today">
-        <span>Classes to go to today:</span>
-      </div>
-      <div id="class_1_">
-        <svg class="circle_box_3">
-          <ellipse id="circle_box" rx="25" ry="25" cx="25" cy="25">
-          </ellipse>
-        </svg>
-        <div id="first_class">
-          <span>Prob & Stats 1</span>
-        </div>
-        <div id="sleep_entry_ba">
-          <span>12:30 PM - 1:45 PM</span>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div onclick="application.goToTargetView(event)" id="emo_check_in">
-    <div id="check_in_prompt">
-      <div id="emo_check_in_">
-        <svg class="check_in_box">
-          <rect id="check_in_box" rx="20" ry="20" x="0" y="0" width="476" height="309">
-          </rect>
-        </svg>
-      </div>
-      <div id="check_in_question">
-        <span>Emotional check-in:</span>
-      </div>
-      <div id="entry_time_ci">
-        <span>7:33am</span>
-      </div>
-    </div>
-    <div id="emoji_feeling">
-      <div id="feeling_now_question">
-        <span>How are you feeling right now?</span>
-      </div>
-      <div id="emoji_feeling_bar">
-        <img id="pouting_emoji" src="img/pouting_emoji.png" srcset="img/pouting_emoji.png img/pouting_emoji@2x.png.png 2x">
 
-        <img id="crying_emoji" src="img/crying_emoji.png" srcset="img/crying_emoji.png img/crying_emoji@2x.png.png 2x">
+        <hr><br>
 
-        <img id="worried_emoji" src="img/worried_emoji.png" srcset="img/worried_emoji.png img/worried_emoji@2x.png.png 2x">
+        <!-- Main Area: Account Registration and Login -->
+        <div>
+            Everything you need to better visualize your mental health throughout the year.
+        </div>
 
-        <img id="neutral_emoji" src="img/neutral_emoji.png" srcset="img/neutral_emoji.png img/neutral_emoji@2x.png.png 2x">
+        <br>
+        <button class="normal-btn" onclick="window.location.href='../Sonria/pages/account-creation.html';">Get Started</button>
+        <br>
+        <button class="normal-btn" onclick="window.location.href='../Sonria/pages/login.html';">Log In</button>
 
-        <img id="smiling_emoji" src="img/smiling_emoji.png" srcset="img/smiling_emoji.png img/smiling_emoji@2x.png.png 2x">
+        <hr>
 
-        <img id="joyful_emoji" src="img/joyful_emoji.png" srcset="img/joyful_emoji.png img/joyful_emoji@2x.png.png 2x">
+        <!-- Feature Highlights -->
+        <div class="feature-highlight-container">
+            <div class="feature-highlight-child">
+                <h3>Easily track your day-to-day moods with Sonria!</h3>
+                <p>Every first login of the day, you will be prompted to describe your current mood with emojis.</p>
+            </div>
+            <div class="feature-highlight-child">
+                <img src="img\logo.png">
+            </div>
+        </div>
 
-      </div>
-    </div>
-    <div id="feeling_description">
-      <div id="feelings_question">
-        <span>What describes your feelings?</span>
-      </div>
-      <div id="user_feelings">
-        <span>- Motivated<br/>- Grateful<br/>- Friends</span>
-      </div>
-    </div>
-  </div>
-  <div onclick="application.goToTargetView(event)" id="morning_motivation">
-    <div id="morn_mot">
-      <svg class="morn_mot_box">
-        <rect id="morn_mot_box" rx="20" ry="20" x="0" y="0" width="476" height="309">
-        </rect>
-      </svg>
-    </div>
-    <div id="entry">
-      <div id="Morning_motivation_bt">
-        <span>Morning motivation:</span>
-      </div>
-      <div id="entry_time_bu">
-        <span>5:06am</span>
-      </div>
-      <div id="goal_2_entry">
-        <div id="How_did_you_sleep">
-          <span>How did you sleep?</span>
+        <div class="feature-highlight-container">
+            <div class="feature-highlight-child">
+                <img src="img\logo.png">
+            </div>
+            <div class="feature-highlight-child">
+                <h3>Did you miss anything?</h3>
+                <p>It can be difficult keeping track of important deadlines and event dates, especially when your mental health is poor. Let Sonria! do the remembering for you.</p>
+            </div>
         </div>
-        <div id="sleep_entry_bx">
-          <span>I feel good about my sleep last nig…..</span>
-        </div>
-      </div>
-      <div id="grateful_entry">
-        <div id="What_are_you_grateful_for">
-          <span>What are you grateful for?</span>
-        </div>
-        <div id="grateful_entry_b">
-          <span>I have a great support system of f…..</span>
-        </div>
-      </div>
-      <div id="motivated_entry">
-        <div id="How_motivated_are_you_b">
-          <span>How motivated are you?</span>
-        </div>
-        <div id="motivation_entry">
-          <span>I’m excited to tackle my to-do list a…..</span>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div id="user_entries_prompt">
-    <span>Your entries for the day:</span>
-  </div>
-  <div id="date_scroll_bar">
-    <div id="change_date">
-      <img id="left_date" src="img/left_date.png" srcset="img/left_date.png img/left_date@2x.png.png 2x">
 
-      <img id="right_date" src="img/right_date.png" srcset="img/right_date.png img/right_date@2x.png.png 2x">
+        <div class="feature-highlight-container">
+            <div class="feature-highlight-child">
+                <h3>No need to keep your thoughts and feelings in your head all the time.</h3>
+                <p>Sonria! can be your trusted resource for venting, to-do lists, and more! Make your Sonria! yours.</p>
+            </div>
+            <div class="feature-highlight-child">
+                <img src="img\logo.png">
+            </div>
+        </div>
 
-    </div>
-    <div id="dates">
-      <div id="date_2_before">
-        <svg class="date_2_before_cb">
-          <ellipse id="date_2_before_cb" rx="25" ry="25" cx="25" cy="25">
-          </ellipse>
-        </svg>
-        <div id="Th">
-          <span>Th</span>
+        <div class="feature-highlight-container">
+            <div class="feature-highlight-child">
+                <img src="img\logo.png">
+            </div>
+            <div class="feature-highlight-child">
+                <h3>You’re not alone.</h3>
+                <p>We aim to create a community of students who want to help each other through hardships and help develop a sense of togetherness among each other through our Forums.</p>
+            </div>
         </div>
-        <div id="n_3">
-          <span>23</span>
-        </div>
-      </div>
-      <div id="date_yesterday">
-        <svg class="date_yesterday_cf">
-          <ellipse id="date_yesterday_cf" rx="25" ry="25" cx="25" cy="25">
-          </ellipse>
-        </svg>
-        <div id="Fr">
-          <span>Fr</span>
-        </div>
-        <div id="n_4">
-          <span>24</span>
-        </div>
-      </div>
-      <div id="date_today">
-        <svg class="Rectangle_3">
-          <rect id="Rectangle_3" rx="20" ry="20" x="0" y="0" width="57" height="114">
-          </rect>
-        </svg>
-        <svg class="date_today_ck">
-          <ellipse id="date_today_ck" rx="25" ry="25" cx="25" cy="25">
-          </ellipse>
-        </svg>
-        <div id="Sa">
-          <span>Sa</span>
-        </div>
-        <div id="n_5">
-          <span>25</span>
-        </div>
-      </div>
-      <div id="date_tmrw">
-        <svg class="date_tomorrow">
-          <ellipse id="date_tomorrow" rx="25" ry="25" cx="25" cy="25">
-          </ellipse>
-        </svg>
-        <div id="Su">
-          <span>Su</span>
-        </div>
-        <div id="n_6">
-          <span>26</span>
-        </div>
-      </div>
-      <div id="date_2_after">
-        <svg class="date_2_after_cs">
-          <ellipse id="date_2_after_cs" rx="25" ry="25" cx="25" cy="25">
-          </ellipse>
-        </svg>
-        <div id="Mo">
-          <span>Mo</span>
-        </div>
-        <div id="n_7">
-          <span>27</span>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div id="Today_is_Saturday_February_25">
-    <span>Today is Saturday, February 25</span>
-  </div>
-  <div id="Nav_Bar">
-    <svg class="navigation_box">
-      <rect id="navigation_box" rx="20" ry="20" x="0" y="0" width="981" height="70">
-      </rect>
-    </svg>
-    <div id="Settings">
-      <span>Settings</span>
-    </div>
-    <div id="Analytics">
-      <span>Analytics</span>
-    </div>
-    <div id="Forms">
-      <span>Forms</span>
-    </div>
-    <div id="Journal">
-      <span>Journal</span>
-    </div>
-    <div id="Reminders">
-      <span>Reminders</span>
-    </div>
-    <div id="Dashboard">
-      <span>Dashboard</span>
-    </div>
-    <img id="sonria_logo" src="img/sonria_logo.png" srcset="img/sonria_logo.png 1x, img/sonria_logo@2x.png 2x">
 
-    <svg class="Line_1" viewBox="0 0 1 51">
-      <path id="Line_1" d="M 0 0 L 0 51">
-      </path>
-    </svg>
-  </div>
-  <div onclick="application.goToTargetView(event)" id="btnNew_Entry">
-    <svg class="new_entry_box">
-      <rect id="new_entry_box" rx="20" ry="20" x="0" y="0" width="321" height="65">
-      </rect>
-    </svg>
-    <div id="New_Entry">
-      <span>New Entry</span>
-    </div>
-  </div>
-</div>
-</body>
+        <div>
+            <h3>No need to keep your thoughts and feelings in your head all the time.</h3>
+            <p>Sonria! can be your trusted resource for venting, to-do lists, and more! Make your Sonria! yours.</p>
+            <img src="img\logo.png">
+        </div>
+
+        <br><hr><br>
+
+        <footer>Copyright © 2023 Hannah Guillen, Mimi Tran, Aria Siriouthay, Tashia Boddu</footer>
+    </body>
 </html>

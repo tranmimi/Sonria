@@ -39,10 +39,6 @@ hr {
   width: 50%;
 }
 
-#second-mood-tracker-modal-box , #second-mood-tracker-content {
-  display: none;
-}
-
 .emoji-today, .emoji-this-day {
   background: none;
   border: none;
