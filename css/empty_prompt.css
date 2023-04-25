@@ -1,12 +1,3 @@
-.mediaViewInfo {
-	--web-view-name: empty_prompt;
-	--web-view-id: empty_prompt;
-	--web-scale-on-resize: true;
-	--web-enable-deep-linking: true;
-}
-:root {
-	--web-view-ids: empty_prompt;
-}
 * {
 	margin: 0;
 	padding: 0;
@@ -19,10 +10,6 @@
 	height: 1024px;
 	background-color: rgba(231,226,222,1);
 	overflow: hidden;
-	--web-view-name: empty_prompt;
-	--web-view-id: empty_prompt;
-	--web-scale-on-resize: true;
-	--web-enable-deep-linking: true;
 }
 
 #empty_page_entry {
@@ -46,7 +33,8 @@
 	top: 0px;
 }
 textarea {
-	border: none;
+	border: 1px solid rgba(93,63,53,0.6);
+	border-radius: 10px;
 	background-color: rgba(234,218,214,1);
 	text-indent: 5px;
 }
@@ -62,6 +50,7 @@ textarea {
 	font-weight: normal;
 	font-size: 24px;
 	color: rgba(93,63,53,1);
+	padding: 10px;
 }
 .date_prompt {
 	left: 436px;
