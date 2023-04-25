@@ -23,25 +23,43 @@
     <li><a href="..\pages\settings.html" class="nav-link">Settings</a></li>
 </ul>
 <br><br>
+<div class = "popup" id="popup">
+    <div class="popup-header">
+        <div class="popup-title">Example</div>
+        <button class="close-button">&times;</button>
+    </div>
+    <div class="popup-body">
+        <!-- Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus quisquam sequi nulla vitae. Amet veniam suscipit deleniti? Dicta eveniet ex distinctio eaque delectus optio numquam itaque incidunt! Provident, eaque vero! -->
+    </div>
+</div>
+<div class="" id = "overlay"></div>
 <div class="container">
     <div class="left">
         <div class="form-container">
             <form id = "form" action="#">
                 <p>Title</p>
                 <div class="input-box" >
-                    <input type="text" id="input-title" placeholder="Title" required>
+                    <input type="text" id="input-title" name="input-title" placeholder="Title" required>
                 </div>
                 <p>Date</p>
                 <div class="input-box" >
-                    <input type="date" id="input-date" placeholder="Date" required>
+                    <input type="date" id="input-date" name="input-date" placeholder="Date" required>
                 </div>
                 <p>Start</p>
                 <div class="input-box" >
-                    <input type="time" id="start-time" placeholder="Time"required>
+                    <input type="time" id="start-time" name = "start-time" placeholder="Time"required>
                 </div>
                 <p>End</p>
                 <div class="input-box" >
-                    <input type="time" id="end-time" placeholder="Time" required>
+                    <input type="time" id="end-time" name="end-time" placeholder="Time" required>
+                </div>
+                <div class="notes-container">
+                    <div class="notes">
+                        <h3>Notes</h3>
+                        <div class="note">
+                            <textarea name="note-input" id="input-note" cols="30" rows="5" placeholder="Description" spellcheck="false"></textarea>
+                        </div>
+                    </div>
                 </div>
                 <div class="btn-contaner">
                     <button type="submit" class="submit-btn">Create</button>
@@ -62,19 +80,7 @@
                     <button type="submit" class="btn">x</button>
                 </div>
             </div> -->
-            <div class="notes-container">
-                <div class="notes">
-                    <h3>Notes</h3>
-                    <div class="note">
-                        <ul>
-                            <li><span>Get party hats</span></li>
-                            <li><span>Get balloons</span></li>
-                            <li><span>Buy chips</span></li>
 
-                        </ul>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
     <div class="right">
@@ -100,6 +106,9 @@
     </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js" integrity="sha512-rstIgDs0xPgmG6RX1Aba4KV5cWJbAMcvRCVmglpam9SoHZiUCyQVDdH2LPlxoHtrv17XWblE/V/PP+Tr04hbtA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 <script src="../js/new-reminder-script.js"></script>
 </body>
 </html>
