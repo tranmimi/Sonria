@@ -18,12 +18,9 @@
 		</path>
 	</svg>
 	<div id="notes">
-		<div id="notes_question">
-			<span>What are you doing?</span>
-		</div>
-		<div id="user_notes_entry">
-			<span>Just finished an exam and feel confident with what the results could be!</span>
-		</div>
+		<div id="notes_question">What are you doing?</div>
+		<label for="user_notes_entry"></label>
+		<textarea id="user_notes_entry" cols="64" rows="3" placeholder="Write down any additional notes:"></textarea>
 	</div>
 	<div id="weather_btns">
 		<div id="weather_text">
@@ -286,8 +283,11 @@
 		</path>
 	</svg>
 	<div class="date_prompt"></div>
-	<img id="back_arrow_icon" src="../img/back_arrow_icon.png" srcset="../img/back_arrow_icon.png"
-		 onclick="window.location.href='../pages/journal.html'">
+	
+	<!-- Back arrow icon -->
+	<a class="back_arrow_icon" href="../pages/new_entry.html">
+		<i class="feather-back-arrow" data-feather="arrow-left"></i>
+	</a>
 
 	<!-- Navigation Bar-->
 	<ul id="nav-bar">
@@ -300,6 +300,10 @@
 		<li><a href="..\pages\settings.html" class="nav-link">Settings</a></li>
 	</ul>
 </div>
+<!-- Import icons from Feather Icons -->
+<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+<script> feather.replace()</script>
+
 <script id="applicationScript" type="text/javascript" src="../js/emotional_check_in.js"></script>
 </body>
 </html>

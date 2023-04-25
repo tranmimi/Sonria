@@ -1,12 +1,3 @@
-.mediaViewInfo {
-	--web-view-name: emotional_check_in;
-	--web-view-id: emotional_check_in;
-	--web-scale-on-resize: true;
-	--web-enable-deep-linking: true;
-}
-:root {
-	--web-view-ids: emotional_check_in;
-}
 * {
 	margin: 0;
 	padding: 0;
@@ -19,10 +10,6 @@
 	height: 1024px;
 	background-color: rgba(231,226,222,1);
 	overflow: hidden;
-	--web-view-name: emotional_check_in;
-	--web-view-id: emotional_check_in;
-	--web-scale-on-resize: true;
-	--web-enable-deep-linking: true;
 }
 
 #check_in_box {
@@ -62,17 +49,17 @@
 }
 #user_notes_entry {
 	left: 0px;
-	top: 37px;
+	top: 45px;
 	position: absolute;
 	overflow: visible;
 	width: 315px;
 	height: 313px;
 	text-align: left;
-	font-family: Helvetica Neue;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 24px;
 	color: rgba(93,63,53,1);
+	padding: 10px;
 }
 #weather_btns {
 	position: absolute;
@@ -1054,17 +1041,21 @@
 	font-size: 36px;
 	color: rgba(135,95,74,1);
 }
-#back_arrow_icon {
+.back_arrow_icon {
 	position: absolute;
-	width: 51.38px;
-	height: 51.38px;
+	width: 40px;
+	height: 40px;
 	left: 225px;
-	top: 121px;
+	top: 115px;
 	overflow: visible;
-	--web-animation: fadein undefineds undefined;
-	--web-action-type: page;
-	--web-action-target: journal_main.html;
 	cursor: pointer;
+}
+.back_arrow_icon:hover{
+	color: #707058;
+}
+.feather-back-arrow{
+	width: 40px;
+	height: 40px;
 }
 #nav-bar{
 	background-color: #FEF9F4;
