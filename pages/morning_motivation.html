@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="">
 <head>
 	<meta charset="utf-8"/>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -11,63 +11,68 @@
 	<link rel="stylesheet" href="../css/main.css" />
 </head>
 <body>
-<div id="morning_motivation">
-	<div id="motivation_entry">
-		<svg class="motivated_box">
-			<rect id="motivated_box" rx="20" ry="20" x="0" y="0" width="977" height="760">
-			</rect>
-		</svg>
-		<div id="sleep">
-			<div id="sleep_question">
-				<span>How did you sleep?</span>
+	<div id="morning_motivation">
+		<div id="motivation_entry">
+			<svg class="motivated_box">
+				<rect id="motivated_box" rx="20" ry="20" x="0" y="0" width="977" height="760">
+				</rect>
+			</svg>
+			<div id="sleep">
+				<div id="sleep_question">
+					<span>How did you sleep?</span>
+				</div>
+				<!-- <div id="sleep_entry"></div> -->
+				<label for="sleep_entry"></label>
+				<textarea id="sleep_entry" cols="64" rows="3"></textarea>
 			</div>
-			<!-- <div id="sleep_entry"></div> -->
-			<label for="sleep_entry"></label>
-			<textarea id="sleep_entry" cols="64" rows="3"></textarea>
-		</div>
-		<div id="grateful">
-			<div id="grateful_question">
-				<span>What are you grateful for?</span>
+			<div id="grateful">
+				<div id="grateful_question">
+					<span>What are you grateful for?</span>
+				</div>
+				<!-- <div id="grateful_entry"></div> -->
+				<label for="grateful_entry"></label>
+				<textarea id="grateful_entry" cols="64" rows="3"></textarea>
 			</div>
-			<!-- <div id="grateful_entry"></div> -->
-			<label for="grateful_entry"></label>
-			<textarea id="grateful_entry" cols="64" rows="3"></textarea>
-		</div>
-		<div id="motivated">
-			<div id="motivated_question">
-				<span>How motivated are you?</span>
+			<div id="motivated">
+				<div id="motivated_question">
+					<span>How motivated are you?</span>
+				</div>
+				<!-- <div id="motivated_entry"></div> -->
+				<label for="motivated_entry"></label>
+				<textarea id="motivated_entry" cols="64" rows="3"></textarea>
 			</div>
-			<!-- <div id="motivated_entry"></div> -->
-			<label for="motivated_entry"></label>
-			<textarea id="motivated_entry" cols="64" rows="3"></textarea>
 		</div>
+
+		<div id="btn_Done" onclick="window.location.href = '../pages/journal.html'" >
+			<svg class="done_box">
+				<rect id="done_box" rx="20" ry="20" x="0" y="0" width="321" height="65"></rect>
+			</svg>
+			<div id="done_text">
+				<span>Done</span>
+			</div>
+		</div>
+
+		<div class="date_prompt"></div>
+		<a class="back_arrow_icon" href="../pages/new_entry.html">
+			<i class="feather-back-arrow" data-feather="arrow-left"></i>
+		</a>
+
+		<!-- Navigation Bar-->
+		<ul id="nav-bar">
+			<li><img src="..\img\sonria_logo.png" height="50px" width="56px" id="logo"></li>
+			<li><a href="..\pages\dashboard.html" class="nav-link">Dashboard</a></li>
+			<li><a href="..\pages\reminders.html" class="nav-link">Reminders</a></li>
+			<li><a href="..\pages\journal.html" class="nav-link"> <!--id="current-page"--> Journal</a></li>
+			<li><a href="..\pages\forums.html" class="nav-link">Forums</a></li>
+			<li><a href="..\pages\analytics.html" class="nav-link">Analytics</a></li>
+			<li><a href="..\pages\settings.html" class="nav-link">Settings</a></li>
+		</ul>
 	</div>
 
-	<div id="btn_Done" onclick="window.location.href = '../pages/journal.html'" >
-		<svg class="done_box">
-			<rect id="done_box" rx="20" ry="20" x="0" y="0" width="321" height="65"></rect>
-		</svg>
-		<div id="done_text">
-			<span>Done</span>
-		</div>
-	</div>
+	<script id="applicationScript" type="text/javascript" src="../js/morning_motivation.js"></script>
 
-	<div class="date_prompt"></div>
-	<img id="back_arrow_icon" src="../img/back_arrow_icon.png" srcset="../img/back_arrow_icon.png"
-		 onclick="window.location.href='../pages/journal.html'" alt="">
-
-	<!-- Navigation Bar-->
-	<ul id="nav-bar">
-		<li><img src="..\img\sonria_logo.png" height="50px" width="56px" id="logo"></li>
-		<li><a href="..\pages\dashboard.html" class="nav-link">Dashboard</a></li>
-		<li><a href="..\pages\reminders.html" class="nav-link">Reminders</a></li>
-		<li><a href="..\pages\journal.html" class="nav-link"> <!--id="current-page"--> Journal</a></li>
-		<li><a href="..\pages\forums.html" class="nav-link">Forums</a></li>
-		<li><a href="..\pages\analytics.html" class="nav-link">Analytics</a></li>
-		<li><a href="..\pages\settings.html" class="nav-link">Settings</a></li>
-	</ul>
-</div>
-
-<script id="applicationScript" type="text/javascript" src="../js/morning_motivation.js"></script>
+	<!-- Import icons from Feather Icons -->
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script> feather.replace()</script>
 </body>
 </html>

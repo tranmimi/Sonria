@@ -16,3 +16,16 @@ document.getElementById('btn_Done').addEventListener('click', function() {
     // Set the "formCompleted" flag in local storage to true
     localStorage.setItem('dpCompleted', 'true');
 });
+
+// Tasks list
+const tasksList = document.getElementById('tasks-list');
+
+tasksList.addEventListener('keydown', function(e) {
+    if (e.keyCode === 13) {
+        e.preventDefault();
+        const newItem = document.createElement('li');
+        newItem.setAttribute('contenteditable', true);
+        newItem.innerHTML = '';
+        tasksList.appendChild(newItem);
+    }
+});

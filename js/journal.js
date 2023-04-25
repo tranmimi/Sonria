@@ -15,7 +15,6 @@ window.onload = function() {
     setDisplayFromFlag('eciCompleted', 'emo_check_in');
 };
 
-
 // Gets accurate date for today
 const dateElement = document.querySelector(".date_prompt");
 /**
