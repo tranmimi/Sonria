@@ -39,58 +39,60 @@ $(document).ready(function(){
     // console.log(date);
     displayDate.innerHTML =  months[month] + " " + day + "th " + year;
 
-    // getUserData(database);
+    getUserData(database);
     initCal(month, year, daysCont);
     getEvents(todayDate);
     clickDays(month, year);
     markEvents(month, year);
+   
+    // localStorage.clear();
 
     //getting user info from login 
-    // let userObj = JSON.parse(localStorage.getItem("user")) || [];
+    let userObj = JSON.parse(localStorage.getItem("user")) || [];
 
-    // let eventsRef = ref(database, "users/" + userObj.uid + "/events");
-    // onValue(eventsRef, function(snapshot) {
-    //     snapshot.forEach(function(childSnapshot) {
-    //       const eventId = childSnapshot.key;
-    //       const event = childSnapshot.val();
-    //       console.log(eventId, event);
-    //     //   if (event.hasOwnProperty('event')) {
-    //     //     const nestedEvent = event.event;
-    //     //     console.log(nestedEvent);
-    //     //   }
-    //     });
-    //   });
+    let eventsRef = ref(database, "users/" + userObj.uid + "/events");
+    onValue(eventsRef, function(snapshot) {
+        snapshot.forEach(function(childSnapshot) {
+          const eventId = childSnapshot.key;
+          const event = childSnapshot.val();
+          console.log(eventId, event);
+        //   if (event.hasOwnProperty('event')) {
+        //     const nestedEvent = event.event;
+        //     console.log(nestedEvent);
+        //   }
+        });
+      });
 
 
 
-    //DATABASE
-    //Saving to database the eventObj entries by iterating through each
-    // let eventObj = JSON.parse(localStorage.getItem("eventObj"));
-    // let userRef = ref(database, "users/" + userObj.uid);
-    // console.log(eventObj);
-    // if(eventObj != null){
-    //     for(let i = 0; i < eventObj.length; i++){
-    //         let eventStr = "/event" + i;
-    //         //creating new subfolder called "events" that contain "event+index" entries
-    //         set(ref(database, 'users/' + userObj.uid + "/events" + eventStr), {
-    //             eventTitle: eventObj[i].title,
-    //             eventDate: eventObj[i].date,
-    //             eventStarttime: eventObj[i].start,
-    //             eventEndtime: eventObj[i].end,
-    //             eventNote: eventObj[i].note,
-    //             eventEdit: eventObj[i].edit,
-    //             // profile_picture: imageUrl
-    //         }).then(() => {
-    //             // Data saved successfully!
-    //             // alert("user created successfully");
-    //         })
-    //         .catch((error) => {
-    //             // The write failed...
-    //             alert("error in saving event data");
-    //         });
-    //     }
+    // DATABASE
+    // Saving to database the eventObj entries by iterating through each
+    let eventObj = JSON.parse(localStorage.getItem("eventObj"));
+    let userRef = ref(database, "users/" + userObj.uid);
+    console.log(eventObj);
+    if(eventObj != null){
+        for(let i = 0; i < eventObj.length; i++){
+            let eventStr = "/event" + i;
+            //creating new subfolder called "events" that contain "event+index" entries
+            set(ref(database, 'users/' + userObj.uid + "/events" + eventStr), {
+                eventTitle: eventObj[i].title,
+                eventDate: eventObj[i].date,
+                eventStarttime: eventObj[i].start,
+                eventEndtime: eventObj[i].end,
+                eventNote: eventObj[i].note,
+                eventEdit: eventObj[i].edit,
+                // profile_picture: imageUrl
+            }).then(() => {
+                // Data saved successfully!
+                // alert("user created successfully");
+            })
+            .catch((error) => {
+                // The write failed...
+                alert("error in saving event data");
+            });
+        }
        
-    // }
+    }
 
     $(".btn").click(function(){
         // console.log("hello");
@@ -213,7 +215,7 @@ function getUserData(database){
         //     }
         //     );}
     const userData = snapshot.val();
-    const displayName = userData.displayName;
+    const displayName = userData.username;
     // Display the user's name in the UI
     var greeting = document.getElementById("greeting");
     greeting.textContent = "Hi, " + displayName + "!";
