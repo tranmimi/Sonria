@@ -25,6 +25,12 @@
 	top: 193px;
 	transform: matrix(1,0,0,1,0,0);
 }
+textarea {
+	border: 1px solid rgba(93,63,53,0.6);
+	border-radius: 10px;
+	background-color: rgba(234,218,214,1);
+	text-indent: 5px;
+}
 #notes {
 	position: absolute;
 	width: 314px;
