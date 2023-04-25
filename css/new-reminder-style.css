@@ -80,7 +80,6 @@ form{
     border-radius: 20px;
     padding-top: 10px;
     padding-bottom: 10px;
-
 }
 h4{
     display: inline;
@@ -103,10 +102,8 @@ p{
     position: relative;
     float:left;
 }
-.btn{
-    /* display: flex; */
-    /* position: relative;
-    float:left; */
+/* .btn{
+
     align-items: start;
     justify-content: center;
     border-radius: 100px;
@@ -119,23 +116,27 @@ p{
     color:#5C3F37;
     font-size: larger;
     
-}
+} */
 /* https://stackoverflow.com/questions/58120283/hr-tag-shows-a-line-in-2-colors-against-a-colored-background */
 
 .notes-container{
     /* box-shadow: 0 0 30px rgba(0, 0, 0, .1); */
-    margin-top: 10px;
-    width: 235px;
-    height: 150px;
+    /* margin-top: 10px; */
     background-color: #EADAD6;
     border-radius: 20px;
     text-align: center;
-    padding: 10px;
+    padding-bottom: 10px;
 }
-.notes-container h3{
+textarea{
+    resize: none;
+    font-family: "Poppins";
+    color:#5C3F37;
+
+}
+/* .notes-container h3{
     position: relative;
-    bottom: 25px;
-    /* background-color: #FEF9F4; */
+    bottom: 25px; 
+    background-color: #FEF9F4;
     border-radius: 20px;
     display:flex;
     justify-content: center;
@@ -149,20 +150,20 @@ p{
     text-align: start;
 }
 .note li{
-    /* display: flex;
+    display: flex;
     justify-content: start;
-    align-items: start; */
-    font-size: xx-large;
+    align-items: start; 
+     font-size: xx-large;
     position: relative;
     top: -50px;
     margin: -10px;
     
-}
-li span{
+} */
+/* li span{
     font-size: medium;
     position: relative;
     top: -5px;
-}
+} */
 /* left end */
 /* calender start */
 
@@ -247,7 +248,8 @@ li span{
 .submit-btn{
     width: 100px;
     height: 40px;
-    position: relative;
+    /* position: absolute;
+    bottom: 0; */
     /* top: 50px;
     left: 0px; */
     background-color: #FFF3E8;
@@ -320,3 +322,75 @@ li span{
     border-radius: 50%;
   }
   /* w3 end */
+
+.hasEvent{
+    background-color: rgb(148, 124, 118);
+}
+.popup{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0); 
+    border: 1px solid black;
+    border-radius: 10px;
+    z-index: 2;
+    background-color: white;
+    box-shadow: 0 0 30px rgba(0, 0, 0, .25);
+    width: 500px;
+    max-width: 80%;
+    transition: 200ms ease-in-out;
+    
+}
+
+.popup.active{
+    transform: translate(-50%, -50%) scale(1); 
+}
+
+.popup-header{
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+
+.popup-title{
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.popup-header .close-button{
+    cursor: pointer;
+    border: none;
+    outline: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color:#5C3F37;
+    border-radius: 5px;
+    
+}
+
+.popup-body{
+    padding: 10px 15px;
+}
+.today{
+    border: 5px solid #5C3F37;
+}
+#overlay{
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .5);
+    z-index: 1;
+    pointer-events: none;
+    transition: 200ms ease-in-out;
+
+}
+
+#overlay.active{
+    opacity: 1;
+    pointer-events: all;
+}
