@@ -8,34 +8,61 @@ const firebaseConfig = {
     messagingSenderId: "770936446305",
     appId: "1:770936446305:web:8142c0a0996628d1c63920",
     measurementId: "G-GJJBX8J37X"
-  };
+  };    
+  
 
-      
-// Initialize Firebase
-// const app = initializeApp(firebaseConfig);
-// const analytics = getAnalytics(app);
 
-// const auth = firebase.auth();
-// const database = firebase.database();
-
-//register
-
-//register btn
-// const btn = document.getElementById("submit-btn")
-// btn.onclick = function(){
-//     var email = document.getElementById("input-email").value;
-//     var password = document.getElementById("input-password").value;  
-//     createUserWithEmailAndPassword(auth, email, password).then((userCredential) => {
-      
-//     // Signed in 
-//     const user = userCredential.user;
-//     // ...
-//     console.log("success");
-//     window.location.href = "../verification.html";  })
-//   .catch((error) => {
-//     const errorCode = error.code;
-//     const errorMessage = error.message;
-//     // ..
-//     alert(errorMessage);
-//   });
-// }
+$(document).ready(function(){
+  $("#form").validate({
+    rules: {
+      "input-email":{
+        required: true,
+        email: true
+      },
+      "confirm-email":{
+        required: true,
+        email: true,
+        equalTo: "#input-email"
+      },
+      "input-firstname":{
+        required: true,
+        minlength: 2
+      },
+      "input-lastname":{
+        required: true,
+        minlength: 2
+      },
+      "input-username":{
+        required: true,
+        minlength: 6
+  
+      },
+      "input-password":{
+        required: true,
+        minlength: 7
+      },
+      "confirm-password":{
+        required: true,
+        equalTo: "#input-password",
+      }
+    },
+    messages: {
+      "confirm-email":{
+        equalTo: "Emails do not match."
+      },
+      "confirm-password":{
+        equalTo: "Passwords do not match."
+      }
+    }
+  });
+  // const btn = document.getElementById("submit-btn");
+  // btn.addEventListener("click", function(e){
+  //   e.preventDefault();
+  //   if($("#form").valid()){
+  //     console.log("valid");
+  //   }
+  //   else{
+  //     console.log("invalid");
+  //   }
+  // });
+});

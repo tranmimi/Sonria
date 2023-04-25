@@ -1,3 +1,24 @@
+$.validator.addMethod("compareTimes", function(value, element){
+   let start = new Date("2001-01-01" + "T" +  $("#start-time").val());
+   console.log(start);
+    let end = new Date("2001-01-01"+ "T" + $("#end-time").val());
+   console.log(end);
+   if(start && end){
+    return  start < end;
+   }
+   return true;
+}, "The start time must occur before the end time.");
+$.validator.addMethod("compareTitles", function(value, element){
+    if(localStorage.getItem("eventObj") != null){
+        let obj = JSON.parse(localStorage.getItem("eventObj"));
+        for(let i = 0; i < obj.length; i++){
+            if(obj[i].title === value){
+                return false;
+            }
+        }
+    } 
+    return true;
+}, "Event names must be unique.");
 $(document).ready(function(){
     const calender = document.querySelector(".calender");
     date = document.querySelector(".date");
@@ -22,60 +43,83 @@ $(document).ready(function(){
     const inputDate = document.getElementById("input-date");
     const startTime = document.getElementById("start-time");
     const endTime = document.getElementById("end-time");
+    const note = document.getElementById("input-note");
+
+    // let editBool = JSON.parse(localStorage.getItem("editBool"));
+    // if(editBool != null){
+    //     if(editBool == "true"){
+    //         console.log("true");
+    //     }
+    // }
+    editEvents(title, inputDate, startTime, endTime, note);
+    $("#form").validate({
+        rules: {
+            "input-title":{
+                required: true,
+                compareTitles:true
+            },
+            "input-date":{
+                required: true
+            },
+            "start-time":{
+                required:true,
+                // compareTimes:true
+            },
+            "end-time":{
+                required:true,
+                compareTimes:true
+            }
+        },
+        messages: {
+            "input-title":{
+                required: "Please enter a title."
+            },
+            "input-date":{
+                required: "Please enter a date."
+            },
+            "start-time":{
+                required:"Please enter a start time."
+            },
+            "end-time":{
+                required:"Please enter an end time."
+            }
+        }
+    });
+
     form.addEventListener("submit", function(e){
         e.preventDefault();
-        const titleVal = title.value;
-        const inputDateVal = inputDate.value;
-        const startTimeVal = startTime.value;
-        const endTimeVal = endTime.value;
+        if($("#form").valid()){
+            // getting all form vals
+            const titleVal = title.value;
+            const inputDateVal = inputDate.value;
+            const startTimeVal = startTime.value;
+            const endTimeVal = endTime.value;
+            const noteVal = note.value;
 
-        // localStorage.setItem("input-title", titleVal);
-        // localStorage.setItem("input-date", inputDateVal);
-        // localStorage.setItem("input-starttime", startTimeVal);
-        // localStorage.setItem("input-endtime", endTimeVal);
-        //change to json
-        //yt vid 45:21
-        // let eventArr = [];
-        // var eventArr = [
-        //     {
-        //         title: titleVal,
-        //         date: inputDateVal,
-        //         start: startTimeVal,
-        //         end: endTimeVal
-        //     }
-        // ];
-    
-        //where local storage obj is created
-        let eventHistory = localStorage.getItem("eventObj") || [];
-        eventHistory = JSON.parse(eventHistory);
-        if(!(eventHistory instanceof Array)){
-            eventHistory = [eventHistory];
-        }
-        //saving array of input elements
-        eventHistory.push({
-                    title: titleVal,
-                    date: inputDateVal,
-                    start: startTimeVal,
-                    end: endTimeVal,
-                });
-        // getEvents();
-        // console.log(eventArr);
-        // saveEvents();
-
-        // localStorage.setItem("eventObj", JSON.stringify({title: titleVal, date: inputDateVal, start: startTimeVal, end:endTimeVal}));
-
-        //saving obj
-        localStorage.setItem("eventObj", JSON.stringify(eventHistory));
-        window.location.href = "../pages/reminders.html";
-        
+            // checking for ant pre-existing event entries w/ get() & transforming it into an array
+            let eventHistory = JSON.parse(localStorage.getItem("eventObj")) || [];
+            if(!(eventHistory instanceof Array)){
+                eventHistory = [eventHistory];
+            }
+            //pushing current form vals into array
+            eventHistory.push({
+                        title: titleVal,
+                        date: inputDateVal,
+                        start: startTimeVal,
+                        end: endTimeVal,
+                        edit: "false",
+                        note: noteVal
+            });
+           //saving the array with the new event entry to the eventObj w/ set()
+            localStorage.setItem("eventObj", JSON.stringify(eventHistory));
+            window.location.href = "../pages/reminders.html";
+        }   
     });
     
     initCal(month, year, daysCont);
+    clickDays(month, year);
+    markEvents(month, year);
 
-    // $(".submit-btn").click(function(){
-    //     // console.log("hello");
-    //     window.location.href = "../pages/reminders.html";
-    // });
     $(".prev").click(function(){
         // console.log("prev");
         month--;
@@ -88,6 +132,8 @@ $(document).ready(function(){
             todayDate = new Date();
         }
         initCal(month, year, daysCont);
+        clickDays(month, year);
+        markEvents(month, year);
 
     });
     $(".next").click(function(){
@@ -103,50 +149,21 @@ $(document).ready(function(){
             todayDate = new Date();
         }
         initCal(month, year, daysCont);
+        clickDays(month, year);
+        markEvents(month, year);
 
     });
+    const closePopUpBtn = document.getElementsByClassName("close-button")[0];
+    closePopUpBtn.addEventListener("click", function(){
+        const popup = document.getElementsByClassName("popup")[0];
+        closePopUp(popup);
+    });
 });
-// function getEvents(){
-//     if(localStorage.getItem("eventObj") === null){
-//         return;
-//     }   
-//     eventArr.push(...JSON.parse(localStorage.getItem("eventObj")));
-// }
-// function saveEvents(){
-//     localStorage.setItem("eventObj", JSON.stringify(eventArr));
-// }
 
-// function newPage(){
-
-// }
  function initCal(month, year, daysCont){
-    // const firstDay = new Date(year, month, 1);
-    // const lastDay = new Date(year, month + 1, 0);
-    // const prevLastDay = new Date (year, month, 0);
-    // const prevDays = prevLastDay.getDate();
-    // const lastDayDate= lastDay.getDate();
-    // const day = firstDay.getDate();
-    // const nextDays = 7 - lastDay.getDay() - 1; 
     const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
 
     date.innerHTML = months[month] + " " + year; 
-    // // console.log(prevDays);
-    // let days = "";
-    
-    // for(let i = day; i > 0; i--){
-    //     days += '<div class="day prev-date">' + (prevDays - i + 1) + '</div>';
-    //     // console.log(days);
-
-    // }
-    // for(let i = 1; i <lastDayDate; i++){
-    //     if(i === new Date().getDate() && year === new Date().getFullYear() && month === new Date().getMonth()){
-    //         days += '<div class ="day today">' + i  + '</div>';
-    //     }
-    //     else{
-    //         days += '<div class ="day">' + i  + '</div>';
-    //     }
-    // }
-    // daysCont.innerHTML = days;
     let firstDay = new Date(year, month, 1).getDay();
     let lastDate= new Date(year, month + 1, 0).getDate();
     let lastDay = new Date(year, month, lastDate).getDay();
@@ -156,8 +173,6 @@ $(document).ready(function(){
 
     for (let i = firstDay; i > 0; i--) {
         days += '<div class="day inactive">' + (lastDatePrev - i + 1) + '</div>';
-        // console.log(days);
-
     }
     for (let i = 1; i <= lastDate; i++) {
         if (i === new Date().getDate() && year === new Date().getFullYear() && month === new Date().getMonth()) {
@@ -172,4 +187,98 @@ $(document).ready(function(){
 
     }
     daysCont.innerHTML = days;
+ }
+ function editEvents(title, inputDate, startTime, endTime, note){
+    if(localStorage.getItem("eventObj") != null){
+        //retrieving eventObj and iterating through it
+        let obj = JSON.parse(localStorage.getItem("eventObj"));
+        for(let i = 0; i < obj.length; i++){
+            if(obj[i].edit === "true"){
+                console.log("edit");
+                //have form prefilled for editting
+                title.value = obj[i].title;
+                inputDate.value = obj[i].date;
+                startTime.value = obj[i].start;
+                endTime.value = obj[i].end;
+                note.value = obj[i].note;
+                obj[i].edit = "false";
+                //delete old entry to replace with new changes
+                obj.splice(i,1);
+            } 
+        }
+        obj = JSON.stringify(obj);
+        localStorage.setItem("eventObj", obj);
+    }
+}
+
+function markEvents(month, year){
+    const days = document.getElementsByClassName("day");
+    if(localStorage.getItem("eventObj") != null){
+        let obj = JSON.parse(localStorage.getItem("eventObj"));
+        for(let i = 0; i < obj.length; i++){
+            const event = obj[i];
+            for(let i = 0; i < days.length; i++){
+                let objDate = new Date(event.date + "T" + event.start);
+                if((objDate.getDate() == days[i].textContent) && (objDate.getFullYear() == year) && (objDate.getMonth() == month)){
+                    // console.log("has event logged");
+                    // alert("Title: " + event.title + " Time: " + event.start + " - " + event.end);
+                    if(!days[i].classList.contains("hasEvent") && !days[i].classList.contains("inactive")){
+                        days[i].className += " hasEvent";
+                    }
+                }
+            }
+        }
+    }
+}
+
+function clickDays(month, year){
+    const days = document.getElementsByClassName("day");;
+    if(localStorage.getItem("eventObj") != null){
+        const obj = JSON.parse(localStorage.getItem("eventObj"))
+        for(let i = 0; i < days.length; i++){
+            days[i].addEventListener("click", function(){
+                // console.log("clicked day");
+                for(let j = 0; j < obj.length; j++){
+                    let event = obj[j];
+                    let objDate = new Date(event.date + "T" + event.start);
+                    if((objDate.getDate() == days[i].textContent) && (objDate.getFullYear() == year) && (objDate.getMonth() == month)){
+                        // console.log("has event logged");
+                        // alert("Title: " + event.title + " Time: " + event.start + " - " + event.end);
+                        const popup = document.getElementsByClassName("popup")[0];
+                        displayPopUp(popup, event.title, event.start, event.end, objDate, event.note);
+                    }
+                }
+            });
+        }
+    }
+ }
+
+ function displayPopUp(popup, title, start, end, date, note){
+    const overlay = document.getElementById("overlay");
+    const body = document.getElementsByClassName("popup-body")[0];
+    const popupTitle = document.getElementsByClassName("popup-title")[0];
+    const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+    if(popup == null) return;
+
+    const startDate = new Date("2023-07-26" + "T" + start);
+    const endDate = new Date("2023-07-26" + "T" + end);
+
+    const startTimeStr = startDate.toLocaleTimeString('en-US',
+        { hour12: true, hour: 'numeric', minute: 'numeric' });
+    const endTimeStr = endDate.toLocaleTimeString('en-US',
+        { hour12: true, hour: 'numeric', minute: 'numeric' });
+
+    popupTitle.textContent = months[date.getMonth()] + " " + date.getDate() + "th, " + date.getFullYear();
+    body.innerHTML += "<br>Title: " + title + "<br>Time: " + startTimeStr + " - " + endTimeStr + "<br>Note: " + note;
+    popup.classList.add("active");
+    overlay.classList.add("active");
+ }
+
+ function closePopUp(popup){
+    const overlay = document.getElementById("overlay");
+    const body = document.getElementsByClassName("popup-body")[0];
+    if(popup == null) return;
+    popup.classList.remove("active");
+    overlay.classList.remove("active");
+    body.innerHTML="";
  }
