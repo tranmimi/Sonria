@@ -68,6 +68,7 @@
         const user = userCredential.user;
         localStorage.setItem("user", JSON.stringify(user)); 
         alert("User logged in");
+        window.location.href= "../pages/dashboard.html";                       
    })
    //if any errors occur during sign in
    .catch((error) => {
