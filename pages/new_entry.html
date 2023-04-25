@@ -13,46 +13,46 @@
 </head>
 
 <body>
-<div id="journal_main">
-  <div id="journal_page" onclick="window.location.href='../pages/empty_prompt.html'">
-    <div id="entry_time"></div>
-  </div>
-  <div id="entries_prompt">
-    <span>Your entries for today:</span>
-  </div>
-
-  <div class="date_prompt"></div>
-
-  <!-- Navigation Bar-->
-  <ul id="nav-bar">
-    <li><img src="..\img\sonria_logo.png" height="50px" width="56px" id="logo"></li>
-    <li><a href="..\pages\dashboard.html" class="nav-link">Dashboard</a></li>
-    <li><a href="..\pages\reminders.html" class="nav-link">Reminders</a></li>
-    <li><a href="..\pages\journal.html" class="nav-link" id="current-page">Journal</a></li>
-    <li><a href="..\pages\forums.html" class="nav-link">Forums</a></li>
-    <li><a href="..\pages\analytics.html" class="nav-link">Analytics</a></li>
-    <li><a href="..\pages\settings.html" class="nav-link">Settings</a></li>
-  </ul>
-
-  <div id="new_entry_prompt">
-    <!-- Container for the main box -->
-    <svg class="new_entry_box_c">
-      <rect id="new_entry_box_c" rx="20" ry="20" x="0" y="0" width="832" height="489"></rect>
-    </svg>
-    <!-- Plus button -->
-    <div id="btn_plus">
-      <svg class="plus_circle">
-        <ellipse id="plus_circle" rx="38" ry="37.5" cx="38" cy="37.5"></ellipse>
-      </svg>
-      <div id="plus_icon">
-        <svg class="Path_1" viewBox="18 7.5 3 32.622">
-          <path id="Path_1" d="M 18 7.500000953674316 L 18 40.1221923828125"></path>
-        </svg>
-        <svg class="Path_2" viewBox="7.5 18 35.745 3">
-          <path id="Path_2" d="M 7.499999523162842 18 L 43.2449951171875 18"></path>
-        </svg>
-      </div>
+  <div id="journal_main">
+    <div id="journal_page" onclick="window.location.href='../pages/empty_prompt.html'">
+      <div id="entry_time"></div>
     </div>
+    <div id="entries_prompt">
+      <span>Your entries for today:</span>
+    </div>
+
+    <div class="date_prompt"></div>
+
+    <!-- Navigation Bar-->
+    <ul id="nav-bar">
+      <li><img src="..\img\sonria_logo.png" height="50px" width="56px" id="logo"></li>
+      <li><a href="..\pages\dashboard.html" class="nav-link">Dashboard</a></li>
+      <li><a href="..\pages\reminders.html" class="nav-link">Reminders</a></li>
+      <li><a href="..\pages\journal.html" class="nav-link" id="current-page">Journal</a></li>
+      <li><a href="..\pages\forums.html" class="nav-link">Forums</a></li>
+      <li><a href="..\pages\analytics.html" class="nav-link">Analytics</a></li>
+      <li><a href="..\pages\settings.html" class="nav-link">Settings</a></li>
+    </ul>
+
+    <div id="new_entry_prompt">
+      <!-- Container for the main box -->
+      <svg class="new_entry_box_c">
+        <rect id="new_entry_box_c" rx="20" ry="20" x="0" y="0" width="832" height="489"></rect>
+      </svg>
+      <!-- Plus button -->
+      <div id="btn_plus">
+        <svg class="plus_circle">
+          <ellipse id="plus_circle" rx="38" ry="37.5" cx="38" cy="37.5"></ellipse>
+        </svg>
+        <div id="plus_icon">
+          <svg class="Path_1" viewBox="18 7.5 3 32.622">
+            <path id="Path_1" d="M 18 7.500000953674316 L 18 40.1221923828125"></path>
+          </svg>
+          <svg class="Path_2" viewBox="7.5 18 35.745 3">
+            <path id="Path_2" d="M 7.499999523162842 18 L 43.2449951171875 18"></path>
+          </svg>
+        </div>
+      </div>
     <!-- Empty journal page -->
     <div onclick="window.location.href='../pages/empty_prompt.html'" id="empty_page">
       <svg class="empty_page_box">
@@ -62,50 +62,56 @@
         <span>Empty journal page</span>
       </div>
     </div>
-    <!-- Emotional check-in -->
-    <div onclick="window.location.href='../pages/emotional_check_in.html'" id="emo_check_in_dg">
-      <svg class="emo_check_in_box">
-        <rect id="emo_check_in_box" rx="20" ry="20" x="0" y="0" width="321" height="65"></rect>
-      </svg>
-      <div id="emo_check_in_txt">
-        <span>Emotional check-in</span>
+      <!-- Emotional check-in -->
+      <div onclick="window.location.href='../pages/emotional_check_in.html'" id="emo_check_in_dg">
+        <svg class="emo_check_in_box">
+          <rect id="emo_check_in_box" rx="20" ry="20" x="0" y="0" width="321" height="65"></rect>
+        </svg>
+        <div id="emo_check_in_txt">
+          <span>Emotional check-in</span>
+        </div>
       </div>
-    </div>
-    <!-- Day recap -->
-    <div id="day_recap">
-      <svg class="day_recap_box">
-        <rect id="day_recap_box" rx="20" ry="20" x="0" y="0" width="321" height="65"></rect>
-      </svg>
-      <div id="day_recap_txt">
-        <span>Day recap</span>
+      <!-- Day recap -->
+      <div id="day_recap">
+        <svg class="day_recap_box">
+          <rect id="day_recap_box" rx="20" ry="20" x="0" y="0" width="321" height="65"></rect>
+        </svg>
+        <div id="day_recap_txt">
+          <span>Day recap</span>
+        </div>
       </div>
-    </div>
-    <!-- Daily planner -->
-    <div onclick="window.location.href='../pages/daily_planner.html'" id="daily_planner_dm">
-      <svg class="daily_planner_box_dn">
-        <rect id="daily_planner_box_dn" rx="20" ry="20" x="0" y="0" width="321" height="65"></rect>
-      </svg>
-      <div id="daily_planner_txt">
-        <span>Daily planner</span>
+      <!-- Daily planner -->
+      <div onclick="window.location.href='../pages/daily_planner.html'" id="daily_planner_dm">
+        <svg class="daily_planner_box_dn">
+          <rect id="daily_planner_box_dn" rx="20" ry="20" x="0" y="0" width="321" height="65"></rect>
+        </svg>
+        <div id="daily_planner_txt">
+          <span>Daily planner</span>
+        </div>
       </div>
-    </div>
-    <!-- Morning motivation -->
+      <!-- Morning motivation -->
     <div onclick="window.location.href='../pages/morning_motivation.html'" id="morning_motivation_dp">
-      <svg class="morn_mot_box">
-        <rect id="morn_mot_box" rx="20" ry="20" x="0" y="0" width="321" height="65"></rect>
-      </svg>
-      <div id="morn_mot_txt">
-        <span>Morning motivation</span>
+        <svg class="morn_mot_box">
+          <rect id="morn_mot_box" rx="20" ry="20" x="0" y="0" width="321" height="65"></rect>
+        </svg>
+        <div id="morn_mot_txt">
+          <span>Morning motivation</span>
+        </div>
       </div>
-    </div>
-    <div id="journal_question">
-      <span>What would you like to journal?</span>
-    </div>
-    <img id="back_arrow_icon" src="../img/back_arrow_icon.png" srcset="../img/back_arrow_icon.png"
-         onclick="window.location.href='../pages/journal.html'">
+      <div id="journal_question">
+        <span>What would you like to journal?</span>
+      </div>
 
+      <a class="back_arrow_icon" href="../pages/journal.html">
+        <i class="feather-back-arrow" data-feather="arrow-left"></i>
+      </a>
+
+    </div>
   </div>
-</div>
-<script id="applicationScript" type="text/javascript" src="../js/new_entry.js"></script>
+  <!-- Import icons from Feather Icons -->
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+  <script> feather.replace()</script>
+
+  <script id="applicationScript" type="text/javascript" src="../js/new_entry.js"></script>
 </body>
 </html>

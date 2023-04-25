@@ -5,16 +5,7 @@
 	box-sizing: border-box;
 	border: none;
 }
-/* Media view */
-.mediaViewInfo {
-	--web-view-name: morning_motivation;
-	--web-view-id: morning_motivation;
-	--web-scale-on-resize: true;
-	--web-enable-deep-linking: true;
-}
-:root {
-	--web-view-ids: morning_motivation;
-}
+
 /* Morning motivation page */
 #morning_motivation {
 	position: absolute;
@@ -22,10 +13,6 @@
 	height: 1024px;
 	background-color: rgba(231, 226, 222, 1);
 	overflow: hidden;
-	--web-view-name: morning_motivation;
-	--web-view-id: morning_motivation;
-	--web-scale-on-resize: true;
-	--web-enable-deep-linking: true;
 }
 
 /* Motivated entry box */
@@ -84,6 +71,7 @@
 	font-weight: normal;
 	font-size: 24px;
 	color: rgba(93, 63, 53, 1);
+	padding: 10px;
 }
 
 /* Grateful entry */
@@ -120,6 +108,7 @@
 	font-weight: normal;
 	font-size: 24px;
 	color: rgba(93,63,53,1);
+	padding: 10px;
 }
 #motivated {
 	position: absolute;
@@ -154,10 +143,12 @@
 	font-weight: normal;
 	font-size: 24px;
 	color: rgba(93,63,53,1);
+	padding: 10px;
 }
 
 textarea {
-	border: none;
+	border: 1px solid rgba(93,63,53,0.6);
+	border-radius: 10px;
 	background-color: rgba(234,218,214,1);
 	text-indent: 5px;
 }
@@ -170,9 +161,6 @@ textarea {
 	/*top: 931px;*/
 	top: 960px;
 	overflow: visible;
-	--web-animation: fadein undefineds undefined;
-	--web-action-type: page;
-	--web-action-target: new_entry.html;
 	cursor: pointer;
 	padding-bottom: 20px;
 }
@@ -215,18 +203,6 @@ textarea {
 	font-size: 36px;
 	color: rgba(135,95,74,1);
 }
-#back_arrow_icon {
-	position: absolute;
-	width: 51.38px;
-	height: 51.38px;
-	left: 225px;
-	top: 121px;
-	overflow: visible;
-	--web-animation: fadein undefineds undefined;
-	--web-action-type: page;
-	--web-action-target: journal_main.html;
-	cursor: pointer;
-}
 
 #nav-bar{
 	background-color: #FEF9F4;
@@ -239,4 +215,21 @@ textarea {
 
 #logo {
 	vertical-align: middle;
+}
+
+.back_arrow_icon {
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	left: 225px;
+	top: 115px;
+	overflow: visible;
+	cursor: pointer;
+}
+.back_arrow_icon:hover{
+	color: #707058;
+}
+.feather-back-arrow{
+	width: 40px;
+	height: 40px;
 }

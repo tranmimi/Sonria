@@ -4,6 +4,8 @@
     A file which adds dynamic functionality to the Dashboard. 
 */
 
+// import { getDatabase } from "firebase/database";
+
 /*
     Functionality for Mood Tracker modal box.
 
@@ -13,10 +15,7 @@
 
 // Get the Modal Box and Confirm button
 var modal = document.getElementById("mood-tracker-modal-box");
-var second_modal = document.getElementById("second-mood-tracker-modal-box");
-var second_modal_content = document.getElementById("second-mood-tracker-content");
 var confirm_btn = document.getElementById("mood-confirm");
-var second_confirm_btn = document.getElementById("second-mood-confirm");
 
 // Get individual emoji Moods
 var angry = document.getElementById("angry-face");
@@ -52,7 +51,7 @@ for (let i = firstDayofMonth; i > 0; i--) {
 liTag += `<li class="inactive">${lastDateofLastMonth - i + 1}</li>`;
 }
 
-for (let i = 1; i <= lastDateofMonth; i++) { let isToday=i===date.getDate() && currMonth===new Date().getMonth() && currYear===new Date().getFullYear() ? "active today-mood" : "" ; liTag +=`<li class="${isToday} other-day" id="day${i}">${i}</li>`;
+for (let i = 1; i <= lastDateofMonth; i++) { let isToday=i===date.getDate() && currMonth===new Date().getMonth() && currYear===new Date().getFullYear() ? "active today-mood" : "" ; liTag +=`<li class="${isToday}" id="day${i}">${i}</li>`;
     }
 
     for (let i = lastDayofMonth; i < 6; i++) { liTag +=`<li class="inactive">${i - lastDayofMonth + 1}</li>`
@@ -76,6 +75,11 @@ for (let i = 1; i <= lastDateofMonth; i++) { let isToday=i===date.getDate() && c
             renderCalendar();
             });
             });
+
+// function recordMoods(userId, mood, ) {
+//     const db = getDatabase();
+//     setInterval(ref(db, 'users/' + userId))
+// }
 
 $(document).ready(function() {
   // Retrieve the id of the selected Mood
@@ -119,20 +123,18 @@ $(document).ready(function() {
     // I'm not sure how to fix it. Hardcoding everything results in the same issue. For whatever reason, the click() function is holding onto the IDs of all previously
     // clicked-on days. I have no idea how to fix that.
 
-    $(".other-day").click(function(e) {
-        let day_id = "#" + this.id;
-        console.log(day_id);
-        second_modal.style.display = "block";
-        second_modal_content.style.display = "block";
+    $("#day1").click(function(e) {
+        var day_id = "#" + this.id;
+        $("<div id='second-mood-tracker-modal-box'><div id='second-mood-tracker-content'><h2>How did you feel on this day?</h2><ul id='emoji-lineup'><li><button class='emoji-this-day' id='angry-face'><img src='../img/🦆 emoji _pouting face_.png'></button></li><li><button class='emoji-this-day' id='crying-face'><img src='../img/🦆 emoji _loudly crying face_.png'></button></li><li><button class='emoji-this-day' id='worried-face'><img src='../img/🦆 emoji _worried face_.png'></button></li><li><button class='emoji-this-day' id='neutral-face'><img src='../img/🦆 emoji _neutral face_.png'></button></li><li><button class='emoji-this-day' id='smiling-face'><img src='../img/🦆 emoji _slightly smiling face_.png'></button></li><li><button class='emoji-this-day' id='happy-face'><img src='../img/🦆 emoji _smiling face with open mouth and smiling eyes_.png'></button></li></ul><button class='normal-btn' id='second-mood-confirm' disabled>Confirm</button></div></div>")
+        .insertAfter(".main-area");
         $(".emoji-this-day").click(function(e) {
             var selected_mood = this.id;
+            var second_confirm_btn = document.getElementById("second-mood-confirm");
             second_confirm_btn.disabled = false;
             if(second_confirm_btn.disabled === false) {
                 $("#second-mood-confirm").click(function(e) {
-                    second_modal.style.display = "none";
-                    second_modal_content.style.display = "none";
-                    // Replace today's date with selected Mood
-                    console.log(day_id);
+                    var second_modal = document.getElementById("second-mood-tracker-modal-box");
+                    second_modal.remove();                    // Replace today's date with selected Mood
                     switch(selected_mood) {
                         case "angry-face":
                             $(day_id).html('<img src="../img/🦆 emoji _pouting face_.png" style="height:40px;width:40px;">');
@@ -159,5 +161,1149 @@ $(document).ready(function() {
         })
     })
 
-});
+    $("#day2").click(function(e) {
+        var day_id = "#" + this.id;
+        $("<div id='second-mood-tracker-modal-box'><div id='second-mood-tracker-content'><h2>How did you feel on this day?</h2><ul id='emoji-lineup'><li><button class='emoji-this-day' id='angry-face'><img src='../img/🦆 emoji _pouting face_.png'></button></li><li><button class='emoji-this-day' id='crying-face'><img src='../img/🦆 emoji _loudly crying face_.png'></button></li><li><button class='emoji-this-day' id='worried-face'><img src='../img/🦆 emoji _worried face_.png'></button></li><li><button class='emoji-this-day' id='neutral-face'><img src='../img/🦆 emoji _neutral face_.png'></button></li><li><button class='emoji-this-day' id='smiling-face'><img src='../img/🦆 emoji _slightly smiling face_.png'></button></li><li><button class='emoji-this-day' id='happy-face'><img src='../img/🦆 emoji _smiling face with open mouth and smiling eyes_.png'></button></li></ul><button class='normal-btn' id='second-mood-confirm' disabled>Confirm</button></div></div>")
+        .insertAfter(".main-area");
+        $(".emoji-this-day").click(function(e) {
+            var selected_mood = this.id;
+            var second_confirm_btn = document.getElementById("second-mood-confirm");
+            second_confirm_btn.disabled = false;
+            if(second_confirm_btn.disabled === false) {
+                $("#second-mood-confirm").click(function(e) {
+                    var second_modal = document.getElementById("second-mood-tracker-modal-box");
+                    second_modal.remove();                    // Replace today's date with selected Mood
+                    switch(selected_mood) {
+                        case "angry-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _pouting face_.png" style="height:40px;width:40px;">');
+                            // $("#day1").html('<img src="../img/🦆 emoji _pouting face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "crying-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _loudly crying face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "worried-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _worried face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "neutral-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _neutral face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "smiling-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _slightly smiling face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "happy-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _smiling face with open mouth and smiling eyes_.png" style="height:40px;width:40px;">');
+                            break;
+                    }
+                });
+            }
+        })
+    })
+    
+    $("#day3").click(function(e) {
+        var day_id = "#" + this.id;
+        $("<div id='second-mood-tracker-modal-box'><div id='second-mood-tracker-content'><h2>How did you feel on this day?</h2><ul id='emoji-lineup'><li><button class='emoji-this-day' id='angry-face'><img src='../img/🦆 emoji _pouting face_.png'></button></li><li><button class='emoji-this-day' id='crying-face'><img src='../img/🦆 emoji _loudly crying face_.png'></button></li><li><button class='emoji-this-day' id='worried-face'><img src='../img/🦆 emoji _worried face_.png'></button></li><li><button class='emoji-this-day' id='neutral-face'><img src='../img/🦆 emoji _neutral face_.png'></button></li><li><button class='emoji-this-day' id='smiling-face'><img src='../img/🦆 emoji _slightly smiling face_.png'></button></li><li><button class='emoji-this-day' id='happy-face'><img src='../img/🦆 emoji _smiling face with open mouth and smiling eyes_.png'></button></li></ul><button class='normal-btn' id='second-mood-confirm' disabled>Confirm</button></div></div>")
+        .insertAfter(".main-area");
+        $(".emoji-this-day").click(function(e) {
+            var selected_mood = this.id;
+            var second_confirm_btn = document.getElementById("second-mood-confirm");
+            second_confirm_btn.disabled = false;
+            if(second_confirm_btn.disabled === false) {
+                $("#second-mood-confirm").click(function(e) {
+                    var second_modal = document.getElementById("second-mood-tracker-modal-box");
+                    second_modal.remove();                    // Replace today's date with selected Mood
+                    switch(selected_mood) {
+                        case "angry-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _pouting face_.png" style="height:40px;width:40px;">');
+                            // $("#day1").html('<img src="../img/🦆 emoji _pouting face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "crying-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _loudly crying face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "worried-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _worried face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "neutral-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _neutral face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "smiling-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _slightly smiling face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "happy-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _smiling face with open mouth and smiling eyes_.png" style="height:40px;width:40px;">');
+                            break;
+                    }
+                });
+            }
+        })
+    })
 
+    $("#day4").click(function(e) {
+        var day_id = "#" + this.id;
+        $("<div id='second-mood-tracker-modal-box'><div id='second-mood-tracker-content'><h2>How did you feel on this day?</h2><ul id='emoji-lineup'><li><button class='emoji-this-day' id='angry-face'><img src='../img/🦆 emoji _pouting face_.png'></button></li><li><button class='emoji-this-day' id='crying-face'><img src='../img/🦆 emoji _loudly crying face_.png'></button></li><li><button class='emoji-this-day' id='worried-face'><img src='../img/🦆 emoji _worried face_.png'></button></li><li><button class='emoji-this-day' id='neutral-face'><img src='../img/🦆 emoji _neutral face_.png'></button></li><li><button class='emoji-this-day' id='smiling-face'><img src='../img/🦆 emoji _slightly smiling face_.png'></button></li><li><button class='emoji-this-day' id='happy-face'><img src='../img/🦆 emoji _smiling face with open mouth and smiling eyes_.png'></button></li></ul><button class='normal-btn' id='second-mood-confirm' disabled>Confirm</button></div></div>")
+        .insertAfter(".main-area");
+        $(".emoji-this-day").click(function(e) {
+            var selected_mood = this.id;
+            var second_confirm_btn = document.getElementById("second-mood-confirm");
+            second_confirm_btn.disabled = false;
+            if(second_confirm_btn.disabled === false) {
+                $("#second-mood-confirm").click(function(e) {
+                    var second_modal = document.getElementById("second-mood-tracker-modal-box");
+                    second_modal.remove();                    // Replace today's date with selected Mood
+                    switch(selected_mood) {
+                        case "angry-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _pouting face_.png" style="height:40px;width:40px;">');
+                            // $("#day1").html('<img src="../img/🦆 emoji _pouting face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "crying-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _loudly crying face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "worried-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _worried face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "neutral-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _neutral face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "smiling-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _slightly smiling face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "happy-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _smiling face with open mouth and smiling eyes_.png" style="height:40px;width:40px;">');
+                            break;
+                    }
+                });
+            }
+        })
+    })
+
+    $("#day5").click(function(e) {
+        var day_id = "#" + this.id;
+        $("<div id='second-mood-tracker-modal-box'><div id='second-mood-tracker-content'><h2>How did you feel on this day?</h2><ul id='emoji-lineup'><li><button class='emoji-this-day' id='angry-face'><img src='../img/🦆 emoji _pouting face_.png'></button></li><li><button class='emoji-this-day' id='crying-face'><img src='../img/🦆 emoji _loudly crying face_.png'></button></li><li><button class='emoji-this-day' id='worried-face'><img src='../img/🦆 emoji _worried face_.png'></button></li><li><button class='emoji-this-day' id='neutral-face'><img src='../img/🦆 emoji _neutral face_.png'></button></li><li><button class='emoji-this-day' id='smiling-face'><img src='../img/🦆 emoji _slightly smiling face_.png'></button></li><li><button class='emoji-this-day' id='happy-face'><img src='../img/🦆 emoji _smiling face with open mouth and smiling eyes_.png'></button></li></ul><button class='normal-btn' id='second-mood-confirm' disabled>Confirm</button></div></div>")
+        .insertAfter(".main-area");
+        $(".emoji-this-day").click(function(e) {
+            var selected_mood = this.id;
+            var second_confirm_btn = document.getElementById("second-mood-confirm");
+            second_confirm_btn.disabled = false;
+            if(second_confirm_btn.disabled === false) {
+                $("#second-mood-confirm").click(function(e) {
+                    var second_modal = document.getElementById("second-mood-tracker-modal-box");
+                    second_modal.remove();                    // Replace today's date with selected Mood
+                    switch(selected_mood) {
+                        case "angry-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _pouting face_.png" style="height:40px;width:40px;">');
+                            // $("#day1").html('<img src="../img/🦆 emoji _pouting face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "crying-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _loudly crying face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "worried-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _worried face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "neutral-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _neutral face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "smiling-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _slightly smiling face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "happy-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _smiling face with open mouth and smiling eyes_.png" style="height:40px;width:40px;">');
+                            break;
+                    }
+                });
+            }
+        })
+    })
+
+    $("#day6").click(function(e) {
+        var day_id = "#" + this.id;
+        $("<div id='second-mood-tracker-modal-box'><div id='second-mood-tracker-content'><h2>How did you feel on this day?</h2><ul id='emoji-lineup'><li><button class='emoji-this-day' id='angry-face'><img src='../img/🦆 emoji _pouting face_.png'></button></li><li><button class='emoji-this-day' id='crying-face'><img src='../img/🦆 emoji _loudly crying face_.png'></button></li><li><button class='emoji-this-day' id='worried-face'><img src='../img/🦆 emoji _worried face_.png'></button></li><li><button class='emoji-this-day' id='neutral-face'><img src='../img/🦆 emoji _neutral face_.png'></button></li><li><button class='emoji-this-day' id='smiling-face'><img src='../img/🦆 emoji _slightly smiling face_.png'></button></li><li><button class='emoji-this-day' id='happy-face'><img src='../img/🦆 emoji _smiling face with open mouth and smiling eyes_.png'></button></li></ul><button class='normal-btn' id='second-mood-confirm' disabled>Confirm</button></div></div>")
+        .insertAfter(".main-area");
+        $(".emoji-this-day").click(function(e) {
+            var selected_mood = this.id;
+            var second_confirm_btn = document.getElementById("second-mood-confirm");
+            second_confirm_btn.disabled = false;
+            if(second_confirm_btn.disabled === false) {
+                $("#second-mood-confirm").click(function(e) {
+                    var second_modal = document.getElementById("second-mood-tracker-modal-box");
+                    second_modal.remove();                    // Replace today's date with selected Mood
+                    switch(selected_mood) {
+                        case "angry-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _pouting face_.png" style="height:40px;width:40px;">');
+                            // $("#day1").html('<img src="../img/🦆 emoji _pouting face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "crying-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _loudly crying face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "worried-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _worried face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "neutral-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _neutral face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "smiling-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _slightly smiling face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "happy-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _smiling face with open mouth and smiling eyes_.png" style="height:40px;width:40px;">');
+                            break;
+                    }
+                });
+            }
+        })
+    })
+
+    $("#day7").click(function(e) {
+        var day_id = "#" + this.id;
+        $("<div id='second-mood-tracker-modal-box'><div id='second-mood-tracker-content'><h2>How did you feel on this day?</h2><ul id='emoji-lineup'><li><button class='emoji-this-day' id='angry-face'><img src='../img/🦆 emoji _pouting face_.png'></button></li><li><button class='emoji-this-day' id='crying-face'><img src='../img/🦆 emoji _loudly crying face_.png'></button></li><li><button class='emoji-this-day' id='worried-face'><img src='../img/🦆 emoji _worried face_.png'></button></li><li><button class='emoji-this-day' id='neutral-face'><img src='../img/🦆 emoji _neutral face_.png'></button></li><li><button class='emoji-this-day' id='smiling-face'><img src='../img/🦆 emoji _slightly smiling face_.png'></button></li><li><button class='emoji-this-day' id='happy-face'><img src='../img/🦆 emoji _smiling face with open mouth and smiling eyes_.png'></button></li></ul><button class='normal-btn' id='second-mood-confirm' disabled>Confirm</button></div></div>")
+        .insertAfter(".main-area");
+        $(".emoji-this-day").click(function(e) {
+            var selected_mood = this.id;
+            var second_confirm_btn = document.getElementById("second-mood-confirm");
+            second_confirm_btn.disabled = false;
+            if(second_confirm_btn.disabled === false) {
+                $("#second-mood-confirm").click(function(e) {
+                    var second_modal = document.getElementById("second-mood-tracker-modal-box");
+                    second_modal.remove();                    // Replace today's date with selected Mood
+                    switch(selected_mood) {
+                        case "angry-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _pouting face_.png" style="height:40px;width:40px;">');
+                            // $("#day1").html('<img src="../img/🦆 emoji _pouting face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "crying-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _loudly crying face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "worried-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _worried face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "neutral-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _neutral face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "smiling-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _slightly smiling face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "happy-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _smiling face with open mouth and smiling eyes_.png" style="height:40px;width:40px;">');
+                            break;
+                    }
+                });
+            }
+        })
+    })
+
+    $("#day8").click(function(e) {
+        var day_id = "#" + this.id;
+        $("<div id='second-mood-tracker-modal-box'><div id='second-mood-tracker-content'><h2>How did you feel on this day?</h2><ul id='emoji-lineup'><li><button class='emoji-this-day' id='angry-face'><img src='../img/🦆 emoji _pouting face_.png'></button></li><li><button class='emoji-this-day' id='crying-face'><img src='../img/🦆 emoji _loudly crying face_.png'></button></li><li><button class='emoji-this-day' id='worried-face'><img src='../img/🦆 emoji _worried face_.png'></button></li><li><button class='emoji-this-day' id='neutral-face'><img src='../img/🦆 emoji _neutral face_.png'></button></li><li><button class='emoji-this-day' id='smiling-face'><img src='../img/🦆 emoji _slightly smiling face_.png'></button></li><li><button class='emoji-this-day' id='happy-face'><img src='../img/🦆 emoji _smiling face with open mouth and smiling eyes_.png'></button></li></ul><button class='normal-btn' id='second-mood-confirm' disabled>Confirm</button></div></div>")
+        .insertAfter(".main-area");
+        $(".emoji-this-day").click(function(e) {
+            var selected_mood = this.id;
+            var second_confirm_btn = document.getElementById("second-mood-confirm");
+            second_confirm_btn.disabled = false;
+            if(second_confirm_btn.disabled === false) {
+                $("#second-mood-confirm").click(function(e) {
+                    var second_modal = document.getElementById("second-mood-tracker-modal-box");
+                    second_modal.remove();                    // Replace today's date with selected Mood
+                    switch(selected_mood) {
+                        case "angry-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _pouting face_.png" style="height:40px;width:40px;">');
+                            // $("#day1").html('<img src="../img/🦆 emoji _pouting face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "crying-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _loudly crying face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "worried-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _worried face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "neutral-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _neutral face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "smiling-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _slightly smiling face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "happy-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _smiling face with open mouth and smiling eyes_.png" style="height:40px;width:40px;">');
+                            break;
+                    }
+                });
+            }
+        })
+    })
+
+    $("#day9").click(function(e) {
+        var day_id = "#" + this.id;
+        $("<div id='second-mood-tracker-modal-box'><div id='second-mood-tracker-content'><h2>How did you feel on this day?</h2><ul id='emoji-lineup'><li><button class='emoji-this-day' id='angry-face'><img src='../img/🦆 emoji _pouting face_.png'></button></li><li><button class='emoji-this-day' id='crying-face'><img src='../img/🦆 emoji _loudly crying face_.png'></button></li><li><button class='emoji-this-day' id='worried-face'><img src='../img/🦆 emoji _worried face_.png'></button></li><li><button class='emoji-this-day' id='neutral-face'><img src='../img/🦆 emoji _neutral face_.png'></button></li><li><button class='emoji-this-day' id='smiling-face'><img src='../img/🦆 emoji _slightly smiling face_.png'></button></li><li><button class='emoji-this-day' id='happy-face'><img src='../img/🦆 emoji _smiling face with open mouth and smiling eyes_.png'></button></li></ul><button class='normal-btn' id='second-mood-confirm' disabled>Confirm</button></div></div>")
+        .insertAfter(".main-area");
+        $(".emoji-this-day").click(function(e) {
+            var selected_mood = this.id;
+            var second_confirm_btn = document.getElementById("second-mood-confirm");
+            second_confirm_btn.disabled = false;
+            
+            if(second_confirm_btn.disabled === false) {
+                $("#second-mood-confirm").click(function(e) {
+                    var second_modal = document.getElementById("second-mood-tracker-modal-box");
+                    second_modal.remove();                    // Replace today's date with selected Mood
+                    switch(selected_mood) {
+                        case "angry-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _pouting face_.png" style="height:40px;width:40px;">');
+                            // $("#day1").html('<img src="../img/🦆 emoji _pouting face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "crying-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _loudly crying face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "worried-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _worried face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "neutral-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _neutral face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "smiling-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _slightly smiling face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "happy-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _smiling face with open mouth and smiling eyes_.png" style="height:40px;width:40px;">');
+                            break;
+                    }
+                });
+            }
+        })
+    })
+
+    $("#day10").click(function(e) {
+        var day_id = "#" + this.id;
+        $("<div id='second-mood-tracker-modal-box'><div id='second-mood-tracker-content'><h2>How did you feel on this day?</h2><ul id='emoji-lineup'><li><button class='emoji-this-day' id='angry-face'><img src='../img/🦆 emoji _pouting face_.png'></button></li><li><button class='emoji-this-day' id='crying-face'><img src='../img/🦆 emoji _loudly crying face_.png'></button></li><li><button class='emoji-this-day' id='worried-face'><img src='../img/🦆 emoji _worried face_.png'></button></li><li><button class='emoji-this-day' id='neutral-face'><img src='../img/🦆 emoji _neutral face_.png'></button></li><li><button class='emoji-this-day' id='smiling-face'><img src='../img/🦆 emoji _slightly smiling face_.png'></button></li><li><button class='emoji-this-day' id='happy-face'><img src='../img/🦆 emoji _smiling face with open mouth and smiling eyes_.png'></button></li></ul><button class='normal-btn' id='second-mood-confirm' disabled>Confirm</button></div></div>")
+        .insertAfter(".main-area");
+        $(".emoji-this-day").click(function(e) {
+            var selected_mood = this.id;
+            var second_confirm_btn = document.getElementById("second-mood-confirm");
+            second_confirm_btn.disabled = false;
+            
+            if(second_confirm_btn.disabled === false) {
+                $("#second-mood-confirm").click(function(e) {
+                    var second_modal = document.getElementById("second-mood-tracker-modal-box");
+                    second_modal.remove();                    // Replace today's date with selected Mood
+                    switch(selected_mood) {
+                        case "angry-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _pouting face_.png" style="height:40px;width:40px;">');
+                            // $("#day1").html('<img src="../img/🦆 emoji _pouting face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "crying-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _loudly crying face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "worried-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _worried face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "neutral-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _neutral face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "smiling-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _slightly smiling face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "happy-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _smiling face with open mouth and smiling eyes_.png" style="height:40px;width:40px;">');
+                            break;
+                    }
+                });
+            }
+        })
+    })
+
+    $("#day11").click(function(e) {
+        var day_id = "#" + this.id;
+        $("<div id='second-mood-tracker-modal-box'><div id='second-mood-tracker-content'><h2>How did you feel on this day?</h2><ul id='emoji-lineup'><li><button class='emoji-this-day' id='angry-face'><img src='../img/🦆 emoji _pouting face_.png'></button></li><li><button class='emoji-this-day' id='crying-face'><img src='../img/🦆 emoji _loudly crying face_.png'></button></li><li><button class='emoji-this-day' id='worried-face'><img src='../img/🦆 emoji _worried face_.png'></button></li><li><button class='emoji-this-day' id='neutral-face'><img src='../img/🦆 emoji _neutral face_.png'></button></li><li><button class='emoji-this-day' id='smiling-face'><img src='../img/🦆 emoji _slightly smiling face_.png'></button></li><li><button class='emoji-this-day' id='happy-face'><img src='../img/🦆 emoji _smiling face with open mouth and smiling eyes_.png'></button></li></ul><button class='normal-btn' id='second-mood-confirm' disabled>Confirm</button></div></div>")
+        .insertAfter(".main-area");
+        $(".emoji-this-day").click(function(e) {
+            var selected_mood = this.id;
+            var second_confirm_btn = document.getElementById("second-mood-confirm");
+            second_confirm_btn.disabled = false;
+            if(second_confirm_btn.disabled === false) {
+                $("#second-mood-confirm").click(function(e) {
+                    var second_modal = document.getElementById("second-mood-tracker-modal-box");
+                    second_modal.remove();                    // Replace today's date with selected Mood
+                    switch(selected_mood) {
+                        case "angry-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _pouting face_.png" style="height:40px;width:40px;">');
+                            // $("#day1").html('<img src="../img/🦆 emoji _pouting face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "crying-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _loudly crying face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "worried-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _worried face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "neutral-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _neutral face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "smiling-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _slightly smiling face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "happy-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _smiling face with open mouth and smiling eyes_.png" style="height:40px;width:40px;">');
+                            break;
+                    }
+                });
+            }
+        })
+    })
+
+    $("#day12").click(function(e) {
+        var day_id = "#" + this.id;
+        $("<div id='second-mood-tracker-modal-box'><div id='second-mood-tracker-content'><h2>How did you feel on this day?</h2><ul id='emoji-lineup'><li><button class='emoji-this-day' id='angry-face'><img src='../img/🦆 emoji _pouting face_.png'></button></li><li><button class='emoji-this-day' id='crying-face'><img src='../img/🦆 emoji _loudly crying face_.png'></button></li><li><button class='emoji-this-day' id='worried-face'><img src='../img/🦆 emoji _worried face_.png'></button></li><li><button class='emoji-this-day' id='neutral-face'><img src='../img/🦆 emoji _neutral face_.png'></button></li><li><button class='emoji-this-day' id='smiling-face'><img src='../img/🦆 emoji _slightly smiling face_.png'></button></li><li><button class='emoji-this-day' id='happy-face'><img src='../img/🦆 emoji _smiling face with open mouth and smiling eyes_.png'></button></li></ul><button class='normal-btn' id='second-mood-confirm' disabled>Confirm</button></div></div>")
+        .insertAfter(".main-area");
+        $(".emoji-this-day").click(function(e) {
+            var selected_mood = this.id;
+            var second_confirm_btn = document.getElementById("second-mood-confirm");
+            second_confirm_btn.disabled = false;
+            if(second_confirm_btn.disabled === false) {
+                $("#second-mood-confirm").click(function(e) {
+                    var second_modal = document.getElementById("second-mood-tracker-modal-box");
+                    second_modal.remove();                    // Replace today's date with selected Mood
+                    switch(selected_mood) {
+                        case "angry-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _pouting face_.png" style="height:40px;width:40px;">');
+                            // $("#day1").html('<img src="../img/🦆 emoji _pouting face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "crying-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _loudly crying face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "worried-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _worried face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "neutral-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _neutral face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "smiling-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _slightly smiling face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "happy-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _smiling face with open mouth and smiling eyes_.png" style="height:40px;width:40px;">');
+                            break;
+                    }
+                });
+            }
+        })
+    })
+    
+    $("#day13").click(function(e) {
+        var day_id = "#" + this.id;
+        $("<div id='second-mood-tracker-modal-box'><div id='second-mood-tracker-content'><h2>How did you feel on this day?</h2><ul id='emoji-lineup'><li><button class='emoji-this-day' id='angry-face'><img src='../img/🦆 emoji _pouting face_.png'></button></li><li><button class='emoji-this-day' id='crying-face'><img src='../img/🦆 emoji _loudly crying face_.png'></button></li><li><button class='emoji-this-day' id='worried-face'><img src='../img/🦆 emoji _worried face_.png'></button></li><li><button class='emoji-this-day' id='neutral-face'><img src='../img/🦆 emoji _neutral face_.png'></button></li><li><button class='emoji-this-day' id='smiling-face'><img src='../img/🦆 emoji _slightly smiling face_.png'></button></li><li><button class='emoji-this-day' id='happy-face'><img src='../img/🦆 emoji _smiling face with open mouth and smiling eyes_.png'></button></li></ul><button class='normal-btn' id='second-mood-confirm' disabled>Confirm</button></div></div>")
+        .insertAfter(".main-area");
+        $(".emoji-this-day").click(function(e) {
+            var selected_mood = this.id;
+            var second_confirm_btn = document.getElementById("second-mood-confirm");
+            second_confirm_btn.disabled = false;
+            if(second_confirm_btn.disabled === false) {
+                $("#second-mood-confirm").click(function(e) {
+                    var second_modal = document.getElementById("second-mood-tracker-modal-box");
+                    second_modal.remove();                    // Replace today's date with selected Mood
+                    switch(selected_mood) {
+                        case "angry-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _pouting face_.png" style="height:40px;width:40px;">');
+                            // $("#day1").html('<img src="../img/🦆 emoji _pouting face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "crying-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _loudly crying face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "worried-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _worried face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "neutral-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _neutral face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "smiling-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _slightly smiling face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "happy-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _smiling face with open mouth and smiling eyes_.png" style="height:40px;width:40px;">');
+                            break;
+                    }
+                });
+            }
+        })
+    })
+
+    $("#day14").click(function(e) {
+        var day_id = "#" + this.id;
+        $("<div id='second-mood-tracker-modal-box'><div id='second-mood-tracker-content'><h2>How did you feel on this day?</h2><ul id='emoji-lineup'><li><button class='emoji-this-day' id='angry-face'><img src='../img/🦆 emoji _pouting face_.png'></button></li><li><button class='emoji-this-day' id='crying-face'><img src='../img/🦆 emoji _loudly crying face_.png'></button></li><li><button class='emoji-this-day' id='worried-face'><img src='../img/🦆 emoji _worried face_.png'></button></li><li><button class='emoji-this-day' id='neutral-face'><img src='../img/🦆 emoji _neutral face_.png'></button></li><li><button class='emoji-this-day' id='smiling-face'><img src='../img/🦆 emoji _slightly smiling face_.png'></button></li><li><button class='emoji-this-day' id='happy-face'><img src='../img/🦆 emoji _smiling face with open mouth and smiling eyes_.png'></button></li></ul><button class='normal-btn' id='second-mood-confirm' disabled>Confirm</button></div></div>")
+        .insertAfter(".main-area");
+        $(".emoji-this-day").click(function(e) {
+            var selected_mood = this.id;
+            var second_confirm_btn = document.getElementById("second-mood-confirm");
+            second_confirm_btn.disabled = false;
+            if(second_confirm_btn.disabled === false) {
+                $("#second-mood-confirm").click(function(e) {
+                    var second_modal = document.getElementById("second-mood-tracker-modal-box");
+                    second_modal.remove();                    // Replace today's date with selected Mood
+                    switch(selected_mood) {
+                        case "angry-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _pouting face_.png" style="height:40px;width:40px;">');
+                            // $("#day1").html('<img src="../img/🦆 emoji _pouting face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "crying-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _loudly crying face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "worried-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _worried face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "neutral-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _neutral face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "smiling-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _slightly smiling face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "happy-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _smiling face with open mouth and smiling eyes_.png" style="height:40px;width:40px;">');
+                            break;
+                    }
+                });
+            }
+        })
+    })
+
+    $("#day15").click(function(e) {
+        var day_id = "#" + this.id;
+        $("<div id='second-mood-tracker-modal-box'><div id='second-mood-tracker-content'><h2>How did you feel on this day?</h2><ul id='emoji-lineup'><li><button class='emoji-this-day' id='angry-face'><img src='../img/🦆 emoji _pouting face_.png'></button></li><li><button class='emoji-this-day' id='crying-face'><img src='../img/🦆 emoji _loudly crying face_.png'></button></li><li><button class='emoji-this-day' id='worried-face'><img src='../img/🦆 emoji _worried face_.png'></button></li><li><button class='emoji-this-day' id='neutral-face'><img src='../img/🦆 emoji _neutral face_.png'></button></li><li><button class='emoji-this-day' id='smiling-face'><img src='../img/🦆 emoji _slightly smiling face_.png'></button></li><li><button class='emoji-this-day' id='happy-face'><img src='../img/🦆 emoji _smiling face with open mouth and smiling eyes_.png'></button></li></ul><button class='normal-btn' id='second-mood-confirm' disabled>Confirm</button></div></div>")
+        .insertAfter(".main-area");
+        $(".emoji-this-day").click(function(e) {
+            var selected_mood = this.id;
+            var second_confirm_btn = document.getElementById("second-mood-confirm");
+            second_confirm_btn.disabled = false;
+            if(second_confirm_btn.disabled === false) {
+                $("#second-mood-confirm").click(function(e) {
+                    var second_modal = document.getElementById("second-mood-tracker-modal-box");
+                    second_modal.remove();                    // Replace today's date with selected Mood
+                    switch(selected_mood) {
+                        case "angry-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _pouting face_.png" style="height:40px;width:40px;">');
+                            // $("#day1").html('<img src="../img/🦆 emoji _pouting face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "crying-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _loudly crying face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "worried-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _worried face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "neutral-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _neutral face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "smiling-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _slightly smiling face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "happy-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _smiling face with open mouth and smiling eyes_.png" style="height:40px;width:40px;">');
+                            break;
+                    }
+                });
+            }
+        })
+    })
+
+    $("#day16").click(function(e) {
+        var day_id = "#" + this.id;
+        $("<div id='second-mood-tracker-modal-box'><div id='second-mood-tracker-content'><h2>How did you feel on this day?</h2><ul id='emoji-lineup'><li><button class='emoji-this-day' id='angry-face'><img src='../img/🦆 emoji _pouting face_.png'></button></li><li><button class='emoji-this-day' id='crying-face'><img src='../img/🦆 emoji _loudly crying face_.png'></button></li><li><button class='emoji-this-day' id='worried-face'><img src='../img/🦆 emoji _worried face_.png'></button></li><li><button class='emoji-this-day' id='neutral-face'><img src='../img/🦆 emoji _neutral face_.png'></button></li><li><button class='emoji-this-day' id='smiling-face'><img src='../img/🦆 emoji _slightly smiling face_.png'></button></li><li><button class='emoji-this-day' id='happy-face'><img src='../img/🦆 emoji _smiling face with open mouth and smiling eyes_.png'></button></li></ul><button class='normal-btn' id='second-mood-confirm' disabled>Confirm</button></div></div>")
+        .insertAfter(".main-area");
+        $(".emoji-this-day").click(function(e) {
+            var selected_mood = this.id;
+            var second_confirm_btn = document.getElementById("second-mood-confirm");
+            second_confirm_btn.disabled = false;
+            if(second_confirm_btn.disabled === false) {
+                $("#second-mood-confirm").click(function(e) {
+                    var second_modal = document.getElementById("second-mood-tracker-modal-box");
+                    second_modal.remove();                    // Replace today's date with selected Mood
+                    switch(selected_mood) {
+                        case "angry-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _pouting face_.png" style="height:40px;width:40px;">');
+                            // $("#day1").html('<img src="../img/🦆 emoji _pouting face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "crying-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _loudly crying face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "worried-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _worried face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "neutral-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _neutral face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "smiling-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _slightly smiling face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "happy-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _smiling face with open mouth and smiling eyes_.png" style="height:40px;width:40px;">');
+                            break;
+                    }
+                });
+            }
+        })
+    })
+
+    $("#day17").click(function(e) {
+        var day_id = "#" + this.id;
+        $("<div id='second-mood-tracker-modal-box'><div id='second-mood-tracker-content'><h2>How did you feel on this day?</h2><ul id='emoji-lineup'><li><button class='emoji-this-day' id='angry-face'><img src='../img/🦆 emoji _pouting face_.png'></button></li><li><button class='emoji-this-day' id='crying-face'><img src='../img/🦆 emoji _loudly crying face_.png'></button></li><li><button class='emoji-this-day' id='worried-face'><img src='../img/🦆 emoji _worried face_.png'></button></li><li><button class='emoji-this-day' id='neutral-face'><img src='../img/🦆 emoji _neutral face_.png'></button></li><li><button class='emoji-this-day' id='smiling-face'><img src='../img/🦆 emoji _slightly smiling face_.png'></button></li><li><button class='emoji-this-day' id='happy-face'><img src='../img/🦆 emoji _smiling face with open mouth and smiling eyes_.png'></button></li></ul><button class='normal-btn' id='second-mood-confirm' disabled>Confirm</button></div></div>")
+        .insertAfter(".main-area");
+        $(".emoji-this-day").click(function(e) {
+            var selected_mood = this.id;
+            var second_confirm_btn = document.getElementById("second-mood-confirm");
+            second_confirm_btn.disabled = false;
+            if(second_confirm_btn.disabled === false) {
+                $("#second-mood-confirm").click(function(e) {
+                    var second_modal = document.getElementById("second-mood-tracker-modal-box");
+                    second_modal.remove();                    // Replace today's date with selected Mood
+                    switch(selected_mood) {
+                        case "angry-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _pouting face_.png" style="height:40px;width:40px;">');
+                            // $("#day1").html('<img src="../img/🦆 emoji _pouting face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "crying-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _loudly crying face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "worried-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _worried face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "neutral-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _neutral face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "smiling-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _slightly smiling face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "happy-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _smiling face with open mouth and smiling eyes_.png" style="height:40px;width:40px;">');
+                            break;
+                    }
+                });
+            }
+        })
+    })
+
+    $("#day18").click(function(e) {
+        var day_id = "#" + this.id;
+        $("<div id='second-mood-tracker-modal-box'><div id='second-mood-tracker-content'><h2>How did you feel on this day?</h2><ul id='emoji-lineup'><li><button class='emoji-this-day' id='angry-face'><img src='../img/🦆 emoji _pouting face_.png'></button></li><li><button class='emoji-this-day' id='crying-face'><img src='../img/🦆 emoji _loudly crying face_.png'></button></li><li><button class='emoji-this-day' id='worried-face'><img src='../img/🦆 emoji _worried face_.png'></button></li><li><button class='emoji-this-day' id='neutral-face'><img src='../img/🦆 emoji _neutral face_.png'></button></li><li><button class='emoji-this-day' id='smiling-face'><img src='../img/🦆 emoji _slightly smiling face_.png'></button></li><li><button class='emoji-this-day' id='happy-face'><img src='../img/🦆 emoji _smiling face with open mouth and smiling eyes_.png'></button></li></ul><button class='normal-btn' id='second-mood-confirm' disabled>Confirm</button></div></div>")
+        .insertAfter(".main-area");
+        $(".emoji-this-day").click(function(e) {
+            var selected_mood = this.id;
+            var second_confirm_btn = document.getElementById("second-mood-confirm");
+            second_confirm_btn.disabled = false;
+            if(second_confirm_btn.disabled === false) {
+                $("#second-mood-confirm").click(function(e) {
+                    var second_modal = document.getElementById("second-mood-tracker-modal-box");
+                    second_modal.remove();                    // Replace today's date with selected Mood
+                    switch(selected_mood) {
+                        case "angry-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _pouting face_.png" style="height:40px;width:40px;">');
+                            // $("#day1").html('<img src="../img/🦆 emoji _pouting face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "crying-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _loudly crying face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "worried-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _worried face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "neutral-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _neutral face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "smiling-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _slightly smiling face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "happy-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _smiling face with open mouth and smiling eyes_.png" style="height:40px;width:40px;">');
+                            break;
+                    }
+                });
+            }
+        })
+    })
+
+    $("#day19").click(function(e) {
+        var day_id = "#" + this.id;
+        $("<div id='second-mood-tracker-modal-box'><div id='second-mood-tracker-content'><h2>How did you feel on this day?</h2><ul id='emoji-lineup'><li><button class='emoji-this-day' id='angry-face'><img src='../img/🦆 emoji _pouting face_.png'></button></li><li><button class='emoji-this-day' id='crying-face'><img src='../img/🦆 emoji _loudly crying face_.png'></button></li><li><button class='emoji-this-day' id='worried-face'><img src='../img/🦆 emoji _worried face_.png'></button></li><li><button class='emoji-this-day' id='neutral-face'><img src='../img/🦆 emoji _neutral face_.png'></button></li><li><button class='emoji-this-day' id='smiling-face'><img src='../img/🦆 emoji _slightly smiling face_.png'></button></li><li><button class='emoji-this-day' id='happy-face'><img src='../img/🦆 emoji _smiling face with open mouth and smiling eyes_.png'></button></li></ul><button class='normal-btn' id='second-mood-confirm' disabled>Confirm</button></div></div>")
+        .insertAfter(".main-area");
+        $(".emoji-this-day").click(function(e) {
+            var selected_mood = this.id;
+            var second_confirm_btn = document.getElementById("second-mood-confirm");
+            second_confirm_btn.disabled = false;
+            
+            if(second_confirm_btn.disabled === false) {
+                $("#second-mood-confirm").click(function(e) {
+                    var second_modal = document.getElementById("second-mood-tracker-modal-box");
+                    second_modal.remove();                    // Replace today's date with selected Mood
+                    switch(selected_mood) {
+                        case "angry-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _pouting face_.png" style="height:40px;width:40px;">');
+                            // $("#day1").html('<img src="../img/🦆 emoji _pouting face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "crying-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _loudly crying face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "worried-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _worried face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "neutral-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _neutral face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "smiling-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _slightly smiling face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "happy-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _smiling face with open mouth and smiling eyes_.png" style="height:40px;width:40px;">');
+                            break;
+                    }
+                });
+            }
+        })
+    })
+
+    $("#day20").click(function(e) {
+        var day_id = "#" + this.id;
+        $("<div id='second-mood-tracker-modal-box'><div id='second-mood-tracker-content'><h2>How did you feel on this day?</h2><ul id='emoji-lineup'><li><button class='emoji-this-day' id='angry-face'><img src='../img/🦆 emoji _pouting face_.png'></button></li><li><button class='emoji-this-day' id='crying-face'><img src='../img/🦆 emoji _loudly crying face_.png'></button></li><li><button class='emoji-this-day' id='worried-face'><img src='../img/🦆 emoji _worried face_.png'></button></li><li><button class='emoji-this-day' id='neutral-face'><img src='../img/🦆 emoji _neutral face_.png'></button></li><li><button class='emoji-this-day' id='smiling-face'><img src='../img/🦆 emoji _slightly smiling face_.png'></button></li><li><button class='emoji-this-day' id='happy-face'><img src='../img/🦆 emoji _smiling face with open mouth and smiling eyes_.png'></button></li></ul><button class='normal-btn' id='second-mood-confirm' disabled>Confirm</button></div></div>")
+        .insertAfter(".main-area");
+        $(".emoji-this-day").click(function(e) {
+            var selected_mood = this.id;
+            var second_confirm_btn = document.getElementById("second-mood-confirm");
+            second_confirm_btn.disabled = false;
+            
+            if(second_confirm_btn.disabled === false) {
+                $("#second-mood-confirm").click(function(e) {
+                    var second_modal = document.getElementById("second-mood-tracker-modal-box");
+                    second_modal.remove();                    // Replace today's date with selected Mood
+                    switch(selected_mood) {
+                        case "angry-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _pouting face_.png" style="height:40px;width:40px;">');
+                            // $("#day1").html('<img src="../img/🦆 emoji _pouting face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "crying-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _loudly crying face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "worried-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _worried face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "neutral-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _neutral face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "smiling-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _slightly smiling face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "happy-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _smiling face with open mouth and smiling eyes_.png" style="height:40px;width:40px;">');
+                            break;
+                    }
+                });
+            }
+        })
+    })
+
+    $("#day21").click(function(e) {
+        var day_id = "#" + this.id;
+        $("<div id='second-mood-tracker-modal-box'><div id='second-mood-tracker-content'><h2>How did you feel on this day?</h2><ul id='emoji-lineup'><li><button class='emoji-this-day' id='angry-face'><img src='../img/🦆 emoji _pouting face_.png'></button></li><li><button class='emoji-this-day' id='crying-face'><img src='../img/🦆 emoji _loudly crying face_.png'></button></li><li><button class='emoji-this-day' id='worried-face'><img src='../img/🦆 emoji _worried face_.png'></button></li><li><button class='emoji-this-day' id='neutral-face'><img src='../img/🦆 emoji _neutral face_.png'></button></li><li><button class='emoji-this-day' id='smiling-face'><img src='../img/🦆 emoji _slightly smiling face_.png'></button></li><li><button class='emoji-this-day' id='happy-face'><img src='../img/🦆 emoji _smiling face with open mouth and smiling eyes_.png'></button></li></ul><button class='normal-btn' id='second-mood-confirm' disabled>Confirm</button></div></div>")
+        .insertAfter(".main-area");
+        $(".emoji-this-day").click(function(e) {
+            var selected_mood = this.id;
+            var second_confirm_btn = document.getElementById("second-mood-confirm");
+            second_confirm_btn.disabled = false;
+            if(second_confirm_btn.disabled === false) {
+                $("#second-mood-confirm").click(function(e) {
+                    var second_modal = document.getElementById("second-mood-tracker-modal-box");
+                    second_modal.remove();                    // Replace today's date with selected Mood
+                    switch(selected_mood) {
+                        case "angry-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _pouting face_.png" style="height:40px;width:40px;">');
+                            // $("#day1").html('<img src="../img/🦆 emoji _pouting face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "crying-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _loudly crying face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "worried-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _worried face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "neutral-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _neutral face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "smiling-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _slightly smiling face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "happy-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _smiling face with open mouth and smiling eyes_.png" style="height:40px;width:40px;">');
+                            break;
+                    }
+                });
+            }
+        })
+    })
+
+    $("#day22").click(function(e) {
+        var day_id = "#" + this.id;
+        $("<div id='second-mood-tracker-modal-box'><div id='second-mood-tracker-content'><h2>How did you feel on this day?</h2><ul id='emoji-lineup'><li><button class='emoji-this-day' id='angry-face'><img src='../img/🦆 emoji _pouting face_.png'></button></li><li><button class='emoji-this-day' id='crying-face'><img src='../img/🦆 emoji _loudly crying face_.png'></button></li><li><button class='emoji-this-day' id='worried-face'><img src='../img/🦆 emoji _worried face_.png'></button></li><li><button class='emoji-this-day' id='neutral-face'><img src='../img/🦆 emoji _neutral face_.png'></button></li><li><button class='emoji-this-day' id='smiling-face'><img src='../img/🦆 emoji _slightly smiling face_.png'></button></li><li><button class='emoji-this-day' id='happy-face'><img src='../img/🦆 emoji _smiling face with open mouth and smiling eyes_.png'></button></li></ul><button class='normal-btn' id='second-mood-confirm' disabled>Confirm</button></div></div>")
+        .insertAfter(".main-area");
+        $(".emoji-this-day").click(function(e) {
+            var selected_mood = this.id;
+            var second_confirm_btn = document.getElementById("second-mood-confirm");
+            second_confirm_btn.disabled = false;
+            if(second_confirm_btn.disabled === false) {
+                $("#second-mood-confirm").click(function(e) {
+                    var second_modal = document.getElementById("second-mood-tracker-modal-box");
+                    second_modal.remove();                    // Replace today's date with selected Mood
+                    switch(selected_mood) {
+                        case "angry-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _pouting face_.png" style="height:40px;width:40px;">');
+                            // $("#day1").html('<img src="../img/🦆 emoji _pouting face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "crying-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _loudly crying face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "worried-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _worried face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "neutral-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _neutral face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "smiling-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _slightly smiling face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "happy-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _smiling face with open mouth and smiling eyes_.png" style="height:40px;width:40px;">');
+                            break;
+                    }
+                });
+            }
+        })
+    })
+    
+    $("#day23").click(function(e) {
+        var day_id = "#" + this.id;
+        $("<div id='second-mood-tracker-modal-box'><div id='second-mood-tracker-content'><h2>How did you feel on this day?</h2><ul id='emoji-lineup'><li><button class='emoji-this-day' id='angry-face'><img src='../img/🦆 emoji _pouting face_.png'></button></li><li><button class='emoji-this-day' id='crying-face'><img src='../img/🦆 emoji _loudly crying face_.png'></button></li><li><button class='emoji-this-day' id='worried-face'><img src='../img/🦆 emoji _worried face_.png'></button></li><li><button class='emoji-this-day' id='neutral-face'><img src='../img/🦆 emoji _neutral face_.png'></button></li><li><button class='emoji-this-day' id='smiling-face'><img src='../img/🦆 emoji _slightly smiling face_.png'></button></li><li><button class='emoji-this-day' id='happy-face'><img src='../img/🦆 emoji _smiling face with open mouth and smiling eyes_.png'></button></li></ul><button class='normal-btn' id='second-mood-confirm' disabled>Confirm</button></div></div>")
+        .insertAfter(".main-area");
+        $(".emoji-this-day").click(function(e) {
+            var selected_mood = this.id;
+            var second_confirm_btn = document.getElementById("second-mood-confirm");
+            second_confirm_btn.disabled = false;
+            if(second_confirm_btn.disabled === false) {
+                $("#second-mood-confirm").click(function(e) {
+                    var second_modal = document.getElementById("second-mood-tracker-modal-box");
+                    second_modal.remove();                    // Replace today's date with selected Mood
+                    switch(selected_mood) {
+                        case "angry-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _pouting face_.png" style="height:40px;width:40px;">');
+                            // $("#day1").html('<img src="../img/🦆 emoji _pouting face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "crying-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _loudly crying face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "worried-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _worried face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "neutral-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _neutral face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "smiling-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _slightly smiling face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "happy-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _smiling face with open mouth and smiling eyes_.png" style="height:40px;width:40px;">');
+                            break;
+                    }
+                });
+            }
+        })
+    })
+
+    $("#day24").click(function(e) {
+        var day_id = "#" + this.id;
+        $("<div id='second-mood-tracker-modal-box'><div id='second-mood-tracker-content'><h2>How did you feel on this day?</h2><ul id='emoji-lineup'><li><button class='emoji-this-day' id='angry-face'><img src='../img/🦆 emoji _pouting face_.png'></button></li><li><button class='emoji-this-day' id='crying-face'><img src='../img/🦆 emoji _loudly crying face_.png'></button></li><li><button class='emoji-this-day' id='worried-face'><img src='../img/🦆 emoji _worried face_.png'></button></li><li><button class='emoji-this-day' id='neutral-face'><img src='../img/🦆 emoji _neutral face_.png'></button></li><li><button class='emoji-this-day' id='smiling-face'><img src='../img/🦆 emoji _slightly smiling face_.png'></button></li><li><button class='emoji-this-day' id='happy-face'><img src='../img/🦆 emoji _smiling face with open mouth and smiling eyes_.png'></button></li></ul><button class='normal-btn' id='second-mood-confirm' disabled>Confirm</button></div></div>")
+        .insertAfter(".main-area");
+        $(".emoji-this-day").click(function(e) {
+            var selected_mood = this.id;
+            var second_confirm_btn = document.getElementById("second-mood-confirm");
+            second_confirm_btn.disabled = false;
+            if(second_confirm_btn.disabled === false) {
+                $("#second-mood-confirm").click(function(e) {
+                    var second_modal = document.getElementById("second-mood-tracker-modal-box");
+                    second_modal.remove();                    // Replace today's date with selected Mood
+                    switch(selected_mood) {
+                        case "angry-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _pouting face_.png" style="height:40px;width:40px;">');
+                            // $("#day1").html('<img src="../img/🦆 emoji _pouting face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "crying-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _loudly crying face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "worried-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _worried face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "neutral-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _neutral face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "smiling-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _slightly smiling face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "happy-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _smiling face with open mouth and smiling eyes_.png" style="height:40px;width:40px;">');
+                            break;
+                    }
+                });
+            }
+        })
+    })
+
+    $("#day25").click(function(e) {
+        var day_id = "#" + this.id;
+        $("<div id='second-mood-tracker-modal-box'><div id='second-mood-tracker-content'><h2>How did you feel on this day?</h2><ul id='emoji-lineup'><li><button class='emoji-this-day' id='angry-face'><img src='../img/🦆 emoji _pouting face_.png'></button></li><li><button class='emoji-this-day' id='crying-face'><img src='../img/🦆 emoji _loudly crying face_.png'></button></li><li><button class='emoji-this-day' id='worried-face'><img src='../img/🦆 emoji _worried face_.png'></button></li><li><button class='emoji-this-day' id='neutral-face'><img src='../img/🦆 emoji _neutral face_.png'></button></li><li><button class='emoji-this-day' id='smiling-face'><img src='../img/🦆 emoji _slightly smiling face_.png'></button></li><li><button class='emoji-this-day' id='happy-face'><img src='../img/🦆 emoji _smiling face with open mouth and smiling eyes_.png'></button></li></ul><button class='normal-btn' id='second-mood-confirm' disabled>Confirm</button></div></div>")
+        .insertAfter(".main-area");
+        $(".emoji-this-day").click(function(e) {
+            var selected_mood = this.id;
+            var second_confirm_btn = document.getElementById("second-mood-confirm");
+            second_confirm_btn.disabled = false;
+            if(second_confirm_btn.disabled === false) {
+                $("#second-mood-confirm").click(function(e) {
+                    var second_modal = document.getElementById("second-mood-tracker-modal-box");
+                    second_modal.remove();                    // Replace today's date with selected Mood
+                    switch(selected_mood) {
+                        case "angry-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _pouting face_.png" style="height:40px;width:40px;">');
+                            // $("#day1").html('<img src="../img/🦆 emoji _pouting face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "crying-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _loudly crying face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "worried-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _worried face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "neutral-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _neutral face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "smiling-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _slightly smiling face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "happy-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _smiling face with open mouth and smiling eyes_.png" style="height:40px;width:40px;">');
+                            break;
+                    }
+                });
+            }
+        })
+    })
+
+    $("#day26").click(function(e) {
+        var day_id = "#" + this.id;
+        $("<div id='second-mood-tracker-modal-box'><div id='second-mood-tracker-content'><h2>How did you feel on this day?</h2><ul id='emoji-lineup'><li><button class='emoji-this-day' id='angry-face'><img src='../img/🦆 emoji _pouting face_.png'></button></li><li><button class='emoji-this-day' id='crying-face'><img src='../img/🦆 emoji _loudly crying face_.png'></button></li><li><button class='emoji-this-day' id='worried-face'><img src='../img/🦆 emoji _worried face_.png'></button></li><li><button class='emoji-this-day' id='neutral-face'><img src='../img/🦆 emoji _neutral face_.png'></button></li><li><button class='emoji-this-day' id='smiling-face'><img src='../img/🦆 emoji _slightly smiling face_.png'></button></li><li><button class='emoji-this-day' id='happy-face'><img src='../img/🦆 emoji _smiling face with open mouth and smiling eyes_.png'></button></li></ul><button class='normal-btn' id='second-mood-confirm' disabled>Confirm</button></div></div>")
+        .insertAfter(".main-area");
+        $(".emoji-this-day").click(function(e) {
+            var selected_mood = this.id;
+            var second_confirm_btn = document.getElementById("second-mood-confirm");
+            second_confirm_btn.disabled = false;
+            if(second_confirm_btn.disabled === false) {
+                $("#second-mood-confirm").click(function(e) {
+                    var second_modal = document.getElementById("second-mood-tracker-modal-box");
+                    second_modal.remove();                    // Replace today's date with selected Mood
+                    switch(selected_mood) {
+                        case "angry-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _pouting face_.png" style="height:40px;width:40px;">');
+                            // $("#day1").html('<img src="../img/🦆 emoji _pouting face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "crying-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _loudly crying face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "worried-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _worried face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "neutral-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _neutral face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "smiling-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _slightly smiling face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "happy-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _smiling face with open mouth and smiling eyes_.png" style="height:40px;width:40px;">');
+                            break;
+                    }
+                });
+            }
+        })
+    })
+
+    $("#day27").click(function(e) {
+        var day_id = "#" + this.id;
+        $("<div id='second-mood-tracker-modal-box'><div id='second-mood-tracker-content'><h2>How did you feel on this day?</h2><ul id='emoji-lineup'><li><button class='emoji-this-day' id='angry-face'><img src='../img/🦆 emoji _pouting face_.png'></button></li><li><button class='emoji-this-day' id='crying-face'><img src='../img/🦆 emoji _loudly crying face_.png'></button></li><li><button class='emoji-this-day' id='worried-face'><img src='../img/🦆 emoji _worried face_.png'></button></li><li><button class='emoji-this-day' id='neutral-face'><img src='../img/🦆 emoji _neutral face_.png'></button></li><li><button class='emoji-this-day' id='smiling-face'><img src='../img/🦆 emoji _slightly smiling face_.png'></button></li><li><button class='emoji-this-day' id='happy-face'><img src='../img/🦆 emoji _smiling face with open mouth and smiling eyes_.png'></button></li></ul><button class='normal-btn' id='second-mood-confirm' disabled>Confirm</button></div></div>")
+        .insertAfter(".main-area");
+        $(".emoji-this-day").click(function(e) {
+            var selected_mood = this.id;
+            var second_confirm_btn = document.getElementById("second-mood-confirm");
+            second_confirm_btn.disabled = false;
+            if(second_confirm_btn.disabled === false) {
+                $("#second-mood-confirm").click(function(e) {
+                    var second_modal = document.getElementById("second-mood-tracker-modal-box");
+                    second_modal.remove();                    // Replace today's date with selected Mood
+                    switch(selected_mood) {
+                        case "angry-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _pouting face_.png" style="height:40px;width:40px;">');
+                            // $("#day1").html('<img src="../img/🦆 emoji _pouting face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "crying-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _loudly crying face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "worried-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _worried face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "neutral-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _neutral face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "smiling-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _slightly smiling face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "happy-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _smiling face with open mouth and smiling eyes_.png" style="height:40px;width:40px;">');
+                            break;
+                    }
+                });
+            }
+        })
+    })
+
+    $("#day28").click(function(e) {
+        var day_id = "#" + this.id;
+        $("<div id='second-mood-tracker-modal-box'><div id='second-mood-tracker-content'><h2>How did you feel on this day?</h2><ul id='emoji-lineup'><li><button class='emoji-this-day' id='angry-face'><img src='../img/🦆 emoji _pouting face_.png'></button></li><li><button class='emoji-this-day' id='crying-face'><img src='../img/🦆 emoji _loudly crying face_.png'></button></li><li><button class='emoji-this-day' id='worried-face'><img src='../img/🦆 emoji _worried face_.png'></button></li><li><button class='emoji-this-day' id='neutral-face'><img src='../img/🦆 emoji _neutral face_.png'></button></li><li><button class='emoji-this-day' id='smiling-face'><img src='../img/🦆 emoji _slightly smiling face_.png'></button></li><li><button class='emoji-this-day' id='happy-face'><img src='../img/🦆 emoji _smiling face with open mouth and smiling eyes_.png'></button></li></ul><button class='normal-btn' id='second-mood-confirm' disabled>Confirm</button></div></div>")
+        .insertAfter(".main-area");
+        $(".emoji-this-day").click(function(e) {
+            var selected_mood = this.id;
+            var second_confirm_btn = document.getElementById("second-mood-confirm");
+            second_confirm_btn.disabled = false;
+            if(second_confirm_btn.disabled === false) {
+                $("#second-mood-confirm").click(function(e) {
+                    var second_modal = document.getElementById("second-mood-tracker-modal-box");
+                    second_modal.remove();                    // Replace today's date with selected Mood
+                    switch(selected_mood) {
+                        case "angry-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _pouting face_.png" style="height:40px;width:40px;">');
+                            // $("#day1").html('<img src="../img/🦆 emoji _pouting face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "crying-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _loudly crying face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "worried-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _worried face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "neutral-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _neutral face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "smiling-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _slightly smiling face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "happy-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _smiling face with open mouth and smiling eyes_.png" style="height:40px;width:40px;">');
+                            break;
+                    }
+                });
+            }
+        })
+    })
+
+    $("#day29").click(function(e) {
+        var day_id = "#" + this.id;
+        $("<div id='second-mood-tracker-modal-box'><div id='second-mood-tracker-content'><h2>How did you feel on this day?</h2><ul id='emoji-lineup'><li><button class='emoji-this-day' id='angry-face'><img src='../img/🦆 emoji _pouting face_.png'></button></li><li><button class='emoji-this-day' id='crying-face'><img src='../img/🦆 emoji _loudly crying face_.png'></button></li><li><button class='emoji-this-day' id='worried-face'><img src='../img/🦆 emoji _worried face_.png'></button></li><li><button class='emoji-this-day' id='neutral-face'><img src='../img/🦆 emoji _neutral face_.png'></button></li><li><button class='emoji-this-day' id='smiling-face'><img src='../img/🦆 emoji _slightly smiling face_.png'></button></li><li><button class='emoji-this-day' id='happy-face'><img src='../img/🦆 emoji _smiling face with open mouth and smiling eyes_.png'></button></li></ul><button class='normal-btn' id='second-mood-confirm' disabled>Confirm</button></div></div>")
+        .insertAfter(".main-area");
+        $(".emoji-this-day").click(function(e) {
+            var selected_mood = this.id;
+            var second_confirm_btn = document.getElementById("second-mood-confirm");
+            second_confirm_btn.disabled = false;
+            
+            if(second_confirm_btn.disabled === false) {
+                $("#second-mood-confirm").click(function(e) {
+                    var second_modal = document.getElementById("second-mood-tracker-modal-box");
+                    second_modal.remove();                    // Replace today's date with selected Mood
+                    switch(selected_mood) {
+                        case "angry-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _pouting face_.png" style="height:40px;width:40px;">');
+                            // $("#day1").html('<img src="../img/🦆 emoji _pouting face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "crying-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _loudly crying face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "worried-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _worried face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "neutral-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _neutral face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "smiling-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _slightly smiling face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "happy-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _smiling face with open mouth and smiling eyes_.png" style="height:40px;width:40px;">');
+                            break;
+                    }
+                });
+            }
+        })
+    })
+
+    $("#day30").click(function(e) {
+        var day_id = "#" + this.id;
+        $("<div id='second-mood-tracker-modal-box'><div id='second-mood-tracker-content'><h2>How did you feel on this day?</h2><ul id='emoji-lineup'><li><button class='emoji-this-day' id='angry-face'><img src='../img/🦆 emoji _pouting face_.png'></button></li><li><button class='emoji-this-day' id='crying-face'><img src='../img/🦆 emoji _loudly crying face_.png'></button></li><li><button class='emoji-this-day' id='worried-face'><img src='../img/🦆 emoji _worried face_.png'></button></li><li><button class='emoji-this-day' id='neutral-face'><img src='../img/🦆 emoji _neutral face_.png'></button></li><li><button class='emoji-this-day' id='smiling-face'><img src='../img/🦆 emoji _slightly smiling face_.png'></button></li><li><button class='emoji-this-day' id='happy-face'><img src='../img/🦆 emoji _smiling face with open mouth and smiling eyes_.png'></button></li></ul><button class='normal-btn' id='second-mood-confirm' disabled>Confirm</button></div></div>")
+        .insertAfter(".main-area");
+        $(".emoji-this-day").click(function(e) {
+            var selected_mood = this.id;
+            var second_confirm_btn = document.getElementById("second-mood-confirm");
+            second_confirm_btn.disabled = false;
+            
+            if(second_confirm_btn.disabled === false) {
+                $("#second-mood-confirm").click(function(e) {
+                    var second_modal = document.getElementById("second-mood-tracker-modal-box");
+                    second_modal.remove();                    // Replace today's date with selected Mood
+                    switch(selected_mood) {
+                        case "angry-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _pouting face_.png" style="height:40px;width:40px;">');
+                            // $("#day1").html('<img src="../img/🦆 emoji _pouting face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "crying-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _loudly crying face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "worried-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _worried face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "neutral-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _neutral face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "smiling-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _slightly smiling face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "happy-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _smiling face with open mouth and smiling eyes_.png" style="height:40px;width:40px;">');
+                            break;
+                    }
+                });
+            }
+        })
+    })
+
+    $("#day31").click(function(e) {
+        var day_id = "#" + this.id;
+        $("<div id='second-mood-tracker-modal-box'><div id='second-mood-tracker-content'><h2>How did you feel on this day?</h2><ul id='emoji-lineup'><li><button class='emoji-this-day' id='angry-face'><img src='../img/🦆 emoji _pouting face_.png'></button></li><li><button class='emoji-this-day' id='crying-face'><img src='../img/🦆 emoji _loudly crying face_.png'></button></li><li><button class='emoji-this-day' id='worried-face'><img src='../img/🦆 emoji _worried face_.png'></button></li><li><button class='emoji-this-day' id='neutral-face'><img src='../img/🦆 emoji _neutral face_.png'></button></li><li><button class='emoji-this-day' id='smiling-face'><img src='../img/🦆 emoji _slightly smiling face_.png'></button></li><li><button class='emoji-this-day' id='happy-face'><img src='../img/🦆 emoji _smiling face with open mouth and smiling eyes_.png'></button></li></ul><button class='normal-btn' id='second-mood-confirm' disabled>Confirm</button></div></div>")
+        .insertAfter(".main-area");
+        $(".emoji-this-day").click(function(e) {
+            var selected_mood = this.id;
+            var second_confirm_btn = document.getElementById("second-mood-confirm");
+            second_confirm_btn.disabled = false;
+            if(second_confirm_btn.disabled === false) {
+                $("#second-mood-confirm").click(function(e) {
+                    var second_modal = document.getElementById("second-mood-tracker-modal-box");
+                    second_modal.remove();                    // Replace today's date with selected Mood
+                    switch(selected_mood) {
+                        case "angry-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _pouting face_.png" style="height:40px;width:40px;">');
+                            // $("#day1").html('<img src="../img/🦆 emoji _pouting face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "crying-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _loudly crying face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "worried-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _worried face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "neutral-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _neutral face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "smiling-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _slightly smiling face_.png" style="height:40px;width:40px;">');
+                            break;
+                        case "happy-face":
+                            $(day_id).html('<img src="../img/🦆 emoji _smiling face with open mouth and smiling eyes_.png" style="height:40px;width:40px;">');
+                            break;
+                    }
+                });
+            }
+        })
+    })
+});
