@@ -22,19 +22,22 @@
 		<label for="user_entry"></label>
 		<textarea id="user_entry" cols="64" rows="3" placeholder="Write however you are feeling..."></textarea>
 	</div>
-	<div class="date_prompt"></div>
 
-	<img id="back_arrow_icon" src="../img/back_arrow_icon.png" srcset="../img/back_arrow_icon.png"
-		 onclick="window.location.href='../pages/journal.html'">
-
+	<!-- Done button -->
 	<div id="btn_Done" onclick="window.location.href = '../pages/journal.html'">
 		<svg class="done_box">
 			<rect id="done_box" rx="20" ry="20" x="0" y="0" width="321" height="65"></rect>
 		</svg>
-		<div id="done_text">
-			<span>Done</span>
-		</div>
+		<div id="done_text">Done</div>
 	</div>
+
+	<!-- Date loaded from Javascript -->
+	<div class="date_prompt"></div>
+
+	<!-- Back arrow icon -->
+	<a class="back_arrow_icon" href="../pages/new_entry.html">
+		<i class="feather-back-arrow" data-feather="arrow-left"></i>
+	</a>
 
 	<!-- Navigation Bar-->
 	<ul id="nav-bar">
@@ -47,6 +50,10 @@
 		<li><a href="..\pages\settings.html" class="nav-link">Settings</a></li>
 	</ul>
 </div>
+<!-- Import icons from Feather Icons -->
+<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+<script> feather.replace()</script>
+
 <script id="applicationScript" type="text/javascript" src="../js/empty_prompt.js"></script>
 </body>
 </html>

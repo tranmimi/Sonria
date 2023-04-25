@@ -80,7 +80,7 @@ textarea {
 	position: absolute;
 	overflow: hidden;
 	width: 315px;
-	height: 27px;
+	height: 35px;
 	text-align: left;
 	font-style: normal;
 	font-weight: normal;
@@ -450,103 +450,7 @@ textarea {
 	top: 220px;
 	overflow: visible;
 }
-#goal_3 {
-	position: absolute;
-	width: 537px;
-	height: 33.108px;
-	left: 4px;
-	top: 145px;
-	overflow: visible;
-}
-#goal_3_entry {
-	left: 49px;
-	top: 3px;
-	position: absolute;
-	overflow: visible;
-	width: 489px;
-	height: 26px;
-	text-align: left;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 22px;
-	color: rgba(93,63,53,1);
-}
-#chkbox_filled {
-	display: none;
-	position: absolute;
-	width: 43px;
-	height: 40.367px;
-	left: -4px;
-	top: -4px;
-	overflow: visible;
-}
-#chkbox_empty {
-	opacity: 0.6;
-	position: absolute;
-	width: 35px;
-	height: 33.108px;
-	left: 0px;
-	top: 0px;
-	overflow: visible;
-}
-#goal_2 {
-	position: absolute;
-	width: 541px;
-	height: 40.367px;
-	left: 0px;
-	top: 90px;
-	overflow: visible;
-}
-#goal_2_entry {
-	left: 53px;
-	top: 7px;
-	position: absolute;
-	overflow: visible;
-	width: 489px;
-	height: 26px;
-	text-align: left;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 22px;
-	color: rgba(93,63,53,1);
-}
-#chkbox_filled_b {
-	position: absolute;
-	width: 43px;
-	height: 40.367px;
-	left: 0px;
-	top: 0px;
-	overflow: visible;
-}
-#goal_1 {
-	position: absolute;
-	width: 541px;
-	height: 40.367px;
-	left: 0px;
-	top: 40px;
-	overflow: visible;
-}
-#goal_1_entry {
-	left: 53px;
-	top: 7px;
-	position: absolute;
-	overflow: visible;
-	width: 489px;
-	height: 26px;
-	text-align: left;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 22px;
-	color: rgba(93,63,53,1);
-}
-#chkbox_filled_ca {
-	position: absolute;
-	width: 43px;
-	height: 40.367px;
-	left: 0px;
-	top: 0px;
-	overflow: visible;
-}
+
 #goals_question {
 	left: 0px;
 	top: 0px;
@@ -644,4 +548,122 @@ textarea {
 	font-weight: normal;
 	font-size: 24px;
 	color: rgba(93,63,53,1);
+}
+
+.checkbox_container {
+	display: block;
+	position: relative;
+	padding-left: 35px;
+	margin-bottom: 12px;
+	cursor: pointer;
+	font-size: 22px;
+	user-select: none;
+	top: 60px;
+	text-align: left;
+}
+
+.checkbox_container input {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+}
+
+.checkmark {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 25px;
+	width: 25px;
+	background-color: #eee;
+	border-radius: 5px;
+}
+
+.checkbox_container:hover input ~ .checkmark {
+	background-color: #FEF9F4;
+}
+
+.checkbox_container input:checked ~ .checkmark {
+	background-color: rgba(198,180,168,1);
+}
+
+.checkmark:after {
+	content: "";
+	position: absolute;
+	display: none;
+}
+
+.checkbox_container input:checked ~ .checkmark:after {
+	display: block;
+}
+
+.checkbox_container .checkmark:after {
+	left: 9px;
+	top: 5px;
+	width: 5px;
+	height: 10px;
+	border: solid white;
+	border-width: 0 3px 3px 0;
+	transform: rotate(45deg);
+}
+
+/* Check circle */
+
+.checkcircle_container {
+	display: block;
+	position: relative;
+	padding-left: 35px;
+	margin-bottom: 12px;
+	cursor: pointer;
+	font-size: 22px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	top: 60px;
+	text-align: left;
+}
+
+.checkcircle_container input {
+	pposition: absolute;
+	opacity: 0;
+	cursor: pointer;
+	height: 0;
+	width: 0;
+}
+
+.checkcircle {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 25px;
+	width: 25px;
+	background-color: #eee;
+	border-radius: 50%;
+}
+
+.checkcircle_container:hover input ~ .checkcircle {
+	background-color: #FEF9F4;
+}
+
+.checkcircle_container input:checked ~ .checkcircle {
+	background-color: rgba(198,180,168,1);
+}
+
+.checkcircle:after {
+	content: "";
+	position: absolute;
+	display: none;
+}
+
+.checkcircle_container input:checked ~ .checkcircle:after {
+	display: block;
+}
+
+.checkcircle_container .checkcircle:after {
+	top: 9px;
+	left: 9px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: white;
 }
