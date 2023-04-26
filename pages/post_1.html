@@ -9,7 +9,7 @@
   <!-- Add Poppins font from main-->
   <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto+Condensed:ital,wght@0,400;1,700&display=swap"
         rel="stylesheet">
-  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="../css/main.css"/>
 <!-- <script id="applicationScript" type="text/javascript" src="js/fourm_post_1.js"></script> -->
 </head>
 <body>
@@ -72,40 +72,26 @@
 			<span>Follow</span>
 		</div>
 	</div>
-	<!-- Navigation Bar -->
-	<div id="Nav_Bar">
-		<svg class="nav_bar_box">
-			<rect id="nav_bar_box" rx="20" ry="20" x="0" y="0" width="981" height="70">
-			</rect>
-		</svg>
-		<div id="Settings" onclick="window.location.href='../pages/settings.html'">
-			<span>Settings</span>
-		</div>
-		<div id="Analytics" onclick="window.location.href='../pages/analytics.html'">
-			<span>Analytics</span>
-		</div>
-		<div id="Forums" onclick="window.location.href='../pages/forums.html'">
-			<span>Forums</span>
-		</div>
-		<div id="Journal" onclick="window.location.href='../pages/journal.html'">
-			<span>Journal</span>
-		</div>
-		<div id="Reminders" onclick="window.location.href='../pages/reminders.html'">
-			<span>Reminders</span>
-		</div>
-		<div id="Dashboard" onclick="window.location.href='../pages/dashboard.html'">
-			<span>Dashboard</span>
-		</div>
-		<img id="sonria_logo" src="../img/sonria_logo.png" srcset="../img/sonria_logo.png">
 
-		<svg class="nav_bar_divider" viewBox="0 0 1 51">
-			<path id="nav_bar_divider" d="M 0 0 L 0 51">
-			</path>
-		</svg>
-	</div>
-	<img id="back_arrow_icon" src="../img/back_arrow_icon.png" srcset="../img/back_arrow_icon.png"
-		 onclick="window.location.href='../pages/forums.html'">
+	<!-- Navigation Bar-->
+	<ul id="nav-bar">
+		<li><img src="..\img\sonria_logo.png" height="50px" width="56px" id="logo"></li>
+		<li><a href="..\pages\dashboard.html" class="nav-link">Dashboard</a></li>
+		<li><a href="..\pages\reminders.html" class="nav-link">Reminders</a></li>
+		<li><a href="..\pages\journal.html" class="nav-link">Journal</a></li>
+		<li><a href="..\pages\forums.html" class="nav-link"><!--id="current-page"-->Forums</a></li>
+		<li><a href="..\pages\analytics.html" class="nav-link">Analytics</a></li>
+		<li><a href="..\pages\settings.html" class="nav-link">Settings</a></li>
+	</ul>
+
+	<a class="back_arrow_icon" href="../pages/forums.html">
+		<i class="feather-back-arrow" data-feather="arrow-left"></i>
+	</a>
 
 </div>
+<!-- Import icons from Feather Icons -->
+<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+<script> feather.replace()</script>
+
 </body>
 </html>
