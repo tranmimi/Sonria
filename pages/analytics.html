@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- Poppins Font link-->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto+Condensed:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
+  <!-- CSS link -->
+  <link href="../css/analytics.css" rel="stylesheet">
+  <!-- JS link as well as link to chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.2/dist/echarts.min.js">
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Analytics</title>
+</head>
+<body>
+  <!-- Navigation Bar-->
+  <ul id="nav-bar">
+    <li><img src="..\img\logo.png" height="50px" width="56px" id="logo"></li>
+    <li><a href="..\pages\dashboard.html" class="nav-link">Dashboard</a></li>
+    <li><a href="..\pages\reminders.html" class="nav-link">Reminders</a></li>
+    <li><a href="..\pages\journal.html" class="nav-link">Journal</a></li>
+    <li><a href="..\pages\form.html" class="nav-link">Forums</a></li>
+    <li><a href="..\pages\analytics.html" class="nav-link" id="settings" id="current-page">Analytics</a></li>
+    <li><a href="..\pages\settings.html" class="nav-link">Settings</a></li>
+  </ul>
+
+  <h1>Monthly Mood Chart</h1>
+
+  <!-- Buttons for different time frames
+  <button class="button1">1 Month</button>
+  <button class="button2">6 Months</button>
+  <button class="button3">1 Year</button> -->
+
+  <!-- Graph with all the moods -->
+  <div id="main" style="width: 1000px;height:700px;"></div>
+
+  <script type="text/javascript">
+    // Initialize the echarts instance based on the prepared dom
+    var myChart = echarts.init(document.getElementById('main'));
+    const emoji = {
+      Happy: '../img/🦆 emoji _smiling face with open mouth and smiling eyes_.png',
+      Okay: '../img/🦆 emoji _slightly smiling face_.png',
+      Neutral: '../img/🦆 emoji _neutral face_.png',
+      Sad: '../img/🦆 emoji _worried face_.png',
+      Crying: '../img/🦆 emoji _loudly crying face_.png',
+      Pout: '../img/🦆 emoji _pouting face_.png'
+    };
+
+    // Specify the configuration items and data for the chart
+    var option = {
+      tooltip: {},
+      legend: {
+        data: ['mood']
+      },
+      xAxis: {
+        data: [1,3,5,7,9,11,13,15,17,19,21,23,25,27,30]
+      },
+      yAxis: {
+        type: 'category',
+        inverse: true,
+        data: ['Happy', 'Okay', 'Neutral', 'Sad', 'Crying', 'Mad'],
+        axisLabel: {
+          formatter: function (value) {
+            return '{' + value + '| }\n{value|' + value + '}';
+          },
+        margin: 20,
+        rich: {
+          value: {
+            lineHeight: 30,
+            align: 'center'
+          },
+          Happy: {
+            height: 40,
+            align: 'center',
+            backgroundColor: {
+              image: emoji.Happy
+            }
+          },
+          Okay: {
+            height: 40,
+            align: 'center',
+            backgroundColor: {
+              image: emoji.Okay
+            }
+          },
+          Neutral: {
+            height: 40,
+            align: 'center',
+            backgroundColor: {
+              image: emoji.Neutral
+            }
+          },
+          Sad: {
+            height: 40,
+            align: 'center',
+            backgroundColor: {
+              image: emoji.Sad
+            }
+          },
+          Crying: {
+            height: 40,
+            align: 'center',
+            backgroundColor: {
+              image: emoji.Crying
+            }
+          },
+          Mad: {
+            height: 40,
+            align: 'center',
+            backgroundColor: {
+              image: emoji.Pout
+            }
+          }
+        }
+        }
+      },
+      series: [ {
+        name: 'Mood',
+        type: 'line',
+        data: ['Happy', 'Okay', 'Sad', 'Sad', 'Sad', 'Neutral', 'Neutral',
+        'Crying', 'Sad', ],
+        lineStyle: {
+          normal: {
+            color: '#D79F8F',
+          }
+        }
+      }]
+    };
+
+    // Display the chart using the configuration items and data just specified.
+    myChart.setOption(option);
+    </script>
+
+</body>
+</html>

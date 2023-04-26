@@ -1,0 +1,235 @@
+/* 
+    File: dashboard.css
+    
+    Styling specifically for the Dashboard page. 
+*/
+
+/* Style Mood Tracker Modal Box. 
+
+    Part of the code for this section is referenced from:
+        https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_modal
+*/
+hr {
+  margin: auto;
+}
+
+#mood-tracker-modal-box, #second-mood-tracker-modal-box {
+  background-color: rgba(0,0,0,0.4);
+  box-shadow: 0 15px 15px rgba(0, 0, 0, 0.12);
+  /* display: none; */
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  z-index: 1;
+}
+
+  /* Style Mood Tracker Box Content 
+
+      Code for changing the opacity of the images referenced from:
+        https://stackoverflow.com/questions/18223663/how-to-change-the-opacity-of-image-on-hover-using-css
+  */
+#mood-tracker-content, #second-mood-tracker-content {
+  background-color: #FEF9F4;;
+  margin: 15% auto;
+  padding: 20px;
+  border-radius: 20px;
+  width: 50%;
+}
+
+.emoji-today, .emoji-this-day {
+  background: none;
+  border: none;
+  opacity: 0.5;
+  filter: alpha(opacity=40);
+}
+
+.emoji-today:hover, .emoji-today:focus, .emoji-this-day:hover, .emoji-this-day:focus{
+  cursor: pointer;
+  opacity: 1.0;
+  filter: alpha(opacity=100);
+}
+
+/* Style profile bar. */
+#profile-bar {
+    background-color: #FEF9F4;
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.12);
+    border-radius: 20px;
+    margin: auto;
+    padding: 10px;
+    width: 75%;
+}
+
+#users-name {
+    display: inline-block;
+    padding-left: 20px;
+}
+
+/* Style mood tracker calendar.
+    Code referenced and modified from https://gosnippets.com/snippets/dynamic-calendar-with-pure-css-and-javascript
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Reposition mood tracker calendar and reminders bar side-by-side. */
+.main-area {
+  display: flex;
+  justify-content: center;
+}
+
+.tracker-calendar {
+    align-items: center;
+    padding: 0 10px;
+    justify-content: center;
+    width: 470px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.12);
+}
+
+.wrapper header {
+    display: flex;
+    align-items: center;
+    padding: 25px 30px 10px;
+    justify-content: space-between;
+}
+
+header .icons {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+header .icons span {
+    height: 38px;
+    width: 38px;
+    margin: 0 1px;
+    cursor: pointer;
+    color: #878787;
+    text-align: center;
+    line-height: 38px;
+    font-size: 1.9rem;
+    user-select: none;
+    border-radius: 20px;
+}
+
+.icons span:last-child {
+    margin-right: -10px;
+}
+
+header .icons span:hover {
+    background: #DBDBBE;
+}
+
+header .current-date {
+    color: #875F4A;
+    font-size: 1.45rem;
+    font-weight: 500;
+}
+
+.calendar {
+    padding: 10px;
+    background-color: #FEF9F4;
+    border-radius: 20px;
+}
+
+.calendar ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    text-align: center;
+}
+
+.calendar .days {
+    margin-bottom: 20px;
+}
+
+.calendar li {
+    color: #ffffff;
+    width: calc(100% / 7);
+    font-size: 1.07rem;
+}
+
+.calendar .weeks li {
+    color: #875F4A;
+    font-weight: 500;
+    cursor: default;
+}
+
+.calendar .days li {
+    background-color: #A5A58E;
+    z-index: 1;
+    cursor: pointer;
+    position: relative;
+    margin-top: 30px;
+    margin-left: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+
+.days li.inactive {
+    background: #DBDBBE;
+    color: #ffffff;
+}
+
+.days li.active {
+    color: #ffffff; /* current day */
+}
+
+.days li::before {
+    position: absolute;
+    content: "";
+    left: 50%;
+    top: 50%;
+    height: 40px;
+    width: 40px;
+    z-index: -1;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.days li.active::before {
+    background: #000000; /* current day -> previously ##9B59B6  */
+    opacity: 0.3;
+}
+
+.days li:not(.active):hover::before {
+    background: #000000;
+    opacity: 0.2;
+}
+
+/* Style "Did you miss anything?" bar. */
+#reminders {
+  background-color: #ffffff;
+  box-shadow: 0 15px 15px rgba(0, 0, 0, 0.12);
+  margin-left: 5%;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+header #reminders-header {
+  color: #875F4A;
+  font-size: 1.45rem;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+#list-of-reminders {
+  background-color: #FEF9F4;
+  border-radius: 20px;
+  height: 95%;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+}

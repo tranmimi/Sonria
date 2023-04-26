@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Creation</title>
+    <link rel="stylesheet" href="../css/account-creation-style.css">
+    <link rel = "stylesheet" href = "https://fonts.googleapis.com/css?family=Poppins">  
+</head>
+<body>
+    <div class="container">
+        <div class="form-box create">
+            <div class="logo"></div>
+            <h2>Welcome to Sonria!</h2>
+            <h4>Create an account with us.</h4>
+            <form id="form" action="#">
+                <div class="input-box">
+                    <!-- <span class="icon"></span> --> 
+                    <input type="email" id="input-email" name="input-email" placeholder="Email">
+                    <!-- <label>Email</label> -->
+                </div>
+                <div class="input-box">
+                     <!-- <span class="icon"></span> -->
+                    <input type="email" id="confirm-email" name="confirm-email" placeholder="Confirm Email" >
+                    <!-- <label>Confirm Email</label> -->
+                </div>
+                <div class="input-box">
+                     <!-- <span class="icon"></span> -->
+                    <input type="text" id="input-firstname" name="input-firstname" placeholder="First Name" >
+                    <!-- <label>First Name</label> -->
+                </div>
+                <div class="input-box">
+                     <!-- <span class="icon"></span> -->
+                    <input type="text" id="input-lastname" name="input-lastname" placeholder="Last Name" >
+                    <!-- <label>Last Name</label> -->
+                </div>
+                <div class="input-box">
+                     <!-- <span class="icon"></span> -->
+                    <input type="text" id="input-username" name="input-username" placeholder="Username" >
+                    <!-- <label>Username</label> -->
+                </div>
+                <div class="input-box">
+                    <!-- <span class="icon"></span> -->
+                   <input type="password" id="input-password" name="input-password" placeholder="Password">
+                   <!-- <label>Confirm Password</label> -->
+               </div>
+                <div class="input-box">
+                     <!-- <span class="icon"></span> -->
+                    <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm Password" >
+                    <!-- <label>Confirm Password</label> -->
+                </div>
+                <button type="button" class="btn"  id="submit-btn">Create Account</button>
+            </form>
+        </div>
+    </div>
+    
+<script type="module">
+    
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-analytics.js";
+        import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-auth.js";
+        import { getDatabase, set, ref } from  "https://www.gstatic.com/firebasejs/9.18.0/firebase-database.js";
+
+ 
+
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth();
+        const database = getDatabase(app);
+        const btn = document.getElementById("submit-btn");
+        const myForm = $("#form");
+        btn.onclick = function () {
+            if(myForm.valid()){
+                var email = document.getElementById("input-email").value;
+                console.log(email);
+            var password = document.getElementById("input-password").value;
+            var username = document.getElementById("input-username").value;
+            var firstName = document.getElementById("input-firstname").value;
+            var lastName = document.getElementById("input-lastname").value;
+            var displayName = firstName + " " + lastName;
+            createUserWithEmailAndPassword(auth, email, password, username, displayName).then((userCredential) => {
+
+                // Signed in 
+                const user = userCredential.user;
+                // ...
+                set(ref(database, 'users/' + user.uid), {
+                    username: username,
+                    email: email,
+                    password: password,
+                    displayName: displayName
+                    // profile_picture: imageUrl
+                }).then(() => {
+                    // Data saved successfully!
+                    alert("user created successfully");
+                })
+                .catch((error) => {
+                    // The write failed...
+                    alert("error in creating user");
+                });
+                console.log("success");
+                window.location.href = "../pages/login.html";
+            })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    // ..
+                    alert(errorMessage);
+                });
+            }
+}
+
+      </script> 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js" integrity="sha512-rstIgDs0xPgmG6RX1Aba4KV5cWJbAMcvRCVmglpam9SoHZiUCyQVDdH2LPlxoHtrv17XWblE/V/PP+Tr04hbtA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/additional-methods.min.js" integrity="sha512-6S5LYNn3ZJCIm0f9L6BCerqFlQ4f5MwNKq+EthDXabtaJvg3TuFLhpno9pcm+5Ynm6jdA9xfpQoMz2fcjVMk9g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="../js/account-creation-script.js"></script>
+</body>
+</html>
