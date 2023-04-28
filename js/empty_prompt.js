@@ -21,3 +21,11 @@ document.getElementById('btn_Done').addEventListener('click', function() {
     // Set the "formCompleted" flag in local storage to true
     localStorage.setItem('epCompleted', 'true');
 });
+
+// Reference for input elements to be displayed on Journal page
+const input = document.getElementById('empty_page_entry');
+
+input.addEventListener('empty_journal_submission', function() {
+    localStorage.setItem('btn_done', input.value);
+});
+

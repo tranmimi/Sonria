@@ -127,12 +127,13 @@ h2 {
 }
 #new_entry_box_c {
     fill: rgba(254,249,244,1);
+    height: 350px;
 }
 .new_entry_box_c {
     position: absolute;
     overflow: visible;
     width: 832px;
-    height: 489px;
+    height: 350px;
     left: 0px;
     top: 0px;
 }
@@ -144,62 +145,7 @@ h2 {
     top: 400px;
     overflow: visible;
 }
-#plus_circle {
-    fill: rgba(255,243,232,1);
-}
-.plus_circle {
-    filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.161));
-    position: absolute;
-    overflow: visible;
-    width: 106px;
-    height: 105px;
-    left: 0px;
-    top: 0px;
-}
-#plus_icon {
-    position: absolute;
-    width: 35.745px;
-    height: 32.622px;
-    left: 20.127px;
-    top: 21.189px;
-    overflow: visible;
-}
-#Path_1 {
-    fill: transparent;
-    stroke: rgba(93,63,53,1);
-    stroke-width: 3px;
-    stroke-linejoin: round;
-    stroke-linecap: round;
-    stroke-miterlimit: 4;
-    shape-rendering: auto;
-}
-.Path_1 {
-    overflow: visible;
-    position: absolute;
-    width: 3px;
-    height: 35.622px;
-    left: 17.873px;
-    top: 0px;
-    transform: matrix(1,0,0,1,0,0);
-}
-#Path_2 {
-    fill: transparent;
-    stroke: rgba(93,63,53,1);
-    stroke-width: 3px;
-    stroke-linejoin: round;
-    stroke-linecap: round;
-    stroke-miterlimit: 4;
-    shape-rendering: auto;
-}
-.Path_2 {
-    overflow: visible;
-    position: absolute;
-    width: 38.745px;
-    height: 3px;
-    left: 0px;
-    top: 16.311px;
-    transform: matrix(1,0,0,1,0,0);
-}
+
 .mm_text{
     left: 24px;
     top: 14px;
