@@ -1,3 +1,12 @@
+// new-reminder-script.js
+// Implemented by: Aria Siriouthay
+// Implemented by Aria Siriouthay
+// School Email: aria_siriouthay@student.uml.edu
+// Personal Email: aria.siriouthay@gmail.com
+
+// reference: same as in reminders-script.js, along with HW4 from GUI I.
+
+// additonal validation method to compare start/end time
 $.validator.addMethod("compareTimes", function(value, element){
    let start = new Date("2001-01-01" + "T" +  $("#start-time").val());
    console.log(start);
@@ -8,6 +17,8 @@ $.validator.addMethod("compareTimes", function(value, element){
    }
    return true;
 }, "The start time must occur before the end time.");
+
+// additional validation method to ensure all event titles have a unique name.
 $.validator.addMethod("compareTitles", function(value, element){
     if(localStorage.getItem("eventObj") != null){
         let obj = JSON.parse(localStorage.getItem("eventObj"));
@@ -19,25 +30,22 @@ $.validator.addMethod("compareTitles", function(value, element){
     } 
     return true;
 }, "Event names must be unique.");
+
 $(document).ready(function(){
-    const calender = document.querySelector(".calender");
+    
+    // access to date & its display, along with next/prev buttons on calendar
     date = document.querySelector(".date");
     daysCont = document.querySelector(".days");
     prev = document.querySelector(".prev");
     next = document.querySelector(".next");
     displayDate = document.querySelector(".today-date");
 
+    // getting current month and year for calendar display
     let todayDate = new Date();
     let month = todayDate.getMonth();
     let year = todayDate.getFullYear();
-    let day = todayDate.getDate();
-
-    const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-
-    // date = month + year;
-    // console.log(date);
-    // displayDate.innerHTML =  months[month] + " " + day + "th " + year;
-
+   
+    // access to form input fields
     const form = document.getElementById("form");
     const title = document.getElementById("input-title");
     const inputDate = document.getElementById("input-date");
@@ -45,13 +53,10 @@ $(document).ready(function(){
     const endTime = document.getElementById("end-time");
     const note = document.getElementById("input-note");
 
-    // let editBool = JSON.parse(localStorage.getItem("editBool"));
-    // if(editBool != null){
-    //     if(editBool == "true"){
-    //         console.log("true");
-    //     }
-    // }
+    // function to check for any events that need editting
     editEvents(title, inputDate, startTime, endTime, note);
+    
+    // form validation 
     $("#form").validate({
         rules: {
             "input-title":{
@@ -63,7 +68,6 @@ $(document).ready(function(){
             },
             "start-time":{
                 required:true,
-                // compareTimes:true
             },
             "end-time":{
                 required:true,
@@ -86,7 +90,9 @@ $(document).ready(function(){
         }
     });
 
+    // when form is submitted
     form.addEventListener("submit", function(e){
+        // ensure all data is not wiped
         e.preventDefault();
         if($("#form").valid()){
             // getting all form vals
@@ -116,12 +122,13 @@ $(document).ready(function(){
         }   
     });
     
+    // creating calendar, marking days, and making them clickable.
     initCal(month, year, daysCont);
     clickDays(month, year);
     markEvents(month, year);
 
+    // updating calendar is prev arrow clicked
     $(".prev").click(function(){
-        // console.log("prev");
         month--;
         if(month < 0 || month > 11){
             todayDate = new Date(year, month, new Date().getDate());
@@ -136,9 +143,9 @@ $(document).ready(function(){
         markEvents(month, year);
 
     });
-    $(".next").click(function(){
-        //        currMonth = icon.id === "prev" ? currMonth - 1 : currMonth + 1;
 
+    // updating calendar is next arrow clicked
+    $(".next").click(function(){
         month++;
         if(month < 0 || month > 11){
             todayDate = new Date(year, month, new Date().getDate());
@@ -153,6 +160,8 @@ $(document).ready(function(){
         markEvents(month, year);
 
     });
+
+    // click listenr to close popup windows
     const closePopUpBtn = document.getElementsByClassName("close-button")[0];
     closePopUpBtn.addEventListener("click", function(){
         const popup = document.getElementsByClassName("popup")[0];
@@ -160,6 +169,7 @@ $(document).ready(function(){
     });
 });
 
+// function to initalize calendar, same as in reminder-script.js
  function initCal(month, year, daysCont){
     const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
 
@@ -188,6 +198,8 @@ $(document).ready(function(){
     }
     daysCont.innerHTML = days;
  }
+
+//  function to edit events
  function editEvents(title, inputDate, startTime, endTime, note){
     if(localStorage.getItem("eventObj") != null){
         //retrieving eventObj and iterating through it
@@ -211,6 +223,7 @@ $(document).ready(function(){
     }
 }
 
+// function to mark events on calendar, same as in reminders-script.js
 function markEvents(month, year){
     const days = document.getElementsByClassName("day");
     if(localStorage.getItem("eventObj") != null){
@@ -220,8 +233,6 @@ function markEvents(month, year){
             for(let i = 0; i < days.length; i++){
                 let objDate = new Date(event.date + "T" + event.start);
                 if((objDate.getDate() == days[i].textContent) && (objDate.getFullYear() == year) && (objDate.getMonth() == month)){
-                    // console.log("has event logged");
-                    // alert("Title: " + event.title + " Time: " + event.start + " - " + event.end);
                     if(!days[i].classList.contains("hasEvent") && !days[i].classList.contains("inactive")){
                         days[i].className += " hasEvent";
                     }
@@ -231,6 +242,7 @@ function markEvents(month, year){
     }
 }
 
+// function to make days clickable, same as in reminders-script.js
 function clickDays(month, year){
     const days = document.getElementsByClassName("day");;
     if(localStorage.getItem("eventObj") != null){
@@ -242,8 +254,6 @@ function clickDays(month, year){
                     let event = obj[j];
                     let objDate = new Date(event.date + "T" + event.start);
                     if((objDate.getDate() == days[i].textContent) && (objDate.getFullYear() == year) && (objDate.getMonth() == month)){
-                        // console.log("has event logged");
-                        // alert("Title: " + event.title + " Time: " + event.start + " - " + event.end);
                         const popup = document.getElementsByClassName("popup")[0];
                         displayPopUp(popup, event.title, event.start, event.end, objDate, event.note);
                     }
@@ -253,6 +263,7 @@ function clickDays(month, year){
     }
  }
 
+ // function to diplay popups when event clicked, same as in reminders-script.js
  function displayPopUp(popup, title, start, end, date, note){
     const overlay = document.getElementById("overlay");
     const body = document.getElementsByClassName("popup-body")[0];
@@ -274,6 +285,7 @@ function clickDays(month, year){
     overlay.classList.add("active");
  }
 
+//  function to close popup, same as in reminders-script.js
  function closePopUp(popup){
     const overlay = document.getElementById("overlay");
     const body = document.getElementsByClassName("popup-body")[0];
