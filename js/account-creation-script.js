@@ -1,5 +1,4 @@
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// firebase configurations
 const firebaseConfig = {
     apiKey: "AIzaSyBFeeclMvlSO3wSWm7UoGcanmgjQGrj9gg",
     authDomain: "sonria-e68e7.firebaseapp.com",
@@ -10,9 +9,9 @@ const firebaseConfig = {
     measurementId: "G-GJJBX8J37X"
   };    
   
-
-
 $(document).ready(function(){
+  // form validation for input fields
+  // ensuring the correct info is inputted and no fields are left unanswered.
   $("#form").validate({
     rules: {
       "input-email":{
@@ -55,14 +54,4 @@ $(document).ready(function(){
       }
     }
   });
-  // const btn = document.getElementById("submit-btn");
-  // btn.addEventListener("click", function(e){
-  //   e.preventDefault();
-  //   if($("#form").valid()){
-  //     console.log("valid");
-  //   }
-  //   else{
-  //     console.log("invalid");
-  //   }
-  // });
 });

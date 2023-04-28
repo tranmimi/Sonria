@@ -1,12 +1,25 @@
+/* 
+    account-creation-style.css
+    Implemented by Aria Siriouthay
+    School Email: aria_siriouthay@student.uml.edu
+    Personal Email: aria.siriouthay@gmail.com
+*/
+/* reference:  */
 /* https://www.youtube.com/watch?v=p1GmFCGuVjw&t=50s&ab_channel=Codehal */
+
+/* body styling */
 body{
     background: #E7E2DE;
     font-family: "Poppins";
 }
+
+/* header styling */
 header{
     margin:auto;
     width: 0;
 }
+
+/* main container stlying */
 .container{
     position:relative;
     width: 400px;
@@ -21,13 +34,20 @@ header{
     margin-right: auto;
     position: relative;
 }
+
+/* editting form and fields */
 .form-box {
     width: 100%;
     padding: 40px;
+    position: relative;
+    bottom: 35px;
+    margin: -35px;
 }
 .form-box h2,h4{
     color: #5D3F35;
 }
+
+/* styling form headers */
 h2{
     position: relative;
     top: 10px;
@@ -36,60 +56,37 @@ h2{
 h2, h4{
     text-align: center;
 }
-.form-box{
-    position: relative;
-    bottom: 35px;
-    /* display: block; */
-    margin: -35px;
-    
-}
+
+/* input styling */
 .input-box {
-    /* position: relative; */
-    /* width: 100%; */
     height: 50px;
 }
 input{
-    /* color:#FEF9F4; */
     background: #FEF9F4;
     border: 1px solid lightgray;
     border-radius: 5px;
-
     width: 250px;
     height: 25px;
     display: block;
     margin-left: auto;
     margin-right: auto;
     position: relative;
-
     box-shadow: 0 0 10px rgba(0, 0, 0, .1);
-    /* margin-bottom: 0px;
-    display:inline-block; */
-    
-    /* width: 100px; */
 }
+
+/* editing text that appears before input */
 ::placeholder{
     position: relative;
     left: 3px;
     color: #5d3f3591;
 }
-/* label{
-    display: inline-block; 
-     text-align: right;
-    width: 130px;
-    float: left;
-    color: #5D3F35;
-    font-size: small;
-} */
+
+/* displaying Sonria logo */
 .logo{
-    /* width: 50px;
-    height: 50px; */
     background-image: url('../img/logo.png');
     background-repeat: no-repeat;
     background-size: contain;
     height: 80px;
-    /* display: block;
-    margin-left: auto;
-    margin-right: auto; */
     width: 80px;
     margin-left: auto;
     margin-right: auto;
@@ -97,6 +94,8 @@ input{
     top: 35px;
 
 }
+
+/* button styling */
 .btn{
     margin-left: auto;
     margin-right: auto;
@@ -109,10 +108,13 @@ input{
     border-radius: 5px;
     font-family: "Poppins";
 }
+/* styling when input clicked */
 input:focus{
     border: solid 1px gold;
     outline:none;
 }
+
+/* styling when error made when vaildating */
 label.error{
     color: red;
     display:block;

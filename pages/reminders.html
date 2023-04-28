@@ -1,9 +1,16 @@
+<!-- 
+    reminders.html
+    Implemented by Aria Siriouthay
+    School Email: aria_siriouthay@student.uml.edu
+    Personal Email: aria.siriouthay@gmail.com
+ -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- css styling links -->
     <link rel="stylesheet" href="../css/reminders-style.css">
     <link rel="stylesheet" href="../css/main.css">
     <link rel = "stylesheet" href = "https://fonts.googleapis.com/css?family=Poppins">  
@@ -23,22 +30,23 @@
         <li><a href="..\pages\settings.html" class="nav-link">Settings</a></li>
     </ul>
 
+    <!-- area for popup window that appears when clicking a day on calender that has event -->
     <div class = "popup" id="popup">
         <div class="popup-header">
-            <div class="popup-title">Example</div>
+            <div class="popup-title"></div>
             <button class="close-button">&times;</button>
         </div>
         <div class="popup-body">
-            <!-- Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus quisquam sequi nulla vitae. Amet veniam suscipit deleniti? Dicta eveniet ex distinctio eaque delectus optio numquam itaque incidunt! Provident, eaque vero! -->
         </div>
     </div>
+    <!-- popup window for when an event title on the "today" or "upcoming" tab is clicked -->
     <div class = "event-popup" id="event-popup">
         <div class="event-popup-header">
-            <div class="event-popup-title">Example</div>
+            <div class="event-popup-title"></div>
             <button class="event-close-button">&times;</button>
         </div>
+        <!-- allows user to have different options to do with the clicked event  -->
         <div class="event-popup-body">
-            <!-- Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus quisquam sequi nulla vitae. Amet veniam suscipit deleniti? Dicta eveniet ex distinctio eaque delectus optio numquam itaque incidunt! Provident, eaque vero! -->
             <p id="event-text"></p>
             Would you like to modify this event?
             <br>
@@ -47,30 +55,40 @@
             <button class= "button" id="exit-btn">Exit</button>
         </div>
     </div>
+    <!-- simple overlay to provide a page shadow when a popup is displayed -->
     <div class="" id = "overlay"></div>
    
+    <!-- main container for page -->
     <div class="container">
+        <!-- area for the left main section of page -->
         <div class="left">
-            <div class="today-date">hello</div>
-            <div class="icon">
+            <div class="today-date"></div>
+            <!-- <div class="icon">
                 <i class="fas fa-circle"></i>
-            </div>
+            </div> -->
+
+            <!-- area for greeting, name will update according to user logged in -->
             <div id="greeting">Hi, Sonria Demo!</div>
+            <!-- text that will appear if no event data is found in database -->
+            <div id="notasks">No reminders yet!</div>
             <br>
-            <!-- <br> -->
+
+            <!-- section that provides the "today" and "upcoming" tabs -->
             <div class="tasks">
                 <div class="today-task">Today</div>
                 <div class="upcoming-task">Upcoming</div>
-                <!-- <div class="priorities">Priorities</div> -->
             </div>
             <button type="button" class="btn">New Reminder</button>
             <br>
         </div>
+
+        <!-- area for right main section of page -->
         <div class="right">
             <div class="calender">
                 <div class="month">
+                    <!-- provides the current month and clickable arrows on calendar -->
                     <i class="fa fa-angle-left prev"></i>
-                    <div id="date">hi</div>
+                    <div id="date"></div>
                     <i class="fa fa-angle-right next"></i>
                 </div>
                 <div class="weekdays">
@@ -82,20 +100,16 @@
                     <div>Fri</div>
                     <div>Sat</div>
                 </div>
+                <!-- container for all calendar days -->
                 <div class="days">
                     <div class="day"></div>
                 </div>
         </div>
     </div>
 
+    <!-- jquery scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js" integrity="sha512-rstIgDs0xPgmG6RX1Aba4KV5cWJbAMcvRCVmglpam9SoHZiUCyQVDdH2LPlxoHtrv17XWblE/V/PP+Tr04hbtA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script type="module" src="../js/reminders-script.js"></script>
-    <!-- <script type="module">
-          import { initializeApp } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-app.js";
-    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-analytics.js";
-    import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-auth.js";
-    import { getDatabase, set, ref } from  "https://www.gstatic.com/firebasejs/9.18.0/firebase-database.js";
-    </script> -->
 </body>
 </html>
