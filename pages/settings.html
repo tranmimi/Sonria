@@ -67,11 +67,16 @@
   </label>
   <hr>
   <button onclick = "window.location.href='account-creation.html';"
-    type="button" name="button" class = "deleteBtn">Delete Account</button>
+    type="button" name="button" id="myBtn" class = "deleteBtn">Delete Account</button>
 
     <img src="../img/moon.png" id= "icon" alt="moon">
 
       <script>
+        document.getElementById("myBtn").addEventListener("click", myFunction);
+        function myFunction() {
+          localStorage.clear();
+        }
+        
         var icon = document.getElementById("icon");
         icon.onclick = function () {
           document.body.classList.toggle("dark-mode");
