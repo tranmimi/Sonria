@@ -66,8 +66,7 @@
     <span class="slider round"></span>
   </label>
   <hr>
-  <button onclick = "window.location.href='account-creation.html';"
-    type="button" name="button" id="myBtn" class = "deleteBtn">Delete Account</button>
+  <button type="button" name="button" id="myBtn" class = "deleteBtn">Delete Account</button>
 
     <img src="../img/moon.png" id= "icon" alt="moon">
 
@@ -75,6 +74,7 @@
         document.getElementById("myBtn").addEventListener("click", myFunction);
         function myFunction() {
           localStorage.clear();
+          window.location.href='../pages/login.html';
         }
         
         var icon = document.getElementById("icon");
